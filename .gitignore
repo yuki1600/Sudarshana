@@ -28,5 +28,10 @@ Thumbs.db
 *.log
 
 # Data
+
+# Data
+data/places.db
 data/raw/*.zip
 data/raw/*.txt
+!data/raw/countryInfo.txt
+
