@@ -30,6 +30,12 @@ A comprehensive Vedic Astrology calculation engine and visualization platform.
     ```bash
     pip install -r requirements.txt
     ```
+3.  **Setup Data**:
+    *The location database is too large to host on GitHub, so you must generate it locally.*
+    ```bash
+    python3 scripts/build_places_db.py
+    ```
+
 3.  **Run the application**:
     ```bash
     uvicorn src.app:app --reload
