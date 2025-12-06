@@ -1,0 +1,7 @@
+pyswisseph
+pandas
+python-dateutil
+timezonefinder
+fastapi
+uvicorn[standard]
+certifi
