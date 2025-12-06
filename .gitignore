@@ -26,3 +26,7 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Data
+data/raw/*.zip
+data/raw/*.txt
