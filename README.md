@@ -36,8 +36,8 @@ A comprehensive Vedic Astrology calculation engine and visualization platform.
     python3 scripts/build_places_db.py
     ```
 
-3.  **Run the application**:
+4.  **Run the application**:
     ```bash
     uvicorn src.app:app --reload
     ```
-4.  **Access UI**: Open `http://localhost:8000` in your browser.
+5.  **Access UI**: Open `http://localhost:8000` in your browser.
