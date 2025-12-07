@@ -3166,6 +3166,33 @@ def compute_lagna_for_location(jd_ut, lat, lon, ayanamsa_code, ephe_path="ephe",
         return {"error": str(e)}
 
 
+def split_line_at_antimeridian(coords, threshold=180):
+    """Split line into segments when longitude jumps > threshold degrees."""
+    if not coords or len(coords) < 2:
+        return [coords] if coords else []
+    
+    segments = []
+    current_segment = [coords[0]]
+    
+    for i in range(1, len(coords)):
+        prev_lon = coords[i-1]["lon"]
+        curr_lon = coords[i]["lon"]
+        
+        # Detect antimeridian crossing (jump > 180°)
+        if abs(curr_lon - prev_lon) > threshold:
+            # Save current segment and start new one
+            if current_segment:
+                segments.append(current_segment)
+            current_segment = []
+        
+        current_segment.append(coords[i])
+    
+    if current_segment:
+        segments.append(current_segment)
+    
+    return segments
+
+
 def compute_rashi_lines(jd_ut, ayanamsa_code, ephe_path="ephe", use_moseph=False, lat_step=2.0):
     """
     Compute the geographical longitudes where each rāśi cusp becomes the Ascendant
@@ -3213,6 +3240,9 @@ def compute_rashi_lines(jd_ut, ayanamsa_code, ephe_path="ephe", use_moseph=False
             if lon is not None:
                 planet_asc_line.append({"lat": lat, "lon": round(lon, 2)})
         
+        # Split line at antimeridian
+        segments = split_line_at_antimeridian(planet_asc_line)
+        
         planets.append({
             "name": nm,
             "longitude": round(lonv, 4),
@@ -3220,7 +3250,8 @@ def compute_rashi_lines(jd_ut, ayanamsa_code, ephe_path="ephe", use_moseph=False
             "rashi_name": RASHI_SA[rashi_idx],
             "rashi_symbol": RASHI_SYMBOLS[rashi_idx],
             "retro": vals[3] < 0,
-            "line": planet_asc_line
+            "line": segments[0] if segments else [],
+            "line_segments": segments
         })
     
     # Add Rahu/Ketu
@@ -3241,6 +3272,9 @@ def compute_rashi_lines(jd_ut, ayanamsa_code, ephe_path="ephe", use_moseph=False
             if lon is not None:
                 planet_asc_line.append({"lat": lat, "lon": round(lon, 2)})
         
+        # Split line at antimeridian
+        segments = split_line_at_antimeridian(planet_asc_line)
+        
         planets.append({
             "name": nm,
             "longitude": round(lonv, 4),
@@ -3248,7 +3282,8 @@ def compute_rashi_lines(jd_ut, ayanamsa_code, ephe_path="ephe", use_moseph=False
             "rashi_name": RASHI_SA[rashi_idx],
             "rashi_symbol": RASHI_SYMBOLS[rashi_idx],
             "retro": True,
-            "line": planet_asc_line
+            "line": segments[0] if segments else [],
+            "line_segments": segments
         })
     
     # Compute rāśi cusp lines (where each sign's 0° becomes the Ascendant)
@@ -3262,13 +3297,17 @@ def compute_rashi_lines(jd_ut, ayanamsa_code, ephe_path="ephe", use_moseph=False
             if lon is not None:
                 line_coords.append({"lat": lat, "lon": round(lon, 2)})
         
+        # Split line at antimeridian
+        segments = split_line_at_antimeridian(line_coords)
+        
         rashi_lines.append({
             "rashi_idx": rashi_idx,
             "rashi_name": RASHI_SA[rashi_idx],
             "rashi_name_iast": RASHI_NAMES_IAST[rashi_idx],
             "rashi_symbol": RASHI_SYMBOLS[rashi_idx],
             "cusp_longitude": cusp_longitude,
-            "line": line_coords
+            "line": segments[0] if segments else [],
+            "line_segments": segments
         })
     
     return {

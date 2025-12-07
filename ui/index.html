@@ -2495,10 +2495,57 @@
       overflow: hidden;
       background: #aad3df;
       border: 1px solid var(--border);
-      width: 70%;
-      min-width: 600px;
-      height: 450px;
-      flex-shrink: 0;
+      flex: 1;
+      min-height: 600px;
+      min-width: 0;
+      /* Fix flexbox overflow */
+    }
+
+    .astrocarto-map-container.fullscreen {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+      border: none;
+    }
+
+    /* Style sidebar when map is fullscreen */
+    body.map-fullscreen .astrocarto-sidebar {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      width: 300px;
+      max-height: calc(100vh - 100px);
+      z-index: 2001;
+      background: var(--bg-secondary);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      overflow-y: auto;
+    }
+
+    /* Fullscreen specific controls */
+    .astrocarto-fs-close {
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 2002;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .astrocarto-map-container.fullscreen .astrocarto-fs-close {
+      display: block;
     }
 
     #astrocarto-map {
@@ -4549,25 +4596,43 @@
         <!-- Main Content (hidden until chart calculated) -->
         <div id="astrocarto-content" style="display: none;">
           <!-- Controls -->
+          <!-- Controls -->
           <div class="astrocarto-controls">
             <div class="astrocarto-mode-toggle">
               <button class="astrocarto-mode-btn active" data-mode="natal">Natal</button>
               <button class="astrocarto-mode-btn" data-mode="transit">Transit</button>
             </div>
+
+            <div class="vertical-divider" style="width: 1px; height: 20px; background: var(--border); margin: 0 4px;">
+            </div>
+
             <div class="astrocarto-datetime" id="astrocarto-datetime" style="display: none;">
               <input type="date" id="astrocarto-date">
               <input type="time" id="astrocarto-time" step="1">
               <button id="astrocarto-now">Now</button>
               <button id="astrocarto-apply">Apply</button>
             </div>
+
+            <div style="flex: 1;"></div>
+
+            <button id="astrocarto-fs-btn" class="icon-btn" title="Toggle Fullscreen" style="
+                background: var(--bg-tertiary); border: 1px solid var(--border); 
+                border-radius: 6px; padding: 6px 10px; cursor: pointer; color: var(--text-secondary);
+            ">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+              </svg>
+            </button>
+
             <div class="astrocarto-status" id="astrocarto-status"></div>
           </div>
 
           <!-- Map and Sidebar Row -->
           <div class="astrocarto-content-row">
             <!-- Map Container -->
-            <div class="astrocarto-map-container">
+            <div class="astrocarto-map-container" id="astrocarto-map-container">
               <div id="astrocarto-map"></div>
+              <button class="astrocarto-fs-close" id="astrocarto-fs-close">Exit Fullscreen</button>
             </div>
 
             <!-- Right Sidebar (for future content) -->
@@ -5070,13 +5135,37 @@
       const $status = document.getElementById('astrocarto-status');
 
       // Render legend
+      const astrocartoHiddenRashi = new Set();
+
+      // Render legend
       function renderLegend() {
-        $legend.innerHTML = RASHI_SA.map((name, idx) => `
-          <div class="astrocarto-legend-item">
+        $legend.innerHTML = RASHI_SA.map((name, idx) => {
+          const isHidden = astrocartoHiddenRashi.has(idx);
+          return `
+          <div class="astrocarto-legend-item ${isHidden ? 'disabled' : ''}" data-idx="${idx}" style="cursor: pointer; opacity: ${isHidden ? 0.5 : 1}; border: 1px solid ${isHidden ? 'transparent' : 'rgba(255,255,255,0.1)'};">
             <div class="astrocarto-legend-color" style="background: ${ASTROCARTO_RASHI_COLORS[idx]}"></div>
             ${ASTROCARTO_RASHI_SYMBOLS[idx]} ${ASTROCARTO_RASHI_NAMES_IAST[idx]}
           </div>
-        `).join('');
+        `}).join('');
+
+        // Add click listeners
+        $legend.querySelectorAll('.astrocarto-legend-item').forEach(item => {
+          item.addEventListener('click', function () {
+            const idx = parseInt(this.dataset.idx);
+            if (astrocartoHiddenRashi.has(idx)) {
+              astrocartoHiddenRashi.delete(idx);
+            } else {
+              astrocartoHiddenRashi.add(idx);
+            }
+            renderLegend();
+
+            // Re-render lines
+            const currentData = astrocartoMode === 'natal' ? astrocartoNatalData : astrocartoTransitData;
+            if (currentData) {
+              renderRashiLines(currentData);
+            }
+          });
+        });
       }
 
       // Render planetary positions
@@ -5204,37 +5293,52 @@
         // Draw rashi cusp lines (where each sign's 0° rises)
         if (data.rashi_lines) {
           data.rashi_lines.forEach(rashi => {
-            if (!rashi.line || rashi.line.length < 2) return;
+            if (astrocartoHiddenRashi.has(rashi.rashi_idx)) return;
+
+            // Prefer line_segments, fallback to single line (backward compatibility)
+            const segments = rashi.line_segments || (rashi.line ? [rashi.line] : []);
+
+            if (segments.length === 0) return;
 
             const color = ASTROCARTO_RASHI_COLORS[rashi.rashi_idx];
-            const coords = rashi.line.map(p => [p.lat, p.lon]);
 
-            // Draw the line
-            const polyline = L.polyline(coords, {
-              color: color,
-              weight: 3,
-              opacity: 0.9,
-              dashArray: null
+            // Draw each segment as a separate polyline
+            segments.forEach(segment => {
+              if (!segment || segment.length < 2) return;
+
+              const coords = segment.map(p => [p.lat, p.lon]);
+
+              const polyline = L.polyline(coords, {
+                color: color,
+                weight: 3,
+                opacity: 0.9,
+                dashArray: null
+              });
+
+              polyline.bindTooltip(`${rashi.rashi_symbol} ${rashi.rashi_name_iast} Rising Line`, {
+                sticky: true,
+                className: 'astrocarto-tooltip'
+              });
+
+              polyline.on('mouseover', function () {
+                this.setStyle({ weight: 5, opacity: 1 });
+              });
+              polyline.on('mouseout', function () {
+                this.setStyle({ weight: 3, opacity: 0.9 });
+              });
+
+              astrocartoGridLayer.addLayer(polyline);
             });
 
-            polyline.bindTooltip(`${rashi.rashi_symbol} ${rashi.rashi_name_iast} Rising Line`, {
-              sticky: true,
-              className: 'astrocarto-tooltip'
-            });
+            // Add label at middle of the longest segment
+            let longestSeg = segments[0];
+            if (segments.length > 1) {
+              longestSeg = segments.reduce((prev, current) => (prev.length > current.length) ? prev : current);
+            }
 
-            polyline.on('mouseover', function () {
-              this.setStyle({ weight: 5, opacity: 1 });
-            });
-            polyline.on('mouseout', function () {
-              this.setStyle({ weight: 3, opacity: 0.9 });
-            });
-
-            astrocartoGridLayer.addLayer(polyline);
-
-            // Add label at middle of line
-            if (rashi.line.length > 3) {
-              const midIdx = Math.floor(rashi.line.length / 2);
-              const midPoint = rashi.line[midIdx];
+            if (longestSeg && longestSeg.length > 3) {
+              const midIdx = Math.floor(longestSeg.length / 2);
+              const midPoint = longestSeg[midIdx];
 
               const labelIcon = L.divIcon({
                 className: 'rashi-label-icon',
@@ -5469,6 +5573,36 @@
     }
 
     setupAstrocartography();
+
+    // Fullscreen Toggle Logic
+    const fsBtn = document.getElementById('astrocarto-fs-btn');
+    const fsClose = document.getElementById('astrocarto-fs-close');
+    const mapContainer = document.getElementById('astrocarto-map-container');
+
+    if (fsBtn && mapContainer) {
+      function toggleFullscreen() {
+        const isFullscreen = mapContainer.classList.toggle('fullscreen');
+        document.body.classList.toggle('map-fullscreen', isFullscreen);
+
+        // Force map resize
+        if (astrocartoMap) {
+          // Wait for transition
+          setTimeout(() => {
+            astrocartoMap.invalidateSize();
+          }, 100);
+        }
+      }
+
+      fsBtn.addEventListener('click', toggleFullscreen);
+      if (fsClose) fsClose.addEventListener('click', toggleFullscreen);
+
+      // Escape key to exit
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mapContainer.classList.contains('fullscreen')) {
+          toggleFullscreen();
+        }
+      });
+    }
 
     // ---------------------------------------------------------
     // Marriage Matching UI Logic
