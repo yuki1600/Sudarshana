@@ -22,11 +22,13 @@ from src.ci_core import (
     find_opposition, get_mundane_chart, get_tithi_at_jd, PLANETS,
     RASHI_SA, TITHI_NAMES_FULL, calculate_muntha, build_varsha_vimshottari,
     build_varsha_yogini, get_vimshottari_antardasha, get_vimshottari_pratyantardasha,
-    get_yogini_antardasha, get_yogini_pratyantardasha, calculate_ashtakavarga_longevity
+    get_yogini_antardasha, get_yogini_pratyantardasha, calculate_ashtakavarga_longevity,
+    compute_lagna_grid, compute_lagna_for_location, compute_rashi_lines
 )
 from src.ci_mundane import (
     find_new_moon_in_sign, find_solar_ingress, find_planetary_conjunction
 )
+import src.ci_match as ci_match
 import src.dasa_systems as dasa_systems
 import swisseph as swe
 
@@ -806,7 +808,8 @@ def nakshatra_pravesha(
             "event_dt": format_datetime_for_js(event_dt),
             "year": year,
             "natal_sun_lon": natal_sun_lon,
-            "natal_nak_idx": natal_nak_idx,
+            "natal_moon_lon": natal_moon_lon,
+            "nakshatra_name": NAK_NAMES[natal_nak_idx],
             "muntha": muntha,
             "chart": {
                 "tzname": chart["tzname"],
@@ -826,6 +829,67 @@ def nakshatra_pravesha(
         }))
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Nakshatra pravesha error: {e}")
+
+
+@app.get("/match")
+def match_charts(
+    b_date: str = Query(None, description="Boy Date YYYY-MM-DD"),
+    b_time: str = Query(None, description="Boy Time HH:MM"),
+    b_lat: float = Query(None),
+    b_lon: float = Query(None),
+    b_tz: str = Query(None),
+    b_nak: int = Query(None, description="Boy Nakshatra (1-27)"),
+    b_pada: int = Query(None, description="Boy Pada (1-4)"),
+    g_date: str = Query(None, description="Girl Date YYYY-MM-DD"),
+    g_time: str = Query(None, description="Girl Time HH:MM"),
+    g_lat: float = Query(None),
+    g_lon: float = Query(None),
+    g_tz: str = Query(None),
+    g_nak: int = Query(None, description="Girl Nakshatra (1-27)"),
+    g_pada: int = Query(None, description="Girl Pada (1-4)"),
+    ayanamsa: str = Query("Lahiri"),
+):
+    """Calculate Marriage Compatibility (Das Kuta)"""
+    try:
+        def get_moon_from_input(date_str, time_str, lat, lon, tz_str, nak, pada, ayanamsa_name):
+            # If Nakshatra/Pada provided, synthesize longitude
+            if nak is not None and pada is not None:
+                # 1 Nakshatra = 360/27 = 13.3333 deg
+                # 1 Pada = 3.3333 deg
+                # Start of Nakshatra
+                nak_start = (nak - 1) * (360.0 / 27.0)
+                # Start of Pada
+                pada_start = nak_start + (pada - 1) * (360.0 / 27.0 / 4.0)
+                # Center of Pada
+                center = pada_start + (360.0 / 27.0 / 8.0)
+                return center
+            
+            # Else compute from birth details
+            if not date_str or not time_str:
+                raise ValueError("Either Nakshatra/Pada OR full Birth Details must be provided.")
+                
+            if len(time_str.split(":")) == 2: time_str += ":00"
+            dt = datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M:%S")
+            
+            chart_res = compute_chart_with_tzname(
+                dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second,
+                lat, lon, tz_str, ayanamsa=ayanamsa_name
+            )
+            for p in chart_res["points"].to_dict(orient="records"):
+                if p["Point"] == "Moon":
+                    return p["Longitude (Dec)"]
+            return 0.0
+
+        b_moon = get_moon_from_input(b_date, b_time, b_lat, b_lon, b_tz, b_nak, b_pada, ayanamsa)
+        g_moon = get_moon_from_input(g_date, g_time, g_lat, g_lon, g_tz, g_nak, g_pada, ayanamsa)
+
+        # 5. Calculate Match
+        result = ci_match.calculate_match(b_moon, g_moon)
+        
+        return JSONResponse(content=jsonable_encoder(result))
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Matching error: {e}")
 
 
 @app.get("/mundane/yoga-pravesha")
@@ -1282,6 +1346,175 @@ def mundane_chart(
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Mundane chart error: {e}")
+
+
+# ----- Astrocartography Endpoints -----
+
+@app.get("/astrocartography/lagna-grid")
+def lagna_grid(
+    date: str = Query(..., description="Date YYYY-MM-DD"),
+    time: str = Query(..., description="Time HH:MM or HH:MM:SS (UTC or local)"),
+    tz: str = Query("UTC", description="IANA timezone for the time"),
+    ayanamsa: str = Query("Lahiri", description="Ayanamsa system"),
+    lat_step: float = Query(5.0, ge=2.0, le=15.0, description="Latitude step (degrees)"),
+    lon_step: float = Query(10.0, ge=5.0, le=30.0, description="Longitude step (degrees)"),
+):
+    """
+    Get Lagna (ascendant) sign for a grid of world locations at a given datetime.
+    Used for Astrocartography map visualization.
+    """
+    try:
+        from dateutil import tz as tz_module
+        
+        # Parse date and time
+        if len(time.split(":")) == 2:
+            time_s = time + ":00"
+        else:
+            time_s = time
+        
+        local_zone = tz_module.gettz(tz)
+        dt_local = datetime.strptime(f"{date} {time_s}", "%Y-%m-%d %H:%M:%S")
+        dt_local = dt_local.replace(tzinfo=local_zone)
+        dt_utc = dt_local.astimezone(tz_module.UTC)
+        
+        # Calculate Julian Day
+        ut_hour = dt_utc.hour + dt_utc.minute/60 + dt_utc.second/3600
+        jd_ut = swe.julday(dt_utc.year, dt_utc.month, dt_utc.day, ut_hour, swe.GREG_CAL)
+        
+        # Get ayanamsa code
+        ayanamsa_code = get_ayanamsa_code(ayanamsa)
+        
+        # Compute grid
+        result = compute_lagna_grid(
+            jd_ut, ayanamsa_code,
+            ephe_path=EPHE_PATH,
+            lat_step=lat_step,
+            lon_step=lon_step
+        )
+        
+        return JSONResponse(content=jsonable_encoder({
+            "datetime": dt_local.isoformat(),
+            "datetime_utc": dt_utc.isoformat(),
+            "ayanamsa_name": ayanamsa,
+            "ayanamsa_value": result["ayanamsa_value"],
+            "grid": result["grid"],
+            "planets": result["planets"],
+            "grid_count": len(result["grid"])
+        }))
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Lagna grid error: {e}")
+
+
+@app.get("/astrocartography/lagna-location")
+def lagna_location(
+    date: str = Query(..., description="Date YYYY-MM-DD"),
+    time: str = Query(..., description="Time HH:MM or HH:MM:SS"),
+    tz: str = Query("UTC", description="IANA timezone for the time"),
+    lat: float = Query(..., description="Latitude of location"),
+    lon: float = Query(..., description="Longitude of location"),
+    ayanamsa: str = Query("Lahiri", description="Ayanamsa system"),
+):
+    """
+    Get Lagna (ascendant) for a specific location at a given datetime.
+    Used for click-on-map feature in Astrocartography.
+    """
+    try:
+        from dateutil import tz as tz_module
+        
+        # Parse date and time
+        if len(time.split(":")) == 2:
+            time_s = time + ":00"
+        else:
+            time_s = time
+        
+        local_zone = tz_module.gettz(tz)
+        dt_local = datetime.strptime(f"{date} {time_s}", "%Y-%m-%d %H:%M:%S")
+        dt_local = dt_local.replace(tzinfo=local_zone)
+        dt_utc = dt_local.astimezone(tz_module.UTC)
+        
+        # Calculate Julian Day
+        ut_hour = dt_utc.hour + dt_utc.minute/60 + dt_utc.second/3600
+        jd_ut = swe.julday(dt_utc.year, dt_utc.month, dt_utc.day, ut_hour, swe.GREG_CAL)
+        
+        # Get ayanamsa code
+        ayanamsa_code = get_ayanamsa_code(ayanamsa)
+        
+        # Compute lagna for this location
+        result = compute_lagna_for_location(
+            jd_ut, lat, lon, ayanamsa_code,
+            ephe_path=EPHE_PATH
+        )
+        
+        if "error" in result:
+            raise HTTPException(status_code=400, detail=result["error"])
+        
+        return JSONResponse(content=jsonable_encoder({
+            "lat": lat,
+            "lon": lon,
+            "datetime": dt_local.isoformat(),
+            "ayanamsa_name": ayanamsa,
+            **result
+        }))
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Lagna location error: {e}")
+
+
+@app.get("/astrocartography/rashi-lines")
+def rashi_lines(
+    date: str = Query(..., description="Date YYYY-MM-DD"),
+    time: str = Query(..., description="Time HH:MM or HH:MM:SS (UTC or local)"),
+    tz: str = Query("UTC", description="IANA timezone for the time"),
+    ayanamsa: str = Query("Lahiri", description="Ayanamsa system"),
+    lat_step: float = Query(2.0, ge=1.0, le=10.0, description="Latitude step for line resolution"),
+):
+    """
+    Get the curved astrocartography lines showing where each rāśi rises (Ascendant)
+    and where each planet is on the Ascendant at different latitudes.
+    This creates the classic curved line visualization.
+    """
+    try:
+        from dateutil import tz as tz_module
+        
+        # Parse date and time
+        if len(time.split(":")) == 2:
+            time_s = time + ":00"
+        else:
+            time_s = time
+        
+        local_zone = tz_module.gettz(tz)
+        dt_local = datetime.strptime(f"{date} {time_s}", "%Y-%m-%d %H:%M:%S")
+        dt_local = dt_local.replace(tzinfo=local_zone)
+        dt_utc = dt_local.astimezone(tz_module.UTC)
+        
+        # Calculate Julian Day
+        ut_hour = dt_utc.hour + dt_utc.minute/60 + dt_utc.second/3600
+        jd_ut = swe.julday(dt_utc.year, dt_utc.month, dt_utc.day, ut_hour, swe.GREG_CAL)
+        
+        # Get ayanamsa code
+        ayanamsa_code = get_ayanamsa_code(ayanamsa)
+        
+        # Compute rashi lines
+        result = compute_rashi_lines(
+            jd_ut, ayanamsa_code,
+            ephe_path=EPHE_PATH,
+            lat_step=lat_step
+        )
+        
+        return JSONResponse(content=jsonable_encoder({
+            "datetime": dt_local.isoformat(),
+            "datetime_utc": dt_utc.isoformat(),
+            "ayanamsa_name": ayanamsa,
+            "ayanamsa_value": result["ayanamsa_value"],
+            "rashi_lines": result["rashi_lines"],
+            "planets": result["planets"]
+        }))
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Rashi lines error: {e}")
 
 
 # ----- Serve the minimal UI under /ui -----

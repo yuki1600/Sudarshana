@@ -3022,6 +3022,381 @@ def compute_transit_positions(transit_dt, lat, lon, tzname, ephe_path="ephe", us
 
 
 # ---------------------------------
+# Astrocartography Calculations
+# ---------------------------------
+
+# Rāśi symbols for display
+RASHI_SYMBOLS = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"]
+
+# Sanskrit rāśi names (IAST transliteration)
+RASHI_NAMES_IAST = [
+    "Meṣa", "Vṛṣabha", "Mithuna", "Karka", "Siṃha", "Kanyā",
+    "Tulā", "Vṛścika", "Dhanu", "Makara", "Kumbha", "Mīna"
+]
+
+def compute_lagna_grid(jd_ut, ayanamsa_code, ephe_path="ephe", use_moseph=False,
+                       lat_step=5.0, lon_step=10.0):
+    """
+    Compute Lagna (ascendant) sign for a grid of world locations at a given Julian Day.
+    
+    Args:
+        jd_ut: Julian Day in Universal Time
+        ayanamsa_code: Swiss Ephemeris ayanamsa code (e.g., swe.SIDM_LAHIRI)
+        ephe_path: Path to ephemeris files
+        use_moseph: Use Moshier ephemeris instead of Swiss
+        lat_step: Latitude step in degrees (default 5°)
+        lon_step: Longitude step in degrees (default 10°)
+    
+    Returns:
+        dict with:
+            - grid: list of {lat, lon, lagna_idx, lagna_name, lagna_symbol}
+            - planets: list of {name, longitude, rashi_idx, rashi_name, rashi_symbol}
+    """
+    # Initialize ephemeris
+    if not use_moseph:
+        swe.set_ephe_path(ephe_path)
+    if ayanamsa_code is not None:
+        swe.set_sid_mode(ayanamsa_code)
+    
+    # Get ayanamsa value at this time
+    ayan = swe.get_ayanamsa_ut(jd_ut) if ayanamsa_code is not None else 0.0
+    
+    # Compute planetary positions (for the reference chart at 0,0 - positions don't change with location)
+    ephflag = swe.FLG_MOSEPH if use_moseph else swe.FLG_SWIEPH
+    flags = ephflag | swe.FLG_SPEED
+    if ayanamsa_code is not None:
+        flags |= swe.FLG_SIDEREAL
+    
+    planets = []
+    for nm, code in PLANETS.items():
+        vals = swe.calc_ut(jd_ut, code, flags)[0]
+        lonv = norm360(vals[0])
+        rashi_idx = lon_to_sign_idx(lonv)
+        planets.append({
+            "name": nm,
+            "longitude": round(lonv, 4),
+            "rashi_idx": rashi_idx,
+            "rashi_name": RASHI_SA[rashi_idx],
+            "rashi_name_iast": RASHI_NAMES_IAST[rashi_idx],
+            "rashi_symbol": RASHI_SYMBOLS[rashi_idx],
+            "retro": vals[3] < 0
+        })
+    
+    # Add Rahu/Ketu
+    try:
+        vals_true = swe.calc_ut(jd_ut, swe.TRUE_NODE, flags)[0]
+    except Exception:
+        vals_true = swe.nod_aps_ut(jd_ut, swe.MOON, flags, swe.NODBIT_OSCU)[0]
+    
+    rahu = norm360(vals_true[0])
+    ketu = norm360(rahu + 180)
+    for nm, lonv in [("Rahu", rahu), ("Ketu", ketu)]:
+        rashi_idx = lon_to_sign_idx(lonv)
+        planets.append({
+            "name": nm,
+            "longitude": round(lonv, 4),
+            "rashi_idx": rashi_idx,
+            "rashi_name": RASHI_SA[rashi_idx],
+            "rashi_name_iast": RASHI_NAMES_IAST[rashi_idx],
+            "rashi_symbol": RASHI_SYMBOLS[rashi_idx],
+            "retro": True
+        })
+    
+    # Compute Lagna grid
+    grid = []
+    
+    # Generate grid points (avoiding extreme polar latitudes where house calculation fails)
+    for lat in range(-85, 86, int(lat_step)):
+        for lon in range(-180, 180, int(lon_step)):
+            try:
+                # Calculate houses for this location (tropical)
+                cusps_trop, ascmc_trop = swe.houses(jd_ut, float(lat), float(lon), b'O')
+                
+                # Get sidereal ascendant
+                asc_sid = norm360(ascmc_trop[0] - ayan)
+                lagna_idx = lon_to_sign_idx(asc_sid)
+                
+                grid.append({
+                    "lat": lat,
+                    "lon": lon,
+                    "lagna_idx": lagna_idx,
+                    "lagna_name": RASHI_SA[lagna_idx],
+                    "lagna_name_iast": RASHI_NAMES_IAST[lagna_idx],
+                    "lagna_symbol": RASHI_SYMBOLS[lagna_idx]
+                })
+            except Exception:
+                # Skip points where house calculation fails (extreme polar)
+                pass
+    
+    return {
+        "grid": grid,
+        "planets": planets,
+        "ayanamsa_value": round(ayan, 6)
+    }
+
+
+def compute_lagna_for_location(jd_ut, lat, lon, ayanamsa_code, ephe_path="ephe", use_moseph=False):
+    """
+    Compute Lagna (ascendant) for a specific location at a given Julian Day.
+    Used for click-on-map feature.
+    
+    Returns:
+        dict with lagna_idx, lagna_name, lagna_symbol, asc_longitude
+    """
+    if not use_moseph:
+        swe.set_ephe_path(ephe_path)
+    if ayanamsa_code is not None:
+        swe.set_sid_mode(ayanamsa_code)
+    
+    ayan = swe.get_ayanamsa_ut(jd_ut) if ayanamsa_code is not None else 0.0
+    
+    try:
+        cusps_trop, ascmc_trop = swe.houses(jd_ut, lat, lon, b'O')
+        asc_sid = norm360(ascmc_trop[0] - ayan)
+        lagna_idx = lon_to_sign_idx(asc_sid)
+        
+        return {
+            "lagna_idx": lagna_idx,
+            "lagna_name": RASHI_SA[lagna_idx],
+            "lagna_name_iast": RASHI_NAMES_IAST[lagna_idx],
+            "lagna_symbol": RASHI_SYMBOLS[lagna_idx],
+            "asc_longitude": round(asc_sid, 4)
+        }
+    except Exception as e:
+        return {"error": str(e)}
+
+
+def compute_rashi_lines(jd_ut, ayanamsa_code, ephe_path="ephe", use_moseph=False, lat_step=2.0):
+    """
+    Compute the geographical longitudes where each rāśi cusp becomes the Ascendant
+    at different latitudes. This creates the curved "rising lines" for astrocartography.
+    
+    For each rāśi (12 signs), we calculate where the cusp (0° of that sign) rises
+    at each latitude from -66° to +66° (avoiding extreme polar regions).
+    
+    Returns:
+        dict with:
+            - lines: list of 12 lines, each containing lat/lon coordinates
+            - planets: planetary positions with their lines
+    """
+    if not use_moseph:
+        swe.set_ephe_path(ephe_path)
+    if ayanamsa_code is not None:
+        swe.set_sid_mode(ayanamsa_code)
+    
+    ayan = swe.get_ayanamsa_ut(jd_ut) if ayanamsa_code is not None else 0.0
+    
+    # Get current RAMC (Right Ascension of the Meridian at Greenwich) / Sidereal Time
+    # This determines where the zodiac is positioned relative to Earth's rotation
+    
+    # Compute planetary positions
+    ephflag = swe.FLG_MOSEPH if use_moseph else swe.FLG_SWIEPH
+    flags = ephflag | swe.FLG_SPEED
+    if ayanamsa_code is not None:
+        flags |= swe.FLG_SIDEREAL
+    
+    planets = []
+    planet_lines = []
+    
+    for nm, code in PLANETS.items():
+        vals = swe.calc_ut(jd_ut, code, flags)[0]
+        lonv = norm360(vals[0])
+        rashi_idx = lon_to_sign_idx(lonv)
+        
+        # Calculate the line where this planet is on the Ascendant
+        planet_asc_line = []
+        target_asc = lonv  # Where this planet's longitude becomes the Ascendant
+        
+        for lat in range(-66, 67, int(lat_step)):
+            # Calculate RAMC at Greenwich for this JD
+            lon = _find_longitude_for_ascendant(jd_ut, lat, target_asc, ayan)
+            if lon is not None:
+                planet_asc_line.append({"lat": lat, "lon": round(lon, 2)})
+        
+        planets.append({
+            "name": nm,
+            "longitude": round(lonv, 4),
+            "rashi_idx": rashi_idx,
+            "rashi_name": RASHI_SA[rashi_idx],
+            "rashi_symbol": RASHI_SYMBOLS[rashi_idx],
+            "retro": vals[3] < 0,
+            "line": planet_asc_line
+        })
+    
+    # Add Rahu/Ketu
+    try:
+        vals_true = swe.calc_ut(jd_ut, swe.TRUE_NODE, flags)[0]
+    except Exception:
+        vals_true = swe.nod_aps_ut(jd_ut, swe.MOON, flags, swe.NODBIT_OSCU)[0]
+    
+    rahu = norm360(vals_true[0])
+    ketu = norm360(rahu + 180)
+    
+    for nm, lonv in [("Rahu", rahu), ("Ketu", ketu)]:
+        rashi_idx = lon_to_sign_idx(lonv)
+        
+        planet_asc_line = []
+        for lat in range(-66, 67, int(lat_step)):
+            lon = _find_longitude_for_ascendant(jd_ut, lat, lonv, ayan)
+            if lon is not None:
+                planet_asc_line.append({"lat": lat, "lon": round(lon, 2)})
+        
+        planets.append({
+            "name": nm,
+            "longitude": round(lonv, 4),
+            "rashi_idx": rashi_idx,
+            "rashi_name": RASHI_SA[rashi_idx],
+            "rashi_symbol": RASHI_SYMBOLS[rashi_idx],
+            "retro": True,
+            "line": planet_asc_line
+        })
+    
+    # Compute rāśi cusp lines (where each sign's 0° becomes the Ascendant)
+    rashi_lines = []
+    for rashi_idx in range(12):
+        cusp_longitude = rashi_idx * 30.0  # 0°, 30°, 60°, ... 330° sidereal
+        
+        line_coords = []
+        for lat in range(-66, 67, int(lat_step)):
+            lon = _find_longitude_for_ascendant(jd_ut, lat, cusp_longitude, ayan)
+            if lon is not None:
+                line_coords.append({"lat": lat, "lon": round(lon, 2)})
+        
+        rashi_lines.append({
+            "rashi_idx": rashi_idx,
+            "rashi_name": RASHI_SA[rashi_idx],
+            "rashi_name_iast": RASHI_NAMES_IAST[rashi_idx],
+            "rashi_symbol": RASHI_SYMBOLS[rashi_idx],
+            "cusp_longitude": cusp_longitude,
+            "line": line_coords
+        })
+    
+    return {
+        "rashi_lines": rashi_lines,
+        "planets": planets,
+        "ayanamsa_value": round(ayan, 6)
+    }
+
+
+def _find_longitude_for_ascendant(jd_ut, lat, target_asc_sid, ayan):
+    """
+    Find the geographical longitude where a specific sidereal longitude 
+    becomes the Ascendant at a given latitude and time.
+    
+    Uses a more accurate approach based on Local Sidereal Time.
+    The relationship is: Ascendant depends on RAMC (Right Ascension of MC)
+    which changes linearly with longitude at a rate of 1 degree per 4 minutes of time.
+    """
+    import math
+    
+    # Target tropical ascendant (add ayanamsa back)
+    target_asc_trop = norm360(target_asc_sid + ayan)
+    
+    # Get Greenwich Sidereal Time for this Julian Day
+    # GMST changes at a rate of about 360.98564736629 degrees per day
+    t = (jd_ut - 2451545.0) / 36525.0  # Julian centuries from J2000.0
+    gmst = 280.46061837 + 360.98564736629 * (jd_ut - 2451545.0) + \
+           0.000387933 * t * t - t * t * t / 38710000.0
+    gmst = norm360(gmst)
+    
+    # For each longitude, Local Sidereal Time = GMST + longitude
+    # The RAMC (Right Ascension of MC) equals the Local Sidereal Time
+    
+    # The Ascendant is calculated from RAMC using spherical trigonometry
+    # We need to find the longitude where our target ascendant would rise
+    
+    # Use binary search for more accurate and continuous results
+    lat_rad = math.radians(lat)
+    epsilon = 23.4393  # Obliquity of the ecliptic (approximate)
+    eps_rad = math.radians(epsilon)
+    
+    def get_asc_for_longitude(geo_lon):
+        """Calculate tropical Ascendant for given geographic longitude."""
+        try:
+            cusps_trop, ascmc_trop = swe.houses(jd_ut, float(lat), float(geo_lon), b'O')
+            return ascmc_trop[0]
+        except Exception:
+            return None
+    
+    # The ascendant changes by ~360° as longitude changes by 360°
+    # So for any target, there should be one solution in [-180, 180]
+    
+    # Use a smarter search: sample at finer intervals
+    best_lon = None
+    best_diff = 360.0
+    
+    # Fine-grained search for better continuity
+    for lon_int in range(-180, 181, 5):
+        lon = float(lon_int)
+        asc = get_asc_for_longitude(lon)
+        if asc is None:
+            continue
+        
+        diff = abs(norm360(asc - target_asc_trop))
+        if diff > 180:
+            diff = 360 - diff
+        
+        if diff < best_diff:
+            best_diff = diff
+            best_lon = lon
+    
+    if best_lon is None:
+        return None
+    
+    # Binary search refinement for smooth curves
+    low = best_lon - 5
+    high = best_lon + 5
+    
+    for _ in range(20):  # 20 iterations gives ~0.00001 degree precision
+        mid = (low + high) / 2
+        
+        asc_mid = get_asc_for_longitude(mid)
+        if asc_mid is None:
+            break
+        
+        # Check which direction to go
+        diff_mid = norm360(asc_mid - target_asc_trop)
+        if diff_mid > 180:
+            diff_mid = diff_mid - 360
+        
+        if abs(diff_mid) < 0.01:  # Good enough
+            return mid
+        
+        # Determine search direction based on how ascendant changes with longitude
+        # As longitude increases (moving east), LST increases, and ascendant changes
+        asc_low = get_asc_for_longitude(low)
+        asc_high = get_asc_for_longitude(high)
+        
+        if asc_low is None or asc_high is None:
+            break
+        
+        diff_low = norm360(asc_low - target_asc_trop)
+        if diff_low > 180:
+            diff_low = diff_low - 360
+        
+        diff_high = norm360(asc_high - target_asc_trop)
+        if diff_high > 180:
+            diff_high = diff_high - 360
+        
+        # Move toward smaller difference
+        if abs(diff_low) < abs(diff_high):
+            high = mid
+        else:
+            low = mid
+    
+    # Verify the result
+    final_asc = get_asc_for_longitude(best_lon)
+    if final_asc is not None:
+        final_diff = abs(norm360(final_asc - target_asc_trop))
+        if final_diff > 180:
+            final_diff = 360 - final_diff
+        if final_diff < 2.0:  # Accept within 2 degrees
+            return round(best_lon, 2)
+    
+    return None
+
+
+# ---------------------------------
 # Mundane Astrology Calculations
 # ---------------------------------
 

@@ -10,6 +10,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap"
     rel="stylesheet">
+  <!-- Leaflet.js for Astrocartography map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <style>
     /* ==================== CSS VARIABLES ==================== */
     :root {
@@ -241,6 +244,115 @@
 
     [data-theme="light"] .theme-toggle .moon {
       display: none;
+    }
+
+    /* Marriage Matching Styles */
+    .matching-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .matching-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 700px) {
+      .matching-form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .matching-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      /* overflow: hidden; Removed to allow search dropdowns to spill out */
+    }
+
+    .matching-card-header {
+      padding: 12px 16px;
+      background: var(--bg-tertiary);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .matching-card-header.boy {
+      border-top: 3px solid #58a6ff;
+    }
+
+    .matching-card-header.girl {
+      border-top: 3px solid #f778ba;
+    }
+
+    .matching-card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .matching-action {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .match-score-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .match-score-circle {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .match-score-circle .total {
+      font-size: 18px;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .match-verdict {
+      font-size: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .match-details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .match-info-box h4 {
+      font-size: 12px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .match-info-box .highlight-val {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
     }
 
     /* ==================== INPUT FORM (2 rows + button row) ==================== */
@@ -2293,6 +2405,297 @@
 
     /* Red for retrograde transit too */
 
+    /* ==================== ASTROCARTOGRAPHY ==================== */
+    .astrocarto-container {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .astrocarto-content-row {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .astrocarto-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      padding: 12px 16px;
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      flex-wrap: wrap;
+    }
+
+    .astrocarto-mode-toggle {
+      display: flex;
+      gap: 0;
+      background: var(--bg-tertiary);
+      border-radius: 6px;
+      padding: 2px;
+    }
+
+    .astrocarto-mode-btn {
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      background: transparent;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      transition: all 0.2s;
+    }
+
+    .astrocarto-mode-btn.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .astrocarto-mode-btn:hover:not(.active) {
+      color: var(--text-primary);
+    }
+
+    .astrocarto-datetime {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .astrocarto-datetime input {
+      padding: 6px 10px;
+      font-size: 13px;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-primary);
+    }
+
+    .astrocarto-datetime button {
+      padding: 6px 12px;
+      font-size: 12px;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      color: var(--accent);
+      cursor: pointer;
+    }
+
+    .astrocarto-datetime button:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .astrocarto-map-container {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #aad3df;
+      border: 1px solid var(--border);
+      width: 70%;
+      min-width: 600px;
+      height: 450px;
+      flex-shrink: 0;
+    }
+
+    #astrocarto-map {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: #aad3df;
+    }
+
+    .astrocarto-sidebar {
+      flex: 1;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .astrocarto-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 12px;
+      background: var(--bg-secondary);
+      border-radius: 8px;
+    }
+
+    .astrocarto-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      padding: 4px 8px;
+      background: var(--bg-tertiary);
+      border-radius: 4px;
+    }
+
+    .astrocarto-legend-color {
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .astrocarto-info {
+      margin-top: 12px;
+      padding: 12px;
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    .astrocarto-info-title {
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .astrocarto-planets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 8px;
+    }
+
+    .astrocarto-planet-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      background: var(--bg-tertiary);
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .astrocarto-planet-name {
+      font-weight: 500;
+      min-width: 60px;
+    }
+
+    .astrocarto-planet-pos {
+      color: var(--text-secondary);
+    }
+
+    /* Leaflet popup and tooltip customization */
+    .leaflet-popup-content-wrapper {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .leaflet-popup-tip {
+      background: var(--bg-secondary);
+    }
+
+    .leaflet-tooltip {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .leaflet-tooltip-top:before {
+      border-top-color: var(--bg-secondary);
+    }
+
+    .astrocarto-popup {
+      min-width: 200px;
+    }
+
+    .astrocarto-popup h4 {
+      margin: 0 0 8px 0;
+      font-size: 15px;
+      color: var(--accent);
+    }
+
+    .astrocarto-popup p {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+
+    .astrocarto-popup .lagna-highlight {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--accent);
+    }
+
+    .astrocarto-empty-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    .astrocarto-empty-state svg {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 14px;
+      opacity: 0.5;
+      stroke: var(--text-tertiary);
+    }
+
+    .astrocarto-empty-state h3 {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+
+    .astrocarto-empty-state p {
+      font-size: 12px;
+      max-width: 280px;
+    }
+
+    /* Rashi Labels on Map */
+    .rashi-label-icon {
+      background: transparent !important;
+      border: none !important;
+    }
+
+    .rashi-map-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      pointer-events: none;
+    }
+
+    .rashi-map-label .rashi-symbol {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .rashi-map-label .rashi-name {
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .astrocarto-tooltip {
+      background: var(--bg-secondary) !important;
+      color: var(--text-primary) !important;
+      border: 1px solid var(--border) !important;
+      padding: 6px 10px !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+    }
+
     /* ==================== MAIN TABS ==================== */
     .main-tabs {
       display: flex;
@@ -3143,6 +3546,13 @@
         <input id="place-search" type="text" placeholder="Type city name…" autocomplete="off" />
         <div id="search-results" class="search-results"></div>
       </div>
+      <div class="input-group sex">
+        <label>Sex</label>
+        <select id="sex-selector">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
     </div>
     <div class="input-row">
       <div class="input-group date">
@@ -3333,6 +3743,8 @@
       <button class="main-tab" data-tab="ashtakavarga">Ashtakavarga</button>
       <button class="main-tab" data-tab="varshaphal">Varshaphal</button>
       <button class="main-tab" data-tab="ayurdaya">Ayurdaya</button>
+      <button class="main-tab" data-tab="matching" id="tab-marriage">Marriage</button>
+      <button class="main-tab" data-tab="astrocartography" id="tab-astrocartography">Astrocartography</button>
 
     </div>
 
@@ -3964,6 +4376,212 @@
       </div>
     </div><!-- End ayurdaya-panel -->
 
+    <!-- Marriage Matching Tab Panel -->
+    <div id="matching-panel" class="tab-panel">
+      <div class="matching-container">
+
+        <div class="matching-form-row">
+          <!-- Boy's Details -->
+          <div class="matching-card">
+            <div class="matching-card-header boy">
+              <h3>Boy's Details</h3>
+            </div>
+            <div class="matching-card-body">
+              <!-- Mode Toggle -->
+              <div class="input-mode-toggle">
+                <label><input type="radio" name="boy-mode" value="birth" checked> Birth Details</label>
+                <label><input type="radio" name="boy-mode" value="star"> Star Details</label>
+              </div>
+
+              <!-- Birth Input Container -->
+              <div id="boy-birth-inputs">
+                <div class="input-group date">
+                  <label>Date</label>
+                  <input type="text" id="match-boy-date" placeholder="YYYY-MM-DD">
+                </div>
+                <div class="input-group time">
+                  <label>Time</label>
+                  <input type="time" id="match-boy-time" step="1">
+                </div>
+                <div class="input-group city">
+                  <label>Place</label>
+                  <input type="text" id="match-boy-city" placeholder="Search city..." autocomplete="off">
+                  <div class="search-results" id="match-boy-results"></div>
+                  <input type="hidden" id="match-boy-lat">
+                  <input type="hidden" id="match-boy-lon">
+                  <input type="hidden" id="match-boy-tz">
+                </div>
+              </div>
+
+              <!-- Star Input Container (Hidden by default) -->
+              <div id="boy-star-inputs" style="display:none; margin-top:10px;">
+                <div class="input-group">
+                  <label>Nakshatra</label>
+                  <select id="match-boy-nak">
+                    <option value="">Select Star...</option>
+                    <!-- Populated by JS -->
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label>Pada</label>
+                  <select id="match-boy-pada">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Girl's Details -->
+          <div class="matching-card">
+            <div class="matching-card-header girl">
+              <h3>Girl's Details</h3>
+            </div>
+            <div class="matching-card-body">
+              <!-- Mode Toggle -->
+              <div class="input-mode-toggle">
+                <label><input type="radio" name="girl-mode" value="birth" checked> Birth Details</label>
+                <label><input type="radio" name="girl-mode" value="star"> Star Details</label>
+              </div>
+
+              <!-- Birth Input Container -->
+              <div id="girl-birth-inputs">
+                <div class="input-group date">
+                  <label>Date</label>
+                  <input type="text" id="match-girl-date" placeholder="YYYY-MM-DD">
+                </div>
+                <div class="input-group time">
+                  <label>Time</label>
+                  <input type="time" id="match-girl-time" step="1">
+                </div>
+                <div class="input-group city">
+                  <label>Place</label>
+                  <input type="text" id="match-girl-city" placeholder="Search city..." autocomplete="off">
+                  <div class="search-results" id="match-girl-results"></div>
+                  <input type="hidden" id="match-girl-lat">
+                  <input type="hidden" id="match-girl-lon">
+                  <input type="hidden" id="match-girl-tz">
+                </div>
+              </div>
+
+              <!-- Star Input Container (Hidden by default) -->
+              <div id="girl-star-inputs" style="display:none; margin-top:10px;">
+                <div class="input-group">
+                  <label>Nakshatra</label>
+                  <select id="match-girl-nak">
+                    <option value="">Select Star...</option>
+                    <!-- Populated by JS -->
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label>Pada</label>
+                  <select id="match-girl-pada">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="matching-action">
+          <button id="btn-calculate-match" class="btn-compute">Calculate Compatibility</button>
+        </div>
+
+        <!-- Results -->
+        <div id="matching-results" style="display: none;">
+          <div class="match-score-card">
+            <div class="match-score-circle">
+              <span id="match-total-score">0</span>
+              <span class="total">/ 36</span>
+            </div>
+            <div class="match-verdict" id="match-verdict">Unknown</div>
+          </div>
+
+          <div class="match-details-grid">
+            <div class="match-info-box">
+              <h4>Boy's Star</h4>
+              <div id="match-boy-star" class="highlight-val"></div>
+            </div>
+            <div class="match-info-box">
+              <h4>Girl's Star</h4>
+              <div id="match-girl-star" class="highlight-val"></div>
+            </div>
+          </div>
+
+          <table class="data-table match-table">
+            <thead>
+              <tr>
+                <th>Kuta (Porutham)</th>
+                <th>Status</th>
+                <th>Score</th>
+                <th>Obtained</th>
+              </tr>
+            </thead>
+            <tbody id="match-table-body"></tbody>
+          </table>
+        </div>
+
+      </div>
+    </div><!-- End matching-panel -->
+
+    <!-- Astrocartography Tab Panel -->
+    <div id="astrocartography-panel" class="tab-panel">
+      <div class="astrocarto-container">
+        <!-- Empty State (when no chart calculated) -->
+        <div class="astrocarto-empty-state" id="astrocarto-empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10" />
+            <path
+              d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+          <h3>Calculate Chart First</h3>
+          <p>Please calculate a natal chart to view the Astrocartography map showing Lagna (rising sign) regions
+            worldwide.</p>
+        </div>
+
+        <!-- Main Content (hidden until chart calculated) -->
+        <div id="astrocarto-content" style="display: none;">
+          <!-- Controls -->
+          <div class="astrocarto-controls">
+            <div class="astrocarto-mode-toggle">
+              <button class="astrocarto-mode-btn active" data-mode="natal">Natal</button>
+              <button class="astrocarto-mode-btn" data-mode="transit">Transit</button>
+            </div>
+            <div class="astrocarto-datetime" id="astrocarto-datetime" style="display: none;">
+              <input type="date" id="astrocarto-date">
+              <input type="time" id="astrocarto-time" step="1">
+              <button id="astrocarto-now">Now</button>
+              <button id="astrocarto-apply">Apply</button>
+            </div>
+            <div class="astrocarto-status" id="astrocarto-status"></div>
+          </div>
+
+          <!-- Map and Sidebar Row -->
+          <div class="astrocarto-content-row">
+            <!-- Map Container -->
+            <div class="astrocarto-map-container">
+              <div id="astrocarto-map"></div>
+            </div>
+
+            <!-- Right Sidebar (for future content) -->
+            <div class="astrocarto-sidebar" id="astrocarto-sidebar">
+              <div class="astrocarto-legend" id="astrocarto-legend"></div>
+              <div class="astrocarto-info" id="astrocarto-info">
+                <div class="astrocarto-info-title">Planetary Positions</div>
+                <div class="astrocarto-planets-grid" id="astrocarto-planets"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- End astrocartography-panel -->
+
   </main>
 
   <script>
@@ -4411,11 +5029,936 @@
     });
 
     // ==================== INITIALIZATION ====================
+    // ---------------------------------------------------------
+    // Astrocartography UI Logic
+    // ---------------------------------------------------------
+    const ASTROCARTO_RASHI_COLORS = [
+      '#E53935', // Mesha (Aries) - Red
+      '#43A047', // Vrishabha (Taurus) - Green
+      '#FDD835', // Mithuna (Gemini) - Yellow
+      '#90CAF9', // Karka (Cancer) - Light Blue
+      '#FF9800', // Simha (Leo) - Orange
+      '#8D6E63', // Kanya (Virgo) - Brown
+      '#EC407A', // Tula (Libra) - Pink
+      '#7E57C2', // Vrischika (Scorpio) - Purple
+      '#26A69A', // Dhanu (Sagittarius) - Teal
+      '#455A64', // Makara (Capricorn) - Grey
+      '#00BCD4', // Kumbha (Aquarius) - Cyan
+      '#3F51B5'  // Meena (Pisces) - Indigo
+    ];
+
+    const ASTROCARTO_RASHI_SYMBOLS = ['♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓'];
+    const ASTROCARTO_RASHI_NAMES_IAST = ['Meṣa', 'Vṛṣabha', 'Mithuna', 'Karka', 'Siṃha', 'Kanyā', 'Tulā', 'Vṛścika', 'Dhanu', 'Makara', 'Kumbha', 'Mīna'];
+
+    let astrocartoMap = null;
+    let astrocartoGridLayer = null;
+    let astrocartoMode = 'natal';
+    let astrocartoNatalData = null;
+    let astrocartoTransitData = null;
+
+    function setupAstrocartography() {
+      const $emptyState = document.getElementById('astrocarto-empty-state');
+      const $content = document.getElementById('astrocarto-content');
+      const $modeButtons = document.querySelectorAll('.astrocarto-mode-btn');
+      const $datetime = document.getElementById('astrocarto-datetime');
+      const $date = document.getElementById('astrocarto-date');
+      const $time = document.getElementById('astrocarto-time');
+      const $now = document.getElementById('astrocarto-now');
+      const $apply = document.getElementById('astrocarto-apply');
+      const $legend = document.getElementById('astrocarto-legend');
+      const $planets = document.getElementById('astrocarto-planets');
+      const $status = document.getElementById('astrocarto-status');
+
+      // Render legend
+      function renderLegend() {
+        $legend.innerHTML = RASHI_SA.map((name, idx) => `
+          <div class="astrocarto-legend-item">
+            <div class="astrocarto-legend-color" style="background: ${ASTROCARTO_RASHI_COLORS[idx]}"></div>
+            ${ASTROCARTO_RASHI_SYMBOLS[idx]} ${ASTROCARTO_RASHI_NAMES_IAST[idx]}
+          </div>
+        `).join('');
+      }
+
+      // Render planetary positions
+      function renderPlanets(planets) {
+        if (!planets || !Array.isArray(planets)) {
+          $planets.innerHTML = '<p>No planetary data available</p>';
+          return;
+        }
+        $planets.innerHTML = planets.map(p => {
+          const deg = Math.floor(p.longitude % 30);
+          const min = Math.floor((p.longitude % 1) * 60);
+          return `
+            <div class="astrocarto-planet-item">
+              <span class="astrocarto-planet-name">${p.name}${p.retro ? ' ℞' : ''}</span>
+              <span class="astrocarto-planet-pos">${p.rashi_symbol} ${deg}°${min.toString().padStart(2, '0')}′</span>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Initialize map
+      function initMap() {
+        if (astrocartoMap) return;
+
+        // Define world bounds
+        const worldBounds = [[-70, -180], [85, 180]];
+
+        astrocartoMap = L.map('astrocarto-map', {
+          center: [20, 0],
+          zoom: 2,
+          minZoom: 2,
+          maxZoom: 6,
+          maxBounds: [[-90, -180], [90, 180]],
+          maxBoundsViscosity: 1.0,
+          worldCopyJump: false,
+          zoomControl: true
+        });
+
+        // Fit the world into the container
+        astrocartoMap.fitBounds(worldBounds, { padding: [10, 10], animate: false });
+
+        // On resize, re-fit bounds
+        astrocartoMap.on('resize', function () {
+          astrocartoMap.fitBounds(worldBounds, { padding: [10, 10], animate: false });
+        });
+
+        // Light tile layer
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+          attribution: '&copy; OSM &copy; CARTO',
+          subdomains: 'abcd',
+          noWrap: true
+        }).addTo(astrocartoMap);
+
+        astrocartoGridLayer = L.layerGroup().addTo(astrocartoMap);
+
+        // Click handler for map
+        astrocartoMap.on('click', async function (e) {
+          const lat = e.latlng.lat;
+          const lon = e.latlng.lng;
+
+          // Get the datetime based on mode
+          let dateStr, timeStr, tz;
+          if (astrocartoMode === 'natal') {
+            const dobInput = document.getElementById('dob');
+            const tobInput = document.getElementById('tob');
+            const tzSel = document.getElementById('tz-override');
+            dateStr = dobInput.value;
+            timeStr = tobInput.value || '12:00:00';
+            tz = tzSel.value || 'UTC';
+          } else {
+            dateStr = $date.value;
+            timeStr = $time.value || '12:00:00';
+            tz = 'UTC';
+          }
+
+          if (!dateStr) return;
+
+          try {
+            const params = new URLSearchParams({
+              date: dateStr,
+              time: timeStr.length === 5 ? timeStr + ':00' : timeStr,
+              tz: tz,
+              lat: lat.toFixed(4),
+              lon: lon.toFixed(4),
+              ayanamsa: document.getElementById('ayanamsa').value || 'Lahiri'
+            });
+
+            const res = await fetch(`/astrocartography/lagna-location?${params}`);
+            const data = await res.json();
+
+            if (data.error) {
+              L.popup()
+                .setLatLng(e.latlng)
+                .setContent(`<div class="astrocarto-popup"><p>Unable to calculate for this location</p></div>`)
+                .openOn(astrocartoMap);
+              return;
+            }
+
+            const popupContent = `
+              <div class="astrocarto-popup">
+                <h4>📍 ${lat.toFixed(2)}°, ${lon.toFixed(2)}°</h4>
+                <p><strong>Lagna:</strong> <span class="lagna-highlight">${data.lagna_symbol} ${data.lagna_name_iast}</span></p>
+                <p><strong>Asc:</strong> ${(data.asc_longitude % 30).toFixed(2)}° in ${RASHI_SA[data.lagna_idx]}</p>
+              </div>
+            `;
+
+            L.popup()
+              .setLatLng(e.latlng)
+              .setContent(popupContent)
+              .openOn(astrocartoMap);
+
+          } catch (err) {
+            console.error('Lagna location error:', err);
+          }
+        });
+
+        renderLegend();
+      }
+
+      // Render rashi lines on map (curved polylines showing where each rashi rises)
+      function renderRashiLines(data) {
+        if (!astrocartoGridLayer) return;
+        astrocartoGridLayer.clearLayers();
+
+        // Draw rashi cusp lines (where each sign's 0° rises)
+        if (data.rashi_lines) {
+          data.rashi_lines.forEach(rashi => {
+            if (!rashi.line || rashi.line.length < 2) return;
+
+            const color = ASTROCARTO_RASHI_COLORS[rashi.rashi_idx];
+            const coords = rashi.line.map(p => [p.lat, p.lon]);
+
+            // Draw the line
+            const polyline = L.polyline(coords, {
+              color: color,
+              weight: 3,
+              opacity: 0.9,
+              dashArray: null
+            });
+
+            polyline.bindTooltip(`${rashi.rashi_symbol} ${rashi.rashi_name_iast} Rising Line`, {
+              sticky: true,
+              className: 'astrocarto-tooltip'
+            });
+
+            polyline.on('mouseover', function () {
+              this.setStyle({ weight: 5, opacity: 1 });
+            });
+            polyline.on('mouseout', function () {
+              this.setStyle({ weight: 3, opacity: 0.9 });
+            });
+
+            astrocartoGridLayer.addLayer(polyline);
+
+            // Add label at middle of line
+            if (rashi.line.length > 3) {
+              const midIdx = Math.floor(rashi.line.length / 2);
+              const midPoint = rashi.line[midIdx];
+
+              const labelIcon = L.divIcon({
+                className: 'rashi-label-icon',
+                html: `<div class="rashi-line-label" style="color: ${color};">
+                  <span class="symbol">${rashi.rashi_symbol}</span>
+                </div>`,
+                iconSize: [30, 30],
+                iconAnchor: [15, 15]
+              });
+
+              const labelMarker = L.marker([midPoint.lat, midPoint.lon], {
+                icon: labelIcon,
+                interactive: false
+              });
+
+              astrocartoGridLayer.addLayer(labelMarker);
+            }
+          });
+        }
+
+        // Draw planet lines (where each planet is on the Ascendant)
+        const planetColors = {
+          'Sun': '#FFD700',
+          'Moon': '#C0C0C0',
+          'Mars': '#FF4444',
+          'Mercury': '#4CAF50',
+          'Jupiter': '#FF9800',
+          'Venus': '#E91E63',
+          'Saturn': '#607D8B',
+          'Uranus': '#00BCD4',
+          'Neptune': '#3F51B5',
+          'Pluto': '#9C27B0',
+          'Rahu': '#666666',
+          'Ketu': '#999999'
+        };
+
+        if (data.planets) {
+          const planetSymbols = {
+            'Sun': '☉', 'Moon': '☽', 'Mars': '♂', 'Mercury': '☿',
+            'Jupiter': '♃', 'Venus': '♀', 'Saturn': '♄',
+            'Uranus': '♅', 'Neptune': '♆', 'Pluto': '♇',
+            'Rahu': '☊', 'Ketu': '☋'
+          };
+
+          data.planets.forEach(planet => {
+            const color = planetColors[planet.name] || '#ffffff';
+            const retroSymbol = planet.retro ? ' ℞' : '';
+
+            // Get position for the planet marker (use equator position from line data, or calculate)
+            let markerLat = 0;
+            let markerLon = 0;
+
+            if (planet.line && planet.line.length > 0) {
+              // Find position near equator for better visibility
+              const equatorPoint = planet.line.find(p => Math.abs(p.lat) < 10) || planet.line[Math.floor(planet.line.length / 2)];
+              if (equatorPoint) {
+                markerLat = equatorPoint.lat;
+                markerLon = equatorPoint.lon;
+              }
+            }
+
+            const planetIcon = L.divIcon({
+              className: 'planet-label-icon',
+              html: `<div class="planet-marker-label" style="
+                color: ${color}; 
+                background: rgba(0,0,0,0.75); 
+                padding: 4px 8px; 
+                border-radius: 4px; 
+                font-size: 16px; 
+                font-weight: bold;
+                border: 2px solid ${color};
+                white-space: nowrap;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+              ">
+                <span style="font-size: 18px;">${planetSymbols[planet.name] || planet.name.charAt(0)}</span>
+                <span style="font-size: 11px;">${(planet.longitude % 30).toFixed(1)}°</span>
+                ${planet.retro ? '<span style="font-size: 10px;">℞</span>' : ''}
+              </div>`,
+              iconSize: [60, 28],
+              iconAnchor: [30, 14]
+            });
+
+            const planetMarker = L.marker([markerLat, markerLon], {
+              icon: planetIcon,
+              interactive: true
+            });
+
+            planetMarker.bindTooltip(`${planet.name}${retroSymbol}: ${planet.rashi_symbol} ${(planet.longitude % 30).toFixed(2)}° in ${planet.rashi_name}`, {
+              direction: 'top',
+              className: 'astrocarto-tooltip'
+            });
+
+            astrocartoGridLayer.addLayer(planetMarker);
+          });
+        }
+      }
+
+      // Load rashi lines data
+      async function loadGrid(mode) {
+        let dateStr, timeStr, tz;
+
+        if (mode === 'natal') {
+          const dobInput = document.getElementById('dob');
+          const tobInput = document.getElementById('tob');
+          const tzSel = document.getElementById('tz-override');
+          dateStr = dobInput.value;
+          timeStr = tobInput.value || '12:00:00';
+          tz = tzSel.value || 'UTC';
+        } else {
+          dateStr = $date.value;
+          timeStr = $time.value || '12:00:00';
+          tz = 'UTC';
+        }
+
+        if (!dateStr) {
+          $status.textContent = 'No date selected';
+          return;
+        }
+
+        $status.textContent = 'Loading lines...';
+
+        try {
+          const params = new URLSearchParams({
+            date: dateStr,
+            time: timeStr.length === 5 ? timeStr + ':00' : timeStr,
+            tz: tz,
+            ayanamsa: document.getElementById('ayanamsa').value || 'Lahiri',
+            lat_step: '3'
+          });
+
+          const res = await fetch(`/astrocartography/rashi-lines?${params}`);
+          const data = await res.json();
+
+          if (data.detail) {
+            $status.textContent = 'Error: ' + data.detail;
+            return;
+          }
+
+          if (mode === 'natal') {
+            astrocartoNatalData = data;
+          } else {
+            astrocartoTransitData = data;
+          }
+
+          renderRashiLines(data);
+          renderPlanets(data.planets);
+          $status.textContent = `${mode === 'natal' ? 'Natal' : 'Transit'} chart • 12 rāśi lines + ${data.planets?.length || 0} planet lines`;
+
+        } catch (err) {
+          console.error('Astrocartography error:', err);
+          $status.textContent = 'Error loading data';
+        }
+      }
+
+      // Mode toggle
+      $modeButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+          const newMode = this.dataset.mode;
+          if (newMode === astrocartoMode) return;
+
+          $modeButtons.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          astrocartoMode = newMode;
+
+          if (newMode === 'transit') {
+            $datetime.style.display = 'flex';
+            // Set to current time if empty
+            if (!$date.value) {
+              const now = new Date();
+              $date.value = now.toISOString().split('T')[0];
+              $time.value = now.toTimeString().slice(0, 8);
+            }
+            if (astrocartoTransitData) {
+              renderRashiLines(astrocartoTransitData);
+              renderPlanets(astrocartoTransitData.planets);
+            } else {
+              loadGrid('transit');
+            }
+          } else {
+            $datetime.style.display = 'none';
+            if (astrocartoNatalData) {
+              renderRashiLines(astrocartoNatalData);
+              renderPlanets(astrocartoNatalData.planets);
+            } else {
+              loadGrid('natal');
+            }
+          }
+        });
+      });
+
+      // Now button
+      $now.addEventListener('click', function () {
+        const now = new Date();
+        $date.value = now.toISOString().split('T')[0];
+        $time.value = now.toTimeString().slice(0, 8);
+      });
+
+      // Apply button
+      $apply.addEventListener('click', function () {
+        astrocartoTransitData = null;
+        loadGrid('transit');
+      });
+
+      // Show content when chart is calculated
+      window.showAstrocartography = function () {
+        $emptyState.style.display = 'none';
+        $content.style.display = 'block';
+        initMap();
+
+        // Force map to recalculate size
+        setTimeout(() => {
+          if (astrocartoMap) {
+            astrocartoMap.invalidateSize();
+            loadGrid('natal');
+          }
+        }, 100);
+      };
+
+      // Initialize when tab is clicked
+      const astrocartoTab = document.getElementById('tab-astrocartography');
+      if (astrocartoTab) {
+        astrocartoTab.addEventListener('click', function () {
+          // Check if chart has been calculated
+          const resultsDiv = document.getElementById('results');
+          if (resultsDiv && resultsDiv.style.display !== 'none') {
+            showAstrocartography();
+          }
+        });
+      }
+    }
+
+    setupAstrocartography();
+
+    // ---------------------------------------------------------
+    // Marriage Matching UI Logic
+    // ---------------------------------------------------------
+    function setupMarriageMatching() {
+
+      // Default Partner Details (as requested: 1 Jan 2000, 9am, Mysuru)
+      // Default Partner Details (as requested: 1 Jan 2000, 9am, Mysuru)
+      // Calculated: Swati (15), Pada 3
+      const DEFAULT_PARTNER = {
+        date: '2000-01-01',
+        time: '09:00',
+        name: 'Mysuru, Karnataka, India',
+        lat: '12.2958',
+        lon: '76.6394',
+        tz: 'Asia/Kolkata',
+        nak: 15,
+        pada: 3
+      };
+
+      const NAK_NAMES = [
+        "Ashwini", "Bharani", "Krittika", "Rohini", "Mrigashira", "Ardra",
+        "Punarvasu", "Pushya", "Ashlesha", "Magha", "Purva Phalguni",
+        "Uttara Phalguni", "Hasta", "Chitra", "Swati", "Vishakha", "Anuradha",
+        "Jyeshtha", "Mula", "Purva Ashadha", "Uttara Ashadha", "Shravana",
+        "Dhanishtha", "Shatabhisha", "Purva Bhadrapada", "Uttara Bhadrapada", "Revati"
+      ];
+
+      // Populate Star Dropdowns
+      const boyNakSel = document.getElementById('match-boy-nak');
+      const girlNakSel = document.getElementById('match-girl-nak');
+
+      if (boyNakSel && girlNakSel && boyNakSel.options.length <= 1) {
+        NAK_NAMES.forEach((n, i) => {
+          const opt = document.createElement('option');
+          opt.value = i + 1;
+          opt.textContent = `${i + 1}. ${n}`;
+          boyNakSel.appendChild(opt.cloneNode(true));
+          girlNakSel.appendChild(opt);
+        });
+      }
+
+      // Toggle Logic
+      function setupToggle(prefix) {
+        const radios = document.getElementsByName(`${prefix}-mode`);
+        const birthDiv = document.getElementById(`${prefix}-birth-inputs`);
+        const starDiv = document.getElementById(`${prefix}-star-inputs`);
+
+        radios.forEach(r => {
+          r.addEventListener('change', () => {
+            if (r.value === 'birth') {
+              birthDiv.style.display = 'block';
+              starDiv.style.display = 'none';
+            } else {
+              birthDiv.style.display = 'none';
+              starDiv.style.display = 'block';
+            }
+          });
+        });
+      }
+      setupToggle('boy');
+      setupToggle('girl');
+
+
+      // Helper to autofill based on main inputs
+
+      // Helper to autofill based on main inputs
+      function autofillMarriageFields() {
+        const sex = document.getElementById('sex-selector').value;
+        const mainDate = document.getElementById('dob').value;
+        const mainTime = document.getElementById('tob').value;
+
+        const placeVals = {
+          name: document.getElementById('place-search').value,
+          lat: '',
+          lon: '',
+          tz: ''
+        };
+
+        // Resolve Main User Star from Chart Data if available
+        let mainNakIdx = '';
+        let mainPada = '1';
+
+        console.log("Autofill: Checking chartData", window.chartData);
+
+        if (window.chartData && window.chartData.points) {
+          // Priority: Calculate from Moon Longitude (most accurate)
+          const moonP = window.chartData.points.find(p => p.Point === 'Moon');
+          if (moonP) {
+            const lon = moonP['Longitude (Dec)'];
+            // 1 Nakshatra = 13.3333 deg
+            const absNak = lon / (360.0 / 27.0);
+            const idx = Math.floor(absNak); // 0-26
+            mainNakIdx = idx + 1;
+            const sub = absNak - idx; // 0..1 fraction
+            mainPada = Math.floor(sub * 4) + 1;
+            console.log(`Autofill: Calculated from Moon Lon ${lon} -> Nak ${mainNakIdx}, Pada ${mainPada}`);
+          } else {
+            console.warn("Autofill: Moon point not found in chartData");
+          }
+        }
+
+        // Fallback to Panchanga string match if points failed (rare)
+        if (!mainNakIdx && window.chartData && window.chartData.panchanga) {
+          const nakRow = window.chartData.panchanga.find(r => r.Key === 'Nakshatra');
+          if (nakRow) {
+            let name = nakRow.Value.split('(')[0].trim();
+            let idx = NAK_NAMES.findIndex(n => name.startsWith(n));
+            if (idx >= 0) {
+              mainNakIdx = idx + 1;
+              console.log(`Autofill: Matched from Panchanga ${name} -> ${mainNakIdx}`);
+            }
+          }
+        }
+
+        if (typeof chosenPlace !== 'undefined' && chosenPlace) {
+          placeVals.name = `${chosenPlace.name}${chosenPlace.admin1 ? ', ' + chosenPlace.admin1 : ''}`;
+          placeVals.lat = chosenPlace.lat;
+          placeVals.lon = chosenPlace.lon;
+          placeVals.tz = chosenPlace.timezone;
+        } else if (document.getElementById('lat-override').value) {
+          placeVals.lat = document.getElementById('lat-override').value;
+          placeVals.lon = document.getElementById('lon-override').value;
+          placeVals.tz = document.getElementById('tz-override').value;
+        }
+
+        if (sex === 'male') {
+          const bDate = document.getElementById('match-boy-date');
+          const bCity = document.getElementById('match-boy-city');
+
+          // Independent check for Date/Time
+          if (!bDate.value) {
+            bDate.value = mainDate;
+            document.getElementById('match-boy-time').value = mainTime;
+          }
+
+          // Independent check for Place
+          if (!bCity.value) {
+            bCity.value = placeVals.name;
+            document.getElementById('match-boy-lat').value = placeVals.lat;
+            document.getElementById('match-boy-lon').value = placeVals.lon;
+            document.getElementById('match-boy-tz').value = placeVals.tz;
+          }
+
+          // Set Main User Star (Boy)
+          const bNak = document.getElementById('match-boy-nak');
+          const bPada = document.getElementById('match-boy-pada');
+          if (mainNakIdx) {
+            bNak.value = mainNakIdx;
+            bPada.value = mainPada;
+          }
+
+          // --- FILL PARTNER (GIRL) WITH DEFAULT IF EMPTY ---
+          const gDate = document.getElementById('match-girl-date');
+          const gCity = document.getElementById('match-girl-city');
+
+          if (!gDate.value) {
+            gDate.value = DEFAULT_PARTNER.date;
+            document.getElementById('match-girl-time').value = DEFAULT_PARTNER.time;
+          }
+          if (!gCity.value) {
+            gCity.value = DEFAULT_PARTNER.name;
+            document.getElementById('match-girl-lat').value = DEFAULT_PARTNER.lat;
+            document.getElementById('match-girl-lon').value = DEFAULT_PARTNER.lon;
+            document.getElementById('match-girl-tz').value = DEFAULT_PARTNER.tz;
+          }
+
+          // Set Default Partner Star (Girl)
+          const gNak = document.getElementById('match-girl-nak');
+          const gPada = document.getElementById('match-girl-pada');
+          if (!gNak.value) {
+            gNak.value = DEFAULT_PARTNER.nak;
+            gPada.value = DEFAULT_PARTNER.pada;
+          }
+
+
+        } else {
+          const gDate = document.getElementById('match-girl-date');
+          const gCity = document.getElementById('match-girl-city');
+
+          // Independent check for Date/Time
+          if (!gDate.value) {
+            gDate.value = mainDate;
+            document.getElementById('match-girl-time').value = mainTime;
+          }
+
+          // Independent check for Place
+          if (!gCity.value) {
+            gCity.value = placeVals.name;
+            document.getElementById('match-girl-lat').value = placeVals.lat;
+            document.getElementById('match-girl-lon').value = placeVals.lon;
+            document.getElementById('match-girl-tz').value = placeVals.tz;
+          }
+
+          // Set Main User Star (Girl)
+          const gNak = document.getElementById('match-girl-nak');
+          const gPada = document.getElementById('match-girl-pada');
+          if (mainNakIdx) {
+            gNak.value = mainNakIdx;
+            gPada.value = mainPada;
+          }
+
+          // --- FILL PARTNER (BOY) WITH DEFAULT IF EMPTY ---
+          const bDate = document.getElementById('match-boy-date');
+          const bCity = document.getElementById('match-boy-city');
+
+          if (!bDate.value) {
+            bDate.value = DEFAULT_PARTNER.date;
+            document.getElementById('match-boy-time').value = DEFAULT_PARTNER.time;
+          }
+          if (!bCity.value) {
+            bCity.value = DEFAULT_PARTNER.name;
+            document.getElementById('match-boy-lat').value = DEFAULT_PARTNER.lat;
+            document.getElementById('match-boy-lon').value = DEFAULT_PARTNER.lon;
+            document.getElementById('match-boy-tz').value = DEFAULT_PARTNER.tz;
+          }
+
+          // Set Default Partner Star (Boy)
+          const bNak = document.getElementById('match-boy-nak');
+          const bPada = document.getElementById('match-boy-pada');
+          if (!bNak.value) {
+            bNak.value = DEFAULT_PARTNER.nak;
+            bPada.value = DEFAULT_PARTNER.pada;
+          }
+        }
+      }
+
+      // Pre-fill Logic
+      const tabBtn = document.querySelector('button[data-tab="matching"]');
+      if (tabBtn) {
+        tabBtn.addEventListener('click', autofillMarriageFields);
+      }
+
+      // Also update when Sex changes
+      const sexSel = document.getElementById('sex-selector');
+      if (sexSel) {
+        sexSel.addEventListener('change', autofillMarriageFields);
+      }
+
+      // Run once on setup (delayed slightly to allow main inputs to load if async)
+      setTimeout(autofillMarriageFields, 1000);
+
+      // City Search Logic for Boy
+      setupCitySearch('match-boy-city', 'match-boy-results', (place) => {
+        document.getElementById('match-boy-lat').value = place.lat;
+        document.getElementById('match-boy-lon').value = place.lon;
+        document.getElementById('match-boy-tz').value = place.timezone;
+      });
+
+      // City Search Logic for Girl
+      setupCitySearch('match-girl-city', 'match-girl-results', (place) => {
+        document.getElementById('match-girl-lat').value = place.lat;
+        document.getElementById('match-girl-lon').value = place.lon;
+        document.getElementById('match-girl-tz').value = place.timezone;
+      });
+
+      // Calculate Button
+      const btnCalc = document.getElementById('btn-calculate-match');
+      if (btnCalc) {
+        btnCalc.addEventListener('click', async () => {
+
+          // Helper to get query params for a person
+          function getPersonParams(prefix) {
+            const modeInput = document.querySelector(`input[name="${prefix}-mode"]:checked`);
+            if (!modeInput) {
+              // Fallback if none checked (should not happen due to default)
+              alert(`Please select an input mode (Birth Details or Star Details) for ${prefix === 'boy' ? 'Boy' : 'Girl'}`);
+              throw new Error('Mode selection missing');
+            }
+            const mode = modeInput.value;
+
+            let qs = '';
+            if (mode === 'star') {
+              const nakEl = document.getElementById(`match-${prefix}-nak`);
+              const padaEl = document.getElementById(`match-${prefix}-pada`);
+
+              if (!nakEl || !padaEl) throw new Error(`Star inputs missing for ${prefix}`);
+
+              const nak = nakEl.value;
+              const pada = padaEl.value;
+
+              if (!nak) {
+                alert(`Please select a Nakshatra for ${prefix === 'boy' ? 'Boy' : 'Girl'}`);
+                throw new Error('Missing input');
+              }
+              qs += `&${prefix.charAt(0)}_nak=${nak}&${prefix.charAt(0)}_pada=${pada}`;
+            } else {
+              const dateEl = document.getElementById(`match-${prefix}-date`);
+              const timeEl = document.getElementById(`match-${prefix}-time`);
+              const latEl = document.getElementById(`match-${prefix}-lat`);
+              const lonEl = document.getElementById(`match-${prefix}-lon`);
+              const tzEl = document.getElementById(`match-${prefix}-tz`);
+
+              if (!dateEl || !timeEl || !latEl || !lonEl || !tzEl) throw new Error(`Birth inputs missing for ${prefix}`);
+
+              const date = dateEl.value;
+              const time = timeEl.value;
+              const lat = latEl.value;
+              const lon = lonEl.value;
+              const tz = tzEl.value;
+
+              if (!date || !time || !lat) {
+                alert(`Please enter all birth details for ${prefix === 'boy' ? 'Boy' : 'Girl'}`);
+                throw new Error('Missing input');
+              }
+              qs += `&${prefix.charAt(0)}_date=${date}&${prefix.charAt(0)}_time=${time}`;
+              qs += `&${prefix.charAt(0)}_lat=${lat}&${prefix.charAt(0)}_lon=${lon}&${prefix.charAt(0)}_tz=${tz}`;
+            }
+            return qs;
+          }
+
+          btnCalc.disabled = true;
+          btnCalc.textContent = 'Calculating...';
+
+          try {
+            const ayanamsaEl = document.getElementById('ayanamsa');
+            const ayanamsaVal = ayanamsaEl ? ayanamsaEl.value : 'Lahiri';
+            let url = '/match?ayanamsa=' + ayanamsaVal;
+            url += getPersonParams('boy');
+            url += getPersonParams('girl');
+
+            console.log("Fetching match URL:", url); // Debugging
+
+            const resp = await fetch(url);
+            if (!resp.ok) {
+              const err = await resp.json();
+              alert(`Error: ${err.detail}`);
+              return;
+            }
+            const data = await resp.json();
+            renderMatchResults(data);
+          } catch (e) {
+            console.error(e);
+            if (e.message !== 'Missing input') {
+              alert("Calculation Error: " + e.message);
+            }
+          } finally {
+            btnCalc.disabled = false;
+            btnCalc.textContent = 'Calculate Compatibility';
+          }
+        });
+      }
+    }
+
+    function setupCitySearch(inputId, resultsId, onSelect) {
+      const input = document.getElementById(inputId);
+      const results = document.getElementById(resultsId);
+      if (!input || !results) return;
+
+      let debounce;
+      input.addEventListener('input', (e) => {
+        // Use global country or 'IN'
+        const countryEl = document.getElementById('country');
+        const country = countryEl ? countryEl.value : 'IN';
+
+        clearTimeout(debounce);
+        debounce = setTimeout(async () => {
+          const q = e.target.value.trim();
+
+          // If user clears input, clear hidden values too (safety) to trigger validation error if they try to submit
+          if (!q) {
+            onSelect({ lat: '', lon: '', timezone: '' }); // Clearing
+          }
+
+          if (q.length < 2) {
+            results.classList.remove('show');
+            return;
+          }
+
+          results.innerHTML = '<div class="search-item"><span class="details">Searching...</span></div>';
+          results.classList.add('show');
+
+          try {
+            const url = new URL('/places', window.location.origin);
+            url.searchParams.set('country', country);
+            url.searchParams.set('q', q);
+            url.searchParams.set('limit', '12');
+
+            const res = await fetch(url);
+            if (!res.ok) throw new Error('Search failed');
+
+            const places = await res.json();
+
+            if (places && places.length > 0) {
+              results.innerHTML = places.map((p, idx) => `
+                         <div class="search-item" data-idx="${idx}">
+                           <div class="name">${p.name}${p.admin1 ? ', ' + p.admin1 : ''}</div>
+                           <div class="details">${p.country_name} • ${p.lat.toFixed(4)}°, ${p.lon.toFixed(4)}°</div>
+                         </div>
+                       `).join('');
+
+              results.querySelectorAll('.search-item').forEach(item => {
+                item.addEventListener('click', () => {
+                  const idx = item.dataset.idx;
+                  const p = places[idx];
+                  input.value = `${p.name}${p.admin1 ? ', ' + p.admin1 : ''}`;
+                  results.classList.remove('show');
+                  onSelect(p);
+                });
+              });
+            } else {
+              results.innerHTML = '<div class="search-item"><span class="details">No results found</span></div>';
+            }
+          } catch (err) {
+            console.error(err);
+            results.innerHTML = `<div class="search-item"><span class="details" style="color:var(--danger)">Error: ${err.message}</span></div>`;
+          }
+        }, 300); // 300ms is fine, mostly personal pref vs 150
+      });
+
+      // Hide on focus out / click outside
+      // Add Keydown for Enter/Escape
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          results.classList.remove('show');
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!input.contains(e.target) && !results.contains(e.target)) {
+          results.classList.remove('show');
+        }
+      });
+    }
+
+    function renderMatchResults(data) {
+      const resDiv = document.getElementById('matching-results');
+      resDiv.style.display = 'block';
+
+      document.getElementById('match-boy-star').textContent = data.boy_nak;
+      document.getElementById('match-girl-star').textContent = data.girl_nak;
+
+      document.getElementById('match-total-score').textContent = data.total_score;
+      const verdict = document.getElementById('match-verdict');
+      if (data.is_compatible) {
+        verdict.textContent = 'Compatible';
+        verdict.style.color = '#2ea043';
+      } else {
+        verdict.textContent = 'Not Recommended';
+        verdict.style.color = '#da3633';
+      }
+
+      const tbody = document.getElementById('match-table-body');
+      tbody.innerHTML = '';
+
+      const keys = ['dina', 'gana', 'mahendra', 'stree_deergha', 'yoni', 'rasi', 'rasi_lord', 'vashya', 'rajju', 'vedha'];
+
+      keys.forEach(k => {
+        const item = data.kutas[k];
+        const tr = document.createElement('tr');
+
+        // Title
+        const tdName = document.createElement('td');
+        tdName.textContent = k.charAt(0).toUpperCase() + k.slice(1).replace('_', ' ');
+
+        // Status
+        const tdStatus = document.createElement('td');
+        tdStatus.textContent = item.status || (item.dosha ? 'Dosha' : 'OK');
+        if (item.status === 'Bad' || item.dosha) tdStatus.style.color = '#da3633';
+        else if (item.status === 'Good' || item.status === 'Excellent' || item.status === 'Perfect') tdStatus.style.color = '#2ea043';
+
+        // Score / Max
+        const tdScore = document.createElement('td');
+        if (item.max !== undefined) {
+          tdScore.textContent = `${item.score} / ${item.max}`;
+        } else {
+          tdScore.textContent = '—';
+        }
+
+        // Obtained
+        const tdObtained = document.createElement('td');
+        tdObtained.textContent = item.dosha ? 'No' : 'Yes';
+        if (item.max > 0) {
+          tdObtained.textContent = item.score > 0 ? 'Yes' : 'No';
+        }
+
+        tr.appendChild(tdName);
+        tr.appendChild(tdStatus);
+        tr.appendChild(tdScore);
+        tr.appendChild(tdObtained);
+        tbody.appendChild(tr);
+      });
+    }
+
     async function init() {
       initTheme();
       await Promise.all([loadCountries(), loadAyanamsas(), loadHouseSystems()]);
       loadTimezones();
       setupEventListeners();
+      setupMarriageMatching();
 
       // Default settings: Load from localStorage or use fallbacks
       // User Fallbacks: Mysuru, Karnataka, 16/03/2000, 09:45:00 AM, Pushya Paksha
@@ -4461,6 +6004,12 @@
 
       // Use selectPlace to ensure lat/lon/tz fields are populated
       selectPlace(placeToLoad);
+
+      // Auto-compute chart on load so defaults are active and global state is populated
+      setTimeout(() => {
+        const btnComp = document.getElementById('compute');
+        if (btnComp) btnComp.click();
+      }, 500);
     }
 
     async function loadCountries() {
@@ -4928,8 +6477,14 @@
         }
 
         chartData = await res.json();
+        window.chartData = chartData; // Sync to global for autofill
         lastComputedLocation = loc;
         renderResults();
+
+        // Sync calculated Star to Marriage inputs
+        if (typeof autofillMarriageFields === 'function') {
+          setTimeout(autofillMarriageFields, 100);
+        }
       } catch (e) {
         alert('Error: ' + e.message);
       } finally {
