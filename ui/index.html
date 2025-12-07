@@ -8032,25 +8032,25 @@
     </svg>
   `;
 
-      // House positions in North Indian chart (CLOCKWISE from House 1 at top)
+      // House positions in North Indian chart (ANTI-CLOCKWISE from House 1 at top)
       // The chart has 12 regions: 4 corners (triangles), 4 sides, 4 diamond sections
       const housePositions = {
         1: { x: 50, y: 25 },    // Top diamond section (Lagna)
-        2: { x: 75, y: 12.5 },  // Top-right corner triangle
-        3: { x: 87.5, y: 25 },  // Right-upper side trapezoid
-        4: { x: 75, y: 50 },    // Right diamond section
-        5: { x: 87.5, y: 75 },  // Right-lower side trapezoid
-        6: { x: 75, y: 87.5 },  // Bottom-right corner triangle
+        2: { x: 25, y: 12.5 },  // Top-left corner triangle
+        3: { x: 12.5, y: 25 },  // Left-upper side trapezoid
+        4: { x: 25, y: 50 },    // Left diamond section
+        5: { x: 12.5, y: 75 },  // Left-lower side trapezoid
+        6: { x: 25, y: 87.5 },  // Bottom-left corner triangle
         7: { x: 50, y: 75 },    // Bottom diamond section
-        8: { x: 25, y: 87.5 },  // Bottom-left corner triangle
-        9: { x: 12.5, y: 75 },  // Left-lower side trapezoid
-        10: { x: 25, y: 50 },    // Left diamond section
-        11: { x: 12.5, y: 25 },  // Left-upper side trapezoid
-        12: { x: 25, y: 12.5 },  // Top-left corner triangle
+        8: { x: 75, y: 87.5 },  // Bottom-right corner triangle
+        9: { x: 87.5, y: 75 },  // Right-lower side trapezoid
+        10: { x: 75, y: 50 },   // Right diamond section
+        11: { x: 87.5, y: 25 }, // Right-upper side trapezoid
+        12: { x: 75, y: 12.5 }, // Top-right corner triangle
       };
 
       // In North Indian system: houses are FIXED positions, signs ROTATE
-      // House 1 contains Ascendant sign, House 2 = next sign clockwise, etc.
+      // House 1 contains Ascendant sign, House 2 = next sign anti-clockwise order on chart (but sign sequence is naturally zodiacal)
       for (let house = 1; house <= 12; house++) {
         const pos = housePositions[house];
         // Sign in this house = ascendant sign + (house - 1), wrapping at 12
