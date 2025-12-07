@@ -35,3 +35,5 @@ data/raw/*.zip
 data/raw/*.txt
 !data/raw/countryInfo.txt
 
+*.db-shm
+*.db-wal
