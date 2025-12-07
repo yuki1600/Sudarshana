@@ -28,7 +28,7 @@ from .constants import (
     get_ayanamsa_code
 )
 from .dates import HistoricalDate, local_and_utc, fmt_dt
-from .utils import norm360, lon_to_sign_idx, sign_dms_str, dms_str, rashi_name, aspect_strength_pct
+from .utils import norm360, lon_to_sign_idx, sign_dms_str, dms_str, rashi_name, aspect_strength_pct, sign_distance
 from .vargas import (
     navamsa_for, get_all_vargas, get_varga_names, get_nakshatra_details,
 )
@@ -1055,7 +1055,51 @@ def compute_chart(y, m, d, hh, mm, ss, lat, lon,
     panch_swar_df = build_panch_swar_dasa(rows, local_dt, name_str=name if name else "")
     kalachakra_df = build_kalachakra_dasa(rows, local_dt)
 
-    varnada_dasa_df = pd.DataFrame() # Placeholder
+    # Varnada Dasa
+    # Start sign: Ascendant. Direction: Forward if Odd (Aries=0, etc.), Backward if Even.
+    # Note: 0 (Aries) is Odd in Jyotish logic? 0=odd(1st), 1=even(2nd).
+    varnada_dasa_rows = []
+    is_odd_asc = (asc_sign_idx % 2 == 0) # 0, 2, 4... are Odd signs (1, 3, 5)
+    direction_step = 1 if is_odd_asc else -1
+    direction_label = "Direct" if is_odd_asc else "Reverse"
+    
+    sign_sequence = []
+    for i in range(12):
+        if is_odd_asc: s_idx = (asc_sign_idx + i) % 12
+        else: s_idx = (asc_sign_idx - i + 12) % 12
+        sign_sequence.append(s_idx)
+        
+    current_start = local_dt
+    for sign_idx in sign_sequence:
+        # House num relative to Asc
+        # If Asc=0 (Ar), Sign=0 (Ar) -> House 1
+        # If Asc=0, Sign=1 (Ta) -> House 2
+        # Need simpler log: House 1 is always First Dasha
+        # Wait, Dasha is of Rashis. The "House" column in older code was likely just the count 1..12
+        # But old code: house_num = ((sign_idx - asc_sign_idx + 12) % 12) + 1
+        
+        house_num_calc = ((sign_idx - asc_sign_idx + 12) % 12) + 1
+        
+        # Varnada Index for this house
+        # varnada_by_house is keyed by 1-based house number
+        varnada_idx = varnada_by_house.get(house_num_calc, sign_idx)
+        
+        duration_years = sign_distance(sign_idx, varnada_idx, direction_step)
+        days = duration_years * 365.25
+        end_time = current_start + timedelta(days=days)
+        
+        varnada_dasa_rows.append({
+            "House": house_num_calc,
+            "Dasha Rashi": RASHI_SA[sign_idx],
+            "Varnada": RASHI_SA[varnada_idx],
+            "Direction": direction_label,
+            "Start (local)": fmt_dt(current_start),
+            "End (local)": fmt_dt(end_time),
+            "Duration (years)": round(duration_years, 6)
+        })
+        current_start = end_time
+
+    varnada_dasa_df = pd.DataFrame(varnada_dasa_rows)
     
     # Return
     return {

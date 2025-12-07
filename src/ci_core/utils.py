@@ -77,3 +77,12 @@ def aspect_strength_pct(angle_deg: float, planet: str | None = None) -> float:
             t = (ang - a1) / (a2 - a1)
             return v1 + t * (v2 - v1)
     return 0.0
+
+def sign_distance(start, end, step):
+    if step == 0: return 0
+    count = 0
+    curr = start
+    while curr != end:
+        curr = (curr + step) % 12
+        count += 1
+    return count if count > 0 else 12
