@@ -276,6 +276,9 @@ def chart(
         raise HTTPException(status_code=500, detail=f"Chart error: {e}")
 
     def dfrec(df):
+        # Handle default empty lists or non-DFs
+        if not hasattr(df, "to_json"):
+            return df
         # Use to_json->loads so NaN/NaT become null (JSON-compliant)
         return json.loads(df.to_json(orient="records"))
     
