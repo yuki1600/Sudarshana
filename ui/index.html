@@ -4192,7 +4192,20 @@
           </div>
         </section>
         <section class="table-section">
-          <h3>Effects of Graha Rays (Raśmi Phala)</h3>
+          <h3>Calculated Graha Rays (Raśmi)</h3>
+          <p class="section-desc">Rays calculated from planetary positions. Base rays proportional to distance from
+            debilitation; corrections applied for dignity.</p>
+          <div class="data-table-wrapper">
+            <div class="data-table-scroll">
+              <table class="data-table" id="graha-rays-calculated-table"></table>
+            </div>
+          </div>
+          <div id="graha-rays-interpretation"
+            style="margin-top: 16px; padding: 16px; background: var(--bg-tertiary); border-radius: 8px; text-align: center;">
+          </div>
+        </section>
+        <section class="table-section">
+          <h3>Reference: Effects of Graha Rays (Raśmi Phala)</h3>
           <p class="section-desc">Classical reference from BPHS. Rays at deep exaltation; nil at deep debilitation.
             Apply dignity corrections to base rays.</p>
 
@@ -7050,6 +7063,7 @@
       renderVargaClassificationTables();
       renderVimsopakaTable(compoundFriendships);
       renderFriendshipTable(compoundFriendships);
+      renderGrahaRaysTable(compoundFriendships);
       renderAshtakavarga();
       renderDashaTables();
       renderAyurdaya();
@@ -9014,6 +9028,192 @@
       });
       return result;
     }
+
+    // ==================== GRAHA RAYS (RASMI) CALCULATION ====================
+    // Based on BPHS: Rays are max at deep exaltation, 0 at debilitation
+    // Distance from debilitation determines base rays, then dignity correction applied
+
+    const GRAHA_MAX_RAYS = {
+      'Sun': 10, 'Moon': 9, 'Mars': 5, 'Mercury': 5, 'Jupiter': 7, 'Venus': 8, 'Saturn': 5
+    };
+
+    // Deep debilitation points (sign index, degree within sign)
+    const DEBIL_POINTS = {
+      'Sun': { signIdx: 6, deg: 10 },      // Libra 10°
+      'Moon': { signIdx: 7, deg: 3 },      // Scorpio 3°
+      'Mars': { signIdx: 3, deg: 28 },     // Cancer 28°
+      'Mercury': { signIdx: 11, deg: 15 }, // Pisces 15°
+      'Jupiter': { signIdx: 9, deg: 5 },   // Capricorn 5°
+      'Venus': { signIdx: 5, deg: 27 },    // Virgo 27°
+      'Saturn': { signIdx: 0, deg: 20 }    // Aries 20°
+    };
+
+    // Dignity multipliers per BPHS
+    const DIGNITY_MULTIPLIERS = {
+      'exalt': 3.0,
+      'mool': 2.0,
+      'own': 1.5,
+      'extreme_friend': 4 / 3,
+      'friend': 1.2,
+      'neutral': 1.0,
+      'equal': 1.0,
+      'enemy': 0.5,
+      'extreme_enemy': 0.4
+    };
+
+    function computeGrahaRays(planetLon, planet, dignity) {
+      const maxRays = GRAHA_MAX_RAYS[planet];
+      if (!maxRays) return null;
+
+      const debil = DEBIL_POINTS[planet];
+      if (!debil) return null;
+
+      // Calculate debilitation longitude (0-360)
+      const debilLon = debil.signIdx * 30 + debil.deg;
+
+      // Distance from debilitation (in degrees)
+      let distFromDebil = (planetLon - debilLon + 360) % 360;
+
+      // If > 180, take the shorter arc (= 360 - dist)
+      if (distFromDebil > 180) {
+        distFromDebil = 360 - distFromDebil;
+      }
+
+      // Base rays = (distance / 180) * maxRays
+      // At debilitation (0°): 0 rays. At exaltation (180°): max rays
+      const baseRays = (distFromDebil / 180) * maxRays;
+
+      // Apply dignity multiplier
+      const multiplier = DIGNITY_MULTIPLIERS[dignity] || 1.0;
+      const netRays = baseRays * multiplier;
+
+      return {
+        baseRays: +baseRays.toFixed(2),
+        multiplier: multiplier,
+        netRays: +netRays.toFixed(2),
+        maxRays: maxRays
+      };
+    }
+
+    function getDignityFromCompound(planet, points, compoundMap) {
+      const p = points.find(pt => pt.Point === planet);
+      if (!p) return 'neutral';
+
+      const signIdx = p.Rashi_Idx;
+      const deg = getDegreesInSign(p);
+
+      // Check special dignities first
+      if (isExaltPlacement(planet, signIdx, deg)) return 'exalt';
+      if (isMoolPlacement(planet, signIdx, deg)) return 'mool';
+      if (isOwnPlacement(planet, signIdx)) return 'own';
+
+      // Get sign lord and check compound relationship
+      const signLord = SIGN_RULER[signIdx];
+      if (!signLord || signLord === planet) return 'own';
+
+      const compRel = compoundMap[planet]?.[signLord];
+      return compRel || 'neutral';
+    }
+
+    function getEffectsInterpretation(totalRays) {
+      if (totalRays <= 5) return { effect: 'Poor/unhappy', color: '#dc2626' };
+      if (totalRays <= 10) return { effect: 'Poor, struggles', color: '#ea580c' };
+      if (totalRays <= 13) return { effect: 'Meagre wealth', color: '#d97706' };
+      if (totalRays <= 15) return { effect: 'Wealthy, learned', color: '#65a30d' };
+      if (totalRays <= 20) return { effect: 'Distinguished, fame', color: '#16a34a' };
+      if (totalRays <= 23) return { effect: 'Charitable, cultured', color: '#059669' };
+      if (totalRays <= 30) return { effect: 'Powerful, favoured', color: '#0891b2' };
+      if (totalRays <= 40) return { effect: 'Minister-level', color: '#2563eb' };
+      if (totalRays <= 50) return { effect: 'King', color: '#7c3aed' };
+      return { effect: 'Powerful sovereign', color: '#a855f7' };
+    }
+
+    function renderGrahaRaysTable(compoundMap) {
+      const table = document.getElementById('graha-rays-calculated-table');
+      const interpDiv = document.getElementById('graha-rays-interpretation');
+      if (!table || !chartData) return;
+
+      const points = chartData.points || [];
+      const comp = compoundMap || computeCompoundFriendships(points);
+
+      const planets = ['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn'];
+      const rows = [];
+      let totalNetRays = 0;
+
+      planets.forEach(planet => {
+        const p = points.find(pt => pt.Point === planet);
+        if (!p) return;
+
+        const lon = p['Longitude (Dec)'] || 0;
+        const dignity = getDignityFromCompound(planet, points, comp);
+        const rays = computeGrahaRays(lon, planet, dignity);
+
+        if (rays) {
+          totalNetRays += rays.netRays;
+          rows.push({
+            planet,
+            lon: p['Longitude (Sign DMS)'] || '—',
+            dignity: dignity,
+            baseRays: rays.baseRays,
+            multiplier: rays.multiplier,
+            netRays: rays.netRays,
+            maxRays: rays.maxRays
+          });
+        }
+      });
+
+      const dignityLabels = {
+        'exalt': 'Exalted (×3)',
+        'mool': 'Mūla° (×2)',
+        'own': 'Own (×1.5)',
+        'extreme_friend': 'Adhimitr (×1.33)',
+        'friend': 'Friend (×1.2)',
+        'neutral': 'Neutral (×1)',
+        'equal': 'Neutral (×1)',
+        'enemy': 'Enemy (×0.5)',
+        'extreme_enemy': 'Adhi-Śatru (×0.4)'
+      };
+
+      table.innerHTML = `
+<thead>
+  <tr>
+    <th>Graha</th>
+    <th>Position</th>
+    <th>Dignity</th>
+    <th>Base Rays</th>
+    <th>× Mult</th>
+    <th>Net Rays</th>
+  </tr>
+</thead>
+<tbody>
+  ${rows.map(r => `
+    <tr>
+      <td class="planet-name">${planetDisplayName(r.planet)}</td>
+      <td>${r.lon}</td>
+      <td>${dignityLabels[r.dignity] || r.dignity}</td>
+      <td>${r.baseRays.toFixed(2)}</td>
+      <td>${r.multiplier.toFixed(2)}</td>
+      <td><strong>${r.netRays.toFixed(2)}</strong></td>
+    </tr>
+  `).join('')}
+  <tr style="background: var(--surface-alt); font-weight: 700;">
+    <td colspan="5" style="text-align: right;">Σ Total Net Rays:</td>
+    <td><strong style="font-size: 16px;">${totalNetRays.toFixed(2)}</strong></td>
+  </tr>
+</tbody>
+      `;
+
+      // Effects interpretation
+      const interp = getEffectsInterpretation(totalNetRays);
+      if (interpDiv) {
+        interpDiv.innerHTML = `
+          <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 8px;">Total Rays Effect (BPHS):</div>
+          <div style="font-size: 20px; font-weight: 700; color: ${interp.color};">${interp.effect}</div>
+          <div style="font-size: 12px; color: var(--text-tertiary); margin-top: 6px;">${totalNetRays.toFixed(1)} rays → Based on sum of all corrected planetary rays</div>
+        `;
+      }
+    }
+
 
     function vimsopakaGrade(total) {
       if (total >= 17.5) return { label: 'Atipūrṇa', cls: 'vims-grade-atipurna', range: '17.5–20' };
