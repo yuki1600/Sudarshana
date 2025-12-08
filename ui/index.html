@@ -3490,6 +3490,143 @@
       margin-bottom: 32px;
     }
 
+    /* ==================== MUHURTA SECTION ==================== */
+    .muhurta-container {
+      display: flex;
+      gap: 20px;
+      height: 80vh;
+      width: 100%;
+    }
+
+    @media (max-width: 900px) {
+      .muhurta-container {
+        flex-direction: column;
+        height: auto;
+      }
+    }
+
+    /* Calendar Section (Left, 50%) */
+    .muhurta-calendar-section {
+      flex: 1;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      overflow: hidden;
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .calendar-header h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0;
+    }
+
+    .calendar-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .calendar-day {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px;
+      min-height: 80px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .calendar-day:hover {
+      border-color: var(--accent);
+      background: var(--bg-secondary);
+    }
+
+    .calendar-day.selected {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+    }
+
+    .calendar-day.empty {
+      background: transparent;
+      border: none;
+      cursor: default;
+    }
+
+    .day-number {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .day-info {
+      font-size: 10px;
+      color: var(--text-secondary);
+    }
+
+    /* Details Section (Right, 50%) */
+    .muhurta-details-section {
+      flex: 1;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .details-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+    }
+
+    .details-header h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .details-content {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .empty-message {
+      color: var(--text-secondary);
+      text-align: center;
+      margin-top: 40px;
+      font-style: italic;
+    }
+
     #varshaphal-results .table-section {
       margin-bottom: 32px;
     }
@@ -3789,6 +3926,7 @@
       <button class="main-tab" data-tab="ayurdaya">Ayurdaya</button>
       <button class="main-tab" data-tab="matching" id="tab-marriage">Marriage</button>
       <button class="main-tab" data-tab="astrocartography" id="tab-astrocartography">Astrocartography</button>
+      <button class="main-tab" data-tab="muhurta" id="tab-muhurta">Muhurta</button>
 
     </div>
 
@@ -4050,6 +4188,204 @@
           <div class="data-table-wrapper">
             <div class="data-table-scroll">
               <table class="data-table" id="friendship-table"></table>
+            </div>
+          </div>
+        </section>
+        <section class="table-section">
+          <h3>Effects of Graha Rays</h3>
+          <p class="section-desc">Classical reference from Bṛhat Parāśara Horā Śāstra describing planetary rays and
+            their effects.</p>
+
+          <!-- Sub-table 1: Maximum Rays at Deep Exaltation -->
+          <h4
+            style="margin-top: 24px; margin-bottom: 12px; font-size: 14px; font-weight: 600; color: var(--text-secondary);">
+            Maximum Rays at Deep Exaltation</h4>
+          <div class="data-table-wrapper">
+            <div class="data-table-scroll">
+              <table class="data-table" id="graha-rays-max-table">
+                <thead>
+                  <tr>
+                    <th>Graha</th>
+                    <th>Rays</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sūrya (Sun)</td>
+                    <td>10</td>
+                  </tr>
+                  <tr>
+                    <td>Candra (Moon)</td>
+                    <td>9</td>
+                  </tr>
+                  <tr>
+                    <td>Maṅgala (Mars)</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>Budha (Mercury)</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>Guru (Jupiter)</td>
+                    <td>7</td>
+                  </tr>
+                  <tr>
+                    <td>Śukra (Venus)</td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <td>Śani (Saturn)</td>
+                    <td>5</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Sub-table 2: Dignity Correction Multipliers -->
+          <h4
+            style="margin-top: 24px; margin-bottom: 12px; font-size: 14px; font-weight: 600; color: var(--text-secondary);">
+            Dignity Correction Multipliers</h4>
+          <div class="data-table-wrapper">
+            <div class="data-table-scroll">
+              <table class="data-table" id="graha-rays-correction-table">
+                <thead>
+                  <tr>
+                    <th>Dignity</th>
+                    <th>Correction</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Exaltation Rāśi</td>
+                    <td>×3 (treble)</td>
+                  </tr>
+                  <tr>
+                    <td>Mūlatrikoṇa</td>
+                    <td>×2 (double)</td>
+                  </tr>
+                  <tr>
+                    <td>Own Rāśi (Svakṣetra)</td>
+                    <td>×3/2</td>
+                  </tr>
+                  <tr>
+                    <td>Adhimitr (Great Friend)</td>
+                    <td>×4/3</td>
+                  </tr>
+                  <tr>
+                    <td>Friend (Mitra)</td>
+                    <td>×6/5</td>
+                  </tr>
+                  <tr>
+                    <td>Enemy (Śatru)</td>
+                    <td>×1/2</td>
+                  </tr>
+                  <tr>
+                    <td>Adhi-Śatru (Great Enemy)</td>
+                    <td>×2/5</td>
+                  </tr>
+                  <tr>
+                    <td>Neutral (Sama)</td>
+                    <td>No correction</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Sub-table 3: Effects by Net Rays -->
+          <h4
+            style="margin-top: 24px; margin-bottom: 12px; font-size: 14px; font-weight: 600; color: var(--text-secondary);">
+            Effects by Net Rays</h4>
+          <div class="data-table-wrapper">
+            <div class="data-table-scroll">
+              <table class="data-table" id="graha-rays-effects-table">
+                <thead>
+                  <tr>
+                    <th>Rays</th>
+                    <th>Effect</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1–5</td>
+                    <td>Poor and unhappy, even if born in an eminent family</td>
+                  </tr>
+                  <tr>
+                    <td>6–10</td>
+                    <td>Poor, carrier of loads, without wife and children</td>
+                  </tr>
+                  <tr>
+                    <td>11</td>
+                    <td>Meagre wealth and few children</td>
+                  </tr>
+                  <tr>
+                    <td>12</td>
+                    <td>Meagre wealth, idiot and wicked</td>
+                  </tr>
+                  <tr>
+                    <td>13</td>
+                    <td>Thief</td>
+                  </tr>
+                  <tr>
+                    <td>14</td>
+                    <td>Wealthy, protector and maintainer of several families, learned and observer of traditions</td>
+                  </tr>
+                  <tr>
+                    <td>15</td>
+                    <td>Head of family, proficiency in many learnings, good qualities (as per Lord Brahma)</td>
+                  </tr>
+                  <tr>
+                    <td>16</td>
+                    <td>Most distinguished in family</td>
+                  </tr>
+                  <tr>
+                    <td>17</td>
+                    <td>Employer of many servants</td>
+                  </tr>
+                  <tr>
+                    <td>18</td>
+                    <td>Maintainer of large family</td>
+                  </tr>
+                  <tr>
+                    <td>19</td>
+                    <td>Possessor of name and fame</td>
+                  </tr>
+                  <tr>
+                    <td>20</td>
+                    <td>Blessed with a large family and kinsmen</td>
+                  </tr>
+                  <tr>
+                    <td>21</td>
+                    <td>Maintainer and protector of 50 persons</td>
+                  </tr>
+                  <tr>
+                    <td>22</td>
+                    <td>Charitable and kind</td>
+                  </tr>
+                  <tr>
+                    <td>23</td>
+                    <td>Well cultured and happy</td>
+                  </tr>
+                  <tr>
+                    <td>24–30</td>
+                    <td>Healthy, powerful, favourite of the king, splendourous, possessor of large family</td>
+                  </tr>
+                  <tr>
+                    <td>31–40</td>
+                    <td>Minister; maintainer and protector of 100 to 1000 persons</td>
+                  </tr>
+                  <tr>
+                    <td>40–50</td>
+                    <td>King</td>
+                  </tr>
+                  <tr>
+                    <td>51+</td>
+                    <td>Powerful sovereign</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
@@ -4642,7 +4978,44 @@
             </div>
           </div>
         </div>
-      </div><!-- End astrocartography-panel -->
+      </div><!-- End astrocarto-container -->
+    </div><!-- End astrocartography-panel -->
+
+    <!-- Muhurta Tab Panel -->
+    <div id="muhurta-panel" class="tab-panel">
+      <div class="muhurta-container">
+        <!-- Left: Big Calendar -->
+        <div class="muhurta-calendar-section">
+          <div class="calendar-header">
+            <button id="muhurta-prev-month" class="nav-btn">&lt;</button>
+            <h2 id="muhurta-current-month">December 2025</h2>
+            <button id="muhurta-next-month" class="nav-btn">&gt;</button>
+          </div>
+          <div class="calendar-weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+          </div>
+          <div class="calendar-grid" id="muhurta-calendar-grid">
+            <!-- Days injected via JS -->
+          </div>
+        </div>
+
+        <!-- Right: Details Table/List -->
+        <div class="muhurta-details-section">
+          <div class="details-header">
+            <h3 id="muhurta-selected-date">Select a Date</h3>
+          </div>
+          <div class="details-content" id="muhurta-details-content">
+            <div class="empty-message">Click on a date in the calendar to see Panchanga and Muhurta details.</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </main>
 
@@ -13366,6 +13739,226 @@
     }
 
 
+
+
+    // ==================== MUHURTA LOGIC ====================
+    let muhurtaDate = new Date(); // Tracks current view month
+    let selectMuhurtaDate = null; // Tracks selected date
+
+    function initMuhurta() {
+      renderCalendar();
+
+      document.getElementById('muhurta-prev-month')?.addEventListener('click', () => {
+        muhurtaDate.setMonth(muhurtaDate.getMonth() - 1);
+        renderCalendar();
+      });
+
+      document.getElementById('muhurta-next-month')?.addEventListener('click', () => {
+        muhurtaDate.setMonth(muhurtaDate.getMonth() + 1);
+        renderCalendar();
+      });
+    }
+
+    function renderCalendar() {
+      const year = muhurtaDate.getFullYear();
+      const month = muhurtaDate.getMonth();
+
+      // Update header
+      const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
+      const monthDisplay = document.getElementById('muhurta-current-month');
+      if (monthDisplay) {
+        monthDisplay.textContent = `${monthNames[month]} ${year}`;
+      }
+
+      const grid = document.getElementById('muhurta-calendar-grid');
+      if (!grid) return;
+
+      grid.innerHTML = '';
+
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      // Empty cells for days before start of month
+      for (let i = 0; i < firstDay; i++) {
+        const empty = document.createElement('div');
+        empty.className = 'calendar-day empty';
+        grid.appendChild(empty);
+      }
+
+      // Days
+      for (let d = 1; d <= daysInMonth; d++) {
+        const dayCell = document.createElement('div');
+        dayCell.className = 'calendar-day';
+
+        const currentLoopDate = new Date(year, month, d);
+        const isSelected = selectMuhurtaDate &&
+          currentLoopDate.toDateString() === selectMuhurtaDate.toDateString();
+
+        if (isSelected) dayCell.classList.add('selected');
+
+        dayCell.innerHTML = `
+          <div class="day-number">${d}</div>
+          <div class="day-info"></div> 
+        `;
+
+        dayCell.addEventListener('click', () => {
+          selectMuhurtaDate = new Date(year, month, d);
+          renderCalendar(); // Re-render to update selection style
+          updateMuhurtaDetails(selectMuhurtaDate);
+        });
+        grid.appendChild(dayCell);
+      }
+    }
+
+    function calculateKalam(sunriseStr, sunsetStr, weekdayStr) {
+      if (!sunriseStr || !sunsetStr || !weekdayStr) return null;
+
+      const parseTime = (t) => {
+        const parts = t.split(':');
+        if (parts.length < 2) return null;
+        return parseInt(parts[0]) * 60 + parseInt(parts[1]) + (parts[2] ? parseFloat(parts[2]) / 60 : 0);
+      };
+
+      const formatTime = (m) => {
+        const h = Math.floor(m / 60);
+        const min = Math.floor(m % 60);
+        return `${String(h).padStart(2, '0')}:${String(min).padStart(2, '0')}`;
+      };
+
+      const rise = parseTime(sunriseStr);
+      const set = parseTime(sunsetStr);
+      if (rise === null || set === null) return null;
+
+      const duration = set - rise;
+      const part = duration / 8;
+
+      // Weekday mapping (Sunday=0 to Saturday=6)
+      const dayMap = { 'Sunday': 0, 'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6 };
+      const dayIdx = dayMap[weekdayStr];
+      if (dayIdx === undefined) return null;
+
+      // 1-based part indices (1st part starts at sunrise)
+      // Rahu: Mo 2, Tu 7, We 5, Th 6, Fr 4, Sa 3, Su 8
+      const rahuMap = [8, 2, 7, 5, 6, 4, 3];
+      // Yamaganda: Mo 4, Tu 3, We 2, Th 1, Fr 5, Sa 6, Su 7
+      const yamaMap = [7, 4, 3, 2, 1, 5, 6];
+      // Gulika: Mo 6, Tu 5, We 4, Th 3, Fr 2, Sa 1, Su 7
+      const guliMap = [7, 6, 5, 4, 3, 2, 1];
+
+      const getRange = (idxMap) => {
+        const p = idxMap[dayIdx]; // 1-based part index
+        const start = rise + (p - 1) * part;
+        const end = start + part;
+        return `${formatTime(start)} - ${formatTime(end)}`;
+      };
+
+      return {
+        rahu: getRange(rahuMap),
+        yama: getRange(yamaMap),
+        gulika: getRange(guliMap)
+      };
+    }
+
+    async function updateMuhurtaDetails(date) {
+      const detailsContainer = document.getElementById('muhurta-details-content');
+      if (!detailsContainer) return;
+
+      const dateStr = date.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      const dateHeader = document.getElementById('muhurta-selected-date');
+      if (dateHeader) dateHeader.textContent = dateStr;
+
+      // Show loading state
+      detailsContainer.innerHTML = '<div style="padding: 20px; text-align: center; color: var(--text-secondary);">Loading Panchanga...</div>';
+
+      // 1. Gather location details from main inputs
+      const lat = document.getElementById('lat-override').value || (chosenPlace ? chosenPlace.lat : '');
+      const lon = document.getElementById('lon-override').value || (chosenPlace ? chosenPlace.lon : '');
+      const tz = document.getElementById('tz-override').value || (chosenPlace ? chosenPlace.timezone : '');
+      const ayanamsa = document.getElementById('ayanamsa').value || 'Lahiri';
+
+      if (!lat || !lon || !tz) {
+        detailsContainer.innerHTML = '<div class="empty-message" style="color: var(--error);">Please select a location in the main input bar first.</div>';
+        return;
+      }
+
+      // 2. Format date for API (YYYY-MM-DD)
+      const y = date.getFullYear();
+      const m = String(date.getMonth() + 1).padStart(2, '0');
+      const d = String(date.getDate()).padStart(2, '0');
+      const apiDate = `${y}-${m}-${d}`;
+
+      // 3. Fetch chart data for 12:00 PM (Noon) to get general day properties
+      // Ideally we would show sunrise data, but noon is a good middle ground for "Day's Panchanga"
+      try {
+        const params = new URLSearchParams({
+          date: apiDate,
+          time: '12:00:00',
+          lat: lat,
+          lon: lon,
+          tz: tz,
+          ayanamsa: ayanamsa
+        });
+
+        const res = await fetch(`/chart?${params.toString()}`);
+        if (!res.ok) throw new Error('Failed to fetch data');
+        const data = await res.json();
+
+        const p = data.panchanga && data.panchanga[0] ? data.panchanga[0] : {};
+
+        // Calculate Kalams
+        const wDay = p['Vara (weekday)'] || date.toLocaleDateString('en-US', { weekday: 'long' });
+        const kalams = calculateKalam(p['Sunrise (local)'], p['Sunset (local)'], wDay);
+
+        // 4. Render details
+        detailsContainer.innerHTML = `
+          <div class="info-box">
+             <div class="info-row"><span class="label">Date</span><span class="value">${apiDate}</span></div>
+             <div class="info-row"><span class="label">Location</span><span class="value">${chosenPlace ? chosenPlace.name : 'Custom Coordinates'}</span></div>
+             <div class="info-row"><span class="label">Sunrise</span><span class="value">${p['Sunrise (local)'] || '—'}</span></div>
+             <div class="info-row"><span class="label">Sunset</span><span class="value">${p['Sunset (local)'] || '—'}</span></div>
+          </div>
+          
+          <div class="info-box" style="margin-top: 16px;">
+            <h3>Panchanga (at 12:00 PM)</h3>
+            <div class="info-row"><span class="label">Ayana</span><span class="value">${p.Ayana || '—'}</span></div>
+            <div class="info-row"><span class="label">Ritu</span><span class="value">${p.Ritu || '—'}</span></div>
+            <div class="info-row"><span class="label">Maasa</span><span class="value">${p.Maasa || '—'} (${p.Maasa_Tamil || ''})</span></div>
+            <div class="info-row"><span class="label">Paksha</span><span class="value">${p.Paksha || '—'}</span></div>
+            <div class="info-row"><span class="label">Tithi</span><span class="value">${p.Tithi || '—'} <span class="pct">(${p.Tithi_Pct_Left || 0}% left)</span></span></div>
+            <div class="info-row"><span class="label">Nakshatra</span><span class="value">${p.Nakshatra || '—'} <span class="pct">(${p.Nak_Pct_Left || 0}% left)</span></span></div>
+            <div class="info-row"><span class="label">Yoga</span><span class="value">${p.Yoga || '—'}</span></div>
+            <div class="info-row"><span class="label">Karana</span><span class="value">${p.Karana || '—'}</span></div>
+            <div class="info-row"><span class="label">Vara (Day)</span><span class="value">${wDay}</span></div>
+          </div>
+
+          <div class="info-box" style="margin-top: 16px;">
+            <h3>Inauspicious Timings</h3>
+            <div class="info-row"><span class="label">Rahu Kalam</span><span class="value" style="color: var(--error);">${kalams ? kalams.rahu : '—'}</span></div>
+            <div class="info-row"><span class="label">Yamaganda</span><span class="value" style="color: var(--warning);">${kalams ? kalams.yama : '—'}</span></div>
+            <div class="info-row"><span class="label">Gulika</span><span class="value">${kalams ? kalams.gulika : '—'}</span></div>
+          </div>
+          
+          <div style="margin-top: 16px; font-size: 13px; color: var(--text-secondary);">
+             <p><strong>Note:</strong> Tithi/Nakshatra percentages at 12:00 PM. Kalams calculated from Sunrise-Sunset.</p>
+          </div>
+        `;
+
+      } catch (err) {
+        console.error(err);
+        detailsContainer.innerHTML = `<div class="empty-message" style="color: var(--error);">Error loading data: ${err.message}</div>`;
+      }
+    }
+
+    // Call initMuhurta strictly after DOM is ready or as part of init
+    try {
+      console.log('Initializing Muhurta...');
+      initMuhurta();
+      console.log('Muhurta initialized.');
+    } catch (e) {
+      console.error('Muhurta Init Error:', e);
+      alert('Muhurta Error: ' + e.message);
+    }
 
     // ==================== INITIALIZE ====================
     init();
