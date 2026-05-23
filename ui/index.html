@@ -305,52 +305,159 @@
       background: var(--bg-secondary);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 24px;
+      padding: 20px 28px;
       text-align: center;
-      margin-bottom: 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+    }
+
+    .match-dual-scores {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .match-dual-scores .match-score-card {
+      flex: 1;
+    }
+
+    .match-score-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .match-middle-info {
+      flex: 1.5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .match-stars-pair {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .match-star-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .match-vs {
+      font-size: 20px;
+      color: var(--text-secondary);
+      font-weight: 300;
     }
 
     .match-score-circle {
-      font-size: 48px;
+      font-size: 44px;
       font-weight: 700;
       color: var(--gold);
       line-height: 1;
     }
 
     .match-score-circle .total {
-      font-size: 18px;
+      font-size: 16px;
       color: var(--text-secondary);
       font-weight: 400;
     }
 
     .match-verdict {
-      font-size: 20px;
+      font-size: 14px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
-    .match-details-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 24px;
-      text-align: center;
+    .match-kuta-tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
     }
 
-    .match-info-box h4 {
-      font-size: 12px;
+    .match-kuta-tab {
+      padding: 8px 20px;
+      border: none;
+      border-bottom: 3px solid transparent;
+      background: none;
       color: var(--text-secondary);
-      text-transform: uppercase;
-      margin-bottom: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s;
+      border-radius: 6px 6px 0 0;
     }
 
-    .match-info-box .highlight-val {
-      font-size: 18px;
+    .match-kuta-tab:hover {
+      color: var(--text-primary);
+    }
+
+    .match-kuta-tab.active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    .match-kuta-panel {
+      display: block;
+    }
+
+    .match-dosha-flag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      margin: 4px 6px;
+    }
+
+    .match-dosha-flag.bad {
+      background: rgba(218, 54, 51, 0.12);
+      color: #da3633;
+      border: 1px solid rgba(218, 54, 51, 0.3);
+    }
+
+    .match-dosha-flag.good {
+      background: rgba(46, 160, 67, 0.12);
+      color: #2ea043;
+      border: 1px solid rgba(46, 160, 67, 0.3);
+    }
+
+    .match-kuta-bar-wrap {
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 3px;
+      width: 90px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 8px;
+      overflow: hidden;
+    }
+
+    .match-kuta-bar-fill {
+      height: 100%;
+      display: block;
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+
+    .highlight-val {
+      font-size: 16px;
       font-weight: 600;
       color: var(--text-primary);
     }
@@ -3841,6 +3948,209 @@
       background: var(--border);
       border-radius: 3px;
     }
+
+    /* Yogas and Marak Grahas */
+    .yogas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .yoga-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .yoga-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      border-color: var(--accent);
+    }
+
+    .yoga-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .yoga-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .yoga-category {
+      font-size: 11px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .yoga-badge {
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+
+    .yoga-badge.strong {
+      background: rgba(16, 185, 129, 0.15);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .yoga-badge.present {
+      background: rgba(59, 130, 246, 0.15);
+      color: #3b82f6;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .yoga-badge.weak {
+      background: rgba(245, 158, 11, 0.15);
+      color: #f59e0b;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .yoga-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+
+    .yoga-planets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .planet-chip {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    /* Elements & Gunas Section */
+    .elements-gunas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .elements-gunas-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .element-column,
+    .guna-column {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .bars-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .bar-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .bar-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+
+    .bar-outer {
+      height: 8px;
+      background: var(--bg-tertiary);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .bar-inner {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease-out;
+    }
+
+    .dominant-badge {
+      margin-top: 8px;
+      padding: 8px;
+      background: var(--bg-tertiary);
+      border-radius: 4px;
+      font-size: 12px;
+      text-align: center;
+      color: var(--text-primary);
+      border: 1px dashed var(--border);
+    }
+
+    /* Specific Colors for Elements */
+    .bar-inner.Agni {
+      background: #ef4444;
+    }
+
+    .bar-inner.Prithvi {
+      background: #10b981;
+    }
+
+    .bar-inner.Vayu {
+      background: #3b82f6;
+    }
+
+    .bar-inner.Jala {
+      background: #06b6d4;
+    }
+
+    .bar-inner.Akasha {
+      background: #a855f7;
+    }
+
+    /* Gunas */
+    .bar-inner.Sattva {
+      background: #10b981;
+    }
+
+    .bar-inner.Rajas {
+      background: #f59e0b;
+    }
+
+    .bar-inner.Tamas {
+      background: #64748b;
+    }
+
+    /* Outer Planet styling in charts */
+    .planet.outer,
+    .transit-planet.outer {
+      color: #64748b !important;
+      font-weight: 500;
+    }
   </style>
 </head>
 
@@ -4074,6 +4384,7 @@
     <div class="main-tabs">
       <button class="main-tab active" data-tab="natal">Natal Chart</button>
       <button class="main-tab" data-tab="strengths">Strengths</button>
+      <button class="main-tab" data-tab="yogas">Yogas</button>
       <button class="main-tab" data-tab="dasha">Dasha</button>
       <button class="main-tab" data-tab="ashtakavarga">Ashtakavarga</button>
       <button class="main-tab" data-tab="varshaphal">Varshaphal</button>
@@ -4246,6 +4557,68 @@
             </div>
           </div>
         </section>
+
+        <!-- Upagrahas -->
+        <section class="table-section">
+          <h2>Upagrahas &amp; Aprakasha Grahas (Shadow Planets)</h2>
+          <p class="section-desc">According to BPHS Ch. 25, shadow planets have mathematical formulae based on Sun
+            position (Dhuma, Vyatipata, Parivesha, Indrachapa, Upaketu) or represent time-divisions of the day/night
+            (Gulika, Mandi, Yamaghantaka, Ardhaprahara, Kaala, Mrityu Sahama).</p>
+          <div class="data-table-wrapper">
+            <div class="data-table-scroll">
+              <table class="data-table" id="upagrahas-table">
+                <thead>
+                  <tr>
+                    <th>Shadow Point</th>
+                    <th>Family</th>
+                    <th>Longitude (DMS)</th>
+                    <th>Sign</th>
+                    <th>Nakshatra (Pada)</th>
+                    <th>Navamsha</th>
+                  </tr>
+                </thead>
+                <tbody id="upagrahas-rows"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Elements & Gunas -->
+        <section class="table-section">
+          <h2>Panchabhūtas (Elements) &amp; Guṇas</h2>
+          <p class="section-desc">Planetary and Sign elements and qualities distribution.</p>
+          <div class="elements-gunas-grid">
+            <div class="element-column">
+              <h3>Panchabhūtas (Elements)</h3>
+              <div id="elements-bars-container" class="bars-container"></div>
+              <div class="dominant-badge">Dominant Element: <strong id="dominant-element-lbl">None</strong></div>
+            </div>
+            <div class="guna-column">
+              <h3>Guṇas (Qualities)</h3>
+              <div id="gunas-bars-container" class="bars-container"></div>
+              <div class="dominant-badge">Dominant Guna: <strong id="dominant-guna-lbl">None</strong></div>
+            </div>
+          </div>
+
+          <h3>Planetary Elements &amp; Gunas Detail</h3>
+          <div class="data-table-wrapper">
+            <div class="data-table-scroll">
+              <table class="data-table" id="elements-planet-table">
+                <thead>
+                  <tr>
+                    <th>Planet</th>
+                    <th>Planet Element</th>
+                    <th>Planet Guna</th>
+                    <th>Sign Placement</th>
+                    <th>Sign Element</th>
+                    <th>Sign Guna</th>
+                  </tr>
+                </thead>
+                <tbody id="elements-planet-rows"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
       </div>
     </div><!-- End natal-panel -->
 
@@ -4272,6 +4645,65 @@
             </div>
           </div>
         </section>
+        <!-- Avastha -->
+        <section class="table-section">
+          <h2>Planetary Avasthas (State / Readiness)</h2>
+          <p class="section-desc">Classical avasthā systems describing age/vitality (Baladi), sleep state (Jagratadi),
+            dignity (Deeptaadi), psychological condition (Lajjitadi), and posture/activity (Shayanadi).</p>
+          <div class="data-table-wrapper">
+            <div class="data-table-scroll">
+              <table class="data-table" id="avastha-table"></table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Chara Karakas -->
+        <section class="table-section">
+          <h2>Chara Kārakas &amp; Kārakāṁśa</h2>
+          <p class="section-desc">Planet sorted by degrees in sign descending (Jaimini system). Atmakaraka (AK) Navamsha
+            sign = Karakamsha Lagna: <strong id="karakamsha-badge">N/A</strong>.</p>
+          <div class="data-table-wrapper">
+            <div class="data-table-scroll">
+              <table class="data-table" id="chara-karakas-table">
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Karaka</th>
+                    <th>Full Name</th>
+                    <th>Planet</th>
+                    <th>Intra-Sign Degree</th>
+                    <th>Sign</th>
+                    <th>Navamsha</th>
+                  </tr>
+                </thead>
+                <tbody id="chara-karakas-rows"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Argala -->
+        <section class="table-section">
+          <h2>Argala (Inter-planetary Intervention)</h2>
+          <p class="section-desc">Positions relative to Ascendant and Planets. 2nd, 4th, 11th houses form positive
+            Argala; 12th, 10th, 3rd form Virodha (obstruction).</p>
+          <div class="data-table-wrapper">
+            <div class="data-table-scroll">
+              <table class="data-table" id="argala-table">
+                <thead>
+                  <tr>
+                    <th>Reference Cusp / Graha</th>
+                    <th>Positive Argala (2nd / 4th / 11th)</th>
+                    <th>Virodha Obstruction (12th / 10th / 3rd)</th>
+                    <th>Net Active Argala</th>
+                  </tr>
+                </thead>
+                <tbody id="argala-rows"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         <section class="table-section">
           <h3>Positional Strength (Sthāna Bala) Breakdown</h3>
           <div class="data-table-wrapper">
@@ -4373,6 +4805,51 @@
       </div>
     </div><!-- End strengths-panel -->
 
+    <!-- Yogas Tab Panel -->
+    <div id="yogas-panel" class="tab-panel">
+      <div class="empty-state" id="yogas-empty-state">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 2a10 10 0 0110 10" />
+          <circle cx="12" cy="12" r="3" />
+          <path d="M12 9v-4M12 15v4M15 12h4M9 12H5" />
+        </svg>
+        <h3>Calculate Chart First</h3>
+        <p>Please calculate a natal chart to view active Yogas.</p>
+      </div>
+
+      <div id="yogas-results" style="display: none;">
+        <!-- Marak Grahas (Death-inflicting Grahas) -->
+        <section class="table-section">
+          <h2>Māraka Grahas (Longevity Indicators)</h2>
+          <p class="section-desc">According to BPHS Ch. 44, the 2nd and 7th houses are Marak sthanas. Lords of these
+            houses are primary Maraks. Planets in these houses or associated with them are secondary Maraks.</p>
+          <div class="data-table-wrapper">
+            <div class="data-table-scroll">
+              <table class="data-table" id="marak-grahas-table">
+                <thead>
+                  <tr>
+                    <th>Planet</th>
+                    <th>Type</th>
+                    <th>Reason</th>
+                    <th>Placed House</th>
+                  </tr>
+                </thead>
+                <tbody id="marak-grahas-rows"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Active Yogas List -->
+        <section class="table-section">
+          <h2>Active Astrological Yogas (BPHS &amp; Classical)</h2>
+          <p class="section-desc">Grouped by category from classical literature.</p>
+          <div id="yogas-list-container" class="yogas-grid"></div>
+        </section>
+      </div>
+    </div><!-- End yogas-panel -->
+
     <!-- Dasha Tab Panel -->
     <div id="dasha-panel" class="tab-panel">
       <div class="empty-state" id="dasha-empty-state">
@@ -4432,6 +4909,13 @@
           <div class="dasa-description" id="dasa-description">
             <strong>Viṁśottarī Daśā:</strong> The most commonly used Nakṣatra-based daśā system spanning 120 years.
             Based on Moon's nakṣatra position at birth.
+          </div>
+
+          <!-- Current Dasa Status Card -->
+          <div class="current-dasa-card" id="current-dasa-status-card" style="margin-top: 16px; margin-bottom: 24px; padding: 20px; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)); border: 2px solid var(--border); border-radius: 12px; display: none;">
+            <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); font-weight: 600; margin-bottom: 8px;">Active Current Period</div>
+            <div id="current-dasa-hierarchy" style="font-size: 20px; font-weight: 700; color: var(--text-primary); font-family: 'JetBrains Mono', monospace;">Loading...</div>
+            <div id="current-dasa-remaining" style="font-size: 13px; color: var(--text-secondary); margin-top: 6px; font-style: italic;"></div>
           </div>
 
           <!-- Current Dasha Navigation (for Vimshottari and Yogini) -->
@@ -4853,36 +5337,76 @@
 
         <!-- Results -->
         <div id="matching-results" style="display: none;">
-          <div class="match-score-card">
-            <div class="match-score-circle">
-              <span id="match-total-score">0</span>
-              <span class="total">/ 36</span>
+
+          <!-- Dual score header -->
+          <div class="match-dual-scores">
+            <div class="match-score-card">
+              <div class="match-score-circle" id="ashta-circle">
+                <span id="match-ashta-score">0</span>
+                <span class="total">/ 36</span>
+              </div>
+              <div class="match-score-label">Ashtakoota</div>
+              <div class="match-verdict" id="match-ashta-verdict">—</div>
             </div>
-            <div class="match-verdict" id="match-verdict">Unknown</div>
+            <div class="match-middle-info">
+              <div class="match-stars-pair">
+                <div><span class="match-star-label">Boy's Star</span>
+                  <div id="match-boy-star" class="highlight-val"></div>
+                </div>
+                <div class="match-vs">↔</div>
+                <div><span class="match-star-label">Girl's Star</span>
+                  <div id="match-girl-star" class="highlight-val"></div>
+                </div>
+              </div>
+            </div>
+            <div class="match-score-card">
+              <div class="match-score-circle" id="dasha-circle">
+                <span id="match-total-score">0</span>
+                <span class="total">/ 36</span>
+              </div>
+              <div class="match-score-label">Dashakoota</div>
+              <div class="match-verdict" id="match-verdict">—</div>
+            </div>
           </div>
 
-          <div class="match-details-grid">
-            <div class="match-info-box">
-              <h4>Boy's Star</h4>
-              <div id="match-boy-star" class="highlight-val"></div>
-            </div>
-            <div class="match-info-box">
-              <h4>Girl's Star</h4>
-              <div id="match-girl-star" class="highlight-val"></div>
-            </div>
+          <!-- Tabs for Ashtakoota / Dashakoota -->
+          <div class="match-kuta-tabs" style="margin-top: 24px;">
+            <button class="match-kuta-tab active" data-tab="ashtakoota">Ashtakoota (8 Kutas)</button>
+            <button class="match-kuta-tab" data-tab="dashakoota">Dashakoota (10 Poruthams)</button>
           </div>
 
-          <table class="data-table match-table">
-            <thead>
-              <tr>
-                <th>Kuta (Porutham)</th>
-                <th>Status</th>
-                <th>Score</th>
-                <th>Obtained</th>
-              </tr>
-            </thead>
-            <tbody id="match-table-body"></tbody>
-          </table>
+          <!-- Ashtakoota Panel -->
+          <div id="ashtakoota-panel" class="match-kuta-panel">
+            <table class="data-table match-table">
+              <thead>
+                <tr>
+                  <th>Kuta</th>
+                  <th>Description</th>
+                  <th>Score / Max</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="ashta-table-body"></tbody>
+            </table>
+            <div id="ashta-dosha-flags" style="margin-top: 12px;"></div>
+          </div>
+
+          <!-- Dashakoota Panel -->
+          <div id="dashakoota-panel" class="match-kuta-panel" style="display:none;">
+            <table class="data-table match-table">
+              <thead>
+                <tr>
+                  <th>Porutham</th>
+                  <th>Description</th>
+                  <th>Score / Max</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="match-table-body"></tbody>
+            </table>
+            <div id="dasha-dosha-flags" style="margin-top: 12px;"></div>
+          </div>
+
         </div>
 
       </div>
@@ -5009,6 +5533,11 @@
       'Sun': 'Su', 'Moon': 'Mo', 'Mars': 'Ma', 'Mercury': 'Me', 'Jupiter': 'Ju',
       'Venus': 'Ve', 'Saturn': 'Sa', 'Rahu (true)': 'Ra', 'Ketu (true)': 'Ke',
       'Uranus': 'Ur', 'Neptune': 'Ne', 'Pluto': 'Pl', 'Muntha': 'Mu'
+    };
+    const OUTER_PLANET_GLYPHS = {
+      'Uranus': 'Ur',
+      'Neptune': 'Ne',
+      'Pluto': 'Pl'
     };
     const VARGA_MEANINGS = {
       'D-1': 'Physique',
@@ -5338,6 +5867,7 @@
     const $shadbalaTable = document.getElementById('shadbala-table');
     const $shadbalaSthanaTable = document.getElementById('shadbala-sthana-table');
     const $shadbalaKalaTable = document.getElementById('shadbala-kala-table');
+    const $avasthaTable = document.getElementById('avastha-table');
     const $ishtaKashtaTable = document.getElementById('ishta-kashta-table');
     const $bhavaBalaTable = document.getElementById('bhava-bala-table');
     const $aspectGridTable = document.getElementById('aspect-grid-table');
@@ -5351,6 +5881,19 @@
     const $vimshottariTable = document.getElementById('vimshottari-table');
     const $yoginiTable = document.getElementById('yogini-table');
     const $varnadaTable = document.getElementById('varnada-table');
+    const $yogasEmptyState = document.getElementById('yogas-empty-state');
+    const $yogasResults = document.getElementById('yogas-results');
+    const $yogasListContainer = document.getElementById('yogas-list-container');
+    const $marakGrahasRows = document.getElementById('marak-grahas-rows');
+    const $charaKarakasRows = document.getElementById('chara-karakas-rows');
+    const $karakamshaBadge = document.getElementById('karakamsha-badge');
+    const $argalaRows = document.getElementById('argala-rows');
+    const $upagrahasRows = document.getElementById('upagrahas-rows');
+    const $elementsBarsContainer = document.getElementById('elements-bars-container');
+    const $dominantElementLbl = document.getElementById('dominant-element-lbl');
+    const $gunasBarsContainer = document.getElementById('gunas-bars-container');
+    const $dominantGunaLbl = document.getElementById('dominant-guna-lbl');
+    const $elementsPlanetRows = document.getElementById('elements-planet-rows');
     const $btnSouth = document.getElementById('btn-south');
     const $btnNorth = document.getElementById('btn-north');
     const $themeToggle = document.getElementById('theme-toggle');
@@ -6379,58 +6922,160 @@
       const resDiv = document.getElementById('matching-results');
       resDiv.style.display = 'block';
 
-      document.getElementById('match-boy-star').textContent = data.boy_nak;
-      document.getElementById('match-girl-star').textContent = data.girl_nak;
+      // Stars
+      document.getElementById('match-boy-star').textContent = data.boy_nak || '—';
+      document.getElementById('match-girl-star').textContent = data.girl_nak || '—';
 
-      document.getElementById('match-total-score').textContent = data.total_score;
-      const verdict = document.getElementById('match-verdict');
-      if (data.is_compatible) {
-        verdict.textContent = 'Compatible';
-        verdict.style.color = '#2ea043';
-      } else {
-        verdict.textContent = 'Not Recommended';
-        verdict.style.color = '#da3633';
+      // Helper to calculate score verdict
+      function getScoreVerdict(score, hasDosha) {
+        let text = '';
+        let color = '';
+        if (score < 13) {
+          text = 'Challenging';
+          color = '#da3633';
+        } else if (score <= 18) {
+          text = 'Average';
+          color = '#d29922';
+        } else if (score <= 24) {
+          text = 'Good';
+          color = '#3fb950';
+        } else if (score <= 30) {
+          text = 'Great';
+          color = '#2ea043';
+        } else {
+          text = 'Excellent';
+          color = 'var(--gold)';
+        }
+        if (hasDosha) {
+          text += ' (Dosha)';
+          color = '#da3633'; // Highlight bad compatibility if severe dosha present
+        }
+        return { text, color };
       }
 
-      const tbody = document.getElementById('match-table-body');
-      tbody.innerHTML = '';
+      // ---------- Ashtakoota ----------
+      const ashta = data.ashtakoota || {};
+      const ashtaScore = ashta.score ?? 0;
+      const ashtaMax = ashta.max ?? 36;
+      document.getElementById('match-ashta-score').textContent = ashtaScore;
 
-      const keys = ['dina', 'gana', 'mahendra', 'stree_deergha', 'yoni', 'rasi', 'rasi_lord', 'vashya', 'rajju', 'vedha'];
+      const ashtaVerdictEl = document.getElementById('match-ashta-verdict');
+      const ashtaCircle = document.getElementById('ashta-circle');
 
-      keys.forEach(k => {
-        const item = data.kutas[k];
+      const hasAshtaDosha = ashta.kutas && (ashta.kutas.nadi?.dosha);
+      const ashtaVerdict = getScoreVerdict(ashtaScore, hasAshtaDosha);
+      ashtaVerdictEl.textContent = ashtaVerdict.text;
+      ashtaVerdictEl.style.color = ashtaVerdict.color;
+      ashtaCircle.style.color = ashtaVerdict.color;
+
+      // Ashtakoota table
+      const ashtaTbody = document.getElementById('ashta-table-body');
+      ashtaTbody.innerHTML = '';
+      const ASHTA_ORDER = ['varna', 'vashya', 'tara', 'yoni', 'graha_maitri', 'gana', 'bhakoot', 'nadi'];
+      if (ashta.kutas) {
+        ASHTA_ORDER.forEach(k => {
+          const item = ashta.kutas[k];
+          if (!item) return;
+          const pct = item.max > 0 ? (item.score / item.max * 100) : 0;
+          const isDosha = item.dosha;
+          const statusColor = isDosha ? '#da3633'
+            : pct >= 100 ? '#2ea043'
+            : pct >= 67  ? '#3fb950'
+            : pct >= 34  ? '#d29922'
+            : '#da3633';
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td style="font-weight:600">${item.name || k}</td>
+            <td style="font-size:12px;color:var(--text-secondary)">${item.desc || ''}</td>
+            <td>
+              ${item.score} / ${item.max}
+              <span class="match-kuta-bar-wrap"><span class="match-kuta-bar-fill" style="width:${pct}%;background:${statusColor}"></span></span>
+            </td>
+            <td style="color:${statusColor};font-weight:600">${item.status || '—'}${isDosha ? ' ⚠' : ''}</td>
+          `;
+          ashtaTbody.appendChild(tr);
+        });
+      }
+
+      // Ashtakoota dosha flags
+      const ashtaDoshaDiv = document.getElementById('ashta-dosha-flags');
+      const ashtaKutas = ashta.kutas || {};
+      ashtaDoshaDiv.innerHTML = '';
+      ['nadi', 'bhakoot'].forEach(k => {
+        const item = ashtaKutas[k];
+        if (!item) return;
+        const flag = document.createElement('span');
+        flag.className = `match-dosha-flag ${item.dosha ? 'bad' : 'good'}`;
+        flag.textContent = `${item.name}: ${item.dosha ? '⚠ Dosha' : '✓ Clear'}`;
+        ashtaDoshaDiv.appendChild(flag);
+      });
+
+      // ---------- Dashakoota ----------
+      const dasha = data.dashakoota || {};
+      const dashaScore = dasha.score ?? data.total_score ?? 0;
+      const dashaMax = dasha.max ?? 36;
+      document.getElementById('match-total-score').textContent = dashaScore;
+
+      const verdictEl = document.getElementById('match-verdict');
+      const dashaCircle = document.getElementById('dasha-circle');
+
+      const dashaKutas = dasha.kutas || data.kutas || {};
+      const hasDashaDosha = dashaKutas.rajju?.dosha || dashaKutas.vedha?.dosha;
+      const dashaVerdict = getScoreVerdict(dashaScore, hasDashaDosha);
+      verdictEl.textContent = dashaVerdict.text;
+      verdictEl.style.color = dashaVerdict.color;
+      dashaCircle.style.color = dashaVerdict.color;
+
+      // Dashakoota table
+      const dashaTbody = document.getElementById('match-table-body');
+      dashaTbody.innerHTML = '';
+      const DASHA_ORDER = ['dina', 'gana', 'mahendra', 'stree_deergha', 'yoni', 'rasi', 'rasi_lord', 'vashya', 'rajju', 'vedha'];
+      DASHA_ORDER.forEach(k => {
+        const item = dashaKutas[k];
+        if (!item) return;
+        const pct = (item.max || 0) > 0 ? (item.score / item.max * 100) : 0;
+        const isDosha = item.dosha;
+        const status = item.status || (isDosha ? 'Dosha' : 'OK');
+        const statusColor = isDosha ? '#da3633'
+          : pct >= 100 ? '#2ea043'
+          : pct >= 67  ? '#3fb950'
+          : pct >= 34  ? '#d29922'
+          : pct > 0    ? '#d29922'
+          : '#da3633';
         const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="font-weight:600">${item.name || k.replace('_', ' ')}</td>
+          <td style="font-size:12px;color:var(--text-secondary)">${item.desc || ''}</td>
+          <td>
+            ${item.score} / ${item.max || '—'}
+            ${(item.max || 0) > 0 ? `<span class="match-kuta-bar-wrap"><span class="match-kuta-bar-fill" style="width:${pct}%;background:${statusColor}"></span></span>` : ''}
+          </td>
+          <td style="color:${statusColor};font-weight:600">${status}${isDosha ? ' ⚠' : ''}</td>
+        `;
+        dashaTbody.appendChild(tr);
+      });
 
-        // Title
-        const tdName = document.createElement('td');
-        tdName.textContent = k.charAt(0).toUpperCase() + k.slice(1).replace('_', ' ');
+      // Dashakoota dosha flags
+      const dashaDoshaDiv = document.getElementById('dasha-dosha-flags');
+      dashaDoshaDiv.innerHTML = '';
+      ['rajju', 'vedha'].forEach(k => {
+        const item = dashaKutas[k];
+        if (!item) return;
+        const flag = document.createElement('span');
+        flag.className = `match-dosha-flag ${item.dosha ? 'bad' : 'good'}`;
+        flag.textContent = `${item.name || k}: ${item.dosha ? '⚠ Dosha' : '✓ Clear'}`;
+        dashaDoshaDiv.appendChild(flag);
+      });
 
-        // Status
-        const tdStatus = document.createElement('td');
-        tdStatus.textContent = item.status || (item.dosha ? 'Dosha' : 'OK');
-        if (item.status === 'Bad' || item.dosha) tdStatus.style.color = '#da3633';
-        else if (item.status === 'Good' || item.status === 'Excellent' || item.status === 'Perfect') tdStatus.style.color = '#2ea043';
-
-        // Score / Max
-        const tdScore = document.createElement('td');
-        if (item.max !== undefined) {
-          tdScore.textContent = `${item.score} / ${item.max}`;
-        } else {
-          tdScore.textContent = '—';
-        }
-
-        // Obtained
-        const tdObtained = document.createElement('td');
-        tdObtained.textContent = item.dosha ? 'No' : 'Yes';
-        if (item.max > 0) {
-          tdObtained.textContent = item.score > 0 ? 'Yes' : 'No';
-        }
-
-        tr.appendChild(tdName);
-        tr.appendChild(tdStatus);
-        tr.appendChild(tdScore);
-        tr.appendChild(tdObtained);
-        tbody.appendChild(tr);
+      // Tab switching
+      document.querySelectorAll('.match-kuta-tab').forEach(btn => {
+        btn.onclick = () => {
+          document.querySelectorAll('.match-kuta-tab').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const tab = btn.dataset.tab;
+          document.getElementById('ashtakoota-panel').style.display = tab === 'ashtakoota' ? '' : 'none';
+          document.getElementById('dashakoota-panel').style.display = tab === 'dashakoota' ? '' : 'none';
+        };
       });
     }
 
@@ -7019,8 +7664,8 @@
       if ($ashtakavargaResults) $ashtakavargaResults.style.display = 'block';
       if ($strengthsEmptyState) $strengthsEmptyState.style.display = 'none';
       if ($strengthsResults) $strengthsResults.style.display = 'block';
-      if ($strengthsEmptyState) $strengthsEmptyState.style.display = 'none';
-      if ($strengthsResults) $strengthsResults.style.display = 'block';
+      if ($yogasEmptyState) $yogasEmptyState.style.display = 'none';
+      if ($yogasResults) $yogasResults.style.display = 'block';
 
       renderInfoBoxes();
       renderCharts();
@@ -7031,6 +7676,7 @@
       renderShadbalaTable();
       renderShadbalaBreakdown($shadbalaSthanaTable, chartData.shadbala_sthana || []);
       renderShadbalaBreakdown($shadbalaKalaTable, chartData.shadbala_kala || []);
+      renderShadbalaBreakdown($avasthaTable, chartData.avastha || []);
       renderShadbalaBreakdown($ishtaKashtaTable, chartData.ishta_kashta || []);
       renderShadbalaBreakdown($bhavaBalaTable, chartData.bhava_bala || []);
       renderAspectGrid();
@@ -7042,6 +7688,218 @@
       renderAshtakavarga();
       renderDashaTables();
       renderAyurdaya();
+
+      // Render new BPHS sections
+      renderYogas();
+      renderCharaKarakas();
+      renderArgala();
+      renderUpagrahas();
+      renderElementsGunas();
+    }
+
+    // ==================== BPHS NEW SECTIONS RENDERING ====================
+    function renderYogas() {
+      if (!chartData || !chartData.yogas) {
+        $yogasListContainer.innerHTML = '<p>No Yogas found or calculated.</p>';
+        $marakGrahasRows.innerHTML = '<tr><td colspan="4">No data</td></tr>';
+        return;
+      }
+
+      // 1. Render active Yogas
+      const yogas = chartData.yogas;
+      if (yogas.length === 0) {
+        $yogasListContainer.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: var(--text-secondary); padding: 20px;">No active yogas detected.</div>';
+      } else {
+        $yogasListContainer.innerHTML = yogas.map(y => {
+          const strengthClass = (y.strength || 'present').toLowerCase();
+          const badgeClass = `yoga-badge ${strengthClass}`;
+          const planetsHtml = (y.planets_involved || []).map(p => `<span class="planet-chip">${p}</span>`).join('');
+          return `
+            <div class="yoga-card">
+              <div class="yoga-header">
+                <div>
+                  <div class="yoga-title">${y.name}</div>
+                  <div class="yoga-category">${y.category}</div>
+                </div>
+                <span class="${badgeClass}">${y.strength || 'present'}</span>
+              </div>
+              <div class="yoga-desc">${y.description || ''}</div>
+              ${planetsHtml ? `<div class="yoga-planets">${planetsHtml}</div>` : ''}
+            </div>
+          `;
+        }).join('');
+      }
+
+      // 2. Render Marak Grahas
+      const maraks = chartData.marak_grahas || [];
+      if (maraks.length === 0) {
+        $marakGrahasRows.innerHTML = '<tr><td colspan="4" style="text-align: center; color: var(--text-secondary);">No Maraka planets detected.</td></tr>';
+      } else {
+        $marakGrahasRows.innerHTML = maraks.map(m => {
+          return `
+            <tr>
+              <td class="planet-name">${m.Planet}</td>
+              <td><span class="yoga-badge ${m.Type === 'Primary' ? 'strong' : (m.Type === 'Secondary' ? 'present' : 'weak')}">${m.Type}</span></td>
+              <td>${m.Reason}</td>
+              <td>${m['Placed In House'] != null ? `House ${m['Placed In House']}` : '—'}</td>
+            </tr>
+          `;
+        }).join('');
+      }
+    }
+
+    function renderCharaKarakas() {
+      if (!chartData || !chartData.chara_karakas) {
+        $charaKarakasRows.innerHTML = '<tr><td colspan="7">No Chara Karakas calculated.</td></tr>';
+        $karakamshaBadge.textContent = 'N/A';
+        return;
+      }
+
+      const ck = chartData.chara_karakas;
+      $charaKarakasRows.innerHTML = ck.map(item => {
+        return `
+          <tr>
+            <td>${item.Rank}</td>
+            <td style="font-weight: 600; color: var(--gold);">${item.Karaka}</td>
+            <td>${item['Full Name']}</td>
+            <td class="planet-name">${item.Planet}</td>
+            <td>${item['Intra-Sign Deg'] != null ? item['Intra-Sign Deg'].toFixed(4) + '°' : '—'}</td>
+            <td>${item.Sign || '—'}</td>
+            <td>${item.Navamsha || '—'}</td>
+          </tr>
+        `;
+      }).join('');
+
+      const karakamsha = chartData.karakamsha;
+      if (karakamsha && karakamsha.karakamsha_sign) {
+        $karakamshaBadge.textContent = `${karakamsha.karakamsha_sign} (AK: ${karakamsha.ak_planet})`;
+      } else {
+        $karakamshaBadge.textContent = 'N/A';
+      }
+    }
+
+    function renderArgala() {
+      if (!chartData || !chartData.argala) {
+        $argalaRows.innerHTML = '<tr><td colspan="4">No Argala data available.</td></tr>';
+        return;
+      }
+
+      const argala = chartData.argala;
+      $argalaRows.innerHTML = argala.map(item => {
+        const posParts = [];
+        if (item['Positive Argala (2nd)'] && item['Positive Argala (2nd)'] !== '—') posParts.push(`2nd: ${item['Positive Argala (2nd)']}`);
+        if (item['Positive Argala (4th)'] && item['Positive Argala (4th)'] !== '—') posParts.push(`4th: ${item['Positive Argala (4th)']}`);
+        if (item['Positive Argala (11th)'] && item['Positive Argala (11th)'] !== '—') posParts.push(`11th: ${item['Positive Argala (11th)']}`);
+        const posText = posParts.length > 0 ? posParts.join(' | ') : '—';
+
+        const virParts = [];
+        if (item['Virodha (12th)'] && item['Virodha (12th)'] !== '—') virParts.push(`12th: ${item['Virodha (12th)']}`);
+        if (item['Virodha (10th)'] && item['Virodha (10th)'] !== '—') virParts.push(`10th: ${item['Virodha (10th)']}`);
+        if (item['Virodha (3rd)'] && item['Virodha (3rd)'] !== '—') virParts.push(`3rd: ${item['Virodha (3rd)']}`);
+        const virText = virParts.length > 0 ? virParts.join(' | ') : '—';
+
+        return `
+          <tr>
+            <td class="planet-name" style="font-weight: 600;">${item.Reference}</td>
+            <td style="color: #10b981;">${posText}</td>
+            <td style="color: #ef4444;">${virText}</td>
+            <td style="font-weight: 500; color: var(--gold);">${item['Net Argala Active'] || '—'}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function renderUpagrahas() {
+      if (!chartData || !chartData.upagrahas) {
+        $upagrahasRows.innerHTML = '<tr><td colspan="6">No Upagrahas computed.</td></tr>';
+        return;
+      }
+
+      const upagrahas = chartData.upagrahas;
+      $upagrahasRows.innerHTML = upagrahas.map(u => {
+        return `
+          <tr>
+            <td style="font-weight: 600; color: var(--text-primary);">${u.Upagraha}</td>
+            <td><span class="yoga-badge ${u.Family === 'Sun-formula' ? 'present' : 'weak'}">${u.Family}</span></td>
+            <td>${u['Longitude (Sign DMS)'] || '—'}</td>
+            <td>${u.Sign || '—'}</td>
+            <td>${u.Nakshatra || '—'} ${u.Pada != null ? `(Pada ${u.Pada})` : ''}</td>
+            <td>${u.Navamsha || '—'}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function renderElementsGunas() {
+      if (!chartData || !chartData.elements_gunas) {
+        $elementsBarsContainer.innerHTML = '';
+        $gunasBarsContainer.innerHTML = '';
+        $elementsPlanetRows.innerHTML = '<tr><td colspan="6">No elements data available.</td></tr>';
+        return;
+      }
+
+      const eg = chartData.elements_gunas;
+      const elementCounts = eg.element_counts || {};
+      const gunaCounts = eg.guna_counts || {};
+      const dominantElement = eg.dominant_element || 'None';
+      const dominantGuna = eg.dominant_guna || 'None';
+
+      $dominantElementLbl.textContent = dominantElement;
+      $dominantGunaLbl.textContent = dominantGuna;
+
+      // Max count of elements can be 9
+      const maxCount = 9;
+
+      let elementsHtml = '';
+      for (const [el, count] of Object.entries(elementCounts)) {
+        const pct = (count / maxCount) * 100;
+        const elName = el.split(' ')[0]; // Agni, Prithvi, Vayu, Jala, Akasha
+        elementsHtml += `
+          <div class="bar-row">
+            <div class="bar-labels">
+              <span>${el}</span>
+              <span>${count} (${Math.round(pct)}%)</span>
+            </div>
+            <div class="bar-outer">
+              <div class="bar-inner ${elName}" style="width: ${pct}%;"></div>
+            </div>
+          </div>
+        `;
+      }
+      $elementsBarsContainer.innerHTML = elementsHtml;
+
+      // Gunas
+      let gunasHtml = '';
+      for (const [guna, count] of Object.entries(gunaCounts)) {
+        const pct = (count / maxCount) * 100;
+        gunasHtml += `
+          <div class="bar-row">
+            <div class="bar-labels">
+              <span>${guna}</span>
+              <span>${count} (${Math.round(pct)}%)</span>
+            </div>
+            <div class="bar-outer">
+              <div class="bar-inner ${guna}" style="width: ${pct}%;"></div>
+            </div>
+          </div>
+        `;
+      }
+      $gunasBarsContainer.innerHTML = gunasHtml;
+
+      // Planetary detail table
+      const perPlanet = eg.per_planet || [];
+      $elementsPlanetRows.innerHTML = perPlanet.map(item => {
+        return `
+          <tr>
+            <td class="planet-name" style="font-weight: 500;">${item.Planet}</td>
+            <td>${item['Planet Element']}</td>
+            <td>${item['Planet Guna']}</td>
+            <td>${item.Sign}</td>
+            <td>${item['Sign Element']}</td>
+            <td>${item['Sign Guna']}</td>
+          </tr>
+        `;
+      }).join('');
     }
 
     function renderInfoBoxes() {
@@ -7244,10 +8102,15 @@
             degStr = `${degMatch[1]}°${degMatch[2]}'`;
           }
 
+          const isOuter = ['Uranus', 'Neptune', 'Pluto'].includes(name);
+          const glyph = OUTER_PLANET_GLYPHS[name] || '';
+
           buckets[bhavaNum - 1].planets.push({
             abbr,
             retro: p.Retro,
-            deg: degStr
+            deg: degStr,
+            isOuter,
+            glyph
           });
         });
 
@@ -7301,10 +8164,15 @@
             degStr = `${degMatch[1]}°${degMatch[2]}'`;
           }
 
+          const isOuter = ['Uranus', 'Neptune', 'Pluto'].includes(name);
+          const glyph = OUTER_PLANET_GLYPHS[name] || '';
+
           buckets[houseNum - 1].planets.push({
             abbr,
             retro: p.Retro,
-            deg: degStr
+            deg: degStr,
+            isOuter,
+            glyph
           });
         });
 
@@ -7402,9 +8270,15 @@
 
           // Planets with degrees (stacked below)
           if (bucket.planets.length > 0) {
-            // Planet abbreviations line
-            const planetAbbrLine = bucket.planets.map(p => p.abbr + (p.retro ? 'ᴿ' : '')).join(' ');
-            svg += `<text x="${pos.x}" y="${pos.y + 16}" class="sudarshana-planet">${planetAbbrLine}</text>`;
+            // Planet abbreviations line with individual styling
+            svg += `<text x="${pos.x}" y="${pos.y + 16}" class="sudarshana-planet">`;
+            bucket.planets.forEach((p, idx) => {
+              const space = idx > 0 ? ' ' : '';
+              const fill = p.isOuter ? 'fill="#64748b"' : '';
+              const label = p.isOuter ? p.glyph : p.abbr;
+              svg += `<tspan ${fill}>${space}${label}${p.retro ? 'ᴿ' : ''}</tspan>`;
+            });
+            svg += `</text>`;
 
             // Planet degrees line
             const planetDegLine = bucket.planets.map(p => p.deg || '').filter(d => d).join(' ');
@@ -8136,11 +9010,16 @@
             dmsStr = formatDMS(parsed.deg, parsed.min, parsed.sec);
           }
 
+          const isOuter = ['Uranus', 'Neptune', 'Pluto'].includes(name);
+          const glyph = OUTER_PLANET_GLYPHS[name] || '';
+
           buckets[signIdx].planets.push({
             abbr: 'T-' + abbr,
             dmsStr,
             retro: p.Retro,
-            isTransit: true
+            isTransit: true,
+            isOuter,
+            glyph
           });
         }
 
@@ -8205,13 +9084,18 @@
             return formatDMSFromDec(degInSign);
           })();
 
+        const isOuter = ['Uranus', 'Neptune', 'Pluto'].includes(name);
+        const glyph = OUTER_PLANET_GLYPHS[name] || '';
+
         buckets[signIdx].planets.push({
           abbr,
           dmsStr,
           degNum: parsed ? parsed.total : (p['Longitude (Dec)'] % 30),
           retro,
           isAsc,
-          isMuntha
+          isMuntha,
+          isOuter,
+          glyph
         });
       });
 
@@ -8293,13 +9177,18 @@
           dmsStr = formatDMSFromDec(degInSign);
         }
 
+        const isOuter = ['Uranus', 'Neptune', 'Pluto'].includes(name);
+        const glyph = OUTER_PLANET_GLYPHS[name] || '';
+
         buckets[signIdx].planets.push({
           abbr,
           dmsStr,
           degNum: parsed ? parsed.total : (p['Longitude (Dec)'] % 30),
           retro,
           isAsc,
-          isMuntha
+          isMuntha,
+          isOuter,
+          glyph
         });
       });
 
@@ -8333,9 +9222,10 @@
           if (transitBuckets && transitBuckets[signIdx] && transitBuckets[signIdx].planets.length > 0) {
             transitHtml = `
           <div class="transit-planets">
-            ${transitBuckets[signIdx].planets.map(p =>
-              `<span class="transit-planet${p.retro ? ' retro' : ''}">${p.abbr}${p.retro ? '(R)' : ''} ${p.dmsStr || ''}</span>`
-            ).join('')}
+            ${transitBuckets[signIdx].planets.map(p => {
+              const label = p.isOuter ? p.glyph : p.abbr;
+              return `<span class="transit-planet${p.retro ? ' retro' : ''}${p.isOuter ? ' outer' : ''}">${label}${p.retro ? '(R)' : ''} ${p.dmsStr || ''}</span>`;
+            }).join('')}
           </div>
         `;
           }
@@ -8344,7 +9234,10 @@
         <span class="sign-abbr">${bucket.signAbbr}</span>
         <span class="house-num">${fixedSignNum}</span>
         <div class="planets">
-          ${bucket.planets.map(p => `<span class="planet${p.retro ? ' retro' : ''}${p.isAsc ? ' asc' : ''}${p.isMuntha ? ' muntha' : ''}">${p.abbr}${p.retro ? '(R)' : ''} ${p.dmsStr}</span>`).join('')}
+          ${bucket.planets.map(p => {
+            const label = p.isOuter ? p.glyph : p.abbr;
+            return `<span class="planet${p.retro ? ' retro' : ''}${p.isAsc ? ' asc' : ''}${p.isMuntha ? ' muntha' : ''}${p.isOuter ? ' outer' : ''}">${label}${p.retro ? '(R)' : ''} ${p.dmsStr}</span>`;
+          }).join('')}
         </div>
         ${transitHtml}
       `;
@@ -8420,18 +9313,20 @@
         houseDiv.style.width = isDiamond ? '28%' : (isCorner ? '22%' : '18%');
         houseDiv.style.maxHeight = isDiamond ? '26%' : '22%';
 
-        const planetsHtml = bucket.planets.map(p =>
-          `<div class="planet${p.retro ? ' retro' : ''}${p.isAsc ? ' asc' : ''}${p.isMuntha ? ' muntha' : ''}">${p.abbr}${p.retro ? '(R)' : ''} ${p.dmsStr}</div>`
-        ).join('');
+        const planetsHtml = bucket.planets.map(p => {
+          const label = p.isOuter ? p.glyph : p.abbr;
+          return `<div class="planet${p.retro ? ' retro' : ''}${p.isAsc ? ' asc' : ''}${p.isMuntha ? ' muntha' : ''}${p.isOuter ? ' outer' : ''}">${label}${p.retro ? '(R)' : ''} ${p.dmsStr}</div>`;
+        }).join('');
 
         // Transit planets for this sign
         let transitHtml = '';
         if (transitBuckets && transitBuckets[signIdx] && transitBuckets[signIdx].planets.length > 0) {
           transitHtml = `
         <div class="transit-planets">
-          ${transitBuckets[signIdx].planets.map(p =>
-            `<div class="transit-planet${p.retro ? ' retro' : ''}">${p.abbr}${p.retro ? '(R)' : ''} ${p.dmsStr || ''}</div>`
-          ).join('')}
+          ${transitBuckets[signIdx].planets.map(p => {
+            const label = p.isOuter ? p.glyph : p.abbr;
+            return `<div class="transit-planet${p.retro ? ' retro' : ''}${p.isOuter ? ' outer' : ''}">${label}${p.retro ? '(R)' : ''} ${p.dmsStr || ''}</div>`;
+          }).join('')}
         </div>
       `;
         }
@@ -9660,14 +10555,9 @@
       if (yogNav) yogNav.style.display = system === 'yogini' ? 'flex' : 'none';
 
       // Manage Wrapper Visibility
-      // Vimshottari and Yogini have specialized interactive tables (kept for backward compatibility/features)
       const vimWrapper = document.getElementById('vimshottari-wrapper');
       const yogWrapper = document.getElementById('yogini-wrapper');
       const mainWrapper = document.getElementById('main-dasa-table-wrapper');
-      // Varnada has a wrapper but we can render it in main or use its specific one.
-      // Existing code populates #varnada-table in #varnada-wrapper.
-      // Let's use the main table for consistency for purely flat tables,
-      // BUT for now, let's stick to using wrappers if they exist to avoid double-rendering issues.
       const varnadaWrapper = document.getElementById('varnada-wrapper');
 
       if (vimWrapper) vimWrapper.style.display = 'none';
@@ -9680,12 +10570,126 @@
       } else if (system === 'yogini') {
         if (yogWrapper) yogWrapper.style.display = 'block';
       } else if (system === 'varnada') {
-        // Use the legacy varnada wrapper since renderDashaTables populates it nicely
         if (varnadaWrapper) varnadaWrapper.style.display = 'block';
       } else {
-        // For everything else, use the main generic table
         if (mainWrapper) mainWrapper.style.display = 'block';
         renderSelectedDasaTable(system);
+      }
+
+      // Auto expand active current period
+      autoExpandCurrentPeriodForSystem(system);
+    }
+
+    function getGenericDasaData(system) {
+      if (!chartData) return [];
+      return chartData[system] || [];
+    }
+
+    function autoExpandCurrentPeriodForSystem(system) {
+      if (!chartData) return;
+      const now = new Date();
+
+      if (system === 'vimshottari') {
+        const vim = chartData.vimshottari_md || [];
+        let currentMdIdx = -1;
+        vim.forEach((row, idx) => {
+          const start = row['Start (local)'] || row['Start'];
+          const end = row['End (local)'] || row['End'];
+          const startDate = parseDateFlexible(start);
+          const endDate = parseDateFlexible(end);
+          if (isValidDate(startDate) && isValidDate(endDate) && now >= startDate && now <= endDate) {
+            currentMdIdx = idx;
+          }
+        });
+        if (currentMdIdx >= 0) {
+          autoExpandCurrentMahadasha(currentMdIdx);
+        }
+      } else if (system === 'yogini') {
+        const yog = chartData.yogini || [];
+        let currentYogIdx = -1;
+        yog.forEach((row, idx) => {
+          const start = row['Start (local)'] || row['Start'];
+          const end = row['End (local)'] || row['End'];
+          if (start && end) {
+            const startDate = parseDateFlexible(start);
+            const endDate = parseDateFlexible(end);
+            if (isValidDate(startDate) && isValidDate(endDate) && now >= startDate && now <= endDate) {
+              currentYogIdx = idx;
+            }
+          }
+        });
+        if (currentYogIdx >= 0) {
+          autoExpandCurrentYoginiMahadasha(currentYogIdx);
+        }
+      } else if (system !== 'varnada') {
+        const data = getGenericDasaData(system);
+        if (data && data.length) {
+          let currentIdx = -1;
+          data.forEach((row, idx) => {
+            const start = row['Start (local)'] || row['Start'];
+            const end = row['End (local)'] || row['End'];
+            const startDate = start ? parseDateFlexible(start) : null;
+            const endDate = end ? parseDateFlexible(end) : null;
+            if (isValidDate(startDate) && isValidDate(endDate) && now >= startDate && now <= endDate) {
+              currentIdx = idx;
+            }
+          });
+          if (currentIdx >= 0) {
+            autoExpandGenericMahadasha(system, currentIdx);
+          }
+        }
+      }
+    }
+
+    async function autoExpandGenericMahadasha(system, idx) {
+      const row = document.getElementById(`dasa-row-${system}-${idx}`);
+      const childRow = document.getElementById(`dasa-child-${system}-${idx}`);
+      const container = document.getElementById(`dasa-child-container-${system}-${idx}`);
+      if (!row || !childRow || !container) return;
+
+      if (!row.classList.contains('expanded')) {
+        row.classList.add('expanded');
+        const arrow = row.querySelector('.dasa-arrow');
+        if (arrow) arrow.innerText = '▼';
+        childRow.style.display = 'table-row';
+      }
+
+      container.innerHTML = '<div style="padding: 10px; color: var(--text-secondary);">Loading sub-periods...</div>';
+      const lord = row.dataset.lord;
+      const start = row.dataset.start;
+      const duration = parseFloat(row.dataset.duration);
+
+      try {
+        const data = await fetchGenericSubPeriods(system, lord, start, duration);
+        renderGenericSubTableAutoExpand(container, system, idx, data, 'AD');
+      } catch (e) {
+        container.innerHTML = `<div style="color: var(--danger);">Error: ${e.message}</div>`;
+      }
+    }
+
+    async function autoExpandGenericAntardasha(system, parentIdx, childIdx) {
+      const row = document.getElementById(`dasa-sub-row-${system}-${parentIdx}-${childIdx}`);
+      const childRow = document.getElementById(`dasa-sub-child-${system}-${parentIdx}-${childIdx}`);
+      const container = document.getElementById(`dasa-sub-child-container-${system}-${parentIdx}-${childIdx}`);
+      if (!row || !childRow || !container) return;
+
+      if (!row.classList.contains('expanded')) {
+        row.classList.add('expanded');
+        const arrow = row.querySelector('.dasa-arrow');
+        if (arrow) arrow.innerText = '▼';
+        childRow.style.display = 'table-row';
+      }
+
+      container.innerHTML = '<div style="padding: 10px; color: var(--text-secondary);">Loading...</div>';
+      const lord = row.dataset.lord;
+      const start = row.dataset.start;
+      const duration = parseFloat(row.dataset.duration);
+
+      try {
+        const data = await fetchGenericSubPeriods(system, lord, start, duration);
+        renderGenericSubTableAutoExpand(container, system, `${parentIdx}-${childIdx}`, data, 'PD');
+      } catch (e) {
+        container.innerHTML = `<div style="color: var(--danger);">Error: ${e.message}</div>`;
       }
     }
 
@@ -9860,6 +10864,89 @@
 
       html += '</tbody></table>';
       container.innerHTML = html;
+    }
+
+    function renderGenericSubTableAutoExpand(container, system, parentId, data, level) {
+      if (!data.length) {
+        container.innerHTML = '<div style="padding: 10px;">No sub-periods found.</div>';
+        return;
+      }
+
+      const points = chartData.points || [];
+      const now = new Date();
+      let currentAdIdx = -1;
+
+      // Find current Antardasha
+      data.forEach((row, idx) => {
+        const startDate = parseDateFlexible(row.Start);
+        const endDate = parseDateFlexible(row.End);
+        if (isValidDate(startDate) && isValidDate(endDate) && now >= startDate && now <= endDate) {
+          currentAdIdx = idx;
+        }
+      });
+
+      let html = `
+         <table class="data-table" style="margin: 10px 0; width: 95%; margin-left: auto; border: 1px solid var(--border);">
+           <thead>
+             <tr>
+               <th>${level === 'AD' ? 'Antardaśā' : 'Pratyantardaśā'}</th>
+               <th>Start</th>
+               <th>End</th>
+               <th>Duration</th>
+             </tr>
+           </thead>
+           <tbody>
+       `;
+
+      data.forEach((row, idx) => {
+        const lord = row.Lord;
+        const start = row.Start;
+        const end = row.End;
+        const duration = row['Duration (years)'];
+
+        let lordDisplay = lord;
+        if (points[lord]) {
+          lordDisplay = formatPlanetWithRetro(lord, points);
+        } else {
+          lordDisplay = lord;
+        }
+
+        const isCurrent = idx === currentAdIdx;
+        const rowStyle = isCurrent ? 'background: var(--accent-soft);' : '';
+        const isClickable = level === 'AD';
+        const rowId = `dasa-sub-row-${system}-${parentId}-${idx}`;
+        const clickAttr = isClickable ? `onclick="toggleGenericAntardasha('${system}', '${parentId}', ${idx})"` : '';
+        const classAttr = isClickable ? 'class="dasha-row-clickable"' : '';
+        const arrowHtml = isClickable ? `<span class="dasa-arrow">${isCurrent ? '▼' : '►'}</span> ` : '';
+
+        html += `
+            <tr id="${rowId}" ${classAttr} ${clickAttr} style="${rowStyle}"
+                data-lord="${lord}" data-start="${start}" data-duration="${duration}">
+              <td>${arrowHtml}${lordDisplay}${isCurrent ? ' ★' : ''}</td>
+              <td>${formatDashaDate(start)}</td>
+              <td>${formatDashaDate(end)}</td>
+              <td>${duration.toFixed(4)} yrs</td>
+            </tr>
+          `;
+
+        if (isClickable) {
+          html += `
+               <tr id="dasa-sub-child-${system}-${parentId}-${idx}" style="${isCurrent ? '' : 'display: none;'}">
+                 <td colspan="4" style="padding: 0;">
+                   <div id="dasa-sub-child-container-${system}-${parentId}-${idx}" class="subdasha-container${isCurrent ? ' visible' : ''}"></div>
+                 </td>
+               </tr>
+             `;
+        }
+      });
+
+      html += '</tbody></table>';
+      container.innerHTML = html;
+
+      // Auto-expand current Antardasha if level is 'AD'
+      if (level === 'AD' && currentAdIdx >= 0) {
+        setTimeout(() => autoExpandGenericAntardasha(system, parentId, currentAdIdx), 100);
+      }
     }
 
     function renderSelectedDasaTable(system) {
@@ -12278,12 +13365,16 @@
     }
 
     // Helper: Get visible half deduction factor (BPHS 43.10-11)
+    // BPHS text: "Full, half, one third, one fourth, one fifth and one sixth"
+    // applied to malefics in houses 7 through 12 (7th = Full, down to 12th = 1/6)
     function getVisibleHalfDeduction(houseNum, isBenefic) {
       if (houseNum < 7 || houseNum > 12) return 0;
 
+      // BPHS: "Full, half, one third, one fourth, one fifth and one sixth"
+      // counted from the 12th backwards: H12=1.0 (Full), H11=0.5 (1/2), H10=1/3, H9=1/4, H8=1/5, H7=1/6
       const maleficFactors = {
-        12: 1.0,   // Full
-        11: 0.5,   // 1/2
+        12: 1.0,     // Full
+        11: 0.5,     // 1/2
         10: 1 / 3,   // 1/3
         9: 1 / 4,    // 1/4
         8: 1 / 5,    // 1/5
@@ -12291,6 +13382,7 @@
       };
 
       const factor = maleficFactors[houseNum];
+      // Benefics lose only half of what malefics lose (BPHS 43.10)
       return isBenefic ? factor / 2 : factor;
     }
 
@@ -12401,10 +13493,8 @@
         if (isCombustPlanet && planet !== 'Venus' && planet !== 'Saturn') {
           yearsAfterCombustInimical *= 0.5;
           steps.push(`Combust: halved to ${round(yearsAfterCombustInimical, 2)}`);
-        }
-
-        // If in inimical sign AND not retrograde, reduce by one third (keep 2/3)
-        if (inInimicalSign && !isRetro) {
+        } else if (inInimicalSign && !isRetro) {
+          // If both halving and reducing a third are required, only halving is done (BPHS 43.22)
           yearsAfterCombustInimical *= (2 / 3);
           steps.push(`Inimical sign (not retro): reduced to 2/3 = ${round(yearsAfterCombustInimical, 2)}`);
         }
@@ -12573,10 +13663,12 @@
         const ownNavamsha = planetPoint.OwnNavamsha || false;
         const ownDrekkana = planetPoint.OwnDrekkana || false;
 
-        // Step 1: Raw Aṅśāyu from longitude (BPHS 43.18-19)
-        const r = longitude / 30; // Rāśi units
-        const productRasi = r * 108;
-        const reducedRasi = normRasi(productRasi);
+        // Step 1: Raw Aṃśāyu from longitude (BPHS 43.18-19)
+        // "Multiply the longitude [in Rāśi] by 108. If product exceeds 12, expunge multiples of 12."
+        // Longitude in Rāśi (0-12 range). Result in Rāśi units = years.
+        // Equivalent: navamsha_number = lon_degrees * 108 / 360; years = navamsha_number % 12
+        const navamshaNum = longitude * 108 / 360; // 0-108 range
+        const reducedRasi = navamshaNum % 12;       // expunge multiples of 12
         let rawAmshayuYears = reducedRasi;
 
         // Step 2: Apply reductions (BPHS 43.20-22)
@@ -12623,12 +13715,10 @@
         });
       });
 
-      // Lagna's Amshayu (optional, but included)
+      // Lagna's Amshayu (same formula as planets, BPHS 43.18-19)
       if (ascPoint) {
-        const r = ascLongitude / 30;
-        const productRasi = r * 108;
-        const reducedRasi = normRasi(productRasi);
-        const lagnaAmshayu = reducedRasi;
+        const lagnaNavamshaNum = ascLongitude * 108 / 360;
+        const lagnaAmshayu = lagnaNavamshaNum % 12;
 
         contributions.push({
           planet: 'Lagna',
@@ -12842,9 +13932,9 @@
       // Check if Saturn is among contributors and adjust class
       const saturnIsContributor = contributors.some(c => c.name === 'Saturn');
       if (saturnIsContributor && saturnPoint) {
-        // Check if Saturn is in own sign or exalted (simplified check)
-        const saturnOwnSigns = [0, 7]; // Aries, Scorpio (simplified)
-        const saturnExaltSign = 6; // Libra (simplified)
+        // Saturn own signs: Capricorn (idx=9), Aquarius (idx=10); exaltation: Libra (idx=6)
+        const saturnOwnSigns = [9, 10]; // Capricorn, Aquarius
+        const saturnExaltSign = 6; // Libra
         const saturnInOwnOrExalt = saturnOwnSigns.includes(saturnSignIdx) || saturnSignIdx === saturnExaltSign;
 
         if (!saturnInOwnOrExalt) {
@@ -12907,7 +13997,55 @@
       return Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals);
     }
 
-    // Render Ayurdaya results
+    // BPHS 43.30-32: Determine which method is recommended
+    // Lagna strongest → Aṃśāyu; Sun strongest → Pindāyu; Moon strongest → Niṣargāyu
+    function getBPHSRecommendedMethod(chartData) {
+      if (!chartData) return null;
+
+      // Use Shadbala total if available
+      const shadbala = chartData.shadbala || [];
+      const getStrength = (name) => {
+        const row = shadbala.find(s => s.Planet === name);
+        return row ? parseFloat(row['Total (Rupa)'] || 0) : 0;
+      };
+
+      const sunStr  = getStrength('Sun');
+      const moonStr = getStrength('Moon');
+
+      // Lagna strength: use Bhava Bala if available, else approximate via occupants
+      let lagnaStr = 0;
+      if (chartData.bhava_bala && chartData.bhava_bala.length > 0) {
+        const h1 = chartData.bhava_bala.find(b => b.House === 1 || b.Bhava === 1);
+        lagnaStr = h1 ? parseFloat(h1['Total'] || h1['Bhava Bala'] || 0) : 0;
+      }
+      // Fallback: use Lagna lord's shadbala as proxy
+      if (lagnaStr === 0) {
+        const points = chartData.points || [];
+        const asc = points.find(p => p.Point?.includes('Ascendant'));
+        if (asc) {
+          const lagnaLord = SIGN_LORDS[asc.Rashi_Idx || 0];
+          lagnaStr = getStrength(lagnaLord);
+        }
+      }
+
+      const max = Math.max(lagnaStr, sunStr, moonStr);
+      if (max === 0) return null; // no shadbala data
+
+      // Tie-break per BPHS 43.32: if two equal, average both; if all equal, average three
+      const eps = 0.001;
+      const lEq = Math.abs(lagnaStr - max) < eps;
+      const sEq = Math.abs(sunStr  - max) < eps;
+      const mEq = Math.abs(moonStr - max) < eps;
+      const count = [lEq, sEq, mEq].filter(Boolean).length;
+
+      if (count === 3) return { method: 'all', label: 'Average of all three (Lagna = Sun = Moon)' };
+      if (lEq && sEq) return { method: 'amsayu+pindayu', label: 'Average of Aṃśāyu + Pindāyu (Lagna = Sun)' };
+      if (lEq && mEq) return { method: 'amsayu+nisargayu', label: 'Average of Aṃśāyu + Niṣargāyu (Lagna = Moon)' };
+      if (sEq && mEq) return { method: 'pindayu+nisargayu', label: 'Average of Pindāyu + Niṣargāyu (Sun = Moon)' };
+      if (lEq) return { method: 'amsayu',   label: 'Aṃśāyurdaya (Lagna is strongest)' };
+      if (sEq) return { method: 'pindayu',  label: 'Pindāyurdaya (Sun is strongest)' };
+      return         { method: 'nisargayu', label: 'Niṣargāyurdaya (Moon is strongest)' };
+    }
     function renderAyurdaya() {
       if (!chartData || !chartData.points) {
         if ($ayurdayaEmptyState) $ayurdayaEmptyState.style.display = 'flex';
@@ -12924,9 +14062,10 @@
       const amsayu = calculateAmsayu(chartData);
       const jaimini = classifyJaiminiAyurdaya(chartData);
       const ashtakavargaLongevity = chartData.ashtakavarga ? chartData.ashtakavarga.longevity : null;
+      const recMethod = getBPHSRecommendedMethod(chartData);
 
       // Render summary
-      renderAyurdayaSummary(pindayu, amsayu, nisargayu, jaimini, ashtakavargaLongevity);
+      renderAyurdayaSummary(pindayu, amsayu, nisargayu, jaimini, ashtakavargaLongevity, recMethod);
 
       // Render method sections
       renderPindayuSection(pindayu);
@@ -12938,7 +14077,7 @@
       setupAyurdayaMethodTabs();
     }
 
-    function renderAyurdayaSummary(pindayu, amsayu, nisargayu, jaimini, ashtakavargaLongevity) {
+    function renderAyurdayaSummary(pindayu, amsayu, nisargayu, jaimini, ashtakavargaLongevity, recMethod) {
       const summaryEl = document.getElementById('ayurdaya-summary');
       if (!summaryEl) return;
 
@@ -12948,7 +14087,47 @@
       const jaiminiYears = jaimini ? `${jaimini.rectifiedYearsInt} years${jaimini.rectifiedMonths > 0 ? ` ${jaimini.rectifiedMonths} months` : ''}` : '—';
       const avYears = (ashtakavargaLongevity !== null && ashtakavargaLongevity !== undefined) ? `${ashtakavargaLongevity.toFixed(1)} years` : '—';
 
+      let recHtml = '';
+      if (recMethod) {
+        let recTotal = null;
+        if (recMethod.method === 'all') {
+          recTotal = (pindayu.total + amsayu.total + 120) / 3;
+        } else if (recMethod.method === 'amsayu+pindayu') {
+          recTotal = (amsayu.total + pindayu.total) / 2;
+        } else if (recMethod.method === 'amsayu+nisargayu') {
+          recTotal = (amsayu.total + 120) / 2;
+        } else if (recMethod.method === 'pindayu+nisargayu') {
+          recTotal = (pindayu.total + 120) / 2;
+        } else if (recMethod.method === 'amsayu') {
+          recTotal = amsayu.total;
+        } else if (recMethod.method === 'pindayu') {
+          recTotal = pindayu.total;
+        } else if (recMethod.method === 'nisargayu') {
+          recTotal = 120;
+        }
+
+        let recYearsStr = '—';
+        if (recTotal !== null) {
+          const yearsInt = Math.floor(recTotal);
+          const monthsInt = Math.round((recTotal - yearsInt) * 12);
+          recYearsStr = `${yearsInt} years${monthsInt > 0 ? ` ${monthsInt} months` : ''}`;
+        }
+
+        recHtml = `
+          <div class="ayurdaya-summary-item recommended" style="grid-column: 1 / -1; background: rgba(var(--accent-rgb), 0.08); border-color: var(--accent); display: flex; align-items: center; justify-content: space-between; text-align: left; padding: 16px 24px; margin-bottom: 8px;">
+            <div>
+              <div class="label" style="margin-bottom: 4px; color: var(--accent); font-weight: 600; font-size: 11px;">BPHS Recommended Method (43.30-32)</div>
+              <div style="font-size: 16px; font-weight: 600; color: var(--text-primary);">${recMethod.label}</div>
+            </div>
+            <div class="value" style="font-size: 28px; font-weight: 800; color: var(--accent);">
+              ${recYearsStr}
+            </div>
+          </div>
+        `;
+      }
+
       summaryEl.innerHTML = `
+        ${recHtml}
         <div class="ayurdaya-summary-item">
           <div class="label">Pindāyurdaya</div>
           <div class="value">${pindayuYears}</div>
@@ -12966,17 +14145,10 @@
           <div class="value">${avYears}</div>
         </div>
         <div class="ayurdaya-summary-item">
-          <div class="label">Threefold Method (Jaimini)</div>
+          <div class="label">Threefold Classification (Pārāśarī)</div>
           <div class="value">${jaiminiYears} (${jaiminiClass})</div>
         </div>
-        <div class="ayurdaya-summary-item" style="border-top: 1px solid var(--border); margin-top: 8px; padding-top: 8px;">
-          <div class="label">Kālacakra (Param Ayu)</div>
-          <div class="value">${(chartData.kalachakra_ayurdaya || 0).toFixed(2)} years</div>
-        </div>
-        <div class="ayurdaya-summary-item">
-          <div class="label">Kālacakra (Balance)</div>
-          <div class="value">${(chartData.kalachakra_remaining || 0).toFixed(2)} years</div>
-        </div>
+
       `;
     }
 

@@ -331,11 +331,19 @@ def chart(
         "pushkara_table": dfrec(res.get("pushkara_table", [])),
         "panchanga": dfrec(res["panchanga"]),
         "vargas": res.get("vargas", {}),
+        "avastha": dfrec(res.get("avastha", [])),
         "ashtakavarga": {
             "bav": ashtakavarga["bav"],
             "sav": ashtakavarga["sav"],
             "longevity": ashtakavarga_longevity,
         },
+        "chara_karakas": res.get("chara_karakas", []),
+        "karakamsha": res.get("karakamsha", {}),
+        "yogas": res.get("yogas", []),
+        "marak_grahas": res.get("marak_grahas", []),
+        "upagrahas": res.get("upagrahas", []),
+        "argala": res.get("argala", []),
+        "elements_gunas": res.get("elements_gunas", {}),
     }
     return JSONResponse(content=jsonable_encoder(payload))
 

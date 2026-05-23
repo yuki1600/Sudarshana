@@ -12,6 +12,20 @@ A comprehensive Vedic Astrology calculation engine and visualization platform.
 - **Mundane Astrology**: Tools for ingress charts and planetary phenomena.
 - **Dasa Systems**: Vimshottari Dasa calculation and visualization.
 
+## Project layout (Jyotisha modules)
+
+Calculations are grouped by **functional category** under `src/jyotisha/`:
+
+| Category | Folder | Examples |
+|----------|--------|----------|
+| Identity / Nature | `identity/` | vargas, astrocartography |
+| Strength / Intensity | `strength/` | shadbala (in pipeline until extracted) |
+| State / Readiness | `state/` | avastha (planned) |
+| Timing / Activation | `timing/` | dasha, transits, ashtakavarga, mundane |
+| Relational / Effect | `relational/` | match (kutas), aspects (in pipeline) |
+
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the full hierarchy and component registry.
+
 ## Tech Stack
 
 - **Backend**: Python, FastAPI
