@@ -10306,29 +10306,48 @@
       const mdStart = row.dataset.start;
       const mdEnd = row.dataset.end;
       const mdDurationYears = parseFloat(row.dataset.duration);
+      const subdasha = document.getElementById(`md-subdasha-${mdIdx}`);
+      const container = document.getElementById(`ad-container-${mdIdx}`);
+
+      // Ensure row is marked as expanded and subdasha is visible
+      if (!row.classList.contains('expanded')) {
+        row.classList.add('expanded');
+        // Update arrow icon
+        const firstCell = row.querySelector('td');
+        if (firstCell && !firstCell.textContent.includes('▼')) {
+          firstCell.textContent = firstCell.textContent.replace('►', '▼');
+        }
+      }
+      if (subdasha) {
+        subdasha.style.display = 'table-row';
+      }
+      if (container) {
+        container.classList.add('visible');
+      }
 
       // Update navigation
       currentDashaState.vimshottari.md = { lord: mdLord, start: mdStart, end: mdEnd, duration: mdDurationYears };
       updateDashaNav();
 
-      const container = document.getElementById(`ad-container-${mdIdx}`);
-      container.innerHTML = '<p style="padding: 10px; color: var(--text-secondary);">Loading Antardaśā...</p>';
+      if (container) {
+        container.innerHTML = '<p style="padding: 10px; color: var(--text-secondary);">Loading Antardaśā...</p>';
 
-      try {
-        const url = new URL('/dasha/antardasha', window.location.origin);
-        url.searchParams.set('md_lord', mdLord);
-        url.searchParams.set('md_start', mdStart);
-        url.searchParams.set('md_duration_years', mdDurationYears);
+        try {
+          const url = new URL('/dasha/antardasha', window.location.origin);
+          url.searchParams.set('md_lord', mdLord);
+          url.searchParams.set('md_start', mdStart);
+          url.searchParams.set('md_duration_years', mdDurationYears);
 
-        const resp = await fetch(url);
-        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-        const data = await resp.json();
+          const resp = await fetch(url);
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+          const data = await resp.json();
 
-        if (data.antardasha && data.antardasha.length > 0) {
-          renderAntardashaTableAutoExpand(container, data.antardasha, mdIdx);
+          if (data.antardasha && data.antardasha.length > 0) {
+            renderAntardashaTableAutoExpand(container, data.antardasha, mdIdx);
+          }
+        } catch (e) {
+          container.innerHTML = `<p style="padding: 10px; color: var(--danger);">Error: ${e.message}</p>`;
         }
-      } catch (e) {
-        container.innerHTML = `<p style="padding: 10px; color: var(--danger);">Error: ${e.message}</p>`;
       }
     }
 
@@ -10370,6 +10389,7 @@
         const endDate = parseDateFlexible(ad.End);
         const isCurrent = isValidDate(startDate) && isValidDate(endDate) && now >= startDate && now <= endDate;
         const rowStyle = isCurrent ? 'background: var(--accent-soft);' : '';
+        const arrowIcon = isCurrent ? '▼' : '►';
 
         return `
             <tr class="subdasha-row-clickable${isCurrent ? ' expanded' : ''}" id="ad-row-${mdIdx}-${idx}" style="${rowStyle}"
@@ -10379,7 +10399,7 @@
                 data-end="${ad.End}"
                 data-duration="${ad['Duration (days)']}"
                 onclick="toggleAntardasha(${mdIdx}, ${idx})">
-              <td>${lordDisplay}${isCurrent ? ' ★' : ''}</td>
+              <td>${arrowIcon} ${lordDisplay}${isCurrent ? ' ★' : ''}</td>
               <td>${formatDashaDate(ad.Start)}</td>
               <td>${formatDashaDate(ad.End)}</td>
               <td>${Math.round(ad['Duration (days)'])}</td>
@@ -10411,30 +10431,49 @@
       const adStart = row.dataset.start;
       const adEnd = row.dataset.end;
       const adDurationDays = parseFloat(row.dataset.duration);
+      const prad = document.getElementById(`ad-prad-${mdIdx}-${adIdx}`);
+      const container = document.getElementById(`prad-container-${mdIdx}-${adIdx}`);
+
+      // Ensure row is marked as expanded and Pratyantardasha row is visible
+      if (!row.classList.contains('expanded')) {
+        row.classList.add('expanded');
+        // Update arrow icon
+        const firstCell = row.querySelector('td');
+        if (firstCell && !firstCell.textContent.includes('▼')) {
+          firstCell.textContent = firstCell.textContent.replace('►', '▼');
+        }
+      }
+      if (prad) {
+        prad.style.display = 'table-row';
+      }
+      if (container) {
+        container.classList.add('visible');
+      }
 
       // Update navigation
       currentDashaState.vimshottari.ad = { lord: adLord, start: adStart, end: adEnd, duration: adDurationDays };
       updateDashaNav();
 
-      const container = document.getElementById(`prad-container-${mdIdx}-${adIdx}`);
-      container.innerHTML = '<p style="padding: 6px; color: var(--text-secondary); font-size: 11px;">Loading Pratyantardaśā...</p>';
+      if (container) {
+        container.innerHTML = '<p style="padding: 6px; color: var(--text-secondary); font-size: 11px;">Loading Pratyantardaśā...</p>';
 
-      try {
-        const url = new URL('/dasha/pratyantardasha', window.location.origin);
-        url.searchParams.set('md_lord', mdLord);
-        url.searchParams.set('ad_lord', adLord);
-        url.searchParams.set('ad_start', adStart);
-        url.searchParams.set('ad_duration_days', adDurationDays);
+        try {
+          const url = new URL('/dasha/pratyantardasha', window.location.origin);
+          url.searchParams.set('md_lord', mdLord);
+          url.searchParams.set('ad_lord', adLord);
+          url.searchParams.set('ad_start', adStart);
+          url.searchParams.set('ad_duration_days', adDurationDays);
 
-        const resp = await fetch(url);
-        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-        const data = await resp.json();
+          const resp = await fetch(url);
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+          const data = await resp.json();
 
-        if (data.pratyantardasha && data.pratyantardasha.length > 0) {
-          renderPratyantardashaTable(container, data.pratyantardasha);
+          if (data.pratyantardasha && data.pratyantardasha.length > 0) {
+            renderPratyantardashaTable(container, data.pratyantardasha);
+          }
+        } catch (e) {
+          container.innerHTML = `<p style="padding: 6px; color: var(--danger); font-size: 11px;">Error: ${e.message}</p>`;
         }
-      } catch (e) {
-        container.innerHTML = `<p style="padding: 6px; color: var(--danger); font-size: 11px;">Error: ${e.message}</p>`;
       }
     }
 
@@ -10461,6 +10500,11 @@
       document.querySelectorAll('.dasha-row-clickable.expanded').forEach(r => {
         if (r.id !== `md-row-${idx}`) {
           r.classList.remove('expanded');
+          // Update arrow icon
+          const firstCell = r.querySelector('td');
+          if (firstCell) {
+            firstCell.textContent = firstCell.textContent.replace('▼', '►');
+          }
           const id = r.id.replace('md-row-', '');
           document.getElementById(`md-subdasha-${id}`).style.display = 'none';
         }
@@ -10469,12 +10513,22 @@
       if (row.classList.contains('expanded')) {
         // Collapse
         row.classList.remove('expanded');
+        // Update arrow icon
+        const firstCell = row.querySelector('td');
+        if (firstCell) {
+          firstCell.textContent = firstCell.textContent.replace('▼', '►');
+        }
         subdasha.style.display = 'none';
         currentDashaState.vimshottari = { md: null, ad: null, pd: null };
         updateDashaNav();
       } else {
         // Expand - fetch Antardasha data
         row.classList.add('expanded');
+        // Update arrow icon
+        const firstCell = row.querySelector('td');
+        if (firstCell) {
+          firstCell.textContent = firstCell.textContent.replace('►', '▼');
+        }
         subdasha.style.display = 'table-row';
         container.classList.add('visible');
         container.innerHTML = '<p style="padding: 10px; color: var(--text-secondary);">Loading Antardaśā...</p>';
@@ -10533,6 +10587,7 @@
         const endDate = parseDateFlexible(ad.End);
         const isCurrent = isValidDate(startDate) && isValidDate(endDate) && now >= startDate && now <= endDate;
         const rowStyle = isCurrent ? 'background: var(--accent-soft);' : '';
+        const arrowIcon = '►';
 
         return `
             <tr class="subdasha-row-clickable" id="ad-row-${mdIdx}-${idx}" style="${rowStyle}"
@@ -10542,7 +10597,7 @@
                 data-end="${ad.End}"
                 data-duration="${ad['Duration (days)']}"
                 onclick="toggleAntardasha(${mdIdx}, ${idx})">
-              <td>${lordDisplay}${isCurrent ? ' ★' : ''}</td>
+              <td>${arrowIcon} ${lordDisplay}${isCurrent ? ' ★' : ''}</td>
               <td>${formatDashaDate(ad.Start)}</td>
               <td>${formatDashaDate(ad.End)}</td>
               <td>${Math.round(ad['Duration (days)'])}</td>
@@ -10573,6 +10628,11 @@
       document.querySelectorAll(`[id^="ad-row-${mdIdx}-"].expanded`).forEach(r => {
         if (r.id !== `ad-row-${mdIdx}-${adIdx}`) {
           r.classList.remove('expanded');
+          // Update arrow icon
+          const firstCell = r.querySelector('td');
+          if (firstCell) {
+            firstCell.textContent = firstCell.textContent.replace('▼', '►');
+          }
           const id = r.id.replace(`ad-row-${mdIdx}-`, '');
           document.getElementById(`ad-prad-${mdIdx}-${id}`).style.display = 'none';
         }
@@ -10581,6 +10641,11 @@
       if (row.classList.contains('expanded')) {
         // Collapse
         row.classList.remove('expanded');
+        // Update arrow icon
+        const firstCell = row.querySelector('td');
+        if (firstCell) {
+          firstCell.textContent = firstCell.textContent.replace('▼', '►');
+        }
         prad.style.display = 'none';
         currentDashaState.vimshottari.ad = null;
         currentDashaState.vimshottari.pd = null;
@@ -10588,6 +10653,11 @@
       } else {
         // Expand - fetch Pratyantardasha data
         row.classList.add('expanded');
+        // Update arrow icon
+        const firstCell = row.querySelector('td');
+        if (firstCell) {
+          firstCell.textContent = firstCell.textContent.replace('►', '▼');
+        }
         prad.style.display = 'table-row';
         container.classList.add('visible');
         container.innerHTML = '<p style="padding: 6px; color: var(--text-secondary); font-size: 11px;">Loading Pratyantardaśā...</p>';
@@ -10660,10 +10730,10 @@
         const startDate = parseDateFlexible(pd.Start);
         const endDate = parseDateFlexible(pd.End);
         const isCurrent = isValidDate(startDate) && isValidDate(endDate) && now >= startDate && now <= endDate;
-        const rowClass = isCurrent ? 'prad-current' : '';
+        const rowStyle = isCurrent ? 'background: var(--accent-soft);' : '';
 
         return `
-            <tr class="${rowClass}">
+            <tr style="${rowStyle}">
               <td>${lordDisplay}${isCurrent ? ' ★' : ''}</td>
               <td>${formatDashaDate(pd.Start)}</td>
               <td>${formatDashaDate(pd.End)}</td>
