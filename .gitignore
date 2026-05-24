@@ -37,3 +37,4 @@ data/raw/*.txt
 
 *.db-shm
 *.db-wal
+.env
