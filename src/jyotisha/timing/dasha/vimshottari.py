@@ -12,7 +12,9 @@ YOG_TOTAL_YEARS = 36.0
 
 def get_vimshottari_antardasha(md_lord: str, md_start: str, md_duration_years: float) -> list:
     rows = []
-    cur = datetime.strptime(md_start, "%Y-%m-%d %H:%M:%S")
+    # Strip timezone suffix like " IST"
+    md_start_clean = md_start.replace(' IST', '').replace(' ', 'T')[:19].replace('T', ' ')
+    cur = datetime.strptime(md_start_clean, "%Y-%m-%d %H:%M:%S")
     md_idx = VIM_MD_ORDER.index(md_lord)
     for i in range(9):
         ad_lord = VIM_MD_ORDER[(md_idx + i) % 9]
@@ -51,14 +53,16 @@ def get_vimshottari_pratyantardasha(md_lord: str, ad_lord: str, ad_start: str, a
             "Pratyantardasa": pd_lord,
             "Start": cur.strftime("%Y-%m-%d %H:%M:%S"),
             "End": end.strftime("%Y-%m-%d %H:%M:%S"),
-            "Duration (days)": round(pd_days, 2)
+            "Duration (days)": round(pd_days, 2),
+            "Duration (years)": round(pd_days / 365.25, 4)
         })
         cur = end
     return rows
 
 def get_yogini_antardasha(md_lord: str, md_start: str, md_duration_years: float) -> list:
     rows = []
-    cur = datetime.strptime(md_start, "%Y-%m-%d %H:%M:%S")
+    md_start_clean = md_start.replace(' IST', '').replace(' ', 'T')[:19].replace('T', ' ')
+    cur = datetime.strptime(md_start_clean, "%Y-%m-%d %H:%M:%S")
     md_idx = YOG_ORDER.index(md_lord)
     for i in range(8):
         ad_lord = YOG_ORDER[(md_idx + i) % 8]
@@ -90,7 +94,8 @@ def get_yogini_pratyantardasha(md_lord: str, ad_lord: str, ad_start: str, ad_dur
             "Pratyantardasa": pd_lord,
             "Start": cur.strftime("%Y-%m-%d %H:%M:%S"),
             "End": end.strftime("%Y-%m-%d %H:%M:%S"),
-            "Duration (days)": round(pd_days, 2)
+            "Duration (days)": round(pd_days, 2),
+            "Duration (years)": round(pd_days / 365.25, 4)
         })
         cur = end
     return rows

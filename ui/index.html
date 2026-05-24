@@ -11422,7 +11422,7 @@
         try {
           const url = new URL('/dasha/antardasha', window.location.origin);
           url.searchParams.set('md_lord', mdLord);
-          url.searchParams.set('md_start', mdStart);
+          url.searchParams.set('md_start', mdStart.replace(' IST', '').split(' ').slice(0,2).join(' '));
           url.searchParams.set('md_duration_years', mdDurationYears);
 
           const resp = await fetch(url);
@@ -11630,7 +11630,7 @@
         try {
           const url = new URL('/dasha/antardasha', window.location.origin);
           url.searchParams.set('md_lord', mdLord);
-          url.searchParams.set('md_start', mdStart);
+          url.searchParams.set('md_start', mdStart.replace(' IST', '').split(' ').slice(0,2).join(' '));
           url.searchParams.set('md_duration_years', mdDurationYears);
 
           console.log('Fetching Antardasha:', url.toString());
@@ -11855,7 +11855,7 @@
       try {
         const url = new URL('/dasha/yogini/antardasha', window.location.origin);
         url.searchParams.set('md_lord', mdLord);
-        url.searchParams.set('md_start', mdStart);
+        url.searchParams.set('md_start', mdStart.replace(' IST', '').split(' ').slice(0,2).join(' '));
         url.searchParams.set('md_duration_years', mdDurationYears);
 
         const resp = await fetch(url);
@@ -12034,9 +12034,10 @@
         try {
           const url = new URL('/dasha/yogini/antardasha', window.location.origin);
           url.searchParams.set('md_lord', mdLord);
-          url.searchParams.set('md_start', mdStart);
+          url.searchParams.set('md_start', mdStart.replace(' IST', '').split(' ').slice(0,2).join(' '));
           url.searchParams.set('md_duration_years', mdDurationYears);
 
+          console.log('Fetching Yogini Antardasha:', url.toString());
           const resp = await fetch(url);
           if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
           const data = await resp.json();
@@ -12413,6 +12414,11 @@
     function parseDateFlexible(val) {
       if (val instanceof Date) return val;
       if (val === null || val === undefined) return null;
+
+      // Strip timezone abbreviations like " IST"
+      if (typeof val === 'string') {
+        val = val.replace(/\s+[A-Z]{2,5}/g, '').replace(' ', 'T');
+      }
 
       // Quick native parse path
       if (typeof val === 'string' || typeof val === 'number') {
