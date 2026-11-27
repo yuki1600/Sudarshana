@@ -49,17 +49,25 @@ const counted = (t: Table, special: boolean): Table => ({ ...t, rows: t.rows.map
   return n ? [`${r[0]} (${nth(n)})`, ...r.slice(1)] : r;
 }) });
 
-/** Starlight's Taras from Moon and Lagna: the nava taras, then the special taras, from each, one under another in one box that scrolls as one. */
-function Taras({ chart }: { chart: Parameters<typeof api.table>[0] }) {
-  const qs = useQueries({ queries: TARAS.map(([view]) => ({ queryKey: ["table", chart, view, 1, undefined], queryFn: () => api.table(chart, view, 1), placeholderData: (p?: Table) => p })) });
+type TableChart = Parameters<typeof api.table>[0];
+/** Several Key Info tables one under another in one box that scrolls as one, each with its first column naming it (``parts``: view, name, chart). */
+function Stacked({ parts, shape = (t) => t }: { parts: readonly (readonly [string, string, TableChart])[]; shape?: (t: Table, i: number) => Table }) {
+  const qs = useQueries({ queries: parts.map(([view, , chart]) => ({ queryKey: ["table", chart, view, 1, undefined], queryFn: () => api.table(chart, view, 1), placeholderData: (p?: Table) => p })) });
   const failed = qs.find((q) => q.isError);
   const all = qs.every((q) => q.data) ? qs.map((q) => q.data!) : undefined;
   return (
     <Loaded q={{ data: all, isError: !!failed, error: failed?.error ?? null }}>{(ts) => (
-      <div className="scroll tall">{ts.map((t, i) => <Rows key={TARAS[i][0]} t={{ ...counted(t, i > 1), columns: [TARAS[i][1], ...t.columns.slice(1)] }} next={i > 0} />)}</div>
+      <div className="scroll tall">{ts.map((t, i) => <Rows key={i} t={{ ...shape(t, i), columns: [parts[i][1], ...t.columns.slice(1)] }} next={i > 0} />)}</div>
     )}</Loaded>
   );
 }
+
+/** Starlight's Taras from Moon and Lagna: the nava taras, then the special taras, from each. */
+const Taras = ({ chart }: { chart: TableChart }) => <Stacked parts={TARAS.map(([v, n]) => [v, n, chart] as const)} shape={(t, i) => counted(t, i > 1)} />;
+
+// Starlight's Friendships: the natural, temporary and compound relationships in one box
+const FRIENDS = [["friends_natural", "Natural"], ["friends_temporal", "Temporary"], ["friends_compound", "Compound"]] as const;
+const Friendships = ({ chart }: { chart: TableChart }) => <Stacked parts={FRIENDS.map(([v, n]) => [v, n, chart] as const)} />;
 
 /** Starlight's Pushkara and Mrityu Bhagas: the two Key Info lists as one table, a row green when the body is in its pushkara bhaga, red when in its mrityu bhaga;
  *  the pushkaramsa column as the server sends it, then the distance from each centre. */
@@ -412,7 +420,9 @@ export function KeyInfo({ bare, show, onPick, picked }: { b: Basics; bare?: bool
   ];
   return (
     <section className="pane key-stack" onContextMenu={(e) => { e.preventDefault(); if (bare && isList) { const at = { clientX: e.clientX, clientY: e.clientY }; open(at, bodyItems(bodies, at), "Bodies shown"); } else if (menu.length) open(e, menu, "Key Info menu"); }}>
-      {!isList ? (bare && view === "nava_moon" ? <Taras chart={chart} /> : bare && view === "pushkaras" ? <Bhagas chart={chart} /> :<TableView view={tableView} chart={chart} options={aspectOptions} />) : <>
+      {!isList ? (bare && view === "nava_moon" ? <Taras chart={chart} /> : bare && view === "pushkaras" ? <Bhagas chart={chart} />
+        : bare && view === "friends_natural" ? <Friendships chart={chart} />
+        : bare && view === "sahams" ? <Stacked parts={[["sahams", "Sahama", birth!], ["sahams", "Natal sahama", natal!]]} /> : <TableView view={tableView} chart={chart} options={aspectOptions} />) : <>
         <div className="scroll key-points">
           <table className="points" ref={table}>
             <thead><tr><th colSpan={3}>Body{bare && <> <small className="muted">(as per D-{division})</small></>}</th><th>Longitude</th><th>Nakshatra</th><th>{division === 1 ? "Navamsa" : `D9 of D${division}`}</th></tr></thead>

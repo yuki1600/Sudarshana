@@ -40,8 +40,10 @@ const PINNED = new Set<string>(["amsas"]);     // stays on the row, just before 
 // or not at all (Natal Longitudes); the other tara views are in the Moon's nava taras, which shows all four (Panels.tsx Taras), and the Mrityu Bhaga
 // distances in the Pushkara list, which shows both (Panels.tsx Bhagas)
 const TARA_VIEWS = new Set(["nava_lagna", "special_moon", "special_lagna"]);
-const ELSEWHERE = new Set(["latitudes", "aspects", "combustion", "yuddha", "natal_longitudes", "mrityu", ...TARA_VIEWS]);
-const RENAMED: Partial<Record<string, string>> = { nava_moon: "Taras from Moon and Lagna", pushkaras: "Pushkara and Mrityu Bhagas" };
+// the temporary and compound friendships are under the natural ones, the natal sahamas under the sahamas (Panels.tsx Friendships, KeyInfo)
+const FOLDED: Partial<Record<string, string>> = { friends_temporal: "friends_natural", friends_compound: "friends_natural", natal_sahams: "sahams" };
+const ELSEWHERE = new Set(["latitudes", "aspects", "combustion", "yuddha", "natal_longitudes", "mrityu", ...TARA_VIEWS, ...Object.keys(FOLDED)]);
+const RENAMED: Partial<Record<string, string>> = { nava_moon: "Taras from Moon and Lagna", pushkaras: "Pushkara and Mrityu Bhagas", friends_natural: "Friendships" };
 
 // average daily motion, deg/day: in longitude the traditional figures (core_logic/mundane.py MEAN_DAILY_SPEEDS; the node's is backwards),
 // in latitude the mean of its size over 1900-2100 (Swiss Ephemeris; the Sun and the true node stay on the ecliptic)
@@ -250,8 +252,10 @@ export function Starlight({ b }: { b: Basics }) {
   const birth = useChart((s) => s.birth)!;
   const meta = useChart((s) => s.meta);
   const [saved, setTab] = useSaved<string>("starTab", "overview");
-  // a tab saved before Dasa, Ashtakavarga and Strengths left Home, or a view no longer under More, opens Overview; a tara view, all the taras; Mrityu Bhaga, the Pushkara list
-  const tab = TABS.some((t) => t.id === saved) || saved === "avakahada" || (saved.startsWith("ki:") && !ELSEWHERE.has(saved.slice(3))) ? saved : TARA_VIEWS.has(saved.slice(3)) ? "ki:nava_moon" : saved === "ki:mrityu" ? "ki:pushkaras" : "overview";
+  // a tab saved before Dasa, Ashtakavarga and Strengths left Home, or a view no longer under More, opens Overview; a tara view, all the taras; Mrityu Bhaga, the Pushkara list;
+  // a folded friendship or the natal sahamas, the box that holds them
+  const tab = TABS.some((t) => t.id === saved) || saved === "avakahada" || (saved.startsWith("ki:") && !ELSEWHERE.has(saved.slice(3))) ? saved : TARA_VIEWS.has(saved.slice(3)) ? "ki:nava_moon" : saved === "ki:mrityu" ? "ki:pushkaras"
+    : FOLDED[saved.slice(3)] ? "ki:" + FOLDED[saved.slice(3)] : "overview";
   const tables = useQuery({ queryKey: ["tables"], queryFn: api.tables });
   const more = [...(tables.data?.key_info ?? []), ...NATAL_VIEWS].filter((v) => !ELSEWHERE.has(v.key)).map((v) => ({ id: "ki:" + v.key, name: RENAMED[v.key] ?? v.name }))
     .concat({ id: "avakahada", name: "Avakahada" });     // the Moon's pada and its name syllable (once the Chakras page's)
