@@ -32,7 +32,6 @@ export function Matching() {
   const editSide = (who: "boy" | "girl", blank: boolean) => { setFresh(blank); setEdit(who); };
   const [opening, setOpening] = useKept<"boy" | "girl" | null>("match.opening", null);
   const [loadError, setLoadError] = useState("");
-  const [kutas, setKutas] = useState(false);
   const [kindD1, setKindD1] = useSaved<Kind>("matchKind1", "bhava");     // new keys: Bhava is the default, over a saved Rasi of the old ones
   const [kindD9, setKindD9] = useSaved<Kind>("matchKind9", "bhava");
   const [focus, setFocus] = useState<Focus>(null);
@@ -124,11 +123,7 @@ export function Matching() {
     </div>
   ) : chartsTab ? (
     <div className="row wrap match-title match-total">
-      {c ? (
-        <>
-          <button type="button" onClick={() => setKutas(true)}>Kuta details</button>
-        </>
-      ) : <span className="muted">{compare.isError ? "Could not match" : "Matching…"}</span>}
+      {!c && <span className="muted">{compare.isError ? "Could not match" : "Matching…"}</span>}
       <button type="button" title="The matrix of every pair of Moon stars" onClick={() => setTab("matrix")}>Matrix</button>
     </div>
   ) : null;
@@ -260,12 +255,6 @@ export function Matching() {
       {rank && matrix.data && (
         <RankList m={matrix.data} focus={rank} onClose={() => setRank(null)}
           onOpen={(g, b) => pick(g, b)} />
-      )}
-
-      {kutas && c && (
-        <Modal title="Kuta details" onClose={() => setKutas(false)} wide>
-          <Breakdown d={c.match} />
-        </Modal>
       )}
 
       {popup && (

@@ -767,7 +767,7 @@ main>.pane.match-pane> :not(.pane-head, dialog) {     /* not its pop-ups: they s
   }
 }
 
-/* Overview, the area tabs, Kuta details and Matrix atop the right half, outside its scrolling part */
+/* Overview, the area tabs and Matrix atop the right half, outside its scrolling part */
 .match-top {
   flex: none;
   box-sizing: border-box;
@@ -1214,7 +1214,7 @@ main>.pane.match-pane> :not(.pane-head, dialog) {     /* not its pop-ups: they s
   .md-sides { grid-template-columns: 1fr; }
 }
 
-/* the sub tabs stay one row with Kuta details and Matrix beside them (scrolling, unseen, on a narrow window) */
+/* the sub tabs stay one row with Matrix beside them (scrolling, unseen, on a narrow window) */
 .match-top { flex-wrap: nowrap; }
 .match-top > .seg { flex: 1 1 auto; min-width: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
 .match-top > .seg::-webkit-scrollbar { display: none; }
@@ -1374,3 +1374,26 @@ main>.pane.match-pane> :not(.pane-head, dialog) {     /* not its pop-ups: they s
 .mc-section-head > .mc-section-name { margin: 0; padding-bottom: .5625rem; border-bottom: 0; }
 .mc-section .mc-sum { margin-bottom: 0; }
 .mc-section .mc-duo { margin-top: 0; }
+
+/* Starlight: the sub tabs over the box, as Home's and the Dasas tab's (their size and their rule), the box below them */
+:root[data-layout="starlight"] .match-right {
+  gap: .75rem;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+:root[data-layout="starlight"] .match-top {
+  min-height: 0;
+  margin: 0;
+  padding: 2px 0 0;
+  background: none;
+}
+
+:root[data-layout="starlight"] .match-scroll {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+  font-size: calc(.8125rem * var(--list-scale, 1));
+}
