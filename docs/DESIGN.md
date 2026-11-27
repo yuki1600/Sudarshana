@@ -53,6 +53,9 @@ the parts they are built from.
 - A factor row: its name, under it in muted small text what it tells of (`1st bhava` / `the body`), its rule on the ⓘ.
   **Every** factor row has that line, the doshas too (`Papa samya` / `malefics from Ve, Mo, As`).
 - Girl's column before the boy's, each headed with their age (`WhoAge`).
+- **A running dasa goes darker to lighter down its levels**: the running mahadasa solid `--here`, its antardasa about half,
+  its pratyantardasa a light wash, paler below (Matching's dasas, `.md-d*`; the Dasas tab's tree in Starlight). The period running
+  now keeps its level's shade and is marked by its NOW pill, not by a solid row.
 - Every value in a box of one height, bold, one size; inside a box only a measure's caption (Shadbala) is small and muted.
 - In the Grahas and Bhavas tabs each group of tables sits in its own box, its name small and uppercase above (`Section`).
 - One chart against several (Matching ★, `Shortlist`): two boxes, Ranking (Ashtakuta, Dashakuta, Kuja, the gravest kuta

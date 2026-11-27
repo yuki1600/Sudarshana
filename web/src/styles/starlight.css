@@ -2534,3 +2534,19 @@ td.lg-on .lg-cell-years { opacity: 1; }
 }
 
 :root[data-layout="starlight"] select option::checkmark { display: none; }
+
+/* Dasas: the running branch darker to lighter down its levels, as Matching's dasas: the mahadasa solid --here, the antardasa about half, the
+   pratyantardasa a light wash, and paler again below; the period running now keeps its level's shade and its NOW pill (Longevity's tree has its own) */
+:root[data-layout="starlight"] .dasa-tree:not(.lg-dasa) {
+  & tr:is(.running, .now) td { --band: color-mix(in srgb, var(--here) var(--run-mix, 5%), var(--b0)); color: var(--ink); }
+  & tr[data-depth="0"] { --run-mix: 100%; }
+  & tr[data-depth="1"] { --run-mix: 50%; }
+  & tr[data-depth="2"] { --run-mix: 18%; }
+  & tr[data-depth="3"] { --run-mix: 12%; }
+  & tr[data-depth="4"] { --run-mix: 8%; }
+  & tr[data-depth="0"]:is(.running, .now) td { color: var(--here-ink); }
+  & tr[data-depth="0"]:is(.running, .now) .twisty { color: inherit; }
+  & tr[data-depth="0"]:is(.running, .now) .level-tag { background: var(--panel); border-color: var(--here-ink); color: var(--ink); }
+  & tr.now:not([data-depth="0"]) .level-tag { background: color-mix(in srgb, var(--lv) 45%, var(--panel)); border-color: var(--lv); color: inherit; }
+  & tr.now:not([data-depth="0"]) td:first-child::after { background: var(--here); color: var(--here-ink); }
+}
