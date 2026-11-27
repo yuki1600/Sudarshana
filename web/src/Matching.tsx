@@ -119,12 +119,12 @@ export function Matching() {
   const title = chartsTab && !(boy && girl) ? (
     <div className="row wrap match-title match-total">
       <span className="muted">Enter both charts</span>
-      <button type="button" title="The matrix of every pair of Moon stars" onClick={() => setTab("matrix")}>Matrix</button>
+      <button type="button" title="The matrix of every pair of Moon stars" onClick={() => setTab("matrix")}>Tara matrix</button>
     </div>
   ) : chartsTab ? (
     <div className="row wrap match-title match-total">
       {!c && <span className="muted">{compare.isError ? "Could not match" : "Matching…"}</span>}
-      <button type="button" title="The matrix of every pair of Moon stars" onClick={() => setTab("matrix")}>Matrix</button>
+      <button type="button" title="The matrix of every pair of Moon stars" onClick={() => setTab("matrix")}>Tara matrix</button>
     </div>
   ) : null;
 
