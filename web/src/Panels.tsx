@@ -71,6 +71,9 @@ const Taras = ({ chart }: { chart: TableChart }) => <Stacked parts={TARAS.map(([
 // Starlight's Friendships: the natural, temporary and compound relationships in one box
 const FRIENDS = [["friends_natural", "Natural"], ["friends_temporal", "Temporary"], ["friends_compound", "Compound"]] as const;
 const Friendships = ({ chart }: { chart: TableChart }) => <Stacked parts={FRIENDS.map(([v, n]) => [v, n, chart] as const)} />;
+// Starlight's Drekkanas and 64th Navamsa: the drekkana each body is in, then the lords of the 64th navamsa and 22nd drekkana (the second's "Pararsara" is Parasara, as Highlights has it)
+const DrekkanaLords = ({ chart }: { chart: TableChart }) => <Stacked parts={[["drekkanas", "Body", chart], ["malicious", "Malicious Division", chart]]}
+  shape={(t) => ({ ...t, rows: t.rows.map((r) => r.map((c) => c.replace("Pararsara", "Parasara"))) })} />;
 // Starlight's Yogi, Sahayogi, Avayogi with Brahma, Rudra, Maheswara: the six special grahas in one table
 const SpecialGrahas = ({ chart }: { chart: TableChart }) => <Stacked parts={[["yogi", "Title", chart], ["brahma", "Title", chart]]} joined />;
 
@@ -427,7 +430,8 @@ export function KeyInfo({ bare, show, onPick, picked }: { b: Basics; bare?: bool
     <section className="pane key-stack" onContextMenu={(e) => { e.preventDefault(); if (bare && isList) { const at = { clientX: e.clientX, clientY: e.clientY }; open(at, bodyItems(bodies, at), "Bodies shown"); } else if (menu.length) open(e, menu, "Key Info menu"); }}>
       {!isList ? (bare && view === "nava_moon" ? <Taras chart={chart} /> : bare && view === "pushkaras" ? <Bhagas chart={chart} />
         : bare && view === "friends_natural" ? <Friendships chart={chart} />
-        : bare && view === "yogi" ? <SpecialGrahas chart={chart} /> : <TableView view={tableView} chart={chart} options={aspectOptions} />) : <>
+        : bare && view === "yogi" ? <SpecialGrahas chart={chart} />
+        : bare && view === "drekkanas" ? <DrekkanaLords chart={chart} /> : <TableView view={tableView} chart={chart} options={aspectOptions} />) : <>
         <div className="scroll key-points">
           <table className="points" ref={table}>
             <thead><tr><th colSpan={3}>Body{bare && <> <small className="muted">(as per D-{division})</small></>}</th><th>Longitude</th><th>Nakshatra</th><th>{division === 1 ? "Navamsa" : `D9 of D${division}`}</th></tr></thead>

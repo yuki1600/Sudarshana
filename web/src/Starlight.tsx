@@ -40,11 +40,11 @@ const PINNED = new Set<string>(["amsas"]);     // stays on the row, just before 
 // or not at all (Natal Longitudes); the other tara views are in the Moon's nava taras, which shows all four (Panels.tsx Taras), and the Mrityu Bhaga
 // distances in the Pushkara list, which shows both (Panels.tsx Bhagas)
 const TARA_VIEWS = new Set(["nava_lagna", "special_moon", "special_lagna"]);
-// the temporary and compound friendships are under the natural ones (Panels.tsx Friendships), Brahma, Rudra, Maheswara under the Yogi (SpecialGrahas); the sahamas are the shown chart's, a mode's (Tajaka …) when one is on, so no natal ones
-const FOLDED: Partial<Record<string, string>> = { friends_temporal: "friends_natural", friends_compound: "friends_natural", natal_sahams: "sahams", brahma: "yogi" };
+// the temporary and compound friendships are under the natural ones (Panels.tsx Friendships), Brahma, Rudra, Maheswara under the Yogi (SpecialGrahas), the 64th navamsa's and 22nd drekkana's lords under the drekkanas (DrekkanaLords); the sahamas are the shown chart's, a mode's (Tajaka …) when one is on, so no natal ones
+const FOLDED: Partial<Record<string, string>> = { friends_temporal: "friends_natural", friends_compound: "friends_natural", natal_sahams: "sahams", brahma: "yogi", malicious: "drekkanas" };
 // the chara karakas are the Grahas tab's karaka tags (the same scheme, server/basics.py), so they have no view of their own
 const ELSEWHERE = new Set(["latitudes", "aspects", "combustion", "yuddha", "natal_longitudes", "mrityu", "karakas", ...TARA_VIEWS, ...Object.keys(FOLDED)]);
-const RENAMED: Partial<Record<string, string>> = { nava_moon: "Taras from Moon and Lagna", pushkaras: "Pushkara and Mrityu Bhagas", friends_natural: "Friendships", yogi: "Yogi, Sahayogi, Avayogi, Brahma, Rudra, Maheswara" };
+const RENAMED: Partial<Record<string, string>> = { nava_moon: "Taras from Moon and Lagna", pushkaras: "Pushkara and Mrityu Bhagas", friends_natural: "Friendships", yogi: "Yogi, Sahayogi, Avayogi, Brahma, Rudra, Maheswara", drekkanas: "Drekkanas and 64th Navamsa" };
 
 // average daily motion, deg/day: in longitude the traditional figures (core_logic/mundane.py MEAN_DAILY_SPEEDS; the node's is backwards),
 // in latitude the mean of its size over 1900-2100 (Swiss Ephemeris; the Sun and the true node stay on the ecliptic)
