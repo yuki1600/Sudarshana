@@ -2101,9 +2101,9 @@ table.even-cols th {
 /* Summary */
 .lg-verdict { display: flex; flex-wrap: wrap; align-items: baseline; gap: .375rem 1.25rem; }
 
-.lg-class { font-size: 1.375rem; }
+.lg-class { font-size: 1rem; }
 
-.lg-years { font-size: 1.0625rem; }
+.lg-years { font-size: .875rem; }
 
 .lg-rule-row { display: grid; grid-template-columns: 10.5rem 1fr 5rem; gap: 1rem; align-items: center; }
 
@@ -2341,7 +2341,7 @@ table.even-cols th {
 
 .lg-card p { margin: 0; line-height: 1.5; }
 
-.lg-chip.lg-big { font-size: 1.0625rem; padding: .1875rem .75rem; }
+.lg-chip.lg-big { font-size: .875rem; padding: .125rem .625rem; }
 
 /* 8th Bhava: the three rules side by side over the table, half and half; each the two sides face to face, its verdict under a coloured line */
 .star-stack.lg>.pane.lg-eighth { flex: 1 1 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; padding-top: .75rem; padding-bottom: .75rem; }
@@ -2379,14 +2379,14 @@ table.even-cols th {
 
 .lg-tug::after { content: ""; position: absolute; left: 50%; top: -.25rem; bottom: -.25rem; width: 2px; margin-left: -1px; background: var(--muted); }
 
-.lg-e-big { font-size: 1.5rem; }
+.lg-e-big { font-size: 1.0625rem; }
 
 .lg-e-then { margin: 0; color: var(--muted); }
 
 .lg-e-then strong { color: var(--ink); }
 
 /* what the rule gives: one word beside a vertical line in its colour, at the column's foot */
-.lg-e-gives { margin-top: auto; padding: .125rem 0 .125rem .75rem; border-left: .25rem solid var(--line); font-size: 1.25rem; font-weight: 700; }
+.lg-e-gives { margin-top: auto; padding: .125rem 0 .125rem .75rem; border-left: .25rem solid var(--line); font-size: 1rem; font-weight: 700; }
 
 .lg-e-gives.long { border-left-color: var(--lg-long); }
 
@@ -2398,7 +2398,7 @@ table.even-cols th {
 
 .lg-counts dt { font-size: .8125rem; font-weight: 700; }
 
-.lg-counts dd { margin: 0; font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.lg-counts dd { margin: 0; font-size: 1rem; font-weight: 700; font-variant-numeric: tabular-nums; }
 
 /* Three Pairs: the matrix of modes, each cell's class and years; under it the working, step by step */
 .lg-matrix { width: 100%; border-collapse: collapse; table-layout: fixed; }
@@ -2448,7 +2448,7 @@ td.lg-on .lg-cell-years { opacity: 1; }
 
 .lg-math { font-variant-numeric: tabular-nums; }
 
-.lg-result-years { font-size: 1.125rem; }
+.lg-result-years { font-size: .9375rem; }
 
 .lg-scale { margin-top: .375rem; }
 
