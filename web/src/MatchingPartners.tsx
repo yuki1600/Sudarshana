@@ -33,7 +33,7 @@ export function PartnerName({ label, side, onPick }: { label: string; side: Side
   );
 }
 
-/** New chart, edit, Open chart (the same dialog as the top bar's), starred or not (the shortlist, the ★ sub tab). */
+/** New chart, edit, Open chart (the same dialog as the top bar's), starred or not (the shortlist, the Starred sub tab). */
 export function PartnerActions({ side, onNew, onEdit, onOpen, listed, onList }: {
   side: Side | null; onNew: () => void; onEdit: () => void; onOpen: () => void; listed: boolean; onList: () => void;
 }) {
@@ -43,7 +43,7 @@ export function PartnerActions({ side, onNew, onEdit, onOpen, listed, onList }: 
       <button type="button" className="icon-btn" onClick={onEdit} aria-label={side ? "Edit birth data" : "Enter birth data"} title={side ? "Edit birth data" : "Enter birth data"}><Icon name="edit" /></button>
       <button type="button" className="icon-btn" onClick={onOpen} aria-label="Open chart" title="Open chart"><Icon name="open" /></button>
       <button type="button" className="icon-btn match-star" disabled={!side} onClick={onList} aria-pressed={listed} aria-label="Star"
-        title={listed ? "Starred: click to take it off" : "Star it, to rank against the other side's chart under ★"}><Icon name="star" /></button>
+        title={listed ? "Starred: click to take it off" : "Star it, to rank against the other side's chart under Starred"}><Icon name="star" /></button>
     </span>
   );
 }

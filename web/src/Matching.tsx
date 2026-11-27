@@ -194,7 +194,7 @@ export function Matching() {
 
           <aside className="match-right">
             <div className="match-top tab-head">
-              <SubTabs label="Matching" value={view} onChange={setView} tabs={[{ id: "overview", name: "Overview" }, ...AREAS, ...DETAILS, { id: "shortlist", name: listGirl.length + listBoy.length ? `★ ${listGirl.length + listBoy.length}` : "★" }]} />
+              <SubTabs label="Matching" value={view} onChange={setView} tabs={[{ id: "overview", name: "Overview" }, ...AREAS, ...DETAILS, { id: "shortlist", name: listGirl.length + listBoy.length ? `Starred ${listGirl.length + listBoy.length}` : "Starred" }]} />
               {title}
             </div>
             <div className="match-scroll">

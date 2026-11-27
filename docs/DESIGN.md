@@ -58,7 +58,7 @@ the parts they are built from.
   now keeps its level's shade and is marked by its NOW pill, not by a solid row.
 - Every value in a box of one height, bold, one size; inside a box only a measure's caption (Shadbala) is small and muted.
 - In the Grahas and Bhavas tabs each group of tables sits in its own box, its name small and uppercase above (`Section`).
-- One chart against several (Matching ★, `Shortlist`): two boxes, Ranking (Ashtakuta, Dashakuta, Kuja, the gravest kuta
+- One chart against several (Matching Starred, `Shortlist`): two boxes, Ranking (Ashtakuta, Dashakuta, Kuja, the gravest kuta
   doshas) then Domain, which fills the rest of the half, a row per partner in the same rank order in both so a column reads
   straight down. Scores as small band cards (`.ms-score`, the Overview's colours); each
   kuta's points with its dot. No "best in" counts and no bold leader; the pair shown in the charts is the row in `--here`.
