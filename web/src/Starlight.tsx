@@ -42,7 +42,8 @@ const PINNED = new Set<string>(["amsas"]);     // stays on the row, just before 
 const TARA_VIEWS = new Set(["nava_lagna", "special_moon", "special_lagna"]);
 // the temporary and compound friendships are under the natural ones (Panels.tsx Friendships); the sahamas are the shown chart's, a mode's (Tajaka …) when one is on, so no natal ones
 const FOLDED: Partial<Record<string, string>> = { friends_temporal: "friends_natural", friends_compound: "friends_natural", natal_sahams: "sahams" };
-const ELSEWHERE = new Set(["latitudes", "aspects", "combustion", "yuddha", "natal_longitudes", "mrityu", ...TARA_VIEWS, ...Object.keys(FOLDED)]);
+// the chara karakas are the Grahas tab's karaka tags (the same scheme, server/basics.py), so they have no view of their own
+const ELSEWHERE = new Set(["latitudes", "aspects", "combustion", "yuddha", "natal_longitudes", "mrityu", "karakas", ...TARA_VIEWS, ...Object.keys(FOLDED)]);
 const RENAMED: Partial<Record<string, string>> = { nava_moon: "Taras from Moon and Lagna", pushkaras: "Pushkara and Mrityu Bhagas", friends_natural: "Friendships" };
 
 // average daily motion, deg/day: in longitude the traditional figures (core_logic/mundane.py MEAN_DAILY_SPEEDS; the node's is backwards),
@@ -253,8 +254,8 @@ export function Starlight({ b }: { b: Basics }) {
   const meta = useChart((s) => s.meta);
   const [saved, setTab] = useSaved<string>("starTab", "overview");
   // a tab saved before Dasa, Ashtakavarga and Strengths left Home, or a view no longer under More, opens Overview; a tara view, all the taras; Mrityu Bhaga, the Pushkara list;
-  // a folded friendship or the natal sahamas, the box that holds them
-  const tab = TABS.some((t) => t.id === saved) || saved === "avakahada" || (saved.startsWith("ki:") && !ELSEWHERE.has(saved.slice(3))) ? saved : TARA_VIEWS.has(saved.slice(3)) ? "ki:nava_moon" : saved === "ki:mrityu" ? "ki:pushkaras"
+  // a folded friendship or the natal sahamas, the box that holds them; the chara karakas, the Grahas tab
+  const tab = TABS.some((t) => t.id === saved) || saved === "avakahada" || (saved.startsWith("ki:") && !ELSEWHERE.has(saved.slice(3))) ? saved : TARA_VIEWS.has(saved.slice(3)) ? "ki:nava_moon" : saved === "ki:mrityu" ? "ki:pushkaras" : saved === "ki:karakas" ? "planets"
     : FOLDED[saved.slice(3)] ? "ki:" + FOLDED[saved.slice(3)] : "overview";
   const tables = useQuery({ queryKey: ["tables"], queryFn: api.tables });
   const more = [...(tables.data?.key_info ?? []), ...NATAL_VIEWS].filter((v) => !ELSEWHERE.has(v.key)).map((v) => ({ id: "ki:" + v.key, name: RENAMED[v.key] ?? v.name }))
