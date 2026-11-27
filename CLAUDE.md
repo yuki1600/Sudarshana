@@ -74,6 +74,6 @@ A Vedic astrology workstation: `core_logic/` (Python calculation engines), `serv
 ## Working style
 
 - Branches on GitHub (yuki1600/Sudarshana): `main`, `dev`, and `archive` (the earlier Sudarshana, kept as it was).
-  Commit and push straight to `main`; no other branches unless asked.
+  Commit and push to `dev`; push to `main` only when the user says so. No other branches unless asked.
 - Don't raise licensing.
 - Keep changes small and in the codebase's existing patterns; reuse what's in `web/src/ui.tsx`, `hooks.ts`, `format.ts` before adding new helpers.
