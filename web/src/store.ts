@@ -4,14 +4,18 @@ import type { Birth, ChartSpec, CloudChart, DasaEvent, Meta, Recast } from "./ap
 import type { BarOrder } from "./barOrder";
 import { languageOf } from "./translate";
 
-/** A derived chart standing in for the natal one (Tajaka, ...): every view then shows it. */
+/** A cast chart standing in for the natal one (a transit, Tajaka, Tithi Pravesha, an eclipse ...): every tab treats it as the natal chart,
+ *  its balas, dasas and the rest its own, until Back to Natal Chart. */
 export interface Mode {
   title: string;
   lines: [string, string][];   // facts about the chart: its period, the Muntha ...
-  event?: DasaEvent;           // the span its dasas fit into
-  natalDasas?: boolean;        // transits, progressions, Prasna: the dasas stay the natal ones. Neither: the chart is a birth chart of its own
+  event?: DasaEvent;           // the span its dasas fit into; none: its dasas are a birth chart's
   recast?: Recast;             // how it was cast: cast again when the calculation options change (Modes.recastMode)
+  base?: Birth;                // a transit's: the chart the Transits tab reads it against, when not the natal one (a Tajaka year in use when it was cast)
 }
+
+/** The chart the Transits tab (and the transit chakras) read the transits against: a transit's base, else the chart in use as the natal one. */
+export const transitBase = (s: Pick<State, "natal" | "birth" | "mode">) => (s.mode?.title === "Transit" ? s.mode.base ?? s.natal : s.birth);
 
 /** What a chart panel shows: which chart, which bodies, and whether it stays on the natal chart. Chosen on its menu. */
 export interface PanelState { spec: ChartSpec; view: string; natalOnly?: boolean; ref?: number }     // ref: a bhava chart's own reference (Many Vargas), else the bhava_ref setting
@@ -192,9 +196,10 @@ export const useChart = create<State>()(persist((set) => ({
   openWindow: (window) => set({ window }),
   say: (title, text) => set({ window: { kind: "message", title, text } }),
   undo: [],
-  // a transit cast stays at its moment, read against the moved natal chart (cast again from it, should the options change); any other cast goes
+  // a transit of the natal chart stays at its moment, read against the moved natal chart (cast again from it, should the options change); any
+  // other cast goes
   changeBirth: (b) => set((s) => {
-    const transit = s.mode?.title === "Transit" ? s.mode : null;
+    const transit = s.mode?.title === "Transit" && !s.mode.base ? s.mode : null;
     const mode = transit && { ...transit, recast: transit.recast && { ...transit.recast, body: { ...transit.recast.body, birth: b } } };
     return withActive(s, { undo: [...s.undo.slice(-99), s.natal!], natal: b, birth: transit ? s.birth! : b, mode });
   }),
@@ -259,7 +264,11 @@ export const useChart = create<State>()(persist((set) => ({
       const next = charts[Math.min(i, charts.length - 1)];
       return next ? { openCharts: charts, ...apply(next) } : { openCharts: charts, ...clearActive };
     }),
-  enterMode: (birth, mode) => set((s) => withActive(s, { birth, mode })),
+  // a transit is read against the chart in use when it was cast (another transit's base, else the natal chart or the cast in use)
+  enterMode: (birth, mode) => set((s) => {
+    const base = mode?.title === "Transit" ? mode.base ?? transitBase(s) : null;
+    return withActive(s, { birth, mode: base && JSON.stringify(base) !== JSON.stringify(s.natal) ? { ...mode!, base } : mode });
+  }),
   backToNatal: () => set((s) => (s.natal ? withActive(s, { birth: s.natal, mode: null }) : {})),
 }), {
   name: "chart.v2",

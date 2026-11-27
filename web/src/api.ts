@@ -256,7 +256,7 @@ export interface TajakaPeriod { year: number; month: number; d25: number; h5: nu
 export interface DasaEvent { kind: 1 | 2 | 5; name: string; span_days: number; counts?: number[] }
 /** The request that cast a mode's chart, sent again when the calculation options change (its search may find another moment). */
 export interface Recast { url: string; body: object }
-export interface ModeResult { title: string; birth: Birth; start: string; end?: string; event?: DasaEvent; natal_dasas?: boolean; muntha?: { lon: number; sign: number }; recast?: Recast }
+export interface ModeResult { title: string; birth: Birth; start: string; end?: string; event?: DasaEvent; muntha?: { lon: number; sign: number }; recast?: Recast }
 export interface TajakaResult extends ModeResult { end: string; muntha: { lon: number; sign: number } }
 export interface Moment { year: number; month: number; day: number; hour_local: number; tz_east_hours: number }
 /** This moment on the browser's clock, in its zone. */

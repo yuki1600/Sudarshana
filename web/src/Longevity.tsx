@@ -113,9 +113,9 @@ export function Longevity() {
 }
 
 function WindowsLongevity() {
-  const natal = useChart((s) => s.natal)!;
+  const chart = useChart((s) => s.birth)!;     // the chart in use (a cast one too)
   const [tab, setTab] = useSaved<string>("longevity", "summary");
-  const q = useQuery({ queryKey: ["longevity", natal], queryFn: () => api.longevity(natal), placeholderData: (p) => p });
+  const q = useQuery({ queryKey: ["longevity", chart], queryFn: () => api.longevity(chart), placeholderData: (p) => p });
   return (
     <div className="right">
       <Loaded q={q}>{(sections) => {
@@ -163,9 +163,9 @@ const at = (x: number) => `${Math.min(Math.max(x, 0), 120) / 1.2}%`;
 const UNDER_MORE = ["marakas", "yogas"];     // the sub tabs always under "More"; the other six stay on the row
 
 function StarLongevity() {
-  const natal = useChart((s) => s.natal)!;
+  const natal = useChart((s) => s.natal)!, chart = useChart((s) => s.birth)!;     // the chart in use (a cast one too); a death is the native's
   const [tab, setTab] = useSaved<string>("longevity", "summary");
-  const q = useQuery({ queryKey: ["longevity", natal], queryFn: () => api.longevity(natal), placeholderData: (p) => p });
+  const q = useQuery({ queryKey: ["longevity", chart], queryFn: () => api.longevity(chart), placeholderData: (p) => p });
   return (
     <div className="right lab">
       <Loaded q={q}>{(sections) => {

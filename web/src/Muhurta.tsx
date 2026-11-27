@@ -290,7 +290,7 @@ function DayView({ d, prefs, setPref, tz, jump, nowAsk, festivals }: { d: Muhurt
 }
 
 export function Muhurta() {
-  const natal = useChart((s) => s.natal), name = useChart((s) => s.name);
+  const natal = useChart((s) => s.birth), name = useChart((s) => s.name);
   const [who, setWho] = useSaved<"all" | "me">("muhurta.who", "all");
   const personal = who === "me" && !!natal;
   const [view, setView] = useSaved<"day" | "find">("muhurta", "day");

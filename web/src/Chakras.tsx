@@ -11,7 +11,7 @@ import { useMenu, type MenuEntry } from "./Menu";
 import { MixedChart } from "./Mixed";
 import { useMoment } from "./Modes";
 import { KeyInfo, SmallAv } from "./Panels";
-import { useChart } from "./store";
+import { transitBase, useChart } from "./store";
 import { Loaded, SubTabs, supOrd } from "./ui";
 import { Avakahada, CHANDRA, Ghataka, KALA, Kota, KOTA_ZONES, kotaZone, Kurma, type Picks, SaptaShalaka, Sarvatobhadra, type SbcGraha, SHOOLA, StarWheel, Sudarsana, SURYA, TaraChakra, Tripataki, triVedhas, vedhas } from "./Wheels";
 import { SBC, vedhaLines } from "./wheelGeometry";
@@ -82,7 +82,7 @@ function StarDialog({ options, note, onOk, onClose }: { options: ChakraOptions; 
 
 /** The date dialog, for wheels that show a transit date of their own. */
 function DateDialog({ onOk, onClose }: { onOk: (b: Birth) => void; onClose: () => void }) {
-  const natal = useChart((s) => s.natal)!;
+  const natal = useChart(transitBase)!;
   const { fields, moment } = useMoment();
   const find = useMutation({ mutationFn: () => api.transitMode(natal, moment()), onSuccess: (r) => { onOk(r.birth); onClose(); } });
   return (
@@ -172,7 +172,8 @@ function mix<S extends { bodies: string[] }>(ns: S[], ts: S[] | undefined, key: 
  *  the drawing (the left half) or just what goes beside it (the box under the cast form), the natal chart against the transit cast there,
  *  its moment the cast form's; the two parts share their picks through the kept keys. */
 function Wheels({ tab, part }: { tab: string; part?: "draw" | "side" }) {
-  const { birth, natal, mode, say } = useChart();
+  const { birth, mode, say } = useChart();
+  const natal = useChart(transitBase);     // the chart in use as the natal one; a transit's, the chart it is read against
   const embed = !!part;
   const star = useChart((s) => s.display.layout === "starlight");
   const [options, setOptions] = useKept<ChakraOptions>("chakras.options", { show: ["planets"], planet_varga: 1 });
@@ -632,7 +633,7 @@ export const TRANSIT_CHAKRAS = [{ id: "sbc", name: "Sarvatobhadra" }, { id: "kot
  *  beside the Moon's avakahada; under it every nakshatra's four padas and their sounds, the natal grahas in theirs, the native's outlined.
  *  A pada clicked shows its own sound and reading over the box (kept over a refresh); a click anywhere else goes back to the Moon's. */
 export function AvakahadaView() {
-  const { natal, birth } = useChart();
+  const natal = useChart((s) => s.birth), birth = natal;     // the chart in use (a cast one too) as the native's
   const [picked, setPicked] = useKept<number | null>("avakahada.pada", null);
   useEffect(() => {
     if (picked === null) return;

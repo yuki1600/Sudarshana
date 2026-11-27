@@ -172,7 +172,7 @@ function SeedsWindow({ onClose }: { onClose: () => void }) {
 function TransitCorrelationWindow({ dasa, path, onClose }: { dasa: string; path: number[]; onClose: () => void }) {
   const { birth, natal, mode } = useChart();
   const event: DasaEvent | undefined = mode?.event;
-  const chart = mode?.natalDasas ? natal! : birth!;
+  const chart = birth!;
   const q = useQuery({ queryKey: ["dasaTransit", chart, dasa, path, event], queryFn: () => api.dasaTransit(chart, dasa, path, event, natal!) });
   const text = q.data ? q.data.rows.flatMap((r) => [`Transits in ${r.house} during ${q.data!.title}:`, "", ...Object.entries(r.cells).flatMap(([p, spans]) => [`  ${p}`, ...(spans.length ? spans : ["None"]).map((s) => `    ${s}`), ""])]).join("\n") : "";
   return (

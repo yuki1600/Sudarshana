@@ -84,7 +84,7 @@ export function useMoment(zone?: number, withZone = true, name?: string) {
 /** A mutation that finds a derived chart and makes it the current chart. */
 /** A cast chart as the chart in use: its title, span (or moment), a Tajaka year's Muntha, and how to cast it again. */
 export const modeOf = (r: ModeResult): Mode => ({
-  title: r.title, event: r.event, natalDasas: r.natal_dasas, recast: r.recast,
+  title: r.title, event: r.event, recast: r.recast,
   lines: [...(r.end ? [["From", formatMoment(r.start)], ["To", formatMoment(r.end)]] as [string, string][] : [["At", formatMoment(r.start)]] as [string, string][]),
     ...(r.muntha ? [["Muntha", formatLon(r.muntha.lon)]] as [string, string][] : [])],
 });

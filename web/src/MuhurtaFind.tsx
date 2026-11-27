@@ -176,7 +176,7 @@ export function FindMuhurta({ at, clock, lunar, nowAsk, today, enabled, personal
   at: Birth; clock: Clock; lunar: LunarSystem; nowAsk: number; today: string; enabled: boolean; personal: boolean; onShow: (day: string, start: string) => void;
   list: ListMode; setList: (l: ListMode) => void; festivals: Festival[] | undefined; festDays: Record<string, FestivalDay>; calendarName: string; onMonth: (date: string) => void;
 }) {
-  const natal = useChart((s) => s.natal), name = useChart((s) => s.name);
+  const natal = useChart((s) => s.birth), name = useChart((s) => s.name);
   const events = useQuery({ queryKey: ["muhurta-events"], queryFn: api.muhurtaEvents, staleTime: Infinity });
   const [event, setEvent] = useSaved<string>("muhurta.event", "vivah");
   const [festId, setFestId] = useSaved<string>("muhurta.festival", "");

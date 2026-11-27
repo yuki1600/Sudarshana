@@ -15,7 +15,7 @@ import { openLore } from "./Lore";
 import { StarSettings } from "./StarSettings";
 import { SIGNS, SIGN_NAMES } from "./format";
 import { useKept, useSaved, useSettings, useTopVarga } from "./hooks";
-import { useChart, type PanelState } from "./store";
+import { transitBase, useChart, type PanelState } from "./store";
 import { useMenu, type MenuEntry } from "./Menu";
 import { retroMark } from "./names";
 import { OneRowTabs, supOrd } from "./ui";
@@ -164,9 +164,10 @@ export function StarCharts({ onPick, picked, focus }: { onPick?: (p: ChartPick) 
   );
 }
 
-/** The left half of Starlight's chart tabs: the four charts, or the one transit square while a transit chart is cast. ``focus``: the
- *  abbreviation of the graha open on the Grahas tab, whose box each chart tints. */
-export function LeftCharts({ focus }: { focus?: string }) {
+/** The left half of Starlight's chart tabs: the four charts of the chart in use (a cast transit's too, as on every other tab), or on the
+ *  Transits tab (``transit``) the one transit square while a transit chart is cast. ``focus``: the abbreviation of the graha open on the
+ *  Grahas tab, whose box each chart tints. */
+export function LeftCharts({ focus, transit }: { focus?: string; transit?: boolean }) {
   const { mode, activeChartId } = useChart();
   // a graha clicked in a chart (Su to Ke; "SaR" is Saturn) opens in the lore panel, its Strengths the Grahas tab's card; a box (the lagna's
   // label too) opens its rashi, read in that chart's varga, and a box of the rasi's bhava chart the bhava it holds
@@ -176,7 +177,7 @@ export function LeftCharts({ focus }: { focus?: string }) {
     if (sign == null) return;
     openLore(bhava ? { kind: "bhava", n: bhava, ref } : { kind: "rashi", n: sign + 1, d: d ?? 0 });     // d 0: a custom or sub chart, read in no varga
   };
-  return mode?.title === "Transit" ? <TransitChart key={activeChartId} /> : <StarCharts onPick={pick} focus={focus} />;
+  return transit && mode?.title === "Transit" ? <TransitChart key={activeChartId} /> : <StarCharts onPick={pick} focus={focus} />;
 }
 
 const pc = (v: number) => `${v / 10}%`;   // the transit square is worked out on a 1000-unit side
@@ -184,7 +185,8 @@ const pc = (v: number) => `${v / 10}%`;   // the transit square is worked out on
 /** Starlight's Transits tab: one South Indian square, natal grahas (ink) and transit grahas (purple) side by side in each box, every graha (outer ones, maandi and gulika too)
  *  with its degrees, the other points small at the foot; today's sky until a transit moment is shown. In the centre: rasi or bhava, the varga, and the bhava chart's reference. */
 export function TransitChart() {
-  const { natal, birth, mode, optional, activeChartId } = useChart();
+  const { birth, mode, optional, activeChartId } = useChart();
+  const natal = useChart(transitBase);     // the chart in use as the natal one; a transit's, the chart it is read against
   const [now] = useState(() => ({ ...natal!, ...nowMoment(), adjust: undefined }));
   const transit = mode?.title === "Transit" ? birth! : now;
   // each open chart keeps its own varga and rasi/bhava pick (App remounts this per chart, so the keys are read afresh)

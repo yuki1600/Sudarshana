@@ -26,7 +26,7 @@ const full = (label: string) => PLANET_LABEL[label] ?? label;
 
 function useDasaChart() {
   const { birth, natal, mode } = useChart();
-  return { chart: mode?.natalDasas ? natal! : birth!, natal: natal!, event: mode?.event };
+  return { chart: birth!, natal: natal!, event: mode?.event };
 }
 
 function useDasa(key: string, path: number[] = [], enabled = true) {

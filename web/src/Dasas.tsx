@@ -171,9 +171,10 @@ function BestDasaDialog({ best, title, onClose }: { best: BestDasa; title: (key:
 
 export function Dasas() {
   const { birth: current, natal, mode, enterMode, say, openWindow, shifts } = useChart();
-  // The dasas of an event chart fill its span (dasa_systems.fitted_to_span); transit, progressed and Prasna charts keep the natal dasas
+  // the dasas of the chart in use: an event chart's fill its span (dasa_systems.fitted_to_span); any other cast's (a transit, a progression,
+  // a Prasna chart) are its own, as a birth chart's
   const event = mode?.event;
-  const birth = mode?.natalDasas ? natal! : current!;
+  const birth = current!;
   const list = useQuery({ queryKey: ["dasaList"], queryFn: api.dasaList });
   const [group, setGroup] = useSaved<(typeof GROUPS)[number]["id"]>("dasaGroup", "nakshatra");
   const [chosen, setChosen] = useKept<Record<string, string>>("dasa.chosen", {});

@@ -7,7 +7,7 @@ import { MixedChart } from "./Mixed";
 import { Jamakkol, JamakkolLeft, useJamakkolCast } from "./Jamakkol";
 import { AngularReturn, CastButton, ChartPanes, ModeCard, ModeLinks, Prasna, Progressions, TithiPravesha, useFind, useMoment } from "./Modes";
 import { Tajaka } from "./Tajaka";
-import { useChart, type Display } from "./store";
+import { transitBase, useChart, type Display } from "./store";
 import { CopyButton, Loaded, OneRowTabs, Retro, SubTabs, supOrd, tableText } from "./ui";
 import { DIVISIONS, DivisionSelect, STARS } from "./Windows";
 import { LoreDialog, openLore } from "./Lore";
@@ -22,9 +22,9 @@ import { TRANSIT_CHAKRAS, TransitChakra } from "./Chakras";
 const BODIES = ["Lagna", "Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn", "Rahu", "Ketu"];
 const SIGN_NAMES = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"];
 
-/** A search whose result a refresh keeps, for the natal chart it was worked out for (another chart shows nothing). */
+/** A search whose result a refresh keeps, for the chart it was read against (another chart shows nothing). */
 function useKeptRun<T>(name: string, run: () => Promise<T>) {
-  const natal = useChart((s) => s.natal);
+  const natal = useChart(transitBase);
   const [kept, setKept] = useKept<{ natal: unknown; data: T } | null>(name, null);
   const m = useMutation({ mutationFn: run, onSuccess: (data) => setKept({ natal, data }) });
   const same = kept !== null && JSON.stringify(kept.natal) === JSON.stringify(natal);
@@ -49,7 +49,7 @@ const SHORT: Record<string, string> = { moon: "Mo", lagna: "Lg", tara: "Tara", m
 /** Starlight's Home: the natal and transit charts' birth details as Overview shows them, in one full-width box with a column each.
  *  ``menu`` heads its right-click menu, over the birth details' own; ``cast`` false: the transit column says it is not cast yet. */
 function TransitInfo({ menu, cast }: { menu: MenuEntry[]; cast: boolean }) {
-  const { natal, name } = useChart();
+  const name = useChart((s) => s.name), natal = useChart(transitBase);     // the chart in use as the natal one: a cast Tajaka year, an eclipse ...
   const transit = useBasics();
   const natalB = useQuery({ queryKey: ["basics", natal, name], queryFn: () => api.basics(natal!, name), enabled: !!natal, placeholderData: (p) => p });
   const { open, node } = useMenu();
@@ -103,7 +103,7 @@ const YEARS = [{ id: "1", name: "1 year" }, { id: "2", name: "2 years" }, { id: 
  *  The bar over them stays put while they scroll: the toggle, the domain (the box's right-click menu has it too; its hover label says what
  *  the houses are counted from) and how far ahead to look, each kept over a refresh and the same in both. */
 function Outlook() {
-  const { natal, birth } = useChart();
+  const birth = useChart((s) => s.birth), natal = useChart(transitBase);
   const [view, setView] = useKept<"outlook" | "days">("transit.calendar.view", "outlook");
   const [kept, setDomain] = useKept("transit.domain", 1);
   const [years, setYears] = useKept("transit.ahead.years", 2);
@@ -147,7 +147,7 @@ const SHORT_TIP: Record<string, string> = { moon: "The house from the natal Moon
 /** The Outlook's Day by day: the Transit Calendar (every item of it) in the domain's chart, a row a day from the transit moment over
  *  the chosen years; it loads three months at a time as it scrolls. A graha's sign on the day it changes is marked. */
 function DayByDay({ d, years }: { d: number; years: number }) {
-  const { natal, birth } = useChart();
+  const birth = useChart((s) => s.birth), natal = useChart(transitBase);
   const total = Math.round(years * 365.25);
   const q = useInfiniteQuery({
     queryKey: ["transitDays", natal, birth, d, total],
@@ -202,7 +202,7 @@ function DayByDay({ d, years }: { d: number; years: number }) {
  *  ``years`` bring (Ahead). The tables scroll together; a graha's name opens what the books say of its transit, its nakshatra the
  *  nakshatra's own pop-up. */
 function DomainBody({ d, years, toDays }: { d: number; years: number; toDays: () => void }) {
-  const { natal, birth } = useChart();
+  const birth = useChart((s) => s.birth), natal = useChart(transitBase);
   const [info, setInfo] = useKept("transit.domain.info", "");      // the graha whose info pop-up is open
   const q = useQuery(domainQuery(natal, birth, d));
   const ahead = useQuery({ queryKey: ["transitAhead", natal, birth, d, years], queryFn: () => api.transitAhead(natal!, birth!, d, years), placeholderData: (p) => p });
@@ -353,7 +353,7 @@ export function openTransitChakras(id?: string) {
 }
 
 function useTransitLists(enabled: boolean) {
-  const { natal, birth } = useChart();
+  const birth = useChart((s) => s.birth), natal = useChart(transitBase);
   const [o, save] = useKept("transit.lists", LISTS);
   const set = (patch: Partial<typeof o>) => save({ ...o, ...patch });
   const q = useQuery({ queryKey: ["transit", natal, birth, o.reference, o.natalVarga, o.transitVarga], queryFn: () => api.transit(natal!, birth!, o.reference, o.natalVarga, o.transitVarga), enabled, placeholderData: (p) => p });
@@ -444,14 +444,15 @@ export function TransitsLeft() {
   const on = subTab(kept, display) === "basic" && viewOf(lists.view) === "chakras" && mode?.title === "Transit";
   const jamakkol = useJamakkolCast() && subTab(kept, display) === "jamakkol";     // the Jamakkol chart cast on its sub tab
   if (jamakkol) return <JamakkolLeft />;
-  return on ? <div className="star-chart transit-chakra"><TransitChakra key={chakra} tab={chakra} part="draw" /></div> : <LeftCharts />;
+  return on ? <div className="star-chart transit-chakra"><TransitChakra key={chakra} tab={chakra} part="draw" /></div> : <LeftCharts transit />;
 }
 
 const EMPTY = "No transit chart yet. Pick a moment, then show its transit calculations.";
 const links = <ModeLinks links={[["Sarvatobhadra Chakra", "Chakras", "chakras:sbc"], ["Kota Chakra (Durga Chakra)", "Chakras", "chakras:kota"], ["Kalachakra", "Chakras", "chakras:kala"]]} />;
 
 function Basic() {
-  const { natal, birth, mode, display } = useChart();
+  const { birth, mode, display } = useChart();
+  const natal = useChart(transitBase);     // what the transit is read against: the natal chart, or the chart cast before it
   const { fields, moment, now, put } = useMoment(undefined, true, "transit.basic");
   const star = display.layout === "starlight";   // Starlight shows only the two panes: its transit chart on the left has the rest
   const show = useFind(() => api.transitMode(natal!, moment()));
@@ -501,7 +502,7 @@ function Basic() {
 
 /** The Transit Calendar, the Windows layout's sub tab; Starlight's is the Transits view Outlook, its Day by day. */
 function Calendar() {
-  const natal = useChart((s) => s.natal)!;
+  const natal = useChart(transitBase)!;
   const { fields, moment } = useMoment(undefined, true, "transit.calendar");
   const [step, setStep] = useKept("transit.calendar.step", 1);
   const [count, setCount] = useKept("transit.calendar.count", 15);
@@ -603,7 +604,7 @@ const CORRELATION_RULES = ["Quantify aspects based on Parasara's teachings and s
 const STEP_UNITS: [string, number, number][] = [["Year", 0, 12], ["3 Months", 0, 3], ["Month", 0, 1], ["10 Days", 864000, 0], ["5 Days", 432000, 0], ["Day", 86400, 0], ["Hour", 3600, 0]];
 
 function Correlation() {
-  const natal = useChart((s) => s.natal)!;
+  const natal = useChart(transitBase)!;
   const { fields, moment, shift } = useMoment(undefined, true, "transit.correlation");
   const [threshold, setThreshold] = useKept("transit.correlation.threshold", 80);
   const [rule, setRule] = useKept("transit.correlation.rule", 0);
@@ -658,7 +659,7 @@ const COUNTS: [number, string][] = [[0, "1 body, with upagrahas"], [1, "2 grahas
 const LAGNAS = ["Lagna", "Bhava Lagna", "Hora Lagna", "Ghati Lagna", "Vighati Lagna", "Sree Lagna", "Indu Lagna", "Pranapada Lagna"];
 
 function LaghuParasari() {
-  const { birth, natal, mode } = useChart();
+  const { birth, mode } = useChart();
   const [count, setCount] = useState(1);
   const [added, setAdded] = useState("Lagna");
   const [division, setDivision] = useState(1);
@@ -666,8 +667,8 @@ function LaghuParasari() {
   const [oneCycle, setOneCycle] = useState(false);
   const { say } = useChart();
   const star = useChart((s) => s.display.layout === "starlight");
-  // an event chart's ages fit into its span; transit, progressed and Prasna charts keep the natal ages
-  const chart = mode?.natalDasas ? natal! : birth!;
+  // the chart in use: an event chart's ages fit into its span
+  const chart = birth!;
   const span = mode?.event?.span_days;
   const q = useQuery({ queryKey: ["laghu", chart, count, added, span, division, countSigns, oneCycle], queryFn: () => api.laghuParasari(chart, count, added || null, span, division, countSigns, oneCycle) });
   const text = (q.data ?? []).map((r) => [r.label.padEnd(30), ...r.cells.map(([d, a]) => `${d} (${a.toFixed(2)})`)].join(" ")).join("\n");

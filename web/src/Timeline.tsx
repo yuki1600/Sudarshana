@@ -35,7 +35,7 @@ const Gandanta = ({ on }: { on: boolean }) => (on ? <span className="tl-badge">G
 /** The Timeline tab: a calendar year of the sky, from the Barhaspatya samvatsara to every graha's signs, retrogressions,
  *  gandanta passages, combustion, conjunctions and eclipses. Times are in the open chart's zone, with its ayanamsa. */
 export function Timeline() {
-  const natal = useChart((s) => s.natal)!;
+  const natal = useChart((s) => s.birth)!;     // the chart in use: its zone and place
   const [year, setYear] = useKept("timeline.year", new Date().getFullYear());
   const q = useQuery({ queryKey: ["timeline", natal, year], queryFn: () => api.timeline(natal, year), placeholderData: (p) => p });
   const d = q.data;
