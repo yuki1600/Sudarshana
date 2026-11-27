@@ -421,8 +421,7 @@ export function KeyInfo({ bare, show, onPick, picked }: { b: Basics; bare?: bool
   return (
     <section className="pane key-stack" onContextMenu={(e) => { e.preventDefault(); if (bare && isList) { const at = { clientX: e.clientX, clientY: e.clientY }; open(at, bodyItems(bodies, at), "Bodies shown"); } else if (menu.length) open(e, menu, "Key Info menu"); }}>
       {!isList ? (bare && view === "nava_moon" ? <Taras chart={chart} /> : bare && view === "pushkaras" ? <Bhagas chart={chart} />
-        : bare && view === "friends_natural" ? <Friendships chart={chart} />
-        : bare && view === "sahams" ? <Stacked parts={[["sahams", "Sahama", birth!], ["sahams", "Natal sahama", natal!]]} /> : <TableView view={tableView} chart={chart} options={aspectOptions} />) : <>
+        : bare && view === "friends_natural" ? <Friendships chart={chart} /> : <TableView view={tableView} chart={chart} options={aspectOptions} />) : <>
         <div className="scroll key-points">
           <table className="points" ref={table}>
             <thead><tr><th colSpan={3}>Body{bare && <> <small className="muted">(as per D-{division})</small></>}</th><th>Longitude</th><th>Nakshatra</th><th>{division === 1 ? "Navamsa" : `D9 of D${division}`}</th></tr></thead>

@@ -40,7 +40,7 @@ const PINNED = new Set<string>(["amsas"]);     // stays on the row, just before 
 // or not at all (Natal Longitudes); the other tara views are in the Moon's nava taras, which shows all four (Panels.tsx Taras), and the Mrityu Bhaga
 // distances in the Pushkara list, which shows both (Panels.tsx Bhagas)
 const TARA_VIEWS = new Set(["nava_lagna", "special_moon", "special_lagna"]);
-// the temporary and compound friendships are under the natural ones, the natal sahamas under the sahamas (Panels.tsx Friendships, KeyInfo)
+// the temporary and compound friendships are under the natural ones (Panels.tsx Friendships); the sahamas are the shown chart's, a mode's (Tajaka …) when one is on, so no natal ones
 const FOLDED: Partial<Record<string, string>> = { friends_temporal: "friends_natural", friends_compound: "friends_natural", natal_sahams: "sahams" };
 const ELSEWHERE = new Set(["latitudes", "aspects", "combustion", "yuddha", "natal_longitudes", "mrityu", ...TARA_VIEWS, ...Object.keys(FOLDED)]);
 const RENAMED: Partial<Record<string, string>> = { nava_moon: "Taras from Moon and Lagna", pushkaras: "Pushkara and Mrityu Bhagas", friends_natural: "Friendships" };
