@@ -183,12 +183,12 @@ export function Matching() {
         <div className="match-body charts-fit match-split">
           <div className="match-left">
             <div className="match-charts" aria-label="Girl and boy, D-1 and D-9">
-              <MatchChart label="Girl" side={girl} d={1} kind={kindD1} onKind={setKindD1} onPick={(s) => pickSide("girl", s)} picked={focus?.girl} actions={
-                <PartnerActions side={girl} onNew={() => editSide("girl", true)} onEdit={() => editSide("girl", false)} onOpen={() => setOpening("girl")} listed={listed(listGirl, girl)} onList={() => toggle(listGirl, setListGirl, girl)} />} />
-              <MatchChart label="Boy" side={boy} d={1} kind={kindD1} onKind={setKindD1} onPick={(s) => pickSide("boy", s)} second picked={focus?.boy} actions={
-                <PartnerActions side={boy} onNew={() => editSide("boy", true)} onEdit={() => editSide("boy", false)} onOpen={() => setOpening("boy")} listed={listed(listBoy, boy)} onList={() => toggle(listBoy, setListBoy, boy)} />} />
-              <MatchChart label="Girl" side={girl} d={9} kind={kindD9} onKind={setKindD9} onPick={(s) => pickSide("girl", s)} picked={focus?.girl} />
-              <MatchChart label="Boy" side={boy} d={9} kind={kindD9} onKind={setKindD9} onPick={(s) => pickSide("boy", s)} second picked={focus?.boy} />
+              <MatchChart label="Girl" side={girl} d={1} kind={kindD1} onKind={setKindD1} onPick={(s) => pickSide("girl", s)} starred={listGirl} picked={focus?.girl} actions={
+                <PartnerActions side={girl} onNew={() => editSide("girl", true)} onEdit={() => editSide("girl", false)} onOpen={() => setOpening("girl")} listed={listed(listGirl, girl)} onList={() => toggle(listGirl, setListGirl, girl)} otherStarred={listBoy.length > 0} />} />
+              <MatchChart label="Boy" side={boy} d={1} kind={kindD1} onKind={setKindD1} onPick={(s) => pickSide("boy", s)} starred={listBoy} second picked={focus?.boy} actions={
+                <PartnerActions side={boy} onNew={() => editSide("boy", true)} onEdit={() => editSide("boy", false)} onOpen={() => setOpening("boy")} listed={listed(listBoy, boy)} onList={() => toggle(listBoy, setListBoy, boy)} otherStarred={listGirl.length > 0} />} />
+              <MatchChart label="Girl" side={girl} d={9} kind={kindD9} onKind={setKindD9} onPick={(s) => pickSide("girl", s)} starred={listGirl} picked={focus?.girl} />
+              <MatchChart label="Boy" side={boy} d={9} kind={kindD9} onKind={setKindD9} onPick={(s) => pickSide("boy", s)} starred={listBoy} second picked={focus?.boy} />
             </div>
           </div>
 

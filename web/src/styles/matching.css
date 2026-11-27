@@ -494,6 +494,12 @@ main>.pane.match-pane> :not(.pane-head, dialog) {     /* not its pop-ups: they s
 .match-actions .icon-btn[aria-pressed="true"],
 .match-actions .icon-btn[aria-pressed="true"]:hover:not(:disabled) { background: var(--accent); color: var(--accent-ink); }
 
+/* the star while the other side has starred charts: one against many, so greyed and not clickable */
+.match-actions .match-star:disabled { opacity: .35; cursor: not-allowed; }
+
+/* a starred chart in a side's drop-down of open charts */
+.menu .menu-star { margin-left: .25rem; color: var(--accent); }
+
 /* ★: one chart against its starred partners, a box each for the ranking, the eight kutas, the ten poruthams and the areas,
    a row per partner in rank order in every box, so a column reads straight down */
 .match-shortlist + .match-shortlist { margin-top: 1.5rem; }

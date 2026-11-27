@@ -68,7 +68,7 @@ the parts they are built from.
   verdict last; the partner's value, the fixed chart's and why on hover).
 - A page's sub tabs in Starlight sit over its box, not inside it: one size and rule on every page (Home, Dasas, Matching's right
   half, `.match-top` as `.star-tabbar`), the box starting below them. No action buttons in the row beyond a way to another view or its options (Tara matrix, Mundane's calendar
-  options), each drawn as Tara matrix: small padding, the tabs' size, centred a little above the rule. A starred list's tab is `★ Starred 3`.
+  options), each drawn as Tara matrix: small padding, the tabs' size, centred a little above the rule. A starred list's tab is `★ Starred 3`; a starred chart has ★ after its name in the side's drop-down, and while one side has starred charts the other side's ★ is greyed (one against many, never many against many).
 - What a column or a value means goes on hover (`data-tip` for an instant tip), not in extra text in the cell.
 - A setting whose choices are tables of degrees (Pushkara, Mrityu bhaga, on one page) shows the chosen one's table under it, a column per
   sign (Ar … Pi), the rows that differ in the other choice in `--here` (`choices[].table` in the schema, `ChoiceTable`).

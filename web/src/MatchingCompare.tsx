@@ -331,8 +331,8 @@ const short = (s?: string) => s?.split(" (")[0] ?? "";
 const band = (v: number) => (v >= 15 ? "strong" : v >= 10 ? "middling" : "weak");
 
 /** One of the four charts, drawn as Home's: in its centre the name, Rasi or Bhava (linked across the row), the bhava reference, and on the D-1 charts the partner's buttons. */
-export function MatchChart({ label, side, d, kind, onKind, onPick, second, actions, picked }: {
-  label: string; side: Side | null; d: 1 | 9; kind: Kind; onKind: (k: Kind) => void; onPick: (s: Side) => void; second?: boolean; actions?: ReactNode; picked?: string;
+export function MatchChart({ label, side, d, kind, onKind, onPick, second, actions, picked, starred }: {
+  label: string; side: Side | null; d: 1 | 9; kind: Kind; onKind: (k: Kind) => void; onPick: (s: Side) => void; second?: boolean; actions?: ReactNode; picked?: string; starred?: Side[];
 }) {
   const display = useChart((s) => s.display);
   const chartStyle = useChart((s) => s.chartStyle);
@@ -343,7 +343,7 @@ export function MatchChart({ label, side, d, kind, onKind, onPick, second, actio
   return (
     <div className={`star-chart bare match-chart ${label.toLowerCase()}${pop ? " pop" : ""}${side ? "" : " unpicked"}`}>
       <div className="match-centre">
-        <PartnerName label={label} side={side} onPick={onPick} />
+        <PartnerName label={label} side={side} onPick={onPick} starred={starred} />
         <div className="row match-kind">
           <b>D{d}</b>
           <div className="seg" role="tablist" aria-label="Rasi or bhava">
