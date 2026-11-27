@@ -1009,7 +1009,10 @@ Pancha maha purusha yogas;Pancha Mahapurusha yogas|पंच महापुर�
 Conjunctions|युति
 Dosha|दोष
 Shakti|शक्ति
-Murthi;Murti|मूर्ति
+Murthi;Murti;Murthis|मूर्ति
+Kakshya;Kakshyas|कक्ष्या
+Kakshya lord|कक्ष्येश
+Anga graha;Anga grahas|अंग ग्रह
 Jiva|जीव
 Ajiva|अजीव
 Sodhya Pinda;Sodhya pinda;Sodhya pindas|शोध्य पिण्ड

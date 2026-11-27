@@ -74,6 +74,8 @@ const Friendships = ({ chart }: { chart: TableChart }) => <Stacked parts={FRIEND
 // Starlight's Drekkanas and 64th Navamsa: the drekkana each body is in, then the lords of the 64th navamsa and 22nd drekkana (the second's "Pararsara" is Parasara, as Highlights has it)
 const DrekkanaLords = ({ chart }: { chart: TableChart }) => <Stacked parts={[["drekkanas", "Body", chart], ["malicious", "Malicious Division", chart]]}
   shape={(t) => ({ ...t, rows: t.rows.map((r) => r.map((c) => c.replace("Pararsara", "Parasara"))) })} />;
+// Starlight's Nakshatra Aspects & Latta, then the murthi, anga graha and kakshya of each graha at birth (the Transits page's lists, for the birth)
+const NakAspects = ({ chart }: { chart: TableChart }) => <Stacked parts={[["nak_aspects", "Graha", chart], ["murthis", "Murthis", chart], ["anga_grahas", "Anga grahas", chart], ["kakshyas", "Kakshyas", chart]]} />;
 // Starlight's Yogi, Sahayogi, Avayogi with Brahma, Rudra, Maheswara: the six special grahas in one table
 const SpecialGrahas = ({ chart }: { chart: TableChart }) => <Stacked parts={[["yogi", "Title", chart], ["brahma", "Title", chart]]} joined />;
 
@@ -431,6 +433,7 @@ export function KeyInfo({ bare, show, onPick, picked }: { b: Basics; bare?: bool
       {!isList ? (bare && view === "nava_moon" ? <Taras chart={chart} /> : bare && view === "pushkaras" ? <Bhagas chart={chart} />
         : bare && view === "friends_natural" ? <Friendships chart={chart} />
         : bare && view === "yogi" ? <SpecialGrahas chart={chart} />
+        : bare && view === "nak_aspects" ? <NakAspects chart={chart} />
         : bare && view === "drekkanas" ? <DrekkanaLords chart={chart} /> : <TableView view={tableView} chart={chart} options={aspectOptions} />) : <>
         <div className="scroll key-points">
           <table className="points" ref={table}>

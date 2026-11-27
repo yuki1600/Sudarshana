@@ -490,7 +490,7 @@ bala in rupas but gives no minimum).
 | Ekādhipatya śodhana | The two signs of one lord reduced by their occupancy | BPHS 68 | `ashtakavarga.py` `ekadhipatya_sodhana`, `_ekadhipatya_pair` |
 | Rāśi, graha and śodhya piṇḍas | Sign multipliers 7 10 8 4 10 5 7 8 9 5 11 12 (Aries to Pisces) and the grahas' multipliers | BPHS 69 | `ashtakavarga.py` `compute_shodhya_pinda` |
 | Piṇḍa × bindus ÷ 27 (÷ 12): the nakshatra (sign) whose transit by Saturn harms | | BPHS 70.10–11, 70.41–42 | `server/strengths.py` |
-| Transits by bindus and kakṣyās | Each sign in 8 kakṣyās of 3°45′, lorded Saturn … Moon, lagna | **modern**: PVR 25.5.2 | `kakshyas.py`, `server/transits.py` |
+| Transits by bindus and kakṣyās | Each sign in 8 kakṣyās of 3°45′, lorded Saturn … Moon, lagna | **modern**: PVR 25.5.2; the birth's, by the same rule | `kakshyas.py`, `server/transits.py`, `server/tables.py` `kakshyas` |
 | Longevity from the Aṣṭakavarga | Each sign's span by its rekhās | BPHS 71.1–4 | `ashtakavarga.py` `compute_ashtakavarga_ayurdaya`, `ayurdaya.py` `ashtakavarga_years` |
 | Saturn's Aṣṭakavarga and the years of distress | | BPHS 70.37–42 | `ayurdaya.py` `saturn_ashtakavarga` |
 | Aggregate aṣṭakavargas | | BPHS 72 | `ashtakavarga.py` |
@@ -547,13 +547,13 @@ in `YOGA_SOURCES`). Their verses were not found in the editions above, so for th
 | Calculation | Rule | Source | Code |
 | :--- | :--- | :--- | :--- |
 | Gochara from the natal Moon, and vedha | The good houses for each graha and the houses that obstruct them | PD 26.2–8 (vedha 26.3–5) | `transits.py` `evaluate_gochara_transit`, `gochara_vedha` |
-| Mūrti (gold, silver, copper, iron) | By the Moon's house from the natal Moon when the graha entered its sign | **modern**: PVR 26.2 | `transits.py` `compute_murthi_nirnaya`, `server/transits.py` |
+| Mūrti (gold, silver, copper, iron) | By the Moon's house from the natal Moon when the graha entered its sign | **modern**: PVR 26.2; the birth's murthi (each graha's last entry into its sign before the birth), by the same rule | `transits.py` `compute_murthi_nirnaya`, `server/transits.py`, `server/tables.py` `murthis` |
 | Rāśi gochara vedha | | **modern**: PVR 26.3 | `transits.py` |
 | The nine tārās | Janma, Sampat, Vipat, Kṣema, Pratyak, Sādhana, Naidhana, Mitra, Parama-mitra, from the natal star (or the lagna's) | **modern**: PVR 26.4.1 | `key_info.py`, `chakras.py` |
 | Special nakshatras | Karma, Sāṅghātika, Sāmudāyika, Vaināśika, Mānasa … on the 28-star wheel | **modern**: PVR 26.4.2 | `key_info.py` `transit_special_nakshatras` |
 | Nakshatra aspects | | **modern**: PVR 26.5 | `key_info.py` |
 | Lattās (forward and rear kicks) | Sun the 12th star, Mars the 3rd, Jupiter the 6th, Saturn the 8th forward; Venus the 5th, Mercury the 7th, Rāhu the 9th, Moon the 22nd backward | PD 26.42–47 | `transits.py` `LATTA_RULES`, `key_info.py` |
-| Aṅga graha (the limb a transit falls on) | Per graha, by the count from the natal star: Sun face 1, head 2–5, chest 6–9 … | PD 26.35–40 (the Sun's 26.35); PVR 26.6 | `key_info.py` `anga_graha` |
+| Aṅga graha (the limb a transit falls on) | Per graha, by the count from the natal star: Sun face 1, head 2–5, chest 6–9 … | PD 26.35–40 (the Sun's 26.35); PVR 26.6. The birth's (each graha's natal star from the natal Moon's, lagna's, Sun's): the same tables, **convention** | `key_info.py` `anga_graha`, `server/tables.py` `anga_grahas` |
 | Sapta Śalākā | | PD 26.26–27 | `transits.py` |
 | Transits by Aṣṭakavarga and kakṣyā | See [§10.3](#103-aṣṭakavarga) | | |
 | Pācakādi relationships | Pācaka, Bodhaka, Kāraka, Vedhaka houses from each graha | **convention**: no verse checked | `key_info.py` `PACHAKADI_HOUSES` |

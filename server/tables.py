@@ -81,6 +81,29 @@ def nakshatra_aspects(b, ch, cfg, s):
     return _table(["Graha", "Latta on", "Occupied Star", "Aspected Stars"], [[PLANETS[i], latta, star, " ".join(asp)] for i, (latta, star, asp) in enumerate(rows)])
 
 
+# The transit view's murthi, anga graha and kakshya lists, for the birth (server/transits.py): each graha at birth as if it were the transit
+def murthis(b, ch, cfg, s):
+    """Each graha's murthi at birth: the Moon's sign, from the natal Moon, when the graha last entered its sign (PVR 26.2). The Moon has none."""
+    from .transits import _murthis
+    lons = _lons(ch)
+    m = _murthis(b.jd_ut, [int(x // 30) for x in lons], int(lons[2] // 30), cfg)
+    return _table(["Graha", "Murthi"], [[PLANETS[p - 1], m.get(p, "-")] for p in range(1, 10)])
+
+
+def anga_grahas(b, ch, cfg, s):
+    """The limb each graha's star falls on, counted from the natal Moon's, lagna's and Sun's stars (PD 26.35-40)."""
+    lons = _lons(ch)
+    natal = dict(enumerate(lons[1:10]))
+    return _table(["Graha", "Limb (Moon)", "Result (from Moon)", "Limb (lagna)", "Result (from lagna)", "Limb (Sun)", "Result (from Sun)"],
+                  [[n, *m, *l, *u] for n, m, l, u in zip(PLANETS, K.anga_graha(natal, lons[2]), K.anga_graha(natal, lons[0]), K.anga_graha(natal, lons[1]))])
+
+
+def kakshyas(b, ch, cfg, s):
+    """Each body's kakshya at birth: the eighth of its sign (3°45') and its lord (PVR 25.5.2)."""
+    from .transits import _kakshyas
+    return _table(["Graha", "Sign", "Kakshya", "Span", "Kakshya lord"], _kakshyas(_lons(ch)))
+
+
 def yogi(b, ch, cfg, s):
     lons = _lons(ch)
     y = (lons[1] + lons[2] + 93.0 + 1.0 / 3.0) % 360.0
@@ -286,7 +309,8 @@ STRENGTH_LISTS = [("sthana", "Shadbala: Sthana", _shadbala(["Sthana Bala", "Uchc
                   ("drig", "Shadbala: Drik", _shadbala(["DrikBala"], ["drig"])), ("naisargika", "Shadbala: Naisargika", _shadbala(["Naisargika Bala"], ["naisargika"])),
                   ("rashmis", "Ishta-Kashta and Rashmis", rashmis), ("vaiseshikamsa", "Vaiseshikamsas", vaiseshikamsa), ("avasthas", "Basic Avasthas", avasthas), ("sayanadi", "Sayanadi Avasthas", sayanadi),
                   ("pancha", "Pancha-vargeeya Bala", pancha), ("dwadasa", "Dwadasa-vargeeya Bala", dwadasa), ("harsha", "Harsha Bala", harsha)]
-VIEWS = {key: fn for key, _, fn in KEY_INFO + STRENGTH_LISTS} | {"avasthas_parashara": avasthas_parashara}     # Starlight's, in no list
+VIEWS = {key: fn for key, _, fn in KEY_INFO + STRENGTH_LISTS} | {"avasthas_parashara": avasthas_parashara,     # Starlight's, in no list
+                                                                  "murthis": murthis, "anga_grahas": anga_grahas, "kakshyas": kakshyas}
 VARGA_VIEWS = {"avasthas", "avasthas_parashara"}      # these take the chart's varga
 
 
