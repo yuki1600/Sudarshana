@@ -1,0 +1,2519 @@
+/* Black and white. Purple is for what you act on (the selected tab, buttons, links, focus);
+   the intro's gold marks where you are (the lagna, the dasa running now); red to green is weak to strong. */
+/* no scrollbars anywhere: everything still scrolls by wheel, trackpad, touch and keys (the owner wants them hidden) */
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --radius: .75rem;   /* the corners of every box and table */
+  --th: var(--ink);   /* every table's headings: black (white in the dark theme); the Windows layout keeps them grey (below) */
+  --font: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --bg: #f4f5f7;
+  --panel: #ffffff;
+  --boy-tint: #f1f8ff;    /* Matching: the boy's chart centre, light blue */
+  --girl-tint: #fff4f8;   /* and the girl's, light pink */
+  --ink: #0a0a0a;
+  --muted: #676b73;
+  --line: #e3e5e9;
+  --chart-line: #bcc0c7;
+  --accent: #5b2bd9;
+  --accent-ink: #ffffff;
+  --shade: #eff0f3;
+  --gold: #f5b03e;
+  --gold-ink: #000000;
+  --here: var(--gold);        /* where you are (the period running now, the chosen row): gold, purple in Sudarshana Starlight */
+  --here-ink: var(--gold-ink);
+  --weak: #e5352b;
+  --middling: #facc15;   /* the tones' halfway: yellow, so weak to strong reads red, yellow, green */
+  --strong: #16a34a;
+  --bad-ink: #b42318;
+  --good-ink: #0b7a3e;
+  --great-friend: #0b6b35;   /* a graha's name by its relation to the sign's lord */
+  --friend: #4caf72;
+  --enemy: #e57368;
+  --great-enemy: #9b1c13;
+  --moola: #1f5fd1;
+  --lagna: #a86500;
+  --error: #c4231b;
+  --bar: #5b2bd9;
+  --running: #5b2bd9;
+  --running-ink: #ffffff;
+  --band-mix: 22%;
+  --shadow: 0 .75rem 2rem rgb(10 10 20 / .12), 0 1px .1875rem rgb(10 10 20 / .08);
+  --dl-0: color-mix(in srgb, var(--ink) 62%, var(--panel));
+  --dl-1: color-mix(in srgb, var(--ink) 46%, var(--panel));
+  --dl-2: color-mix(in srgb, var(--ink) 34%, var(--panel));
+  --dl-3: color-mix(in srgb, var(--ink) 26%, var(--panel));
+  --dl-4: color-mix(in srgb, var(--ink) 20%, var(--panel));
+  --dl-5: color-mix(in srgb, var(--ink) 15%, var(--panel));
+  --lv-1: #d39200;
+  --lv-2: #2e9e4f;
+  --lv-3: #6b4fc8;
+  --lv-4: #d0417c;
+  --lv-5: #7d7f86;
+  --g-Su: #eb6834;
+  --g-Mo: #2a78d6;
+  --g-Ma: #e34948;
+  --g-Me: #008300;
+  --g-Ju: #eda100;
+  --g-Ve: #e87ba4;
+  --g-Sa: #6250d6;
+  --g-Ra: #1baf7a;
+  --g-Ke: #1baf7a;
+  --astro-bhava: #a01f6e;
+  --astro-ke: #8a6a3a;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #000000;
+    --panel: #0c0c0e;
+    --boy-tint: #0e161f;
+    --girl-tint: #1c1116;
+    --ink: #f4f4f5;
+    --muted: #8d9099;
+    --line: #232428;
+    --chart-line: #46494f;
+    --accent: #a68cff;
+    --accent-ink: #0a0a0a;
+    --shade: #17181b;
+    --gold: #ffc766;
+    --gold-ink: #000000;
+    --weak: #f0605a;
+    --middling: #facc15;
+    --strong: #34c76f;
+    --bad-ink: #ff8a80;
+    --good-ink: #5fd68f;
+    --great-friend: #2fbf6a;
+    --friend: #9be3b6;
+    --enemy: #ffa39b;
+    --great-enemy: #ff4d40;
+    --moola: #6f9dff;
+    --lagna: #ffc766;
+    --error: #f2b8b5;
+    --bar: #9479ff;
+    --running: #a68cff;
+    --running-ink: #0a0a0a;
+    --band-mix: 24%;
+    --shadow: 0 .625rem 1.875rem rgb(0 0 0 / .6), 0 0 0 1px rgb(255 255 255 / .04);
+    --lv-1: #e0a800;
+    --lv-2: #4fb56a;
+    --lv-3: #a08cf0;
+    --lv-4: #e8709f;
+    --lv-5: #8d9099;
+    --g-Su: #d95926;
+    --g-Mo: #3987e5;
+    --g-Ma: #e66767;
+    --g-Me: #008300;
+    --g-Ju: #c98500;
+    --g-Ve: #d55181;
+    --g-Sa: #9085e9;
+    --g-Ra: #199e70;
+    --g-Ke: #199e70;
+    --astro-bhava: #ee8ac6;
+    --astro-ke: #c9a26a;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #000000;
+  --panel: #0c0c0e;
+  --boy-tint: #0e161f;
+  --girl-tint: #1c1116;
+  --ink: #f4f4f5;
+  --muted: #8d9099;
+  --line: #232428;
+  --chart-line: #46494f;
+  --accent: #a68cff;
+  --accent-ink: #0a0a0a;
+  --shade: #17181b;
+  --gold: #ffc766;
+  --gold-ink: #000000;
+  --weak: #f0605a;
+  --middling: #facc15;
+  --strong: #34c76f;
+  --bad-ink: #ff8a80;
+  --good-ink: #5fd68f;
+  --great-friend: #2fbf6a;
+  --friend: #9be3b6;
+  --enemy: #ffa39b;
+  --great-enemy: #ff4d40;
+  --moola: #6f9dff;
+  --lagna: #ffc766;
+  --error: #f2b8b5;
+  --bar: #9479ff;
+  --running: #a68cff;
+  --running-ink: #0a0a0a;
+  --band-mix: 24%;
+  --shadow: 0 .625rem 1.875rem rgb(0 0 0 / .6), 0 0 0 1px rgb(255 255 255 / .04);
+  --lv-1: #e0a800;
+  --lv-2: #4fb56a;
+  --lv-3: #a08cf0;
+  --lv-4: #e8709f;
+  --lv-5: #8d9099;
+  --g-Su: #d95926;
+  --g-Mo: #3987e5;
+  --g-Ma: #e66767;
+  --g-Me: #008300;
+  --g-Ju: #c98500;
+  --g-Ve: #d55181;
+  --g-Sa: #9085e9;
+  --g-Ra: #199e70;
+  --g-Ke: #199e70;
+  --astro-bhava: #ee8ac6;
+  --astro-ke: #c9a26a;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Every size is in rem, so the page scales as one with the window: 16px at 1440 × 810, the width or the height,
+   whichever is tighter. The fixed 4px keeps the browser's own zoom working. Drawings keep px: their viewBox scales them. */
+html {
+  font-size: clamp(14px, 4px + min(.8333vw, 1.4815vh), 32px);
+}
+
+/* phones: the narrow layouts were drawn at 16px; the Windows layout stays as it is */
+@media (max-width: 720px) {
+  html { font-size: 16px; }
+}
+
+html[data-layout="windows"] {
+  font-size: 16px;
+  --th: var(--muted);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: .875rem/1.45 var(--font);
+}
+
+/* ordinals' endings (12th, supOrd in ui.tsx): raised and small without making their line taller */
+sup {
+  font-size: .7em;
+  line-height: 0;
+}
+
+.ord { white-space: nowrap; }     /* an ordinal never breaks between its number and its ending */
+
+button,
+select,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button,
+select {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  padding: .3125rem .625rem;
+  cursor: pointer;
+}
+
+/* dropdowns (and their open lists) never smaller than 1rem, whatever small text they sit in */
+select {
+  font-size: max(1em, 1rem);
+}
+
+button:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--ink) 45%, var(--line));
+}
+
+button:disabled {
+  opacity: .45;
+  cursor: default;
+}
+
+button.primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  font-weight: 500;
+}
+
+button.primary:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 88%, var(--ink));
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 .3125rem color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+input {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  padding: .3125rem .5rem;
+  width: 100%;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.error {
+  color: var(--error);
+}
+
+.banner {
+  margin: .5rem 1rem;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  height: calc(3rem * var(--list-scale, 1));
+  flex: none;
+  padding: 0 .75rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.topbar>*,
+.bar-left>*,
+.bar-right>*,
+.bar-right .page-tab {
+  flex: none;
+}
+
+/* Windows layout: the wrapper drops out and the bar runs as one row; Starlight: see .star-bar>.bar-left */
+.bar-left {
+  display: contents;
+}
+
+/* the instant hover label of the bar's buttons and every icon (IconTips); fixed, so no overflow clips it */
+.bar-tip {
+  position: fixed;
+  z-index: 1000;
+  translate: -50% 0;
+  width: max-content;
+  max-width: min(16rem, calc(100vw - .5rem));     /* a long tip wraps into a narrow column, not across the page */
+  padding: .25rem .5rem;
+  white-space: pre-line;     /* a tip's own line breaks show */
+  border-radius: .375rem;
+  background: var(--ink);
+  color: var(--panel);
+  font-size: calc(.75rem * var(--list-scale, 1));
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.bar-tip.above {
+  translate: -50% -100%;
+}
+
+/* a menu item's tip, to the left of the menu */
+.bar-tip.side {
+  translate: -100% -50%;
+}
+
+.page-tabs {
+  display: flex;
+  gap: 2px;
+}
+
+.icon-btn,
+.page-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .375rem;
+  height: calc(2.125rem * var(--list-scale, 1));
+  min-width: calc(2.125rem * var(--list-scale, 1));
+  padding: 0 calc(.4375rem * var(--list-scale, 1));
+  border: 0;
+  background: none;
+  color: var(--muted);
+  border-radius: .5rem;
+  position: relative;
+}
+
+.icon-btn:hover:not(:disabled),
+.page-tab:hover {
+  background: var(--shade);
+  color: var(--ink);
+  border-color: transparent;
+}
+
+.icon-btn[aria-pressed="true"],
+.icon-btn[aria-pressed="true"]:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* the page you are on: a purple outline (drawn inside, so the bar does not shift); Starlight's page icons mark it with aria-current */
+.page-tab[aria-selected="true"],
+.page-tab[aria-current="page"] {
+  box-shadow: inset 0 0 0 1.5px var(--c-SelectedTab, var(--accent));
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.page-tab .tab-label {
+  display: none;
+  white-space: nowrap;
+}
+
+.page-tab[aria-selected="true"] .tab-label {
+  display: inline;
+}
+
+/* Starlight: the open page is its outlined icon alone, so the bar keeps its width and nothing beside it jumps on a click */
+.star-bar .page-tab[aria-selected="true"] .tab-label {
+  display: none;
+}
+
+.icon .icon,
+svg.icon {
+  flex: none;
+}
+
+.bar-sep {
+  width: 1px;
+  height: 1.375rem;
+  background: var(--line);
+  margin: 0 .375rem;
+}
+
+/* Beat .topbar > * so the middle strip fills leftover space without shoving the steppers. */
+.topbar .spacer {
+  flex: 1 1 0;
+  min-width: .5rem;
+}
+
+/* min-width overrides flex's content minimum so the strip can't shove the steppers; tabs inside still compress. */
+.topbar .chart-tabs {
+  flex: 1 1 0%;
+  min-width: 6rem;
+  display: flex;
+  gap: 2px;
+  align-items: stretch;
+  overflow: hidden;
+  margin: 0 .5rem;
+}
+
+.chart-tab {
+  display: inline-flex;
+  align-items: center;
+  flex: 1 1 0%;
+  width: 0;
+  min-width: 0;
+  max-width: 10rem;
+  height: 2rem;
+  padding-right: 1px;
+  border: 1px solid var(--line);
+  border-radius: .375rem;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: calc(.8125rem * var(--list-scale, 1));
+}
+
+.chart-tab:hover {
+  background: var(--shade);
+}
+
+.chart-tab[aria-selected="true"] {
+  border-color: var(--c-SelectedTab, var(--accent));
+  background: var(--panel);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.chart-tab-main {
+  display: inline-flex;
+  align-items: center;
+  flex: 1 1 0%;
+  min-width: 0;
+  height: 100%;
+  padding: 0 2px 0 .375rem;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.chart-tab-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+/* a cast chart's word drawn as its page's icon (☉ Tajaka, ☽ Tithi Pravesha, the Transits logo), the size of the text beside it */
+
+.chart-tab-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  padding: 0;
+  border: 0;
+  border-radius: .25rem;
+  flex: none;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.chart-tab-close:hover {
+  background: var(--line);
+  color: var(--ink);
+}
+
+.chart-tab-close .icon,
+.chart-tab-close svg {
+  width: .75rem;
+  height: .75rem;
+}
+
+.zone-note {
+  margin-left: .5rem;
+  white-space: nowrap;
+  font-size: calc(.75rem * var(--list-scale, 1));
+}
+
+.stepper select {
+  padding: .1875rem .25rem;
+  border-color: transparent;
+  background: none;
+}
+
+.stepper select:hover {
+  border-color: var(--accent);
+}
+
+main {
+  flex: 1;
+  min-height: 0;
+  padding: .75rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+main>* {
+  min-height: 0;
+}
+
+.empty {
+  color: var(--muted);
+  text-align: center;
+  margin: auto;
+}
+
+.empty .row {
+  justify-content: center;
+  margin-top: .5rem;
+}
+
+.empty button {
+  display: inline-flex;
+  align-items: center;
+  gap: .375rem;
+}
+
+.basics {
+  display: grid;
+  grid-template-columns: minmax(17.5rem, 0.8fr) minmax(0, 1.6fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.charts {
+  display: grid;
+  gap: 1rem;
+}
+
+.right {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.lower {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+
+  .basics,
+  .lower {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pane {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  min-width: 0;
+}
+
+.pane-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .5rem .75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.pane-head h2 {
+  margin: 0;
+  font-size: calc(.84375rem * var(--list-scale, 1));
+  font-weight: 600;
+  letter-spacing: -.005em;
+}
+
+.scroll {
+  max-height: 26.25rem;
+  overflow: auto;
+}
+
+/* every table is round edged alike: its box has the one radius, and the scroller it sits in clips its rows to the same curve */
+.scroll,
+.mn-table-wrap,
+.match-matrix-wrap {
+  border-radius: calc(var(--radius) - 1px);
+}
+
+/* no trackpad rubber-band: it drags the sticky table headers up and down with the rows */
+.scroll,
+.mn-table-wrap,
+.match-matrix-wrap {
+  overscroll-behavior: none;
+}
+
+table.points {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.points th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--panel);
+  text-align: left;
+  font-weight: 600;
+  color: var(--th);
+  padding: .375rem .75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.points td {
+  padding: .1875rem .75rem;
+  white-space: pre;
+}
+
+.points tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--shade) 45%, transparent);
+}
+
+.points .num {
+  font-family: var(--mono);
+  font-size: calc(.8125rem * var(--list-scale, 1));
+}
+
+dl.core {
+  margin: 0;
+  padding: .375rem .75rem .5rem;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 2px .75rem;
+}
+
+.core div {
+  display: contents;
+}
+
+.core dt {
+  font-weight: 700;
+}
+
+.core dd {
+  margin: 0;
+}
+
+.av-grids {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .5rem;
+  padding: .625rem;
+}
+
+svg.grid {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+}
+
+.grid .box {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 2;
+}
+
+.grid .box.shaded {
+  fill: var(--shade);
+}
+
+.grid .box.muntha {
+  fill: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.grid .lagna-mark {
+  fill: var(--gold);
+}
+
+.grid .lagna-box {
+  display: none;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  pointer-events: none;
+}
+
+/* Starlight: every chart's lagna box (Many Vargas too) is outlined in the accent (purple; Praajna's saffron) instead of the gold corner */
+:root[data-layout="starlight"] .grid .lagna-mark {
+  display: none;
+}
+
+:root[data-layout="starlight"] .grid .lagna-box {
+  display: inline;
+}
+
+.grid .sign-name {
+  fill: var(--muted);
+  font-size: var(--sign, 12px);
+}
+
+.grid .body-label {
+  fill: var(--ink);
+  font-size: var(--major, 20px);
+  font-weight: 500;
+}
+
+.grid.compact .body-label {
+  font-size: 30px;
+}
+
+.grid .grid-title {
+  fill: var(--ink);
+  font-size: calc(24px * var(--chart-scale, 1));
+  font-weight: 700;
+}
+
+.grid.compact .grid-title {
+  font-size: calc(36px * var(--chart-scale, 1));
+  fill: var(--accent);
+  font-weight: 700;
+}
+
+.dialog {
+  border: 1px solid var(--line);
+  border-radius: .875rem;
+  box-shadow: var(--shadow);
+  background: var(--panel);
+  color: var(--ink);
+  padding: 1.25rem;
+  width: min(35rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.dialog::backdrop {
+  background: rgb(0 0 0 / .5);
+  backdrop-filter: blur(.375rem);
+}
+
+.dialog h2 {
+  margin: 0 0 .75rem;
+  font-size: calc(1rem * var(--list-scale, 1));
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+
+.dialog label {
+  display: block;
+  margin-bottom: .625rem;
+  font-size: calc(.75rem * var(--list-scale, 1));
+  color: var(--muted);
+}
+
+.dialog label input {
+  margin-top: .1875rem;
+  color: var(--ink);
+  font-size: calc(.875rem * var(--list-scale, 1));
+}
+
+.dialog fieldset {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6.875rem, 1fr));
+  gap: 0 .625rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  margin: 0 0 .625rem;
+  padding: .5rem .625rem 0;
+}
+
+.dialog legend {
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  width: calc(100% - .5rem);
+  font-size: calc(.75rem * var(--list-scale, 1));
+  color: var(--muted);
+  padding: 0 .25rem;
+}
+
+.dialog menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: .5rem;
+  margin: .75rem 0 0;
+  padding: 0;
+}
+
+.place {
+  position: relative;
+  margin-bottom: .625rem;
+}
+
+.place-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .625rem;
+}
+
+.place-row label {
+  margin-bottom: 0;
+}
+
+.place-row .place-name {
+  grid-column: 1 / -1;
+}
+
+/* the time zone takes two columns, so its zone's name fits beside the hours */
+.place-row .zone-field {
+  grid-column: span 2;
+}
+
+.hits {
+  z-index: 2;
+  margin: 2px 0 .5rem;
+  padding: .25rem;
+  list-style: none;
+  max-height: 13.75rem;
+  overflow: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: .625rem;
+  box-shadow: var(--shadow);
+}
+
+.hits button {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-size: calc(.875rem * var(--list-scale, 1));
+  padding: .25rem .5rem;
+}
+
+.hits button:hover,
+.hits button.active {
+  background: var(--shade);
+}
+
+.hit-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  align-items: flex-start;
+}
+
+.hit-name {
+  line-height: 1.25;
+}
+
+.hit-meta {
+  font-size: calc(.71875rem * var(--list-scale, 1));
+  font-variant-numeric: tabular-nums;
+}
+
+.hits-note {
+  margin: 2px 0 .5rem;
+  font-size: calc(.75rem * var(--list-scale, 1));
+}
+
+.coord-fmt {
+  margin-left: auto;
+}
+
+.dialog fieldset>.dms {
+  grid-column: 1 / -1;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.dialog label.dms .dms-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: .25rem;
+  margin-top: .1875rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.dialog label.dms .dms-row input[type="number"] {
+  flex: 1 1 0;
+  width: 0;
+  /* shrink inside the box; ignore intrinsic number-input width */
+  min-width: 0;
+  margin-top: 0;
+  padding: .3125rem .25rem;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.dialog label.dms .dms-row input[type="number"]::-webkit-outer-spin-button,
+.dialog label.dms .dms-row input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.dialog label.dms .dms-row select {
+  flex: 0 0 2.75em;
+  width: 2.75em;
+  min-width: 2.75em;
+  max-width: 2.75em;
+  margin-top: 0;
+  padding: .3125rem 0;
+  display: inline-block;
+  text-align: center;
+}
+
+.dialog label.dms .dms-row>span[aria-hidden] {
+  color: var(--muted);
+  flex: 0 0 auto;
+}
+
+@media (max-width: 520px) {
+  .place-row {
+    grid-template-columns: 1fr;
+  }
+
+  .place-row .place-name,
+  .place-row .zone-field {
+    grid-column: auto;
+  }
+}
+
+.seg {
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+
+.seg button {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  border-radius: .375rem;
+  padding: .25rem .625rem;
+}
+
+.seg button[aria-selected="true"] {
+  background: var(--shade);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.right>.seg {
+  flex: none;
+  padding: 2px 0;
+}
+
+.dasa-bar {
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  padding: .5rem .75rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--line);
+}
+
+.dasa-bar>.muted {
+  flex: 1 1 0;   /* the year note wraps, so Up and Options stay on the picker's row, at its right end */
+  min-width: 10rem;
+}
+
+.dasa-bar select {
+  min-width: 13.75rem;
+  max-width: 100%;
+}
+
+.best-banner {
+  margin: 0;
+  padding: .5rem .75rem;
+  background: var(--shade);
+  border-bottom: 1px solid var(--line);
+}
+
+.best-banner>[aria-hidden] {
+  color: var(--accent);
+}
+
+.best-banner .link {
+  border: 0;
+  background: none;
+  padding: 0 2px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.best-banner .link[aria-current="true"] {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.best-dasa td {
+  white-space: normal;
+  vertical-align: top;
+}
+
+.best-dasa tr.best td {
+  background: var(--shade);
+  font-weight: 600;
+}
+
+.best-glance {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .375rem;
+  padding: .375rem .5rem;
+}
+
+.best-glance select {
+  width: 100%;
+}
+
+.glance-cols {
+  flex: 1 1 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .375rem;
+}
+
+.glance-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.pane-head .seg button {
+  display: inline-flex;
+  align-items: center;
+}
+
+.scroll.tall {
+  max-height: 70vh;
+  padding: 0 .75rem .5rem;
+}
+
+.dasas h3 {
+  margin: .75rem 0 .25rem;
+  font-size: calc(.9375rem * var(--list-scale, 1));
+}
+
+table.periods {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.periods th {
+  text-align: left;
+  color: var(--th);
+  font-weight: 600;
+  padding: .375rem .5rem;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--panel);
+}
+
+.periods td {
+  padding: .25rem .5rem;
+  white-space: nowrap;
+}
+
+.periods .num {
+  font-family: var(--mono);
+  font-size: calc(.8125rem * var(--list-scale, 1));
+}
+
+.periods tr.split {
+  cursor: pointer;
+}
+
+.periods tr.split:hover td,
+.periods tr.split:focus-visible td {
+  background: var(--shade);
+}
+
+.periods tr {
+  scroll-margin-top: 2.25rem;
+}
+
+/* clear of the sticky header */
+.periods .twisty {
+  display: inline-block;
+  width: 1.2em;
+  color: var(--muted);
+}
+
+/* each level reads apart: mahadasas as bold sections under a rule, then each level down its own colour, starting at its indent */
+.dasa-tree {
+  --indent: 1.5rem;
+  --lv-0: var(--accent);
+  --b0: var(--c-DasaViewBackground, var(--panel));
+  --b1: color-mix(in srgb, var(--dl-1) var(--band-mix), var(--b0));
+  --b2: color-mix(in srgb, var(--dl-2) var(--band-mix), var(--b0));
+  --b3: color-mix(in srgb, var(--dl-3) var(--band-mix), var(--b0));
+  --b4: color-mix(in srgb, var(--dl-4) var(--band-mix), var(--b0));
+  --b5: color-mix(in srgb, var(--dl-5) var(--band-mix), var(--b0));
+}
+
+.dasa-tree th {
+  z-index: 1;
+}
+
+/* the indents below are positioned, and must scroll under the header */
+.dasa-tree td {
+  background: var(--band);
+}
+
+.dasa-tree tr.split:hover td,
+.dasa-tree tr.split:focus-visible td {
+  background: color-mix(in srgb, var(--ink) 8%, var(--band));
+}
+
+.dasa-tree td:first-child {
+  position: relative;
+  padding-left: calc(.5rem + var(--level) * var(--indent));
+}
+
+.dasa-tree td:first-child::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--level) * var(--indent));
+  background: var(--b0);
+}
+
+.dasa-tree tr[data-depth="0"] td {
+  font-weight: 600;
+  border-top: 1px solid var(--line);
+}
+
+/* what is running is purple: a tinted branch with a bar down it; the period running now is solid --here (gold, purple in Sudarshana Starlight) */
+.dasa-tree tr.running td {
+  --band: color-mix(in srgb, var(--running) calc(18% + var(--level) * 8%), var(--b0));
+  font-weight: 600;
+}
+
+.dasa-tree tr.running td:first-child::before {
+  border-right: .25rem solid var(--running);
+}
+
+.dasa-tree tr.now td {
+  --band: var(--here);
+  color: var(--here-ink);
+}
+
+.dasa-tree tr.now .twisty {
+  color: inherit;
+}
+
+.dasa-tree tr.now .level-tag {
+  background: var(--panel);
+  border-color: var(--here-ink);
+  color: var(--ink);
+}
+
+.dasa-tree tr.now td:first-child::after {
+  content: "NOW";
+  margin-left: .5rem;
+  padding: 0 .375rem;
+  border-radius: 62.4375rem;
+  background: var(--here-ink);
+  color: var(--here);
+  font-size: calc(.625rem * var(--list-scale, 1));
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.dasa-tree.died tr.now td:first-child::after {
+  content: "DIED";
+}
+
+.level-tag {
+  display: inline-block;
+  min-width: 2.6em;
+  padding: 0 .375rem;
+  border: 1px solid var(--lv);
+  border-radius: 62.4375rem;
+  background: color-mix(in srgb, var(--lv) 45%, var(--panel));
+  text-align: center;
+  font-size: calc(.6875rem * var(--list-scale, 1));
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+[data-depth="0"] .level-tag {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.hint {
+  margin: .5rem 0 0;
+  font-size: calc(.75rem * var(--list-scale, 1));
+}
+
+.empty.small {
+  margin: 1.5rem 0;
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: .375rem;
+  font-size: calc(.8125rem * var(--list-scale, 1));
+  color: var(--muted);
+}
+
+.check input {
+  width: auto;
+}
+
+.pane-head.sub {
+  border-top: 1px solid var(--line);
+}
+
+table.wrap td {
+  white-space: normal;
+  vertical-align: top;
+  min-width: 7em;
+}
+
+.longevity table.wrap td {
+  min-width: 0;
+}
+
+/* up to 14 columns: the 7em above would push the last ones out of the pane */
+.longevity table.wrap td.short {
+  white-space: nowrap;
+}
+
+.longevity-hero {
+  border-bottom: 1px solid var(--line);
+}
+
+.longevity-hero .best-banner {
+  border-bottom: 0;
+}
+
+.longevity-hero .match-score {
+  font-size: calc(.9375rem * var(--list-scale, 1));
+  margin: 0;
+}
+
+.longevity-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.75rem, 1fr));
+  gap: .5rem .75rem;
+  padding: .5rem .75rem .625rem;
+}
+
+.longevity-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.longevity-metric>div {
+  font-size: calc(.8125rem * var(--list-scale, 1));
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.longevity-chip {
+  display: inline-block;
+  padding: 0 .5rem;
+  border-radius: 62.4375rem;
+  border: 1px solid var(--line);
+  background: var(--shade);
+  font-size: calc(.71875rem * var(--list-scale, 1));
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.longevity-chip.short {
+  border-color: color-mix(in srgb, #b45309 55%, var(--line));
+  background: color-mix(in srgb, #b45309 18%, var(--panel));
+}
+
+.longevity-chip.medium {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  background: color-mix(in srgb, var(--accent) 18%, var(--panel));
+}
+
+.longevity-chip.long {
+  border-color: color-mix(in srgb, #15803d 55%, var(--line));
+  background: color-mix(in srgb, #15803d 18%, var(--panel));
+}
+
+.longevity-chip.extreme {
+  border-color: color-mix(in srgb, #1d4ed8 55%, var(--line));
+  background: color-mix(in srgb, #1d4ed8 18%, var(--panel));
+}
+
+.longevity-chip.primary-tag {
+  margin-left: .375rem;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.longevity table.longevity-primary {
+  margin: 0 0 .25rem;
+}
+
+.longevity tr.best td {
+  background: var(--shade);
+  font-weight: 600;
+}
+
+.longevity tr.longevity-secondary td {
+  color: color-mix(in srgb, var(--ink) 78%, var(--muted));
+}
+
+.pad {
+  padding: .75rem;
+}
+
+.mode-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  border-radius: 62.4375rem;
+  padding: 2px .25rem 2px .75rem;
+  font-size: calc(.8125rem * var(--list-scale, 1));
+  white-space: nowrap;
+}
+
+.mode-badge button {
+  color: inherit;
+  border-radius: 62.4375rem;
+  padding: 2px .625rem;
+}
+
+/* the pill's × stays small beside its text (the top bar draws its other icons at 23px) */
+.topbar .mode-badge .icon-btn {
+  height: calc(1.25rem * var(--list-scale, 1));
+  min-width: calc(1.25rem * var(--list-scale, 1));
+  padding: 0 calc(.1875rem * var(--list-scale, 1));
+}
+
+.topbar .mode-badge .icon-btn svg.icon {
+  width: calc(.75rem * var(--list-scale, 1));
+  height: calc(.75rem * var(--list-scale, 1));
+}
+
+.mode-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.375rem, 1fr));
+  gap: .625rem .75rem;
+  padding: .75rem;
+}
+
+.mode-form label {
+  display: grid;
+  gap: .1875rem;
+  align-content: end;
+  font-size: calc(.75rem * var(--list-scale, 1));
+  color: var(--muted);
+}
+
+.mode-form select,
+.mode-form input {
+  color: var(--ink);
+  font-size: calc(1rem * var(--list-scale, 1));
+}
+
+.mode-buttons {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.mode-form.ruled {
+  border-top: 1px solid var(--line);
+}
+
+.mode-group {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: .5rem .625rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  margin: 0;
+  padding: .5rem .625rem .625rem;
+}
+
+.mode-group legend {
+  font-size: calc(.75rem * var(--list-scale, 1));
+  color: var(--muted);
+  padding: 0 .25rem;
+}
+
+.mode-group label {
+  min-width: 7.5rem;
+}
+
+.row {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .375rem;
+}
+
+.day {
+  padding: .625rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.day h3 {
+  margin: 0 0 .25rem;
+  font-size: calc(.9375rem * var(--list-scale, 1));
+  color: var(--accent);
+}
+
+.day p {
+  margin: 2px 0;
+}
+
+.timed {
+  margin-top: .5rem;
+}
+
+.timed h4 {
+  margin: 0 0 .1875rem;
+  font-size: calc(.8125rem * var(--list-scale, 1));
+  font-weight: 600;
+}
+
+.timed ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.75rem, 1fr));
+  gap: 1px .625rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-variant-numeric: tabular-nums;
+  font-size: calc(.8125rem * var(--list-scale, 1));
+}
+
+.many-vargas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(16.25rem, 100%), 1fr));
+  gap: .625rem;
+  padding: .75rem;
+}
+
+.pane>.banner,
+.pane>.empty.small {
+  margin: .75rem;
+}
+
+.dialog label select {
+  display: block;
+  width: 100%;
+  margin-top: .1875rem;
+  color: var(--ink);
+  font-size: calc(1rem * var(--list-scale, 1));
+}
+
+.dialog label.check {
+  display: flex;
+  align-items: flex-start;
+  font-size: calc(.8125rem * var(--list-scale, 1));
+}
+
+.wheel {
+  display: block;
+  width: 100%;
+  max-width: 53.75rem;
+  height: auto;
+  margin: 0 auto;
+}
+
+.wheel.square {
+  max-width: 45rem;
+}
+
+.wheel-line {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.wheel-star {
+  fill: var(--muted);
+  font-size: calc(24px * var(--chart-scale, 1));
+}
+
+.wheel-star.small {
+  font-size: calc(20px * var(--chart-scale, 1));
+}
+
+.wheel-body {
+  fill: var(--accent);
+  font-weight: 600;
+}
+
+.wheel-note {
+  fill: var(--muted);
+  font-size: calc(20px * var(--chart-scale, 1));
+}
+
+.wheel-note.small {
+  font-size: calc(16px * var(--chart-scale, 1));
+}
+
+.wheel-caption {
+  margin: 0 0 .5rem;
+  text-align: center;
+}
+
+.kota {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.kota.bahya {
+  fill: color-mix(in srgb, var(--accent) 28%, var(--panel));
+}
+
+.kota.prakaara {
+  fill: color-mix(in srgb, var(--accent) 14%, var(--panel));
+}
+
+.kota.durga {
+  fill: var(--panel);
+}
+
+.kota.stambha {
+  fill: var(--shade);
+}
+
+.sbc {
+  display: grid;
+  grid-template-columns: minmax(0, 2.4fr) minmax(13.75rem, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .sbc {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sbc-cell {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 2;
+}
+
+.sbc-text {
+  fill: var(--ink);
+  font-size: calc(22px * var(--chart-scale, 1));
+  text-anchor: middle;
+}
+
+.ring {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.ring.outer {
+  fill: var(--shade);
+}
+
+.ring.middle {
+  fill: var(--panel);
+}
+
+.ring.inner {
+  fill: color-mix(in srgb, var(--accent) 14%, var(--panel));
+}
+
+.grid .box.inner {
+  fill: var(--panel);
+}
+
+.grid .body-label.small {
+  font-size: calc(13px * var(--chart-scale, 1));
+}
+
+.grid .grid-title.small {
+  font-size: calc(16px * var(--chart-scale, 1));
+}
+
+.grid .grid-title.corner {
+  font-size: calc(18px * var(--chart-scale, 1));
+}
+
+.mixed {
+  max-width: 32.5rem;
+}
+
+.mixed-screen {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .mixed-screen {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bottom-gap {
+  margin-bottom: .5rem;
+}
+
+.bar-grid {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(16.25rem, 100%), 1fr));
+  gap: .75rem;
+  padding: .75rem;
+}
+
+.bars {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  padding: .5rem .375rem 2px;
+}
+
+/* a 12-bar graph takes two slots, once the grid has room for two */
+@container (min-width: 34.75rem) {
+  .bars.wide {
+    grid-column: span 2;
+  }
+}
+
+.bars figcaption {
+  font-weight: 600;
+  text-align: center;
+  font-size: calc(.8125rem * var(--list-scale, 1));
+}
+
+/* Starlight: the bar graphs fill the pane down to the charts' bottom, each graph drawn at its own size */
+.right>.pane.bars-pane:has(.bar-grid) {     /* beats .right>.pane:not(:has(.scroll)), which keeps a pane to its content */
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+.bars-pane .bar-grid {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: auto;
+  grid-auto-rows: minmax(13.75rem, 1fr);
+}
+
+.bars.fill {
+  display: flex;
+  flex-direction: column;
+  padding: .625rem .5rem .25rem;
+}
+
+.bars.fill svg {
+  flex: 1 1 0;
+  min-height: 0;
+  height: auto;
+}
+
+.bars.fill figcaption {
+  font-size: calc(.9375rem * var(--list-scale, 1));
+}
+
+.bars.fill .bar-value {
+  font-size: calc(13.5px * var(--list-scale, 1));
+  font-weight: 600;
+}
+
+.bars.fill .bar-label {
+  font-size: calc(14px * var(--list-scale, 1));
+}
+
+.bars.fill .bar-rank {
+  font-size: calc(12px * var(--list-scale, 1));
+}
+
+.bars.fill .bar-note {
+  font-size: calc(.78125rem * var(--list-scale, 1));
+}
+
+/* nakshatras and rasis from the sodhya pindas: the star over its sign, the rows stretched down the pane */
+.pinda-points {
+  height: 100%;
+  font-size: calc(.875rem * var(--list-scale, 1));
+}
+
+.pinda-points td .muted {
+  display: block;
+}
+
+/* the relative's house from the planet (9th from the Sun for father ..) */
+.pinda-points tbody td.kin {     /* tbody: beats the striped rows of .points */
+  background: color-mix(in srgb, var(--accent) 14%, var(--panel));
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+  border-radius: .25rem;
+}
+
+.pinda-points .kin-btn {
+  all: unset;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.pinda-points .kin-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* the popup of a highlighted cell: Saturn in red, Jupiter in green, each the star and the sign side by side, so it fits without scrolling */
+.dialog:has(.kin-grid) {
+  width: calc(100vw - 2rem);
+  padding: 1rem 1.25rem;
+}
+
+.dialog:has(.kin-grid) > p {
+  margin: 0 0 .5rem;
+}
+
+.kin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem;
+  margin: 0 0 .5rem;
+}
+
+.kin-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1rem;
+}
+
+.kin-col {
+  border: 1px solid var(--line);
+  border-top: .25rem solid var(--kin);
+  border-radius: .5rem;
+  padding: .5rem .75rem .625rem;
+}
+
+.kin-col.saturn {
+  --kin: var(--weak);
+}
+
+.kin-col.jupiter {
+  --kin: var(--strong);
+}
+
+.kin-col h3 {
+  margin: 0 0 .25rem;
+  color: var(--kin);
+}
+
+.kin-col h4 {
+  margin: .25rem 0 2px;
+  font-size: calc(.75rem * var(--list-scale, 1));
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.kin-visits {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kin-visits li {
+  display: flex;
+  flex-direction: column;
+  padding: .1875rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.kin-visits li:last-child {
+  border-bottom: 0;
+}
+
+.kin-dates {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.kin-passes {
+  width: auto;
+  margin-top: .25rem;
+  border-collapse: collapse;
+  font-size: calc(.78125rem * var(--list-scale, 1));
+  font-variant-numeric: tabular-nums;
+}
+
+.kin-passes th,
+.kin-passes td {
+  padding: 0 .625rem 0 0;
+  line-height: 1.35;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.kin-passes th {
+  color: var(--th);
+  font-weight: 500;
+}
+
+.kin-passes abbr {
+  color: var(--kin);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.kin-dasas {
+  color: var(--kin);
+  font-weight: 600;
+  font-size: calc(.78125rem * var(--list-scale, 1));
+}
+
+.kin-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 .5rem;
+  align-items: baseline;
+}
+
+@media (max-width: 1100px) {
+  .kin-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .kin-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pinda-points .kin-tag {
+  display: block;
+  margin-top: 2px;
+  color: var(--accent);
+  font-size: calc(.65625rem * var(--list-scale, 1));
+  font-weight: 600;
+}
+
+.pinda-points th,
+.pinda-points td {
+  padding: .25rem .375rem;
+}
+
+.pinda-points tbody th {
+  position: static;
+  color: var(--ink);
+  background: none;
+  border: 0;
+}
+
+.pinda-points td .muted {
+  margin-top: 2px;
+  font-weight: 700;
+  font-size: calc(.75rem * var(--list-scale, 1));
+}
+
+/* an ⓘ whose text pops up on hover or focus */
+.info-tip {
+  position: relative;
+  display: inline-flex;
+}
+
+.info-tip [role="tooltip"] {
+  display: none;
+  position: absolute;
+  top: calc(100% + .375rem);
+  right: 0;     /* the ⓘ sits near the pane's right edge: open leftwards */
+  z-index: 20;
+  width: min(26.25rem, 80vw);
+  padding: .625rem .75rem;
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  box-shadow: 0 .375rem 1.25rem rgb(0 0 0 / .15);
+  font-size: calc(.8125rem * var(--list-scale, 1));
+  line-height: 1.5;
+}
+
+.info-tip:hover [role="tooltip"],
+.info-tip:focus-within [role="tooltip"] {
+  display: block;
+}
+
+.bars .bar-note {
+  margin: 0 .25rem .375rem;
+  text-align: center;
+  font-size: calc(.6875rem * var(--list-scale, 1));
+}
+
+.bars svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.bar {
+  fill: var(--bar);
+}
+
+.bar-base {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.bar-value {
+  fill: var(--ink);
+  font-size: calc(11px * var(--list-scale, 1));
+  font-variant-numeric: tabular-nums;
+}
+
+.bar-rank {
+  fill: #fff;
+  stroke: rgb(0 0 0 / .35);
+  stroke-width: 2px;
+  paint-order: stroke;
+  font-size: calc(10.5px * var(--list-scale, 1));
+  font-weight: 600;
+}
+
+.bar-label {
+  fill: var(--muted);
+  font-size: calc(12px * var(--list-scale, 1));
+}
+
+.calendar td {
+  font-size: calc(.75rem * var(--list-scale, 1));
+  min-width: 6rem;
+}
+
+.calendar .num {
+  white-space: nowrap;
+}
+
+.mode-form label.check {
+  display: inline-flex;
+  align-items: center;
+}
+
+.grid .grid-title.corner {
+  paint-order: stroke;
+  stroke: var(--panel);
+  stroke-width: 6px;
+  stroke-linejoin: round;
+}
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+}
+
+.stepper button {
+  padding: .3125rem .5rem;
+}
+
+/* a form's own time stepper (Transits and Jamakkol, once cast): on the one row with Cast and Now, drawn as the top bar's (its chevrons
+   unboxed, the step size a plain dropdown), the step size in the buttons' font */
+.mode-buttons:has(>.stepper) {
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.mode-buttons>.stepper {
+  min-width: 0;
+}
+
+.mode-buttons>.stepper>select {
+  width: auto;
+  min-width: 0;
+  font-size: inherit;
+}
+
+.mode-buttons>.stepper svg.icon {
+  width: calc(1.4375rem * var(--list-scale, 1));
+  height: calc(1.4375rem * var(--list-scale, 1));
+}
+
+/* Now: the clock, in the colour of what you act on (Muhurta, Transits, Jamakkol, the Chakras) */
+.now-btn {
+  display: inline-grid;
+  place-items: center;
+  padding-inline: .5rem;
+  color: var(--accent);
+}
+
+.now-btn svg.icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.mode-form label {
+  min-width: 0;
+}
+
+.mode-form select {
+  width: 100%;
+  min-width: 0;
+}
+
+.mode-buttons button {
+  max-width: 100%;
+}
+
+.dialog.settings {
+  width: min(61.25rem, calc(100vw - 2rem));
+  height: min(45rem, calc(100vh - 2rem));
+  padding: 0;
+}
+
+.dialog.settings[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: .75rem 1rem;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.settings-head h2 {
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+.settings-head input {
+  width: min(17.5rem, 100%);
+}
+
+.settings-body {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 13.75rem minmax(0, 1fr);
+}
+
+.settings-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: .5rem;
+  border-right: 1px solid var(--line);
+  overflow: auto;
+}
+
+.settings-nav button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0;
+  background: none;
+  text-align: left;
+  color: var(--muted);
+  padding: .375rem .625rem;
+}
+
+.settings-nav button.edited {
+  color: var(--ink);
+  box-shadow: inset .1875rem 0 0 var(--accent);
+}
+
+.settings-nav button[aria-current="true"] {
+  background: var(--shade);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.settings-options {
+  padding: .75rem 1rem;
+  overflow: auto;
+}
+
+.settings-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  margin-bottom: .5rem;
+  flex-wrap: wrap;
+}
+
+.settings-title-row h3 {
+  margin: 0;
+  font-size: calc(.9375rem * var(--list-scale, 1));
+}
+
+.setting {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: .25rem 1rem;
+  align-items: center;
+  padding: .5rem;
+  border-radius: .375rem;
+}
+
+.dialog .setting label {
+  margin: 0;
+  color: var(--ink);
+  font-size: calc(.875rem * var(--list-scale, 1));
+}
+
+.setting.bool {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.setting.bool input {
+  width: auto;
+}
+
+.setting.edited {
+  background: var(--shade);
+}
+
+.setting .hint {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+/* the degrees a Mrityu or Pushkara bhaga choice follows, under it: a row per graha, a column per sign; a row the other table has otherwise in --here */
+.setting .degree-table {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: .25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.setting .degree-table th,
+.setting .degree-table td {
+  padding: .1875rem .25rem;
+  text-align: center;
+  font-size: .8125rem;
+}
+
+.setting .degree-table tbody th {
+  text-align: left;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.setting .degree-table tr.differs th,
+.setting .degree-table tr.differs td {
+  color: var(--here);
+  font-weight: 600;
+}
+
+.setting select {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Settings > Language: each language in its own script, its English name under it; the chosen one in solid --here, as the themes */
+.language-pick {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: .5rem;
+  margin: .25rem .5rem .75rem;
+}
+
+.language-pick button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .125rem;
+  padding: .5rem .75rem;
+  text-align: left;
+}
+
+.language-native {
+  font-size: calc(1.0625rem * var(--list-scale, 1));
+  font-weight: 600;
+}
+
+.language-english {
+  font-size: calc(.75rem * var(--list-scale, 1));
+  color: var(--muted);
+}
+
+.language-pick button[aria-checked="true"] {
+  background: var(--here);
+  color: var(--here-ink);
+  border-color: var(--here);
+}
+
+.language-pick button[aria-checked="true"] .language-english {
+  color: inherit;
+}
+
+/* the nav's "Language" in English beside its name in another language, so it can always be found */
+.settings-nav button .muted {
+  font-weight: 400;
+  font-size: .8125em;
+}
+
+.settings-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem 1rem;
+  padding: .625rem 1rem;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+  font-size: calc(.8125rem * var(--list-scale, 1));
+}
+
+.dialog .settings-foot menu {
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 720px) {
+  .settings-body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .settings-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .settings-nav button {
+    white-space: nowrap;
+  }
+
+  .setting {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pane-head {
+  flex-wrap: wrap;
+}
+
+.pane-head .row {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.pane-head select {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* menus */
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: .25rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: .625rem;
+  box-shadow: var(--shadow);
+  max-height: calc(100vh - 3.75rem);
+  overflow: auto;
+  min-width: 12.5rem;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu li[role="separator"] {
+  border-top: 1px solid var(--line);
+  margin: .25rem 2px;
+}
+
+.menu button {
+  display: flex;
+  align-items: center;
+  gap: .375rem;
+  width: 100%;
+  padding: .25rem .5rem;
+  border: 0;
+  border-radius: .3125rem;
+  background: none;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.menu button:hover:not(:disabled),
+.menu button:focus-visible,
+.chart-tab .menu button:focus {   /* the open charts: the row lit after one above it is closed */
+  background: var(--shade);
+}
+
+.menu .tick {
+  width: 1em;
+  flex: none;
+  color: var(--accent);
+}
+
+.menu .label {
+  flex: 1;
+}
+
+.menu li.removable {
+  display: flex;
+}
+
+/* a chart not saved in the Cloud: the save icon struck through in red */
+.unsaved-mark { position: relative; }
+.unsaved-mark::after { content: ""; position: absolute; left: 50%; top: 50%; width: 2px; height: .9rem; translate: -50% -50%; rotate: 45deg; background: #d93025; border-radius: 1px; pointer-events: none; }
+
+.menu .menu-remove {
+  width: auto;
+  flex: none;
+  color: var(--muted);
+}
+
+.menu .menu-remove svg {
+  width: .75rem;
+  height: .75rem;
+}
+
+.floating-menu {
+  position: fixed;
+  z-index: 50;
+}
+
+.floating-menu.sized[aria-label] > .menu {   /* beats the Open charts list's max-width */
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
+
+.submenu {
+  position: fixed;
+  z-index: 51;
+}
+
+/* the item whose sub-menu is open stays lit, joined to it */
+.menu button[aria-expanded="true"] {
+  background: var(--shade);
+}
+
+/* chart panels */
+.chart-panel {
+  position: relative;
+  min-width: 0;
+}
+
+.chart-panel.stale {
+  opacity: .6;
+}
+
+.panel-menu {
+  position: absolute;
+  left: 50%;
+  bottom: 26%;
+  transform: translateX(-50%);
+  padding: 0 .5rem;
+  line-height: 1.2;
+  opacity: 0;
+}
+
+.chart-panel:hover .panel-menu,
+.panel-menu:focus-visible {
+  opacity: 1;
+}
+
+.grid .body-label.major {
+  font-size: var(--major);
+}
+
+.grid .body-label.minor {
+  font-size: var(--minor);
+  font-weight: 400;
+  fill: var(--c-ChartViewSpecialLagna, var(--muted));
+}
+
+.grid .body-label.strip {
+  font-size: var(--strip);
+  font-weight: 400;
+  fill: var(--c-ChartViewBhavaArudha, var(--accent));
+}
+
+.grid .body-label.major.graha-deg {
+  font-size: calc((var(--minor) + var(--major)) / 2);
+  font-weight: 700;
+}
+
+.grid .body-label .deg {
+  font-size: var(--major);
+  font-weight: 400;
+  fill: var(--ink);
+}
+
+.grid .body-label.lagna {
+  fill: var(--c-ChartViewLagna, var(--lagna));
+  font-weight: 700;
+}
+
+.grid .body-label.selected {
+  text-decoration: underline;
+}
+
+.grid .sign-name {
+  font-size: var(--sign, 10px);
+}
+
+.grid .grid-sub {
+  fill: var(--ink);
+  font-size: var(--sub, 13px);
+  font-weight: 600;
+}
+
+.grid .grid-sub.note {
+  fill: var(--accent);
+}
+
+.grid .grid-sub.corner {
+  paint-order: stroke;
+  stroke: var(--panel);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+
+.grid .rel0 {
+  fill: var(--ink);
+  font-weight: 700;
+}
+
+.grid .rel1 {
+  fill: #0a7d2c;
+  font-weight: 700;
+}
+
+.grid .rel2 {
+  fill: #2e9e4f;
+}
+
+.grid .rel3 {
+  fill: var(--muted);
+}
+
+.grid .rel4 {
+  fill: #c8402a;
+}
+
+.grid .rel5 {
+  fill: #99200e;
+  font-weight: 700;
+}
+
+.dialog.wide {
+  width: min(67.5rem, calc(100vw - 2rem));
+}
+
+.dialog .message {
+  white-space: pre-wrap;
+  margin: 0 0 .5rem;
+}
+
+/* Amsa rulers: the body and the counts as narrow as they go, the ruler and its meaning taking the rest; the ruler green when kind, yellow when mixed, red when harsh */
+table.points.amsa-table th:not(:last-child), table.points.amsa-table td:not(:last-child) { width: 1%; white-space: nowrap; }
+.amsa-table td.amsa-good { color: var(--strong); font-weight: 500; }
+.amsa-table td.amsa-middling { color: color-mix(in srgb, var(--middling) 75%, var(--ink)); font-weight: 500; }   /* yellow, deep enough to read on white */
+.amsa-table td.amsa-bad { color: var(--weak); font-weight: 500; }
+

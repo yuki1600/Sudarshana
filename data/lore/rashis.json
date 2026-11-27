@@ -1,0 +1,616 @@
+{
+ "source": "Sudarshana's summary of the classics: each rashi's description (BPHS 4.6-24), Kalapurusha's limbs and the classes (BPHS 4.4-5), the dwellings, rising and the dhatu-mula-jiva classes (Phaladeepika 1.5, 1.8, 1.9) and each rashi as the Lagna (Phaladeepika 9.1-12)",
+ "rashis": [
+  {
+   "n": 1, "name": "Aries", "sanskrit": "Mesha", "symbol": "A ram",
+   "about": "Aries is the first rashi, the ram: the head of Kalapurusha and the spark that starts the zodiac. A movable, fiery and male sign ruled by Mars, it is quick, bold and direct, strong at night and at home in hills and forests. The Sun is exalted here and Saturn debilitated: the sign rewards initiative and resists delay.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Lord", "v": "Mars", "src": "BPHS 4.6-7", "tile": true},
+     {"k": "Symbol", "v": "A ram", "src": "", "tile": true},
+     {"k": "Element", "v": "Fire (tejas)", "src": "BPHS 4.6-7", "tile": true},
+     {"k": "Modality", "v": "Movable (chara)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Gender", "v": "Male (odd)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Nature", "v": "Krura (cruel)", "src": "BPHS 4.5"},
+     {"k": "Class", "v": "Dhatu (mineral)", "src": "Phaladeepika 1.9"}]},
+    {"name": "Temperament", "rows": [
+     {"k": "Guna", "v": "Rajas", "src": "BPHS 4.6-7"},
+     {"k": "Dosha", "v": "Pitta (bilious)", "src": "BPHS 4.5"},
+     {"k": "Varna", "v": "Kshatriya (kings)", "src": "BPHS 4.6-7"},
+     {"k": "Quality", "v": "Courage", "src": "BPHS 4.6-7"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Limb of Kalapurusha", "v": "Head", "src": "BPHS 4.4", "tile": true},
+     {"k": "Build", "v": "Big, prominent", "src": "BPHS 4.6-7"},
+     {"k": "Colour", "v": "Blood red", "src": "BPHS 4.6-7"},
+     {"k": "Feet", "v": "Quadruped", "src": "BPHS 4.6-7"}]},
+    {"name": "Place and time", "rows": [
+     {"k": "Direction", "v": "East", "src": "BPHS 4.6-7", "tile": true},
+     {"k": "Dwelling", "v": "Hills (BPHS); forests (Phaladeepika)", "src": "BPHS 4.6-7, Phaladeepika 1.5"},
+     {"k": "Strong", "v": "At night", "src": "BPHS 4.6-7", "tile": true},
+     {"k": "Rises", "v": "With its back (prishtodaya)", "src": "BPHS 4.6-7"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Soldiers and commanders", "Kings and leaders", "Pioneers and explorers", "Athletes", "Surgeons"],
+     "body": ["Head and brain", "Face and forehead", "Fevers and inflammation", "Headaches and injuries to the head", "Bile (pitta) disorders"],
+     "mind": ["Courage", "Initiative", "Impatience", "Ambition", "Competitiveness"],
+     "creatures": ["Rams, sheep and goats", "Quadrupeds"]
+    },
+    "ajiva": {
+     "work": ["Army, police and defence", "Engineering and metalwork", "Surgery", "Sports", "Work with fire"],
+     "wealth": [],
+     "property": [],
+     "things": ["Fire", "Weapons and sharp tools", "Red things", "Metals and minerals"],
+     "places": ["Hills and forests", "Places of fire: forges, kitchens, furnaces", "Mines", "The east"],
+     "pursuits": ["New beginnings", "Battles and contests", "Exploration"]
+    }
+   },
+   "strengths": ["Courageous", "Pioneering", "Quick to act", "Frank and direct", "Energetic", "Independent", "Protective"],
+   "shadows": ["Impatient", "Rash", "Quarrelsome", "Domineering", "Quick to anger", "Poor at finishing"],
+   "reading": {
+    "lagna": "With Aries rising the native is quick, courageous and direct, with an active, often lean build and a prominent head; Phaladeepika gives round eyes, weak knees, a fierce temper, a fear of water and bruised limbs (9.1). Mars as Lagna lord makes the body the instrument of the will: they lead from the front, recover fast and need action, and must learn patience.",
+    "moon": "The Moon in Aries gives an eager, impulsive and independent mind that acts at once on what it feels. Such people are brave, quick to anger and quick to forgive, restless when kept waiting and fond of being first; their feelings need an outlet in action.",
+    "sun": "The Sun in Aries (mid-April to mid-May) is exalted, at its best at 10°: confidence, vigour and leadership with a strong constitution. The soul wants to act, to begin and to be first; pride and haste are what to watch."
+   }
+  },
+  {
+   "n": 2, "name": "Taurus", "sanskrit": "Vrishabha", "symbol": "A bull",
+   "about": "Taurus is the bull: the face of Kalapurusha, fixed, earthy and female, ruled by Venus. It is patient, steady and fond of comfort, at home in villages, fields and pastures, the sign of merchants and of wealth that grows slowly. The Moon is exalted here and has its moolatrikona in the rest of the sign.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Lord", "v": "Venus", "src": "BPHS 4.8", "tile": true},
+     {"k": "Symbol", "v": "A bull", "src": "", "tile": true},
+     {"k": "Element", "v": "Earth (prithvi)", "src": "BPHS 4.8", "tile": true},
+     {"k": "Modality", "v": "Fixed (sthira)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Gender", "v": "Female (even)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Nature", "v": "Saumya (gentle)", "src": "BPHS 4.5"},
+     {"k": "Class", "v": "Mula (vegetable)", "src": "Phaladeepika 1.9"}]},
+    {"name": "Temperament", "rows": [
+     {"k": "Dosha", "v": "Vata (windy)", "src": "BPHS 4.5"},
+     {"k": "Varna", "v": "Vaishya (merchants)", "src": "BPHS 4.8"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Limb of Kalapurusha", "v": "Face", "src": "BPHS 4.4", "tile": true},
+     {"k": "Build", "v": "Long, tall", "src": "BPHS 4.8"},
+     {"k": "Colour", "v": "White", "src": "BPHS 4.8"},
+     {"k": "Feet", "v": "Quadruped", "src": "BPHS 4.8"}]},
+    {"name": "Place and time", "rows": [
+     {"k": "Direction", "v": "South", "src": "BPHS 4.8", "tile": true},
+     {"k": "Dwelling", "v": "Villages (BPHS); fields under water, meadows (Phaladeepika)", "src": "BPHS 4.8, Phaladeepika 1.5"},
+     {"k": "Strong", "v": "At night", "src": "BPHS 4.8", "tile": true},
+     {"k": "Rises", "v": "With its back (prishtodaya)", "src": "BPHS 4.8"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Merchants and traders", "Farmers and cowherds", "Singers", "Bankers"],
+     "body": ["Face", "Mouth, throat and neck", "Voice", "Eyes", "Ailments of the throat"],
+     "mind": ["Steadiness", "Patience", "Love of comfort", "Stubbornness", "Loyalty"],
+     "creatures": ["Bulls and cattle", "Quadrupeds", "Crops and growing plants"]
+    },
+    "ajiva": {
+     "work": ["Agriculture and dairy", "Trade and commerce", "Banking", "Fine arts", "Food and luxury goods"],
+     "wealth": ["Accumulated wealth", "Cattle wealth"],
+     "property": ["Farms and fields", "Pastures"],
+     "things": ["White things", "Perfumes and ornaments", "Food and grains"],
+     "places": ["Meadows and watered fields", "Villages", "Cattle sheds", "The south"],
+     "pursuits": ["Music and singing", "Comfort and good living"]
+    }
+   },
+   "strengths": ["Steady", "Patient", "Reliable", "Sensual", "Artistic", "Loyal", "Practical"],
+   "shadows": ["Stubborn", "Possessive", "Slow to change", "Indulgent", "Lazy"],
+   "reading": {
+    "lagna": "With Taurus rising the native is steady, patient and sensual, often with a strong neck, a broad face and a pleasing voice; Phaladeepika gives plump thighs, a big face, success in farming and marks on the back and sides (9.2). Venus as Lagna lord gives a love of comfort, beauty and good food, and a slow but lasting way of building wealth.",
+    "moon": "The Moon is exalted in Taurus, deepest at 3°, and in moolatrikona beyond it: a calm, contented and stable mind, loyal affections and a strong memory. Such people enjoy beauty, food and comfort, keep their friends and their savings, and are hard to provoke but harder still to move once settled.",
+    "sun": "The Sun in Taurus (mid-May to mid-June) gives a steady will and a practical, patient pride; the soul seeks security and lasting worth. In Venus's sign, an enemy's, the Sun's authority is quieter, shown through possessions, family and taste."
+   }
+  },
+  {
+   "n": 3, "name": "Gemini", "sanskrit": "Mithuna", "symbol": "A man and a woman, holding a mace and a lute",
+   "about": "Gemini is the couple, a man and a woman holding a mace and a lute: the arms of Kalapurusha, dual, airy and male, ruled by Mercury. It is curious, talkative and versatile, the sign of learning, trade, music and play, at home in villages and in bedrooms. Its two figures make it restless, gifted at many things.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Lord", "v": "Mercury", "src": "BPHS 4.9-9½", "tile": true},
+     {"k": "Symbol", "v": "A man and a woman with a mace and a lute", "src": "BPHS 4.9-9½", "tile": true},
+     {"k": "Element", "v": "Air (vayu)", "src": "BPHS 4.9-9½", "tile": true},
+     {"k": "Modality", "v": "Dual (dvisvabhava)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Gender", "v": "Male (odd)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Nature", "v": "Krura (cruel)", "src": "BPHS 4.5"},
+     {"k": "Class", "v": "Jiva (living)", "src": "Phaladeepika 1.9"}]},
+    {"name": "Temperament", "rows": [
+     {"k": "Dosha", "v": "Mixed (sama)", "src": "BPHS 4.5"},
+     {"k": "Varna", "v": "Shudra", "src": "by its element"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Limb of Kalapurusha", "v": "Arms", "src": "BPHS 4.4", "tile": true},
+     {"k": "Build", "v": "Even", "src": "BPHS 4.9-9½"},
+     {"k": "Colour", "v": "Green, like grass", "src": "BPHS 4.9-9½"},
+     {"k": "Feet", "v": "Biped", "src": "BPHS 4.9-9½"}]},
+    {"name": "Place and time", "rows": [
+     {"k": "Direction", "v": "West", "src": "BPHS 4.9-9½", "tile": true},
+     {"k": "Dwelling", "v": "Villages (BPHS); bedrooms (Phaladeepika)", "src": "BPHS 4.9-9½, Phaladeepika 1.5"},
+     {"k": "Strong", "v": "At night", "src": "BPHS 4.9-9½", "tile": true},
+     {"k": "Rises", "v": "With its head (BPHS); with both (Phaladeepika 1.8)", "src": "BPHS 4.9-9½"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Couples and lovers", "Musicians", "Scholars and writers", "Messengers", "Traders"],
+     "body": ["Arms and shoulders", "Hands", "Lungs and breath", "Nerves"],
+     "mind": ["Wit and curiosity", "Versatility", "Restlessness", "Love of talk"],
+     "creatures": ["Human beings (a human sign)"]
+    },
+    "ajiva": {
+     "work": ["Writing and publishing", "Teaching", "Commerce and accounts", "Music and dance", "Messages and communication"],
+     "wealth": [],
+     "property": [],
+     "things": ["Musical instruments", "Maces and weapons", "Books", "Green things"],
+     "places": ["Bedrooms", "Villages", "Places of entertainment", "The west"],
+     "pursuits": ["Arts and games", "Short travels", "Learning languages"]
+    }
+   },
+   "strengths": ["Witty", "Curious", "Versatile", "Eloquent", "Sociable", "Quick to learn", "Youthful"],
+   "shadows": ["Restless", "Scattered", "Inconstant", "Nervous", "Superficial"],
+   "reading": {
+    "lagna": "With Gemini rising the native is quick, curious and talkative, youthful in looks and manner; Phaladeepika gives black eyes, curly hair, fondness for the other sex and a love of music and dance (9.3). Mercury as Lagna lord gives a mind that lives by learning, trade and words, versatile and restless.",
+    "moon": "The Moon in Gemini gives a lively, witty and changeable mind, eager for news, conversation and variety. Such people learn fast, write and speak well, enjoy company and humour, and can be scattered or anxious when the mind runs ahead of the heart.",
+    "sun": "The Sun in Gemini (mid-June to mid-July) gives an intelligent, communicative and adaptable spirit; the soul expresses itself through learning, writing, trade and skill. Mercury, its sign lord, is neutral to the Sun, so the will works through the intellect."
+   }
+  },
+  {
+   "n": 4, "name": "Cancer", "sanskrit": "Karka", "symbol": "A crab",
+   "about": "Cancer is the crab: the heart of Kalapurusha, movable, watery and female, ruled by the Moon. It is sensitive, caring and protective, the sign of Brahmins and of the home, at home in forests and by water. Jupiter is exalted here and Mars debilitated: it values feeling and wisdom over force.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Lord", "v": "The Moon", "src": "BPHS 4.10-11", "tile": true},
+     {"k": "Symbol", "v": "A crab", "src": "", "tile": true},
+     {"k": "Element", "v": "Water (jala)", "src": "BPHS 4.10-11", "tile": true},
+     {"k": "Modality", "v": "Movable (chara)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Gender", "v": "Female (even)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Nature", "v": "Saumya (gentle)", "src": "BPHS 4.5"},
+     {"k": "Class", "v": "Dhatu (mineral)", "src": "Phaladeepika 1.9"}]},
+    {"name": "Temperament", "rows": [
+     {"k": "Guna", "v": "Sattva", "src": "BPHS 4.10-11"},
+     {"k": "Dosha", "v": "Kapha (phlegmatic)", "src": "BPHS 4.5"},
+     {"k": "Varna", "v": "Brahmin", "src": "BPHS 4.10-11"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Limb of Kalapurusha", "v": "Heart", "src": "BPHS 4.4", "tile": true},
+     {"k": "Build", "v": "Bulky", "src": "BPHS 4.10-11"},
+     {"k": "Colour", "v": "Pale red", "src": "BPHS 4.10-11"},
+     {"k": "Feet", "v": "Many-footed (keeta)", "src": "BPHS 4.10-11"}]},
+    {"name": "Place and time", "rows": [
+     {"k": "Direction", "v": "North", "src": "BPHS 4.10-11", "tile": true},
+     {"k": "Dwelling", "v": "Forests (BPHS); watery pits and chasms (Phaladeepika)", "src": "BPHS 4.10-11, Phaladeepika 1.5"},
+     {"k": "Strong", "v": "At night", "src": "BPHS 4.10-11", "tile": true},
+     {"k": "Rises", "v": "With its back (prishtodaya)", "src": "BPHS 4.10-11"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Mothers", "Brahmins and priests", "Nurses and carers", "Sailors and fisherfolk"],
+     "body": ["Heart and chest", "Breasts", "Lungs", "Colds, fluid retention and kapha disorders"],
+     "mind": ["Sensitivity", "Nurturing care", "Changing moods", "Attachment to home"],
+     "creatures": ["Crabs and water creatures", "Many-footed creatures"]
+    },
+    "ajiva": {
+     "work": ["Shipping and marine trades", "Food, dairy and hospitality", "Nursing and childcare", "Trade in liquids"],
+     "wealth": [],
+     "property": ["Houses and homes", "Land by water"],
+     "things": ["Water and liquids", "Pearls and silver", "Milk"],
+     "places": ["Ponds, wells and watery pits", "Riverbanks and seashores", "Forests", "The north"],
+     "pursuits": ["Home and family life", "Travel by water"]
+    }
+   },
+   "strengths": ["Caring", "Protective", "Intuitive", "Loyal", "Imaginative", "Devoted to family"],
+   "shadows": ["Moody", "Over-sensitive", "Clinging", "Fearful", "Self-pitying"],
+   "reading": {
+    "lagna": "With Cancer rising the native is sensitive, caring and protective, often with a round face and a fleshy neck; Phaladeepika gives a fleshy neck, devotion to the spouse and few sons (9.4). The Moon as Lagna lord makes health and mood rise and fall with the Moon's own state, and home and family are the centre of life.",
+    "moon": "The Moon in its own sign gives a deep, receptive and nurturing mind, strong attachments and a long memory. Such people feel everything, care for others readily, love home and mother, and need emotional security; their moods run like tides.",
+    "sun": "The Sun in Cancer (mid-July to mid-August) gives a warm, protective and devoted spirit; the soul finds its purpose in home, family and care. The Moon, its sign lord, is the Sun's friend, so the will is gentle but persistent."
+   }
+  },
+  {
+   "n": 5, "name": "Leo", "sanskrit": "Simha", "symbol": "A lion",
+   "about": "Leo is the lion: the belly of Kalapurusha, fixed, fiery and male, ruled by the Sun. It is royal, proud and generous, at home in forests, caves and on mountains, strong by day. The Sun has its moolatrikona in the first 20° and its own sign in the rest: the sign of rule, dignity and the heart's courage.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Lord", "v": "The Sun", "src": "BPHS 4.12", "tile": true},
+     {"k": "Symbol", "v": "A lion", "src": "", "tile": true},
+     {"k": "Element", "v": "Fire (tejas)", "src": "by its triplicity", "tile": true},
+     {"k": "Modality", "v": "Fixed (sthira)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Gender", "v": "Male (odd)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Nature", "v": "Krura (cruel)", "src": "BPHS 4.5"},
+     {"k": "Class", "v": "Mula (vegetable)", "src": "Phaladeepika 1.9"}]},
+    {"name": "Temperament", "rows": [
+     {"k": "Guna", "v": "Sattva", "src": "BPHS 4.12"},
+     {"k": "Dosha", "v": "Pitta (bilious)", "src": "BPHS 4.5"},
+     {"k": "Varna", "v": "Kshatriya (royal)", "src": "BPHS 4.12"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Limb of Kalapurusha", "v": "Stomach", "src": "BPHS 4.4", "tile": true},
+     {"k": "Build", "v": "Large", "src": "BPHS 4.12"},
+     {"k": "Colour", "v": "White", "src": "BPHS 4.12"},
+     {"k": "Feet", "v": "Quadruped", "src": "BPHS 4.12"}]},
+    {"name": "Place and time", "rows": [
+     {"k": "Direction", "v": "East", "src": "BPHS 4.12", "tile": true},
+     {"k": "Dwelling", "v": "Forests (BPHS); mountains (Phaladeepika)", "src": "BPHS 4.12, Phaladeepika 1.5"},
+     {"k": "Strong", "v": "By day", "src": "BPHS 4.12", "tile": true},
+     {"k": "Rises", "v": "With its head (shirshodaya)", "src": "BPHS 4.12"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Kings and rulers", "Government officials", "Leaders and chiefs", "Forest dwellers"],
+     "body": ["Stomach and upper abdomen", "Heart", "Spine and back", "Digestive fire"],
+     "mind": ["Dignity and pride", "Generosity", "Authority", "Self-will"],
+     "creatures": ["Lions and big cats", "Wild animals of the forest", "Quadrupeds"]
+    },
+    "ajiva": {
+     "work": ["Government and administration", "Politics", "Management", "Command"],
+     "wealth": ["Wealth from the state"],
+     "property": ["Palaces and seats of power"],
+     "things": ["Gold", "Emblems of rank"],
+     "places": ["Mountains and caves", "Forests", "Palaces and courts", "The east"],
+     "pursuits": ["Rulership", "Honour and display", "Ceremony"]
+    }
+   },
+   "strengths": ["Dignified", "Generous", "Brave", "Commanding", "Loyal", "Warm-hearted"],
+   "shadows": ["Proud", "Arrogant", "Domineering", "Vain", "Hungry for praise"],
+   "reading": {
+    "lagna": "With Leo rising the native has presence and dignity, often a broad chest and a strong frame; Phaladeepika gives reddish eyes, a large chin, a broad face, pride and power (9.5). The Sun as Lagna lord gives the will to lead, generosity and a need for recognition.",
+    "moon": "The Moon in Leo gives a proud, warm-hearted and generous mind that wants to be seen and respected. Such people are loyal, bold and self-assured, fond of display and of wild places, and can be wounded by neglect or swayed by flattery.",
+    "sun": "The Sun in its own sign (mid-August to mid-September), moolatrikona in the first 20°, is strong and dignified: authority, confidence and a clear sense of purpose. The soul is meant to lead and to be the centre around which others gather."
+   }
+  },
+  {
+   "n": 6, "name": "Virgo", "sanskrit": "Kanya", "symbol": "A maiden holding grain and fire",
+   "about": "Virgo is the maiden with grain and fire in her hands: the hips of Kalapurusha, dual, earthy and female, ruled by Mercury. It is modest, careful and discriminating, the sign of merchants, of service and of skill, at home on hills and in watered fields of corn. Mercury is exalted here and Venus debilitated: precision is valued above pleasure.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Lord", "v": "Mercury", "src": "BPHS 4.13-14", "tile": true},
+     {"k": "Symbol", "v": "A maiden holding grain and fire", "src": "BPHS 4.13-14", "tile": true},
+     {"k": "Element", "v": "Earth (prithvi)", "src": "by its triplicity", "tile": true},
+     {"k": "Modality", "v": "Dual (dvisvabhava)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Gender", "v": "Female (even)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Nature", "v": "Saumya (gentle)", "src": "BPHS 4.5"},
+     {"k": "Class", "v": "Jiva (living)", "src": "Phaladeepika 1.9"}]},
+    {"name": "Temperament", "rows": [
+     {"k": "Guna", "v": "Tamas", "src": "BPHS 4.13-14"},
+     {"k": "Dosha", "v": "Vata (windy)", "src": "BPHS 4.5"},
+     {"k": "Varna", "v": "Vaishya (merchants)", "src": "BPHS 4.13-14"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Limb of Kalapurusha", "v": "Hip", "src": "BPHS 4.4", "tile": true},
+     {"k": "Build", "v": "Medium", "src": "BPHS 4.13-14"},
+     {"k": "Colour", "v": "Variegated", "src": "BPHS 4.13-14"},
+     {"k": "Feet", "v": "Biped", "src": "BPHS 4.13-14"}]},
+    {"name": "Place and time", "rows": [
+     {"k": "Direction", "v": "South", "src": "BPHS 4.13-14", "tile": true},
+     {"k": "Dwelling", "v": "Hills (BPHS); land with water and corn (Phaladeepika)", "src": "BPHS 4.13-14, Phaladeepika 1.5"},
+     {"k": "Strong", "v": "By day", "src": "BPHS 4.13-14", "tile": true},
+     {"k": "Rises", "v": "With its head (shirshodaya)", "src": "BPHS 4.13-14"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Young women and maidens", "Merchants", "Accountants and clerks", "Physicians and nurses", "Craftspeople"],
+     "body": ["Hips and waist", "Intestines and bowels", "Digestive troubles", "Nerves"],
+     "mind": ["Discrimination", "Precision", "Modesty", "Worry"],
+     "creatures": ["Human beings (a human sign)"]
+    },
+    "ajiva": {
+     "work": ["Accounts and clerical work", "Trade", "Medicine and health care", "Crafts", "Editing and writing"],
+     "wealth": [],
+     "property": ["Farmland"],
+     "things": ["Grains and crops", "Fire and lamps", "Variegated things"],
+     "places": ["Fields of corn by water", "Hills", "Gardens", "The south"],
+     "pursuits": ["Service", "Study and analysis", "Health and hygiene"]
+    }
+   },
+   "strengths": ["Careful", "Analytical", "Modest", "Helpful", "Skilful", "Clean", "Truthful"],
+   "shadows": ["Anxious", "Over-critical", "Fussy", "Timid", "Cold"],
+   "reading": {
+    "lagna": "With Virgo rising the native is modest, careful and intelligent, often slender with fine features; Phaladeepika gives drooping shoulders and arms, truthfulness and learning in the Shastras (9.6). Mercury as Lagna lord gives skill in analysis, accounts, writing and service, and a tendency to worry over details.",
+    "moon": "The Moon in Virgo gives a practical, discriminating and refined mind, gentle in speech and careful in work. Such people are helpful, clean and methodical, good with words and numbers, and anxious when things are out of order.",
+    "sun": "The Sun in Virgo (mid-September to mid-October) gives a disciplined, analytical spirit; the soul seeks perfection through service and skill. It works best through precision, learning and health, and must beware of being over-critical."
+   }
+  },
+  {
+   "n": 7, "name": "Libra", "sanskrit": "Tula", "symbol": "A man holding a pair of scales",
+   "about": "Libra is the balance, a man holding the scales: the space below Kalapurusha's navel, movable, airy and male, ruled by Venus. It is fair, sociable and refined, the sign of markets and merchants' houses, strong by day. Saturn is exalted here and the Sun debilitated: justice and agreement outweigh command.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Lord", "v": "Venus", "src": "BPHS 4.15-16½", "tile": true},
+     {"k": "Symbol", "v": "A man holding a pair of scales", "src": "", "tile": true},
+     {"k": "Element", "v": "Air (vayu)", "src": "by its triplicity", "tile": true},
+     {"k": "Modality", "v": "Movable (chara)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Gender", "v": "Male (odd)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Nature", "v": "Krura (cruel)", "src": "BPHS 4.5"},
+     {"k": "Class", "v": "Dhatu (mineral)", "src": "Phaladeepika 1.9"}]},
+    {"name": "Temperament", "rows": [
+     {"k": "Guna", "v": "Rajas", "src": "BPHS 4.15-16½"},
+     {"k": "Dosha", "v": "Mixed (sama)", "src": "BPHS 4.5"},
+     {"k": "Varna", "v": "Shudra", "src": "BPHS 4.15-16½"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Limb of Kalapurusha", "v": "Space below the navel", "src": "BPHS 4.4", "tile": true},
+     {"k": "Build", "v": "Medium", "src": "BPHS 4.15-16½"},
+     {"k": "Colour", "v": "Black", "src": "BPHS 4.15-16½"},
+     {"k": "Feet", "v": "Biped", "src": "BPHS 4.15-16½"}]},
+    {"name": "Place and time", "rows": [
+     {"k": "Direction", "v": "West", "src": "BPHS 4.15-16½", "tile": true},
+     {"k": "Dwelling", "v": "On land (BPHS); a merchant's house (Phaladeepika)", "src": "BPHS 4.15-16½, Phaladeepika 1.5"},
+     {"k": "Strong", "v": "By day", "src": "BPHS 4.15-16½", "tile": true},
+     {"k": "Rises", "v": "With its head (shirshodaya)", "src": "BPHS 4.15-16½"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Merchants and traders", "Judges and arbitrators", "Partners", "Artists"],
+     "body": ["Space below the navel", "Kidneys and bladder", "Lower back", "Urinary troubles"],
+     "mind": ["Balance and fairness", "Diplomacy", "Love of beauty", "Indecision"],
+     "creatures": ["Human beings (a human sign)"]
+    },
+    "ajiva": {
+     "work": ["Trade and commerce", "Law and justice", "Fashion and the arts", "Diplomacy and negotiation"],
+     "wealth": ["Profit from trade"],
+     "property": [],
+     "things": ["Scales and measures", "Goods for sale", "Ornaments and fine cloth"],
+     "places": ["Markets and merchants' houses", "On land", "The west"],
+     "pursuits": ["Partnership and marriage", "Bargaining and agreements"]
+    }
+   },
+   "strengths": ["Fair", "Diplomatic", "Charming", "Refined", "Sociable", "Artistic"],
+   "shadows": ["Indecisive", "Dependent on others", "Pleasure-seeking", "Superficial", "Vacillating"],
+   "reading": {
+    "lagna": "With Libra rising the native is graceful, fair-minded and sociable; Phaladeepika gives a lean and frail body, few children, devotion and cleverness in trade (9.7). Venus as Lagna lord gives charm and a sense of balance and beauty, and success through partnership and commerce.",
+    "moon": "The Moon in Libra gives a balanced, diplomatic and pleasant mind that seeks harmony and company. Such people are courteous, fond of beauty and fairness and good at trade and negotiation, and can find decisions hard.",
+    "sun": "The Sun is debilitated in Libra (mid-October to mid-November), deepest at 10°: the will bends to others' wishes and authority is shared or questioned. The soul's lesson is to find strength in fairness and partnership rather than in command."
+   }
+  },
+  {
+   "n": 8, "name": "Scorpio", "sanskrit": "Vrishchika", "symbol": "A scorpion",
+   "about": "Scorpio is the scorpion: the private parts of Kalapurusha, fixed, watery and female, ruled by Mars. It is intense, sharp and secretive, living in holes and in places of water and land, strong by day. The Moon is debilitated here: feeling turns inward and deep, and the sign is the home of research, healing and the hidden.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Lord", "v": "Mars (Ketu co-lord)", "src": "BPHS 4.15-16½", "tile": true},
+     {"k": "Symbol", "v": "A scorpion", "src": "", "tile": true},
+     {"k": "Element", "v": "Water (jala)", "src": "by its triplicity", "tile": true},
+     {"k": "Modality", "v": "Fixed (sthira)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Gender", "v": "Female (even)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Nature", "v": "Saumya (gentle)", "src": "BPHS 4.5"},
+     {"k": "Class", "v": "Mula (vegetable)", "src": "Phaladeepika 1.9"}]},
+    {"name": "Temperament", "rows": [
+     {"k": "Dosha", "v": "Kapha (phlegmatic)", "src": "BPHS 4.5"},
+     {"k": "Varna", "v": "Brahmin", "src": "BPHS 4.15-16½"},
+     {"k": "Quality", "v": "Very sharp, passionate", "src": "BPHS 4.15-16½"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Limb of Kalapurusha", "v": "Private parts", "src": "BPHS 4.4", "tile": true},
+     {"k": "Build", "v": "Slender, hairy", "src": "BPHS 4.15-16½"},
+     {"k": "Colour", "v": "Reddish brown", "src": "BPHS 4.15-16½"},
+     {"k": "Feet", "v": "Many-footed (keeta)", "src": "BPHS 4.15-16½"}]},
+    {"name": "Place and time", "rows": [
+     {"k": "Direction", "v": "North", "src": "BPHS 4.15-16½", "tile": true},
+     {"k": "Dwelling", "v": "Holes and burrows; water and land", "src": "BPHS 4.15-16½, Phaladeepika 1.5"},
+     {"k": "Strong", "v": "By day", "src": "BPHS 4.15-16½", "tile": true},
+     {"k": "Rises", "v": "With its head (shirshodaya)", "src": "Phaladeepika 1.8"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Brahmins", "Researchers and investigators", "Surgeons and healers", "Spies and secret agents"],
+     "body": ["Genitals and excretory organs", "Piles and hidden ailments", "Poisons, stings and bites", "Infections"],
+     "mind": ["Intensity", "Secrecy", "Determination", "Resentment"],
+     "creatures": ["Scorpions, insects and reptiles", "Snakes"]
+    },
+    "ajiva": {
+     "work": ["Research and investigation", "Surgery and medicine", "Mining", "The occult"],
+     "wealth": ["Hidden wealth"],
+     "property": [],
+     "things": ["Poisons and medicines", "Hidden things", "Minerals"],
+     "places": ["Holes, caves and burrows", "Places of water and land", "The north"],
+     "pursuits": ["Secrets and the occult", "Transformation", "Crisis"]
+    }
+   },
+   "strengths": ["Determined", "Perceptive", "Resilient", "Loyal", "Courageous", "Deep"],
+   "shadows": ["Secretive", "Jealous", "Vindictive", "Suspicious", "Harsh of tongue"],
+   "reading": {
+    "lagna": "With Scorpio rising the native is intense, private and determined, with a penetrating gaze; Phaladeepika gives round thighs and knees, broad eyes and chest, and lotus marks on the hands and feet (9.8). Mars as Lagna lord gives courage and endurance and a talent for what is hidden: research, healing and strategy.",
+    "moon": "The Moon is debilitated in Scorpio, deepest at 3°: feelings run deep, strong and secret, with a tendency to suspicion and to holding on to hurts. Such people are loyal, perceptive and resilient, drawn to the mysteries of life, and must learn to let go.",
+    "sun": "The Sun in Scorpio (mid-November to mid-December) gives a strong, intense and resourceful will; the soul seeks mastery over what is hidden, through research, medicine, the occult or crisis. Mars, its sign lord, is the Sun's friend, so the will is courageous and unbending."
+   }
+  },
+  {
+   "n": 9, "name": "Sagittarius", "sanskrit": "Dhanus", "symbol": "An archer, man in front and horse behind",
+   "about": "Sagittarius is the archer, a man in front and a horse behind, holding the bow: the thighs of Kalapurusha, dual, fiery and male, ruled by Jupiter. It is royal, righteous and splendorous, at home in kings' residences and on open land. Jupiter has its moolatrikona in the first 10°: the sign of dharma, teaching and the long journey.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Lord", "v": "Jupiter", "src": "BPHS 4.17-18½", "tile": true},
+     {"k": "Symbol", "v": "An archer, half man and half horse", "src": "BPHS 4.17-18½", "tile": true},
+     {"k": "Element", "v": "Fire (tejas)", "src": "BPHS 4.17-18½", "tile": true},
+     {"k": "Modality", "v": "Dual (dvisvabhava)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Gender", "v": "Male (odd)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Nature", "v": "Krura (cruel)", "src": "BPHS 4.5"},
+     {"k": "Class", "v": "Jiva (living)", "src": "Phaladeepika 1.9"}]},
+    {"name": "Temperament", "rows": [
+     {"k": "Guna", "v": "Sattva", "src": "BPHS 4.17-18½"},
+     {"k": "Dosha", "v": "Pitta (bilious)", "src": "BPHS 4.5"},
+     {"k": "Varna", "v": "Kshatriya (royal)", "src": "BPHS 4.17-18½"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Limb of Kalapurusha", "v": "Thighs", "src": "BPHS 4.4", "tile": true},
+     {"k": "Build", "v": "Even", "src": "BPHS 4.17-18½"},
+     {"k": "Colour", "v": "Tawny", "src": "BPHS 4.17-18½"},
+     {"k": "Feet", "v": "Biped in its first half, quadruped in its second", "src": "BPHS 4.17-18½"}]},
+    {"name": "Place and time", "rows": [
+     {"k": "Direction", "v": "East", "src": "BPHS 4.17-18½", "tile": true},
+     {"k": "Dwelling", "v": "On land (BPHS); a king's residence (Phaladeepika)", "src": "BPHS 4.17-18½, Phaladeepika 1.5"},
+     {"k": "Strong", "v": "At night", "src": "BPHS 4.17-18½", "tile": true},
+     {"k": "Rises", "v": "With its head (BPHS); with its back (Phaladeepika 1.8)", "src": "BPHS 4.17-18½"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Kings and nobles", "Archers and soldiers", "Priests and teachers", "Judges and lawyers"],
+     "body": ["Thighs and hips", "Liver", "Fat and growth"],
+     "mind": ["Idealism", "Faith", "Frankness", "Love of freedom"],
+     "creatures": ["Horses", "Human beings (its first half)"]
+    },
+    "ajiva": {
+     "work": ["Teaching and preaching", "Law", "Archery and the army", "Religious work", "Riding and sport"],
+     "wealth": [],
+     "property": [],
+     "things": ["Bows, arrows and weapons", "Horses and riding gear", "Gold"],
+     "places": ["Royal residences", "Temples", "Open land", "The east"],
+     "pursuits": ["Dharma and religion", "Higher learning", "Long journeys", "Sport and hunting"]
+    }
+   },
+   "strengths": ["Righteous", "Generous", "Optimistic", "Honest", "Learned", "Adventurous"],
+   "shadows": ["Blunt", "Preachy", "Restless", "Careless", "Overconfident"],
+   "reading": {
+    "lagna": "With Sagittarius rising the native is open, honest and idealistic, often with a long face; Phaladeepika gives a long face and neck, large ears and nose, short stature and favour from the king (9.9). Jupiter as Lagna lord gives faith, learning, a love of freedom and good fortune.",
+    "moon": "The Moon in Sagittarius gives a generous, optimistic and principled mind, fond of learning, travel and frank speech. Such people are devout, eloquent and respected for their counsel, and can be blunt or restless.",
+    "sun": "The Sun in Sagittarius (mid-December to mid-January) gives a noble and righteous spirit; the soul seeks dharma, wisdom and higher learning. Jupiter, its sign lord, is the Sun's friend, giving honour through teaching, law or religion."
+   }
+  },
+  {
+   "n": 10, "name": "Capricorn", "sanskrit": "Makara", "symbol": "A makara, half land beast and half sea creature",
+   "about": "Capricorn is the makara, a beast of land in front and a creature of the water behind: the knees of Kalapurusha, movable, earthy and female, ruled by Saturn. It is patient, practical and enduring, at home in forests and on land by water, strong at night. Mars is exalted here and Jupiter debilitated: work and discipline count for more than learning.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Lord", "v": "Saturn", "src": "BPHS 4.19-20", "tile": true},
+     {"k": "Symbol", "v": "A makara, half land beast and half sea creature", "src": "BPHS 4.19-20", "tile": true},
+     {"k": "Element", "v": "Earth (prithvi)", "src": "BPHS 4.19-20", "tile": true},
+     {"k": "Modality", "v": "Movable (chara)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Gender", "v": "Female (even)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Nature", "v": "Saumya (gentle)", "src": "BPHS 4.5"},
+     {"k": "Class", "v": "Dhatu (mineral)", "src": "Phaladeepika 1.9"}]},
+    {"name": "Temperament", "rows": [
+     {"k": "Guna", "v": "Tamas", "src": "BPHS 4.19-20"},
+     {"k": "Dosha", "v": "Vata (windy)", "src": "BPHS 4.5"},
+     {"k": "Varna", "v": "Vaishya", "src": "by its element"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Limb of Kalapurusha", "v": "Knees", "src": "BPHS 4.4", "tile": true},
+     {"k": "Build", "v": "Large", "src": "BPHS 4.19-20"},
+     {"k": "Colour", "v": "Variegated", "src": "BPHS 4.19-20"},
+     {"k": "Feet", "v": "Quadruped in its first half, footless in its second", "src": "BPHS 4.19-20"}]},
+    {"name": "Place and time", "rows": [
+     {"k": "Direction", "v": "South", "src": "BPHS 4.19-20", "tile": true},
+     {"k": "Dwelling", "v": "Forests and lands (BPHS); a forest with abundant water (Phaladeepika)", "src": "BPHS 4.19-20, Phaladeepika 1.5"},
+     {"k": "Strong", "v": "At night", "src": "BPHS 4.19-20", "tile": true},
+     {"k": "Rises", "v": "With its back (prishtodaya)", "src": "BPHS 4.19-20"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Workers and labourers", "Administrators", "Elders", "Fishermen and boatmen"],
+     "body": ["Knees", "Joints and bones", "Skin", "Stiffness and rheumatism"],
+     "mind": ["Patience and discipline", "Ambition", "Practicality", "Pessimism"],
+     "creatures": ["Crocodiles and creatures of the water", "Deer and goats"]
+    },
+    "ajiva": {
+     "work": ["Administration and government service", "Agriculture", "Construction", "Mining and hard labour", "Business"],
+     "wealth": ["Wealth earned slowly"],
+     "property": ["Land"],
+     "things": ["Iron", "Variegated things"],
+     "places": ["Forests with water", "Rivers and seashores", "Forests and lands", "The south"],
+     "pursuits": ["Duty and work", "Status earned slowly"]
+    }
+   },
+   "strengths": ["Patient", "Disciplined", "Practical", "Ambitious", "Enduring", "Responsible"],
+   "shadows": ["Cold", "Pessimistic", "Rigid", "Calculating", "Indolent"],
+   "reading": {
+    "lagna": "With Capricorn rising the native is practical, patient and ambitious, maturing with age; Phaladeepika gives weak lower limbs, courage, some indolence and good fortune (9.10). Saturn as Lagna lord gives endurance, a slow and steady rise and success through discipline and work.",
+    "moon": "The Moon in Capricorn gives a serious, cautious and hard-working mind that values duty and results. Such people are reliable and shrewd, reserved with their feelings, and can be prone to worry or gloom.",
+    "sun": "The Sun in Capricorn (mid-January to mid-February) is in an enemy's sign: authority is earned slowly through duty and labour. The soul's lesson is patient, responsible work; recognition comes late but lasts."
+   }
+  },
+  {
+   "n": 11, "name": "Aquarius", "sanskrit": "Kumbha", "symbol": "A man holding a pot",
+   "about": "Aquarius is a man holding a pot: the ankles of Kalapurusha, fixed, airy and male, ruled by Saturn with Rahu as co-lord. It is thoughtful, independent and humane, at home in deep waters and in the potter's quarter, very strong by day. Saturn has its moolatrikona in the first 20°: the sign of service, perseverance and causes larger than oneself.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Lord", "v": "Saturn (Rahu co-lord)", "src": "BPHS 4.21-21½", "tile": true},
+     {"k": "Symbol", "v": "A man holding a pot", "src": "BPHS 4.21-21½", "tile": true},
+     {"k": "Element", "v": "Air (vayu)", "src": "BPHS 4.21-21½", "tile": true},
+     {"k": "Modality", "v": "Fixed (sthira)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Gender", "v": "Male (odd)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Nature", "v": "Krura (cruel)", "src": "BPHS 4.5"},
+     {"k": "Class", "v": "Mula (vegetable)", "src": "Phaladeepika 1.9"}]},
+    {"name": "Temperament", "rows": [
+     {"k": "Guna", "v": "Tamas", "src": "BPHS 4.21-21½"},
+     {"k": "Dosha", "v": "Mixed (sama)", "src": "BPHS 4.5"},
+     {"k": "Varna", "v": "Shudra", "src": "BPHS 4.21-21½"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Limb of Kalapurusha", "v": "Ankles", "src": "BPHS 4.4", "tile": true},
+     {"k": "Build", "v": "Medium", "src": "BPHS 4.21-21½"},
+     {"k": "Colour", "v": "Deep brown", "src": "BPHS 4.21-21½"},
+     {"k": "Feet", "v": "Biped", "src": "BPHS 4.21-21½"}]},
+    {"name": "Place and time", "rows": [
+     {"k": "Direction", "v": "West", "src": "BPHS 4.21-21½", "tile": true},
+     {"k": "Dwelling", "v": "Deep waters (BPHS); places potters frequent (Phaladeepika)", "src": "BPHS 4.21-21½, Phaladeepika 1.5"},
+     {"k": "Strong", "v": "By day", "src": "BPHS 4.21-21½", "tile": true},
+     {"k": "Rises", "v": "With its head (shirshodaya)", "src": "BPHS 4.21-21½"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Potters and craftsmen", "Labourers and workers", "Reformers", "Servants of the public"],
+     "body": ["Calves and ankles", "Blood circulation", "Cramps and ailments of the legs"],
+     "mind": ["Independence", "Humane ideals", "Detachment", "Eccentricity"],
+     "creatures": ["Human beings (a human sign)"]
+    },
+    "ajiva": {
+     "work": ["Pottery and crafts", "Water works and irrigation", "Science and research", "Social service", "Labour"],
+     "wealth": [],
+     "property": [],
+     "things": ["Pots and vessels", "Water", "Machines and tools"],
+     "places": ["Potters' quarters", "Deep waters", "The west"],
+     "pursuits": ["Groups and causes", "Service of society", "Reform"]
+    }
+   },
+   "strengths": ["Independent", "Humane", "Persevering", "Inventive", "Loyal to friends"],
+   "shadows": ["Aloof", "Eccentric", "Stubborn", "Secretive", "Covetous"],
+   "reading": {
+    "lagna": "With Aquarius rising the native is independent, thoughtful and unconventional; Phaladeepika likens the body to a water-pot and gives secret faults, covetousness and a fondness for perfumes and flowers (9.11). Saturn as Lagna lord gives perseverance and a concern for society, and Rahu as co-lord adds the unusual.",
+    "moon": "The Moon in Aquarius gives a detached, inventive and humane mind, loyal to friends and to causes. Such people think for themselves, enjoy groups and ideas, and can seem cool or aloof.",
+    "sun": "The Sun in Aquarius (mid-February to mid-March), in Saturn's sign, gives a will that serves the group more than the self; the soul seeks purpose in service, reform or science, and struggles with authority."
+   }
+  },
+  {
+   "n": 12, "name": "Pisces", "sanskrit": "Meena", "symbol": "Two fish, the head of each by the tail of the other",
+   "about": "Pisces is the pair of fish, each with its head by the other's tail: the feet of Kalapurusha, dual, watery and female, ruled by Jupiter. It is gentle, devout and imaginative, living in water and rising with both head and back. Venus is exalted here and Mercury debilitated: devotion and feeling count for more than reasoning.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Lord", "v": "Jupiter", "src": "BPHS 4.22-24", "tile": true},
+     {"k": "Symbol", "v": "Two fish, head to tail", "src": "BPHS 4.22-24", "tile": true},
+     {"k": "Element", "v": "Water (jala)", "src": "BPHS 4.22-24", "tile": true},
+     {"k": "Modality", "v": "Dual (dvisvabhava)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Gender", "v": "Female (even)", "src": "BPHS 4.5", "tile": true},
+     {"k": "Nature", "v": "Saumya (gentle)", "src": "BPHS 4.5"},
+     {"k": "Class", "v": "Jiva (living)", "src": "Phaladeepika 1.9"}]},
+    {"name": "Temperament", "rows": [
+     {"k": "Guna", "v": "Sattva", "src": "BPHS 4.22-24"},
+     {"k": "Dosha", "v": "Kapha (phlegmatic)", "src": "BPHS 4.5"},
+     {"k": "Varna", "v": "Brahmin", "src": "by its element"},
+     {"k": "Quality", "v": "Resoluteness", "src": "BPHS 4.22-24"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Limb of Kalapurusha", "v": "Feet", "src": "BPHS 4.4", "tile": true},
+     {"k": "Build", "v": "Medium", "src": "BPHS 4.22-24"},
+     {"k": "Feet", "v": "Footless", "src": "BPHS 4.22-24"}]},
+    {"name": "Place and time", "rows": [
+     {"k": "Direction", "v": "North", "src": "BPHS 4.22-24", "tile": true},
+     {"k": "Dwelling", "v": "Water", "src": "BPHS 4.22-24, Phaladeepika 1.5"},
+     {"k": "Strong", "v": "At night (BPHS); by day (Phaladeepika 1.8)", "src": "BPHS 4.22-24", "tile": true},
+     {"k": "Rises", "v": "With both head and back (ubhayodaya)", "src": "BPHS 4.22-24"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Fishermen and sailors", "Spiritual seekers and sages", "Priests", "Healers and carers"],
+     "body": ["Feet", "Lymph and body fluids", "Sleep", "Water-borne ailments"],
+     "mind": ["Compassion", "Imagination", "Devotion", "Indecision"],
+     "creatures": ["Fish and sea creatures"]
+    },
+    "ajiva": {
+     "work": ["Fishing, shipping and sea trade", "Religious and charitable work", "Medicine and healing", "Arts and music"],
+     "wealth": ["Earnings from pearls and sea produce"],
+     "property": [],
+     "things": ["Pearls and sea produce", "Water and liquids"],
+     "places": ["Seas, rivers and waters", "Places of worship and retreat", "The north"],
+     "pursuits": ["Spiritual practice", "Charity", "Liberation"]
+    }
+   },
+   "strengths": ["Compassionate", "Devout", "Imaginative", "Gentle", "Intuitive", "Generous"],
+   "shadows": ["Indecisive", "Escapist", "Over-trusting", "Easily swayed", "Moody"],
+   "reading": {
+    "lagna": "With Pisces rising the native is gentle, imaginative and compassionate; Phaladeepika gives a fondness for water, a well-proportioned body, earnings from pearls and the produce of the sea, and good fortune (9.12). Jupiter as Lagna lord gives devotion, kindness and an intuitive wisdom.",
+    "moon": "The Moon in Pisces gives a sensitive, intuitive and compassionate mind, open to others' feelings and to the unseen. Such people are kind, artistic and devout, easily moved, and need solitude to recover.",
+    "sun": "The Sun in Pisces (mid-March to mid-April) gives a quiet, devotional and compassionate spirit; the soul seeks the infinite through faith, service or art. Jupiter, its sign lord, is the Sun's friend, giving wisdom more than worldly power."
+   }
+  }
+ ]
+}

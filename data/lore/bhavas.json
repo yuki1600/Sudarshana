@@ -1,0 +1,338 @@
+{
+ "source": "Sudarshana's summary of the classics: the indications of each bhava (BPHS 11.2-13), their names (Phaladeepika 1.10-16), kinds (BPHS 32.35-37, Phaladeepika 1.17-18), karakas (BPHS 32.31-34, Phaladeepika 15.17) and limbs (Kalapurusha, BPHS 4.4, counted from the Lagna)",
+ "bhavas": [
+  {
+   "n": 1, "name": "Tanu", "gloss": "the body",
+   "names": ["Lagna", "Hora", "Kalya", "Deha", "Udaya", "Rupa", "Seersha", "Vartamana", "Janma"],
+   "about": "The first bhava is the rising sign itself, the point where the native meets the world. It is the body and its make-up, the self, its vitality and its temperament, and it colours every other bhava, for each is counted from it. Parashara reads physique, appearance, intellect, complexion, vigour, weakness, happiness, grief and innate nature here. Both a kendra and a trikona, it is the most important bhava: a strong Lagna and Lagna lord carry the whole chart.",
+   "kinds": ["Kendra", "Trikona"], "purushartha": "Dharma",
+   "karakas": {"bphs": ["Su"], "phaladeepika": ["Su"]},
+   "limb": "Head", "relatives": ["The native"],
+   "significations": {
+    "jiva": {
+     "people": ["The native", "One's own standing among people"],
+     "body": ["Head and brain", "Physique and build", "Complexion", "Vigour and vitality", "General health", "Marks and moles on the body"],
+     "mind": ["Innate nature", "Intellect", "Self-confidence", "Happiness and grief", "Temperament", "Dignity and self-respect"],
+     "creatures": []
+    },
+    "ajiva": {
+     "work": ["One's own initiative"], "wealth": [], "property": [], "things": [],
+     "places": ["Place of birth"],
+     "pursuits": ["Fame and good name", "Success in what one begins", "The present (vartamana)", "Beginnings"]
+    }
+   },
+   "reading": {
+    "strong": "A strong first bhava and lord give a sound body, a long life, confidence and a good name, and the power to carry out what one begins; the native stands on their own feet and the rest of the chart works through them.",
+    "weak": "Afflicted, with its lord in the 6th, 8th or 12th or joined by malefics, it weakens health and vitality and brings illness, low confidence and struggle against circumstances. A benefic in a kendra or trikona is Parashara's remedy for the body (BPHS 12.1-2)."
+   }
+  },
+  {
+   "n": 2, "name": "Dhana", "gloss": "wealth",
+   "names": ["Vitta", "Swa", "Kutumba", "Vak", "Annapana", "Bhukti", "Vidya"],
+   "about": "The second bhava is what one holds: accumulated wealth, the family one belongs to, the food one eats and the speech one speaks. Parashara gives wealth, grains, family, death, enemies, metals and precious stones; Phaladeepika adds learning, the face, the right eye and written documents. A panaphara, and as the 7th from the 8th one of the two maraka bhavas, it also weighs on the span of life.",
+   "kinds": ["Panaphara", "Maraka"], "purushartha": "Artha",
+   "karakas": {"bphs": ["Ju"], "phaladeepika": ["Ju"]},
+   "limb": "Face", "relatives": ["Family (kutumba)", "Those one feeds and supports"],
+   "significations": {
+    "jiva": {
+     "people": ["Family (kutumba)", "Those one feeds and supports", "Family elders who keep its traditions"],
+     "body": ["Face", "Right eye", "Mouth, teeth and tongue", "Voice and speech", "Throat"],
+     "mind": ["Truthful or false speech", "Taste in food", "Early learning", "Family values"],
+     "creatures": []
+    },
+    "ajiva": {
+     "work": ["Banking and finance", "Accounting", "Teaching and speaking", "Trade in food"],
+     "wealth": ["Accumulated wealth", "Savings", "Money in hand", "Family wealth", "Precious stones and metals"],
+     "property": [],
+     "things": ["Food and drink (annapana)", "Grains", "Gold, silver and gems", "Letters and documents (patrika)"],
+     "places": ["The family home"],
+     "pursuits": ["Speech and eloquence", "Early education (vidya)", "Family traditions", "Feasts and meals"]
+    }
+   },
+   "reading": {
+    "strong": "Wealth that grows and stays, a supportive family, sweet and truthful speech, good food and a pleasing face; learning comes easily and words carry weight.",
+    "weak": "Money that slips away or never gathers, quarrels in the family, harsh or untruthful speech and trouble to the eyes, teeth or face; as a maraka its dasa can bring illness late in life."
+   }
+  },
+  {
+   "n": 3, "name": "Sahaja", "gloss": "the co-born",
+   "names": ["Duschikya", "Bhratri", "Vikrama", "Parakrama", "Uras"],
+   "about": "The third bhava is courage and effort: what one dares, the brothers and sisters one grows up with and the short journeys one makes. Parashara gives valour, servants, brothers and sisters, initiation into instruction (upadesh), journeys and the death of the parents; Phaladeepika adds the chest, the right ear and the army. An upachaya, it grows with time and with malefics in it, which give drive; as the 8th from the 8th it also bears on longevity.",
+   "kinds": ["Apoklima", "Upachaya"], "purushartha": "Kama",
+   "karakas": {"bphs": ["Ma"], "phaladeepika": ["Ma"]},
+   "limb": "Arms", "relatives": ["Younger brothers and sisters", "Servants and attendants", "Neighbours"],
+   "significations": {
+    "jiva": {
+     "people": ["Younger brothers and sisters", "Servants and attendants", "Neighbours", "Comrades and colleagues", "Soldiers"],
+     "body": ["Arms, shoulders and hands", "Right ear", "Chest and lungs", "Throat and neck"],
+     "mind": ["Courage and valour", "Initiative and effort", "Willpower", "Restlessness"],
+     "creatures": []
+    },
+    "ajiva": {
+     "work": ["Writing and communication", "Messengers and media", "Sales", "Military service", "Sports and the performing arts"],
+     "wealth": ["Earnings by one's own effort"],
+     "property": [],
+     "things": ["Letters and messages", "Books and papers", "Weapons"],
+     "places": ["The neighbourhood"],
+     "pursuits": ["Short journeys", "Initiation and instruction (upadesh)", "Brave deeds", "Hobbies and skills"]
+    }
+   },
+   "reading": {
+    "strong": "Courage, enterprise and a fighting spirit; helpful brothers and sisters, success through one's own effort, and skill with the hands and with words.",
+    "weak": "Timidity or rash daring, strife with or loss of co-borns, trouble to the ears, arms or chest, and efforts that come to nothing."
+   }
+  },
+  {
+   "n": 4, "name": "Bandhu", "gloss": "kin and comfort",
+   "names": ["Sukha", "Matri", "Griha", "Vahana", "Hibuka", "Patala"],
+   "about": "The fourth bhava is the root of a life: mother, home, land and inner contentment. Parashara gives conveyances, relatives, mother, happiness, treasure, lands and buildings; Phaladeepika adds friends, cattle, perfumes, clothes, ornaments, water and rivers. At the nadir of the chart it is what lies beneath and behind: one's foundations, schooling and the peace of the heart.",
+   "kinds": ["Kendra"], "purushartha": "Moksha",
+   "karakas": {"bphs": ["Mo"], "phaladeepika": ["Mo", "Me"]},
+   "limb": "Heart", "relatives": ["Mother", "Relatives (bandhu)", "Friends"],
+   "significations": {
+    "jiva": {
+     "people": ["Mother", "Relatives and kin (bandhu)", "Friends (suhrit)", "Maternal relatives", "The community one lives among"],
+     "body": ["Heart", "Chest and breasts", "Lungs", "Emotional health"],
+     "mind": ["Happiness and contentment (sukha)", "Peace of mind", "Emotional security", "Character formed at home"],
+     "creatures": ["Cows and buffaloes", "Domestic animals"]
+    },
+    "ajiva": {
+     "work": ["Agriculture", "Real estate and building", "Trade in vehicles", "Mining and work below ground"],
+     "wealth": ["Hidden treasure", "Ancestral property", "Inheritance of land"],
+     "property": ["Home and residence", "Lands and buildings", "Vehicles and conveyances", "Farms and fields"],
+     "things": ["Clothes, ornaments and perfumes", "Furniture and household comforts"],
+     "places": ["Home and birthplace", "Wells, rivers and bridges", "Places underground"],
+     "pursuits": ["School education", "Comforts of home", "Domestic life"]
+    }
+   },
+   "reading": {
+    "strong": "A loving mother, a happy home, land, houses and vehicles, good schooling and a contented heart; the native is at ease wherever they live.",
+    "weak": "Unrest at home, distance from or worry for the mother, trouble over land, houses and vehicles, and an anxious, unsettled heart."
+   }
+  },
+  {
+   "n": 5, "name": "Putra", "gloss": "children and the mind",
+   "names": ["Suta", "Dhi", "Buddhi", "Mantra", "Atman", "Asu"],
+   "about": "The fifth bhava is what one creates and what one has earned: children, intelligence, learning and the merit (purva punya) carried from past lives. Parashara gives amulets, sacred spells, learning, knowledge, sons, royalty and the fall from position; Phaladeepika adds the power of discernment (dhi), ministers, the belly, the Sruti and Smriti, and knowledge of what is to come. A trikona and the bhava of judgement, it shows how wisely one chooses and how one's creations prosper.",
+   "kinds": ["Trikona", "Panaphara"], "purushartha": "Dharma",
+   "karakas": {"bphs": ["Ju"], "phaladeepika": ["Ju"]},
+   "limb": "Stomach", "relatives": ["Children", "Students and disciples", "Paternal grandfather"],
+   "significations": {
+    "jiva": {
+     "people": ["Children", "Students and disciples", "Ministers and advisers", "Paternal grandfather"],
+     "body": ["Stomach and belly", "Womb and conception", "Digestion", "Liver"],
+     "mind": ["Intelligence and discernment (dhi)", "Memory and creativity", "Devotion", "Foresight"],
+     "creatures": []
+    },
+    "ajiva": {
+     "work": ["Teaching", "Advising and ministry", "Creative arts", "Politics and administration"],
+     "wealth": ["Speculation and windfalls", "Taxes and tolls (kara)"],
+     "property": [],
+     "things": ["Amulets and talismans", "Mantras and sacred texts"],
+     "places": ["Schools and places of learning"],
+     "pursuits": ["Learning and knowledge", "Mantras and sacred spells", "Merit from past lives (purva punya)", "Authority and royal favour", "Knowledge of the future", "Sruti and Smriti"]
+    }
+   },
+   "reading": {
+    "strong": "Good children, a sharp and discerning mind, success in learning, favour from those in power and the fruit of past merit; one's creations flourish.",
+    "weak": "Delay, worry or sorrow over children, poor judgement, interrupted studies, loss of position and losses in speculation."
+   }
+  },
+  {
+   "n": 6, "name": "Ari", "gloss": "enemies and illness",
+   "names": ["Ripu", "Shatru", "Roga", "Kshata", "Rina"],
+   "about": "The sixth bhava is struggle: enemies, disease, debt and the effort it takes to overcome them. Parashara gives the maternal uncle, doubts about death, enemies, ulcers and the stepmother; Phaladeepika adds debts, thieves, wounds, battles, fear and humiliation. It is a dusthana, yet also an upachaya: malefics here defeat enemies and disease, and it is the bhava of service and daily work.",
+   "kinds": ["Dusthana", "Upachaya", "Apoklima"], "purushartha": "Artha",
+   "karakas": {"bphs": ["Ma"], "phaladeepika": ["Sa", "Ma"]},
+   "limb": "Hip", "relatives": ["Maternal uncle", "Stepmother", "Enemies and rivals", "Servants"],
+   "significations": {
+    "jiva": {
+     "people": ["Enemies and rivals", "Maternal uncle", "Stepmother", "Servants and employees", "Thieves", "Paternal kin (jnati)"],
+     "body": ["Disease and illness", "Wounds and ulcers", "Waist and intestines", "Injuries", "Recovery and immunity"],
+     "mind": ["Fear and anxiety", "Competitive spirit", "Discipline", "Grudges"],
+     "creatures": []
+    },
+    "ajiva": {
+     "work": ["Service and employment", "Medicine and healing", "Law and litigation", "Armed forces and police"],
+     "wealth": ["Debts and loans", "Money lost to disputes and illness"],
+     "property": [],
+     "things": ["Weapons"],
+     "places": ["Hospitals", "Battlefields and courts"],
+     "pursuits": ["Lawsuits and disputes", "Battles and competition", "Obstacles", "Humiliation", "Wicked acts and their fruit"]
+    }
+   },
+   "reading": {
+    "strong": "Victory over enemies and rivals, good health and quick recovery from illness, freedom from debt, and success in service, competition and litigation.",
+    "weak": "Chronic illness, debts, troublesome enemies and lawsuits, theft, and trouble through servants or the maternal uncle."
+   }
+  },
+  {
+   "n": 7, "name": "Yuvati", "gloss": "the spouse",
+   "names": ["Kalatra", "Jaya", "Jamitra", "Dyuna", "Kama", "Asta"],
+   "about": "The seventh bhava faces the first: the spouse and every partner one meets as an equal. Parashara gives the wife, travel, trade, loss of sight and death; Phaladeepika adds desire and passion, the roads one travels and the public. At the setting point it is a kendra and a maraka: it brings union and partnership, and with them the risks that come through others.",
+   "kinds": ["Kendra", "Maraka"], "purushartha": "Kama",
+   "karakas": {"bphs": ["Ve"], "phaladeepika": ["Ve"]},
+   "limb": "Space below the navel", "relatives": ["Spouse", "Partners", "The public"],
+   "significations": {
+    "jiva": {
+     "people": ["Spouse", "Business partners", "Open rivals", "The public (loka)", "Those one desires"],
+     "body": ["Lower abdomen", "Kidneys and bladder", "Sexual health", "Eyesight (its loss)"],
+     "mind": ["Desire and passion (kama)", "Sociability", "Cooperation", "A sense of fairness"],
+     "creatures": []
+    },
+    "ajiva": {
+     "work": ["Trade and commerce", "Partnerships and contracts", "Dealing with the public", "Diplomacy"],
+     "wealth": ["Profit from trade", "Wealth through the spouse"],
+     "property": [],
+     "things": [],
+     "places": ["Roads and ways", "Foreign places reached by travel"],
+     "pursuits": ["Marriage", "Travel", "Sexual union", "Agreements and treaties"]
+    }
+   },
+   "reading": {
+    "strong": "A good spouse and a lasting marriage, fruitful partnerships, success in trade and in dealings with the public, and pleasant travels.",
+    "weak": "Delay or discord in marriage, trouble to or from the spouse, failed partnerships and losses in trade; as a maraka, danger to health in its dasa."
+   }
+  },
+  {
+   "n": 8, "name": "Randhra", "gloss": "the hidden and life's span",
+   "names": ["Ayu", "Mrityu", "Chhidra", "Nidhana", "Mangalya"],
+   "about": "The eighth bhava is the hidden and the sudden: longevity, death and whatever comes unearned. Parashara gives longevity, battles, enemies, forts, the wealth of the dead and the things of past and future births; Phaladeepika adds obstacles, defeat, mental pain, blame and the auspiciousness of a marriage (mangalya). A dusthana, it is also where research, the occult and inheritance are found, for what is hidden can also be uncovered.",
+   "kinds": ["Dusthana", "Panaphara"], "purushartha": "Moksha",
+   "karakas": {"bphs": ["Sa"], "phaladeepika": ["Sa"]},
+   "limb": "Private parts", "relatives": ["The spouse's family", "Those one inherits from"],
+   "significations": {
+    "jiva": {
+     "people": ["The spouse's family", "Those one inherits from", "Hidden enemies", "Servants"],
+     "body": ["Longevity (ayu)", "Genitals and excretory organs", "Chronic and hidden diseases", "Accidents and surgery", "The manner of death"],
+     "mind": ["Mental pain and sorrow (adhi)", "Fear", "Interest in the hidden", "Transformation"],
+     "creatures": []
+    },
+    "ajiva": {
+     "work": ["Research and investigation", "Surgery", "The occult sciences", "Mining"],
+     "wealth": ["Inheritance and legacies", "The wealth of the dead", "Unearned and sudden gains", "The spouse's wealth"],
+     "property": ["Forts"],
+     "things": [],
+     "places": ["Forts", "Battlefields", "Hidden places"],
+     "pursuits": ["Secret and occult knowledge", "Research", "Past and future births", "Obstacles and defeats", "Blame and disgrace", "The fortune of a marriage (mangalya)"]
+    }
+   },
+   "reading": {
+    "strong": "A long life, gains through inheritance and the unexpected, insight into hidden things, and the long life of the marriage (mangalya).",
+    "weak": "A short life or chronic illness, accidents, obstacles and sudden losses, disgrace and mental suffering."
+   }
+  },
+  {
+   "n": 9, "name": "Dharma", "gloss": "fortune and dharma",
+   "names": ["Bhagya", "Guru", "Pitri", "Shubha", "Punya", "Tapas"],
+   "about": "The ninth bhava is fortune and dharma: the grace one is born with, the teachers one follows and the faith one lives by. Parashara gives fortune, the wife's brother, religion, the brother's wife and visits to holy places; Phaladeepika adds the preceptor, the father, deities, worship, penance, merit and grandchildren. The strongest trikona, a good ninth lifts the whole chart.",
+   "kinds": ["Trikona", "Apoklima"], "purushartha": "Dharma",
+   "karakas": {"bphs": ["Ju"], "phaladeepika": ["Su", "Ju"]},
+   "limb": "Thighs", "relatives": ["Father", "Guru and preceptor", "Grandchildren", "Wife's brother", "Brother's wife"],
+   "significations": {
+    "jiva": {
+     "people": ["Father", "Guru and preceptor", "Grandchildren", "Wife's brother", "Brother's wife", "Priests and the righteous"],
+     "body": ["Thighs and hips"],
+     "mind": ["Faith and righteousness", "Higher wisdom", "Ethics", "Devotion"],
+     "creatures": []
+    },
+    "ajiva": {
+     "work": ["Teaching and preaching", "Law", "Priesthood", "Philosophy"],
+     "wealth": ["Fortune and grace (bhagya)", "Merit (punya)"],
+     "property": [],
+     "things": [],
+     "places": ["Temples and holy places", "Distant lands"],
+     "pursuits": ["Fortune and luck", "Religion and dharma", "Pilgrimage", "Worship, penance and japa", "Higher learning", "Long journeys"]
+    }
+   },
+   "reading": {
+    "strong": "Good fortune, a long-lived and helpful father, wise teachers, faith, pilgrimages and righteous deeds; luck comes when it is most needed.",
+    "weak": "Ill luck, strain with the father or teachers, loss of faith and acts against dharma."
+   }
+  },
+  {
+   "n": 10, "name": "Karma", "gloss": "action and position",
+   "names": ["Rajya", "Mana", "Ajna", "Vyapara", "Gagana", "Meshurana"],
+   "about": "The tenth bhava is what one does in the world: profession, position, honour and command. Parashara gives royalty, place, profession, honour, the father, living in foreign lands and debts; Phaladeepika adds commerce, fame, good conduct, sacrifices and the power to command. It is the strongest kendra, at the top of the sky, and a graha here is seen by all.",
+   "kinds": ["Kendra", "Upachaya"], "purushartha": "Artha",
+   "karakas": {"bphs": ["Me"], "phaladeepika": ["Ju", "Su", "Me", "Sa"]},
+   "limb": "Knees", "relatives": ["Father", "Employers and superiors", "Those in authority", "Mother-in-law"],
+   "significations": {
+    "jiva": {
+     "people": ["Father", "Employers and superiors", "Kings and those in authority", "Mother-in-law"],
+     "body": ["Knees and joints"],
+     "mind": ["Ambition", "A sense of duty", "Good conduct", "Leadership"],
+     "creatures": []
+    },
+    "ajiva": {
+     "work": ["Profession and occupation", "Business and commerce (vyapara)", "Government service", "Authority and command"],
+     "wealth": ["Livelihood", "Earnings from work", "Debts"],
+     "property": [],
+     "things": [],
+     "places": ["The workplace", "Foreign lands where one works"],
+     "pursuits": ["Honour and fame", "Status and position", "Rites and sacrifices (yajna)", "Achievements", "Living abroad"]
+    }
+   },
+   "reading": {
+    "strong": "A respected profession, high position, authority and lasting fame; good deeds and success in what one undertakes.",
+    "weak": "Unsteady work and setbacks in career, loss of position or reputation, and strain with superiors or the father."
+   }
+  },
+  {
+   "n": 11, "name": "Labha", "gloss": "gains",
+   "names": ["Aya", "Prapti", "Agama"],
+   "about": "The eleventh bhava is gain: income, the fulfilment of wishes and all that flows in. Parashara gives all articles, the son's wife, income, prosperity and quadrupeds; Phaladeepika adds elder brothers and sisters, the left ear and pleasing news. The best of the upachayas, almost every graha does some good here, even a malefic.",
+   "kinds": ["Upachaya", "Panaphara"], "purushartha": "Kama",
+   "karakas": {"bphs": ["Ju"], "phaladeepika": ["Ju"]},
+   "limb": "Ankles", "relatives": ["Elder brothers and sisters", "Son's wife", "Friends"],
+   "significations": {
+    "jiva": {
+     "people": ["Elder brothers and sisters", "Son's wife", "Friends and well-wishers", "Patrons"],
+     "body": ["Left ear", "Ankles and calves", "Recovery from illness"],
+     "mind": ["Hopes and wishes", "Contentment through gain"],
+     "creatures": ["Quadrupeds"]
+    },
+    "ajiva": {
+     "work": ["Trade that brings profit"],
+     "wealth": ["Income and gains", "Profit", "Prosperity", "Rewards and awards"],
+     "property": ["All articles acquired"],
+     "things": ["Pleasant and juicy things (sarasa)"],
+     "places": [],
+     "pursuits": ["Fulfilment of desires", "Good news", "Honours", "Social circles"]
+    }
+   },
+   "reading": {
+    "strong": "Steady income, profits and gains from many sources, wishes fulfilled, and helpful elder brothers, sisters and friends.",
+    "weak": "Gains that do not come or do not last, unfulfilled hopes, and strained ties with elder siblings and friends."
+   }
+  },
+  {
+   "n": 12, "name": "Vyaya", "gloss": "loss and release",
+   "names": ["Ripha", "Antya", "Moksha"],
+   "about": "The twelfth bhava is letting go: expenses, losses, sleep, distant lands and, at the end, liberation. Parashara gives expenses, the history of enemies and one's own death; Phaladeepika adds the feet, the left eye, the bed, poverty, sin and imprisonment. A dusthana and the last bhava, it shows where wealth and energy go, and a benefic here spends them well.",
+   "kinds": ["Dusthana", "Apoklima"], "purushartha": "Moksha",
+   "karakas": {"bphs": ["Sa"], "phaladeepika": ["Sa"]},
+   "limb": "Feet", "relatives": ["People in distant lands", "Hidden enemies"],
+   "significations": {
+    "jiva": {
+     "people": ["People in distant lands", "Hidden enemies", "Recluses and renunciants", "Tale-bearers"],
+     "body": ["Feet", "Left eye", "Sleep", "Confinement to bed"],
+     "mind": ["Detachment", "Dreams and imagination", "Spiritual longing", "Misery and sorrow"],
+     "creatures": []
+    },
+    "ajiva": {
+     "work": ["Work abroad", "Hospitals, prisons and ashrams"],
+     "wealth": ["Expenses", "Losses", "Charity and donations", "Poverty"],
+     "property": [],
+     "things": ["The bed"],
+     "places": ["Foreign lands", "Hospitals, prisons and ashrams", "The bedroom"],
+     "pursuits": ["Liberation (moksha)", "Foreign travel and life abroad", "Pleasures of the bed (shayana sukha)", "Imprisonment", "Sin and its expiation"]
+    }
+   },
+   "reading": {
+    "strong": "Money spent on good causes, restful sleep, comfort abroad and progress toward liberation.",
+    "weak": "Heavy and wasteful expenses, losses, sleeplessness, confinement or exile, and trouble to the feet or eyes."
+   }
+  }
+ ]
+}

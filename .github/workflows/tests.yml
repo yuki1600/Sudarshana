@@ -1,0 +1,20 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.11", "3.13"]   # pyswisseph has wheels up to 3.11; 3.13 builds from source
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install -r requirements.txt
+      # The ephemeris tests skip silently without pyswisseph; a skip here means a broken install.
+      - name: Run tests (fail on skips)
+        run: |
+          set -o pipefail
+          python -m unittest discover -s core_logic/tests -t . 2>&1 | tee test-output.txt
+          ! grep -q "skipped=" test-output.txt

@@ -1,0 +1,103 @@
+index,sanskrit,english_2,sanskrit_2,english,sanskrit_short
+0,Lagna,As,Lg,Asc,Lag
+1,Surya,Su,Sy,Sun,Sury
+2,Chandra,Mo,Ch,Moon,Chan
+3,Mangala,Ma,Ma,Mars,Mang
+4,Budha,Me,Bu,Merc,Budh
+5,Guru,Ju,Gu,Jup,Guru
+6,Sukra,Ve,Sk,Ven,Sukr
+7,Sani,Sa,Sa,Sat,Sani
+8,Rahu,Ra,Ra,Rah,Rah
+9,Ketu,Ke,Ke,Ket,Ket
+10,Uranus,Ur,Ur,Ura,Ur
+11,Neptune,Ne,Ne,Nep,Ne
+12,Pluto,Pl,Pl,Plu,Pl
+13,Bhava Lagna,BL,BL,BL,BL
+14,Hora Lagna,HL ,HL ,HL,HL 
+15,Ghati Lagna,GL ,GL ,GL,GL 
+16,Vighati Lagna,VG,VG,VGL,VG
+17,Pranapada Lagna,PP,PP,PPL,PP
+18,Sree Lagna,SL ,SL ,SL,SL 
+19,Indu Lagna,IL,IL,IL,IL
+20,Bhrigu Bindu,BB,BB,BB,BB
+21,Kunda,Ku,Ku,Ku,Ku
+22,Dhooma,Dh,Dh,Dhu,Dh
+23,Vyatipata,Vy,Vy,Vya,Vy
+24,Parivesha,PV,PV,PaV,PV
+25,Indra Chapa,IC,IC,ICh,IC
+26,Upaketu,UK,UK,UpK,UK
+27,Kaala,Kl,Kl,Kal,Kl
+28,Mrityu,Mri,Mri,Mri,Mri
+29,Artha Prahara,AP,AP,APr,AP
+30,Yama Ghantaka,YG,YG,YGh,YG
+31,Maandi,Md,Md,Mnd,Md
+32,Gulika,Gk,Gk,Glk,Gk
+33,Prana Sphuta,PS,PS,PS,PS
+34,Deha Sphuta,DS,DS,DS,DS
+35,Mrityu Sphuta,MS,MS,MS,MS
+36,Sookshma TriSphuta,STS,STS,STS,STS
+37,Tithi Sphuta,TS,TS,TS,TS
+38,Yoga Sphuta (Sun-Moon),YS,YS,YS,YS
+39,Rahu Tithi Sphuta,RTS,RTS,RTS,RTS
+40,Kshetra Sphuta,KS,KS,KS,KS
+41,Beeja Sphuta,BS,BS,BS,BS
+42,TriSphuta,TS,TS,TS,TS
+43,ChatusSphuta,CS,CS,CS,CS
+44,PanchaSphuta,PS,PS,PS,PS
+45,Yogi Sphuta,YO,YO,YO,YO
+46,Avayoga Sphuta,AY,AY,AY,AY
+47,Varnada Lagna,VL,VL,VL,VL
+48,V2,V2,V2,V2,V2
+49,V3,V3,V3,V3,V3
+50,V4,V4,V4,V4,V4
+51,V5,V5,V5,V5,V5
+52,V6,V6,V6,V6,V6
+53,V7,V7,V7,V7,V7
+54,V8,V8,V8,V8,V8
+55,V9,V9,V9,V9,V9
+56,V10,V10,V10,V10,V10
+57,V11,V11,V11,V11,V11
+58,V12,V12,V12,V12,V12
+59,AL,AL ,AL ,AL ,AL 
+60,A2,A2,A2,A2,A2
+61,A3,A3,A3,A3,A3
+62,A4,A4,A4,A4,A4
+63,A5,A5,A5,A5,A5
+64,A6,A6,A6,A6,A6
+65,A7,A7,A7,A7,A7
+66,A8,A8,A8,A8,A8
+67,A9,A9,A9,A9,A9
+68,A10,A10,A10,A10,A10
+69,A11,A11,A11,A11,A11
+70,UL,UL,UL,UL,UL
+71,L1,L1,L1,L1,L1
+72,L2,L2,L2,L2,L2
+73,L3,L3,L3,L3,L3
+74,L4,L4,L4,L4,L4
+75,L5,L5,L5,L5,L5
+76,L6,L6,L6,L6,L6
+77,L7,L7,L7,L7,L7
+78,L8,L8,L8,L8,L8
+79,L9,L9,L9,L9,L9
+80,L10,L10,L10,L10,L10
+81,L11,L11,L11,L11,L11
+82,L12,L12,L12,L12,L12
+83,Surya's Arudha,Su,Sy,Su,Sury
+84,Chandra's Arudha,Mo,Ch,Mo,Chan
+85,Mangala's Arudha,Ma,Ma,Ma,Mang
+86,Budha's Arudha,Me,Bu,Me,Budh
+87,Guru's Arudha,Ju,Gu,Ju,Guru
+88,Sukra's Arudha,Ve,Sk,Ve,Sukr
+89,Sani's Arudha,Sa,Sa,Sa,Sani
+90,Rahu's Arudha,Ra,Ra,Ra,Rah
+91,Ketu's Arudha,Ke,Ke,Ke,Ket
+92,Mangala's Ar Arudha,Ma1,Ma1,Ma1,Man1
+93,Budha's Ge Arudha,Me3,Bu3,Me3,Bud3
+94,Guru's Sg Arudha,Ju9,Gu9,Ju9,Gur9
+95,Sukra's Ta Arudha,Ve2,Su2,Ve2,Suk2
+96,Sani's Cp Arudha,Sa10,Sa10,Sa10,San10
+97,Mangala's Sc Arudha,Ma8,Ma8,Ma8,Man8
+98,Budha's Vi Arudha,Me6,Bu6,Me6,Bud6
+99,Guru's Pi Arudha,Ju12,Gu12,Ju12,Gur12
+100,Sukra's Li Arudha,Ve7,Su7,Ve7,Suk7
+101,Sani's Aq Arudha,Sa11,Sa11,Sa11,San11

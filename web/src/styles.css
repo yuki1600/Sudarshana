@@ -1,0 +1,12 @@
+/* The app's styles, in cascade order: later files override earlier ones, so keep this order. */
+@import "./styles/base.css";
+@import "./styles/windows.css";
+@import "./styles/matching.css";
+@import "./styles/remedies.css";
+@import "./styles/muhurta.css";
+@import "./styles/research.css";
+@import "./styles/analysis.css";
+@import "./styles/starlight.css";
+@import "./styles/timeline.css";
+@import "./styles/traditions.css";
+@import "./styles/praajna.css";

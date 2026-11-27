@@ -1,0 +1,450 @@
+<title>Sudarshana Mobile</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Eczar:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Tiro+Devanagari+Sanskrit&display=swap">
+<style>
+/* Layout: a contact sheet of phone screens, grouped by where they sit in the app, each with its notes beside it */
+:root {
+  --page: #f6f5fa; --ink: #0a0a0a; --muted: #676b73; --line: #e3e5e9; --shade: #eff0f3; --scr: #ffffff; --frame: #0a0a0a;
+  --act: #5b2bd9; --act-ink: #ffffff; --here: #f5b03e; --here-ink: #000000; --good: #16a34a; --bad: #e5352b; --scrim: rgba(10, 10, 10, .45);
+  --night: #000000; --night-ink: #f4f4f5; --night-muted: #8d9099; --night-line: #2a2b30; --night-act: #a68cff; --night-here: #ffc766; --star: #ffffff;
+  --display: "Eczar", Georgia, serif; --text: "IBM Plex Sans", system-ui, sans-serif; --mono: "IBM Plex Mono", ui-monospace, monospace; --deva: "Tiro Devanagari Sanskrit", serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --page: #050506; --ink: #f4f4f5; --muted: #8d9099; --line: #232428; --shade: #17181b; --scr: #0a0a0a; --frame: #2a2b30;
+  --act: #a68cff; --act-ink: #0a0a0a; --here: #ffc766; --good: #34c76f; --bad: #f0605a; --scrim: rgba(0, 0, 0, .6); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --page: #050506; --ink: #f4f4f5; --muted: #8d9099; --line: #232428; --shade: #17181b; --scr: #0a0a0a; --frame: #2a2b30;
+  --act: #a68cff; --act-ink: #0a0a0a; --here: #ffc766; --good: #34c76f; --bad: #f0605a; --scrim: rgba(0, 0, 0, .6); color-scheme: dark }
+
+body { background: var(--page); color: var(--ink); font: 15px/1.55 var(--text); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 40px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 56px; }
+h1, h2 { font-family: var(--display); font-weight: 600; line-height: 1.1; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(36px, 6vw, 60px); }
+h1 .deva { font-family: var(--deva); font-weight: 400; font-size: .6em; color: var(--muted); margin-left: .3em; }
+h2 { font-size: 28px; }
+.lede { max-width: 64ch; color: var(--muted); margin: 14px 0 0; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; font: 500 13px var(--text); }
+.legend span { padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--scr); }
+.legend b { color: var(--here-ink); background: var(--here); border-color: var(--here); padding: 5px 12px; border-radius: 999px; }
+.eyebrow { font: 500 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+section { display: grid; gap: 20px; }
+.sheetrow { display: flex; flex-wrap: wrap; gap: 32px 28px; }
+.ph { width: 272px; flex: none; display: grid; gap: 12px; align-content: start; }
+.ph figcaption { font-size: 13.5px; line-height: 1.5; color: var(--muted); }
+.ph figcaption b { display: block; color: var(--ink); font-size: 15px; margin-bottom: 2px; }
+figure { margin: 0; }
+
+/* the phone */
+.scr { height: 568px; border: 7px solid var(--frame); border-radius: 36px; background: var(--scr); overflow: hidden; display: flex; flex-direction: column; position: relative; font-size: 11.5px; line-height: 1.35; }
+.sb { display: flex; justify-content: space-between; padding: 9px 20px 3px; font: 600 10.5px var(--text); }
+.hd { display: flex; align-items: center; gap: 6px; padding: 6px 10px 8px; }
+.pill { font-weight: 600; border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
+.clock { font: 500 10px var(--mono); color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 4px 8px; white-space: nowrap; }
+.more { margin-left: auto; font-weight: 700; letter-spacing: 1px; color: var(--muted); padding: 0 4px; }
+.chips { display: flex; gap: 6px; padding: 0 10px 8px; overflow: hidden; border-bottom: 1px solid var(--line); flex: none; }
+.chip { white-space: nowrap; padding: 4px 10px; border-radius: 999px; background: var(--shade); }
+.chip.on { background: var(--here); color: var(--here-ink); font-weight: 600; }
+.chip.act { background: none; color: var(--act); border: 1px solid var(--act); }
+.body { flex: 1; overflow: hidden; padding: 10px; display: flex; flex-direction: column; gap: 8px; min-height: 0; }
+.bar { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); padding: 6px 4px 14px; flex: none; }
+.bar span { text-align: center; font-size: 9.5px; color: var(--muted); }
+.bar i { display: block; width: 18px; height: 18px; margin: 0 auto 3px; border-radius: 6px; border: 1.5px solid currentColor; }
+.bar .on { color: var(--ink); font-weight: 600; }
+.bar .on i { background: var(--here); border-color: var(--here); }
+.row { display: flex; justify-content: space-between; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.row .k { color: var(--muted); }
+.row .v, .mono { font-family: var(--mono); font-size: 10.5px; text-align: right; }
+.btn { background: var(--act); color: var(--act-ink); border-radius: 10px; padding: 9px; text-align: center; font-weight: 600; }
+.btn.ghost { background: none; color: var(--act); border: 1px solid var(--act); }
+.field { border: 1px solid var(--line); border-radius: 9px; padding: 6px 9px; display: grid; gap: 1px; }
+.field small { color: var(--muted); font-size: 9.5px; }
+.tag { font: 500 9px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.now { background: var(--here); color: var(--here-ink); font: 600 9px var(--text); border-radius: 999px; padding: 1px 6px; margin-left: 4px; }
+.act-t { color: var(--act); font-weight: 600; }
+
+/* South Indian chart */
+.south { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 1fr); aspect-ratio: 1; max-width: 100%; border: 1px solid var(--ink); flex: none; }
+.south > div { border: .5px solid var(--muted); font: 500 10px var(--mono); padding: 3px; display: flex; flex-wrap: wrap; gap: 1px 4px; align-content: flex-start; }
+.south .c { grid-area: 2 / 2 / 4 / 4; display: grid; place-items: center; text-align: center; font: 600 12px var(--display); border: none; }
+.south .c small { display: block; font: 400 9px var(--text); color: var(--muted); }
+.south .as { color: var(--here-ink); background: var(--here); padding: 0 2px; border-radius: 3px; }
+.vargas { display: flex; gap: 5px; overflow: hidden; flex: none; }
+.vargas span { font: 500 10px var(--mono); padding: 3px 7px; border-radius: 6px; background: var(--shade); white-space: nowrap; }
+.vargas .on { background: var(--here); color: var(--here-ink); }
+.running { border: 1px solid var(--line); border-radius: 10px; padding: 7px 9px; display: grid; gap: 2px; }
+
+/* sheets */
+.scrim { position: absolute; inset: 0; background: var(--scrim); }
+.sheet { position: absolute; left: 0; right: 0; bottom: 0; background: var(--scr); border-radius: 18px 18px 0 0; padding: 8px 12px 18px; display: grid; gap: 6px; }
+.grab { width: 36px; height: 4px; border-radius: 2px; background: var(--line); margin: 2px auto 6px; }
+.sheet .item { padding: 8px 0; border-bottom: 1px solid var(--line); color: var(--act); font-weight: 600; }
+
+/* dasa list */
+.dl { display: grid; }
+.dl .r { display: grid; grid-template-columns: 26px 1fr auto; align-items: center; gap: 6px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.dl .r b { font-family: var(--mono); font-size: 11px; }
+.dl .past { color: var(--muted); }
+.dl .l2 { padding-left: 14px; } .dl .l3 { padding-left: 28px; }
+.dl .open b::after { content: " ▾"; color: var(--muted); font-weight: 400; }
+
+/* time strip */
+.strip { position: relative; display: grid; grid-template-columns: 20px 1fr; gap: 5px 6px; align-items: center; }
+.strip .g { font: 600 10px var(--mono); }
+.lane { display: flex; height: 17px; border-radius: 3px; overflow: hidden; }
+.seg { flex: 1; background: var(--shade); border-right: 1px solid var(--scr); font: 500 8.5px var(--mono); display: flex; align-items: center; padding-left: 3px; overflow: hidden; white-space: nowrap; }
+.seg.b { background: var(--line); }
+.months { grid-column: 2; position: relative; height: 12px; font: 500 9px var(--mono); color: var(--muted); }
+.months span { position: absolute; top: 0; }
+.today { position: absolute; top: 14px; bottom: 0; width: 2px; background: var(--here); left: calc(26px + (100% - 26px) * .033); }
+
+/* day strip */
+.day { position: relative; height: 22px; border-radius: 5px; background: var(--shade); }
+.day i { position: absolute; top: 0; bottom: 0; border-radius: 4px; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+
+/* bars */
+.bars { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; align-items: end; height: 190px; position: relative; padding-top: 14px; border-bottom: 1px solid var(--ink); }
+.bars div { display: grid; align-content: end; justify-items: center; gap: 3px; height: 100%; font: 500 9.5px var(--mono); }
+.bars i { width: 100%; background: var(--ink); border-radius: 3px 3px 0 0; }
+.bars .weak i { background: var(--muted); }
+.hund { position: absolute; left: 0; right: 0; border-top: 1px dashed var(--muted); }
+.names { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; text-align: center; font: 600 10px var(--mono); }
+
+/* more grid */
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 8px; }
+.tile { display: grid; justify-items: center; gap: 4px; text-align: center; font-size: 10px; }
+.tile i { width: 38px; height: 38px; border-radius: 11px; border: 1px solid var(--line); background: var(--shade); display: grid; place-items: center; font: 600 11px var(--mono); font-style: normal; }
+
+/* sign-in */
+.night { background: var(--night); color: var(--night-ink); }
+.night .sb { color: var(--night-ink); }
+.sky { position: absolute; inset: 0; }
+.sky i { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: var(--star); }
+.webb { position: absolute; top: 42px; left: 14px; font: 500 9px var(--mono); color: var(--night-muted); letter-spacing: .06em; text-transform: uppercase; }
+.signin { position: relative; margin-top: auto; padding: 18px 18px 26px; display: grid; gap: 9px; }
+.brand { font: 700 30px var(--display); color: var(--night-here); line-height: 1; }
+.brand + .deva { font-family: var(--deva); color: var(--night-muted); font-size: 15px; margin-top: -4px; }
+.nf { border: 1px solid var(--night-line); border-radius: 9px; padding: 8px 10px; color: var(--night-muted); }
+.nbtn { background: var(--night-act); color: var(--night); border-radius: 10px; padding: 10px; text-align: center; font-weight: 600; }
+.nghost { border: 1px solid var(--night-line); border-radius: 10px; padding: 9px; text-align: center; }
+
+/* ring */
+.ring { display: grid; place-items: center; position: relative; height: 112px; }
+.ring svg { width: 112px; height: 112px; }
+.ring div { position: absolute; text-align: center; font: 700 22px var(--display); }
+.ring div small { display: block; font: 400 10px var(--text); color: var(--muted); }
+
+/* tables */
+.tw { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--scr); }
+table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 14px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+tr:last-child td { border-bottom: none; }
+.files { display: flex; flex-wrap: wrap; gap: 10px; }
+.files code { font: 500 13px var(--mono); padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--scr); }
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Wireframes · iOS and Android</div>
+  <h1>Sudarshana Mobile<span class="deva">सुदर्शन</span></h1>
+  <p class="lede">The web app on a phone, with every tab kept. One chart in the hand: its name always in the header, its sub tabs in a fixed chip row, and five tabs at the bottom. Screens use the sample chart India (15 Aug 1947, 00:00, New Delhi) and today's panchanga for New Delhi, computed by the app's own server with its defaults.</p>
+  <div class="legend"><b>Chart</b><span>Dasas</span><span>Transits</span><span>Today</span><span>More: the other eleven tabs, Settings, Account</span></div>
+</header>
+
+<section>
+  <div><div class="eyebrow">Arrive</div><h2>Sign in and pick a chart</h2></div>
+  <div class="sheetrow">
+    <figure class="ph">
+      <div class="scr night">
+        <div class="sky"><i style="left:12%;top:9%"></i><i style="left:70%;top:6%"></i><i style="left:44%;top:17%"></i><i style="left:86%;top:22%"></i><i style="left:23%;top:28%"></i><i style="left:58%;top:33%"></i><i style="left:8%;top:41%"></i><i style="left:79%;top:44%"></i><i style="left:36%;top:47%"></i><i style="left:64%;top:12%"></i><i style="left:91%;top:35%"></i><i style="left:17%;top:52%"></i></div>
+        <div class="sb"><span>9:41</span><span>●●●</span></div>
+        <div class="webb">Webb image, full-bleed</div>
+        <div class="signin">
+          <div class="brand">Sudarshana</div><div class="deva">सुदर्शन</div>
+          <div class="nf">Email</div><div class="nf">Password</div>
+          <div class="nbtn">Sign in</div><div class="nghost">Continue with Google</div>
+        </div>
+      </div>
+      <figcaption><b>Sign in</b>Real NASA/Webb imagery, no card around the form. The chakra intro plays here only; signing in is a short fade into the last chart.</figcaption>
+    </figure>
+
+    <figure class="ph">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●●</span></div>
+        <div class="hd"><span class="pill">India ▾</span><span class="clock">15 Aug 1947 · 00:00</span><span class="more">⋯</span></div>
+        <div class="body" style="opacity:.35"><div class="south" style="width:70%"><div style="grid-area:1/1"></div></div></div>
+        <div class="scrim"></div>
+        <div class="sheet">
+          <div class="grab"></div>
+          <div class="chips" style="padding:0;border:none"><span class="chip">Mine</span><span class="chip">Cloud</span><span class="chip">Shared</span><span class="chip on">Samples</span><span class="chip">Rodden</span></div>
+          <div class="field"><small>Search charts</small></div>
+          <div class="row"><span><b>India</b><br><span class="k">15 Aug 1947 · New Delhi</span></span><span class="now">open</span></div>
+          <div class="row"><span><b>Swami Vivekananda</b><br><span class="k">12 Jan 1863 · Kolkata</span></span></div>
+          <div class="row"><span><b>Mahatma Gandhi</b><br><span class="k">2 Oct 1869 · Porbandar</span></span></div>
+          <div class="row"><span><b>Aurobindo Ghose</b><br><span class="k">15 Aug 1872 · Kolkata</span></span></div>
+          <div class="btn">New chart</div>
+        </div>
+      </div>
+      <figcaption><b>Chart switcher</b>Tap the chart's name anywhere. Mine, Cloud, Shared, Samples and the Rodden library in one sheet; swipe a row to share or delete.</figcaption>
+    </figure>
+
+    <figure class="ph">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●●</span></div>
+        <div class="hd"><span class="act-t">Cancel</span><b style="margin:0 auto">New chart</b><span class="act-t">Save</span></div>
+        <div class="body">
+          <div class="field"><small>Name</small>Ravi</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div class="field"><small>Date</small>19 Nov 2026</div><div class="field"><small>Time</small><span class="mono" style="text-align:left">06:30:00</span></div></div>
+          <div class="field" style="border-color:var(--act)"><small>Place</small>Shim</div>
+          <div class="row" style="background:var(--shade);border-radius:8px;padding:7px 8px;border:none"><span><b>Shimla</b><br><span class="k">Himachal Pradesh, IN</span></span><span class="v">2073 m</span></div>
+          <div class="tag" style="margin-top:4px">Filled from the place</div>
+          <div class="row"><span class="k">Latitude</span><span class="v">31.1044 N</span></div>
+          <div class="row"><span class="k">Longitude</span><span class="v">77.1666 E</span></div>
+          <div class="row"><span class="k">Zone</span><span class="v">+5:30 IST</span></div>
+          <div class="row"><span class="k">Altitude</span><span class="v">2073 m</span></div>
+          <div class="btn ghost">Now, here</div>
+        </div>
+      </div>
+      <figcaption><b>Birth details</b>Native date and time wheels. A picked place fills latitude, longitude, the zone for that date and the altitude. "Now, here" uses the phone's location.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div><div class="eyebrow">Tab 1</div><h2>Chart</h2></div>
+  <div class="sheetrow">
+    <figure class="ph">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●●</span></div>
+        <div class="hd"><span class="pill">India ▾</span><span class="clock">15 Aug 1947 · 00:00</span><span class="more">⋯</span></div>
+        <div class="chips"><span class="chip on">Overview</span><span class="chip">Grahas</span><span class="chip">Bhavas</span><span class="chip">Aspects</span><span class="chip">Yogas</span><span class="chip">KP</span></div>
+        <div class="body">
+          <div class="south">
+            <div style="grid-area:1/1"></div><div style="grid-area:1/2"></div><div style="grid-area:1/3"><span class="as">As</span>Ra</div><div style="grid-area:1/4">Ma</div>
+            <div style="grid-area:2/1"></div><div style="grid-area:2/4">Su Mo Me Ve Sa</div>
+            <div style="grid-area:3/1"></div><div style="grid-area:3/4"></div>
+            <div style="grid-area:4/1"></div><div style="grid-area:4/2">Ke</div><div style="grid-area:4/3">Ju</div><div style="grid-area:4/4"></div>
+            <div class="c"><span>Rasi<small>D-1</small></span></div>
+          </div>
+          <div class="vargas"><span class="on">D-1</span><span>D-2</span><span>D-3</span><span>D-4</span><span>D-7</span><span>D-9</span><span>D-10</span></div>
+          <div class="running"><span class="tag">Vimsottari, running</span><span><b class="mono" style="font-size:11.5px">Ma › Sa › Ve</b><span class="now">now</span></span><span class="k" style="color:var(--muted)">to 16 Jan 2027</span></div>
+          <div class="row"><span class="k">Lagna</span><span class="v">Ta 8°55′</span></div>
+          <div class="row"><span class="k">Moon</span><span class="v">Cn 5°06′ · Pushyami</span></div>
+          <div class="row"><span class="k">Tithi</span><span class="v">Krishna Trayodasi</span></div>
+        </div>
+        <div class="bar"><span class="on"><i></i>Chart</span><span><i></i>Dasas</span><span><i></i>Transits</span><span><i></i>Today</span><span><i></i>More</span></div>
+      </div>
+      <figcaption><b>Chart · Overview</b>The chart fills the width in the chosen style (South, North, East or a wheel). The chip row never moves; only the area below it scrolls. Grahas read Su Mo Ma Me Ju Ve Sa Ra Ke.</figcaption>
+    </figure>
+
+    <figure class="ph">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●●</span></div>
+        <div class="hd"><span class="pill">India ▾</span><span class="clock">15 Aug 1947 · 00:00</span><span class="more">⋯</span></div>
+        <div class="chips"><span class="chip on">Overview</span><span class="chip">Grahas</span><span class="chip">Bhavas</span><span class="chip">Aspects</span></div>
+        <div class="body"><div class="south"><div style="grid-area:1/3"><span class="as">As</span>Ra</div><div style="grid-area:1/4">Ma</div><div style="grid-area:2/4">Su Mo Me Ve Sa</div><div style="grid-area:4/2">Ke</div><div style="grid-area:4/3">Ju</div><div class="c"><span>Rasi<small>D-1</small></span></div></div></div>
+        <div class="scrim"></div>
+        <div class="sheet">
+          <div class="grab"></div>
+          <div><b style="font-size:13px">Sa · Saturn</b><br><span class="mono" style="color:var(--muted)">Cn 21°36′ · 3rd bhava</span></div>
+          <div class="item">Key Info for Sa</div>
+          <div class="item">Transits of Sa</div>
+          <div class="item">Bhavas from Sa</div>
+          <div class="item">Copy position</div>
+        </div>
+      </div>
+      <figcaption><b>Long-press a graha</b>The desktop's right-click menu, as an action sheet with a light haptic tick. A plain tap shows the graha's details instead.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div><div class="eyebrow">Tabs 2 and 3</div><h2>Dasas and Transits</h2></div>
+  <div class="sheetrow">
+    <figure class="ph">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●●</span></div>
+        <div class="hd"><span class="pill">India ▾</span><span class="more">⋯</span></div>
+        <div class="chips"><span class="chip act">Vimsottari ▾</span><span class="chip">Options</span><span class="chip">Quick Info</span></div>
+        <div class="body">
+          <div class="dl">
+            <div class="r past"><b>Mo</b><span>Mahadasa</span><span class="mono">2014–2024</span></div>
+            <div class="r open"><b>Ma</b><span>Mahadasa<span class="now">now</span></span><span class="mono">2024–2031</span></div>
+            <div class="r l2 past"><b>Ju</b><span>13 Jul 2025</span><span class="mono">18 Jun 2026</span></div>
+            <div class="r l2 open"><b>Sa</b><span>18 Jun 2026<span class="now">now</span></span><span class="mono">29 Jul 2027</span></div>
+            <div class="r l3 past"><b>Ke</b><span>20 Oct 2026</span><span class="mono">12 Nov 2026</span></div>
+            <div class="r l3"><b>Ve</b><span>12 Nov 2026<span class="now">now</span></span><span class="mono">16 Jan 2027</span></div>
+            <div class="r l3"><b>Su</b><span>16 Jan 2027</span><span class="mono">5 Feb 2027</span></div>
+            <div class="r l2"><b>Me</b><span>29 Jul 2027</span><span class="mono">25 Jul 2028</span></div>
+            <div class="r"><b>Ra</b><span>Mahadasa</span><span class="mono">2031–2049</span></div>
+            <div class="r"><b>Ju</b><span>Mahadasa</span><span class="mono">2049–2065</span></div>
+          </div>
+        </div>
+        <div class="bar"><span><i></i>Chart</span><span class="on"><i></i>Dasas</span><span><i></i>Transits</span><span><i></i>Today</span><span><i></i>More</span></div>
+      </div>
+      <figcaption><b>Dasas</b>Opens on the running period down to the pratyantar, "now" in gold. Tap a row to open its periods; the system picker holds every dasa the web has.</figcaption>
+    </figure>
+
+    <figure class="ph">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●●</span></div>
+        <div class="hd"><span class="pill">India ▾</span><span class="clock">from 16 Nov 2026</span><span class="more">⋯</span></div>
+        <div class="chips"><span class="chip">Transits</span><span class="chip on">Calendar</span><span class="chip">Tajaka</span><span class="chip">Tithi Pravesha</span></div>
+        <div class="body">
+          <div class="strip">
+            <span></span><div class="months"><span style="left:16%">Dec</span><span style="left:51%">Jan</span><span style="left:85%">Feb</span></div>
+            <span class="g">Su</span><div class="lane"><span class="seg" style="flex:5">Sc</span><span class="seg b" style="flex:4">Sg</span><span class="seg" style="flex:4">Cp</span></div>
+            <span class="g">Mo</span><div class="lane"><i class="seg"></i><i class="seg b"></i><i class="seg"></i><i class="seg b"></i><i class="seg"></i><i class="seg b"></i><i class="seg"></i><i class="seg b"></i><i class="seg"></i><i class="seg b"></i><i class="seg"></i><i class="seg b"></i><i class="seg"></i><i class="seg b"></i><i class="seg"></i><i class="seg b"></i><i class="seg"></i><i class="seg b"></i><i class="seg"></i><i class="seg b"></i></div>
+            <span class="g">Ma</span><div class="lane"><span class="seg" style="flex:13">Le</span></div>
+            <span class="g">Me</span><div class="lane"><span class="seg" style="flex:3">Li</span><span class="seg b" style="flex:3">Sc</span><span class="seg" style="flex:2">Sg</span><span class="seg b" style="flex:3">Cp</span><span class="seg" style="flex:2">Aq</span></div>
+            <span class="g">Ju</span><div class="lane"><span class="seg" style="flex:12">Le</span><span class="seg b" style="flex:1">R</span></div>
+            <span class="g">Ve</span><div class="lane"><span class="seg" style="flex:1"></span><span class="seg b" style="flex:6">Li</span><span class="seg" style="flex:4">Sc</span><span class="seg b" style="flex:2">Sg</span></div>
+            <span class="g">Sa</span><div class="lane"><span class="seg" style="flex:13">Pi</span></div>
+            <span class="g">Ra</span><div class="lane"><span class="seg" style="flex:6">Aq</span><span class="seg b" style="flex:7">Cp</span></div>
+            <span class="g">Ke</span><div class="lane"><span class="seg" style="flex:6">Le</span><span class="seg b" style="flex:7">Cn</span></div>
+            <span class="today"></span>
+          </div>
+          <div class="row"><span class="k">Ju</span><span class="v">back into Cn by 8 Feb</span></div>
+          <div class="row"><span class="k">Ra / Ke</span><span class="v">into Cp / Cn by 28 Dec</span></div>
+        </div>
+        <div class="bar"><span><i></i>Chart</span><span><i></i>Dasas</span><span class="on"><i></i>Transits</span><span><i></i>Today</span><span><i></i>More</span></div>
+      </div>
+      <figcaption><b>Transits · Calendar</b>The row-per-graha strip only, panned sideways through time; tap a span for its dates. Today is the gold line. Tajaka, Tithi Pravesha, searches and progressions sit in the same chip row.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div><div class="eyebrow">Tab 4</div><h2>Today</h2></div>
+  <div class="sheetrow">
+    <figure class="ph">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●●</span></div>
+        <div class="hd"><span class="pill">New Delhi ▾</span><span class="clock">‹ Thu 19 Nov 2026 ›</span></div>
+        <div class="chips"><span class="chip on">Panchanga</span><span class="chip">Muhurta</span><span class="chip">Festivals</span></div>
+        <div class="body">
+          <div class="row"><span class="k">Tithi</span><span class="v">Sukla Dasami · 80% left</span></div>
+          <div class="row"><span class="k">Nakshatra</span><span class="v">Poorvabhadra</span></div>
+          <div class="row"><span class="k">Yoga</span><span class="v">Harshana</span></div>
+          <div class="row"><span class="k">Karana</span><span class="v">Taitula</span></div>
+          <div class="row"><span class="k">Vara</span><span class="v">Thursday (Ju)</span></div>
+          <div class="row"><span class="k">Month</span><span class="v">Karthika · Parabhava</span></div>
+          <div class="tag" style="margin-top:6px">Sunrise 6:50 → sunset 5:21</div>
+          <div class="day"><i style="left:46.6%;width:6.6%;background:var(--good)"></i><i style="left:62.5%;width:12.5%;background:var(--bad)"></i></div>
+          <div class="row"><span><span class="dot" style="background:var(--good)"></span>Abhijit</span><span class="v">11:45–12:27</span></div>
+          <div class="row"><span><span class="dot" style="background:var(--bad)"></span>Rahu Kalam</span><span class="v">1:25–2:44</span></div>
+          <div class="btn ghost">Remind me</div>
+        </div>
+        <div class="bar"><span><i></i>Chart</span><span><i></i>Dasas</span><span><i></i>Transits</span><span class="on"><i></i>Today</span><span><i></i>More</span></div>
+      </div>
+      <figcaption><b>Today</b>Needs no chart, so the header shows the place. Swipe for the next day. "Remind me" schedules a notification on the phone for a chosen window.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div><div class="eyebrow">Tab 5</div><h2>More, and what it opens</h2></div>
+  <div class="sheetrow">
+    <figure class="ph">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●●</span></div>
+        <div class="hd"><span class="pill">India ▾</span><span class="more">⋯</span></div>
+        <div class="body" style="padding-top:14px">
+          <div class="grid3">
+            <span class="tile"><i>Bl</i>Strengths</span><span class="tile"><i>Tl</i>Timeline</span><span class="tile"><i>Pr</i>Predictions</span>
+            <span class="tile"><i>Lg</i>Longevity</span><span class="tile"><i>Ck</i>Chakras</span><span class="tile"><i>Mt</i>Matching</span>
+            <span class="tile"><i>Mu</i>Mundane</span><span class="tile"><i>Ac</i>Astrocarto­graphy</span><span class="tile"><i>Rs</i>Research</span>
+            <span class="tile"><i>Fi</i>Finance</span><span class="tile"><i>Re</i>Remedies</span><span class="tile"><i>Op</i>Settings</span>
+            <span class="tile"><i>Me</i>Account</span><span class="tile"><i>?</i>Help</span><span class="tile"><i>i</i>About</span>
+          </div>
+        </div>
+        <div class="bar"><span><i></i>Chart</span><span><i></i>Dasas</span><span><i></i>Transits</span><span><i></i>Today</span><span class="on"><i></i>More</span></div>
+      </div>
+      <figcaption><b>More</b>The other eleven tabs, then Settings, Account, Help and About. Long-press a tile to pin it to the bottom bar.</figcaption>
+    </figure>
+
+    <figure class="ph">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●●</span></div>
+        <div class="hd"><span class="act-t">‹</span><span class="pill">India ▾</span><span class="more">⋯</span></div>
+        <div class="chips"><span class="chip">Shadbala</span><span class="chip">Ashtakavarga</span><span class="chip">Vimsopaka</span><span class="chip on">Bar graphs</span></div>
+        <div class="body">
+          <div class="tag">Shadbala, % of required</div>
+          <div class="bars">
+            <span class="hund" style="bottom:calc((100% - 14px) * .667)"></span>
+            <div>114<i style="height:76%"></i></div><div>124<i style="height:82.7%"></i></div><div>141<i style="height:94%"></i></div><div>113<i style="height:75.3%"></i></div><div class="weak">76<i style="height:50.7%"></i></div><div>127<i style="height:84.7%"></i></div><div>104<i style="height:69.3%"></i></div>
+          </div>
+          <div class="names"><span>Su</span><span>Mo</span><span>Ma</span><span>Me</span><span>Ju</span><span>Ve</span><span>Sa</span></div>
+          <div class="tag" style="margin-top:4px">Dashed line: 100%</div>
+          <div class="row"><span class="k">Strongest</span><span class="v">Ma 141%</span></div>
+          <div class="row"><span class="k">Below required</span><span class="v">Ju 76%</span></div>
+        </div>
+      </div>
+      <figcaption><b>Strengths</b>Every sub tab of the web, in one chip row. Wide tables turn into one card per graha; graphs take the full width, drawn to one scale.</figcaption>
+    </figure>
+
+    <figure class="ph">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●●</span></div>
+        <div class="hd"><span class="act-t">‹</span><b>Matching</b><span class="tag" style="margin-left:auto">sample</span></div>
+        <div class="chips"><span class="chip on">Overview</span><span class="chip">Comparison</span><span class="chip">Kutas</span><span class="chip">Shortlist</span></div>
+        <div class="body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div class="field"><small>Partner 1</small>Ashwini 2</div><div class="field"><small>Partner 2</small>Rohini 4</div></div>
+          <div class="ring"><svg viewBox="0 0 112 112" aria-hidden="true"><circle cx="56" cy="56" r="46" fill="none" stroke="var(--line)" stroke-width="9"></circle><circle cx="56" cy="56" r="46" fill="none" stroke="var(--act)" stroke-width="9" stroke-dasharray="204.9 289" transform="rotate(-90 56 56)"></circle></svg><div>25.5<small>of 36</small></div></div>
+          <div class="row"><span class="k">Varna · Vashya</span><span class="v">1/1 · 2/2</span></div>
+          <div class="row"><span class="k">Tara · Yoni</span><span class="v">1.5/3 · 3/4</span></div>
+          <div class="row"><span class="k">Graha Maitri · Gana</span><span class="v">5/5 · 6/6</span></div>
+          <div class="row"><span class="k">Bhakoot · Nadi</span><span class="v">7/7 · 0/8</span></div>
+        </div>
+      </div>
+      <figcaption><b>Matching</b>Two partner cards, the total at a glance, the kutas in pairs. Key Points keeps its all / same / different filter across restarts.</figcaption>
+    </figure>
+
+    <figure class="ph">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●●</span></div>
+        <div class="hd"><span class="act-t">‹</span><b>Settings</b></div>
+        <div class="body">
+          <div class="field"><small>Search options</small></div>
+          <div class="tag" style="margin-top:4px">Calculation</div>
+          <div class="row"><span>Ayanamsa</span><span class="v">Pushya Paksha ›</span></div>
+          <div class="row"><span>Bhava system</span><span class="v">Sripati ›</span></div>
+          <div class="row"><span>Full aspect value</span><span class="v">100 ›</span></div>
+          <div class="row"><span>Bhavas from Ra and Ke</span><span class="v">forward ›</span></div>
+          <div class="tag" style="margin-top:6px">Display</div>
+          <div class="row"><span>Date</span><span class="v">15th August 1872 ›</span></div>
+          <div class="row"><span>Clock</span><span class="v">12-hour ›</span></div>
+          <div class="row"><span class="act-t">Import preferences (.ini)</span></div>
+          <div class="row"><span class="act-t">Reset to defaults</span></div>
+        </div>
+      </div>
+      <figcaption><b>Settings</b>Generated from the same schema as the web's Settings, grouped and searchable. Every request carries these, so the phone shows what the web shows.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div><div class="eyebrow">Translation</div><h2>From desktop to touch</h2></div>
+  <div class="tw"><table>
+    <thead><tr><th>On the web</th><th>On the phone</th></tr></thead>
+    <tbody>
+      <tr><td>Right-click menu on a graha, a bhava or a dasa row</td><td>Long-press opens the same items as an action sheet</td></tr>
+      <tr><td>Purple hover to show what can be clicked</td><td>Purple pressed state; tappable things look tappable at rest</td></tr>
+      <tr><td>Ctrl+Tab between page tabs</td><td>Swipe between sub tabs; the bottom bar between tabs</td></tr>
+      <tr><td>Windows side by side (aspect table, correlations, entry chart)</td><td>Full-screen modals stacked, with back</td></tr>
+      <tr><td>Wide tables</td><td>One card per row, key values first, the rest on expand; no sideways scrolling</td></tr>
+      <tr><td>Copy to clipboard, download, mailto with the chart pasted in</td><td>The share sheet, with the file attached</td></tr>
+      <tr><td>Browser print</td><td>A PDF made on the phone, sent to the share sheet</td></tr>
+      <tr><td>Reload reopens what was on screen</td><td>Restart after the system closes the app reopens what was on screen</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <div><div class="eyebrow">In this folder</div><h2>The written plan</h2></div>
+  <p class="lede" style="margin:0">The page shows the shape; the files hold the decisions: why Capacitor over a rewrite, what the server needs first, the components, state, native features, security, testing and the four phases.</p>
+  <div class="files"><code>mobile app/README.md</code><code>mobile app/MOBILE_PLAN.md</code><code>mobile app/FEATURE_MAP.md</code><code>mobile app/wireframes.html</code></div>
+</section>
+</div>

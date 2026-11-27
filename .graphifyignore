@@ -1,0 +1,38 @@
+# graphify: code only (core_logic, server, web/src, tools); see CLAUDE.md
+archive/
+# local-only tests (.gitignore)
+core_logic/tests/golden.py
+core_logic/tests/pe_reader.py
+core_logic/tests/test_binary_tables.py
+core_logic/tests/test_citations.py
+core_logic/tests/test_golden_*.py
+core_logic/tests/test_reference_binaries.py
+core_logic/tests/test_spec_*.py
+core_logic/tests/test_ui_docs.py
+server/tests/test_api.py
+server/tests/test_dasas.py
+server/tests/test_modes.py
+server/tests/test_more_views.py
+server/tests/test_settings.py
+server/tests/test_tables.py
+server/tests/test_transits_misc.py
+server/tests/test_views.py
+server/tests/test_windows.py
+data/
+docs/
+ephemeris/
+databases/raw/
+web/node_modules/
+web/dist/
+web/public/
+graphify-out/
+.venv/
+.host/
+*.md
+*.txt
+*.json
+*.csv
+*.db
+*.html
+# generated data module (tools/build_world_map.py)
+web/src/worldMap.ts

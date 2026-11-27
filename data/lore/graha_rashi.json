@@ -1,0 +1,456 @@
+{
+ "source": "Brihat Jataka Ch. 17 (the Moon in the signs) and Ch. 18 (the other grahas in the signs), in Sudarshana's words; the nodes, which Varahamihira does not cover, from their dignities in BPHS 47.34-39 and their dispositors",
+ "note": "Brihat Jataka gives these results in full when the graha, its sign and the sign's lord are all strong, in part when two of them are, little when only one is, and not at all when none is.",
+ "readings": {
+  "Su": [
+   {
+    "text": "Exalted in Aries, deepest at 10°, the Sun makes the native famous and able, a traveller who carries arms; at its exaltation, rich, settled and served by armed men.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Taurus, Venus's sign, the Sun gives a trade in cloth and perfumes and skill in music, with little liking for the company of women.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Gemini the Sun gives learning in grammar and astrology, and wealth.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Cancer the Sun makes the native independent and fierce but poor, working for others and wearied by travel.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In its own Leo, moolatrikona to 20°, the Sun gives power and a love of forests, hills and pastures, though the classic adds a want of judgement.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Virgo the Sun gives skill in writing, painting, literature and mathematics, with a slight, delicate build.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "Debilitated in Libra, deepest at 10°, the Sun makes the native a wanderer, given to drink or its making and to low ways.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Scorpio the Sun makes the native fierce and rash, expert with weapons, earning through poisons.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Sagittarius the Sun makes the native respected by the good, rich and independent, learned in medicine and the crafts.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Capricorn, Saturn's sign, the Sun gives poverty, miserliness and mean trades, and little aptitude for work.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Aquarius, Saturn's sign, the Sun gives poverty, few sons and little success in work.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Pisces the Sun gives wealth from water and its produce, and respect from women.",
+    "source": "Brihat Jataka 18"
+   }
+  ],
+  "Mo": [
+   {
+    "text": "The Moon in Aries gives round, reddish eyes, a love of travel, quick food and pleasure, a fighting spirit and wealth that does not last.",
+    "source": "Brihat Jataka 17"
+   },
+   {
+    "text": "Exalted in Taurus, deepest at 3°, the Moon makes the native handsome and graceful, generous and influential and fond of comfort, though apart from some kin.",
+    "source": "Brihat Jataka 17"
+   },
+   {
+    "text": "In Gemini the Moon gives wit and eloquence, learning in the scriptures, skill in music and dance, a messenger's work and a fondness for pleasure.",
+    "source": "Brihat Jataka 17"
+   },
+   {
+    "text": "In its own Cancer the Moon gives a quick walk, learning in astrology and a nature swayed by affection; its wealth waxes and wanes with the Moon.",
+    "source": "Brihat Jataka 17"
+   },
+   {
+    "text": "In Leo the Moon makes the native bold, generous and proud, quick-tempered and slow to forgive, devoted to the mother, with few sons.",
+    "source": "Brihat Jataka 17"
+   },
+   {
+    "text": "In Virgo the Moon makes the native modest, gentle and truthful, learned and skilled in music, dance and painting, perhaps living abroad, with more daughters than sons.",
+    "source": "Brihat Jataka 17"
+   },
+   {
+    "text": "In Libra the Moon makes the native honest and religious, devoted to gods and Brahmins, a wealthy trader, though often unwell and estranged from kin.",
+    "source": "Brihat Jataka 17"
+   },
+   {
+    "text": "Debilitated in Scorpio, deepest at 3°, the Moon gives broad eyes and chest, separation from parents or teachers, illness in youth and a secretive nature, though honoured by rulers.",
+    "source": "Brihat Jataka 17"
+   },
+   {
+    "text": "In Sagittarius the Moon gives a long face, an inheritance from the father, generosity and skill in writing and the crafts; the native yields only to kindness.",
+    "source": "Brihat Jataka 17"
+   },
+   {
+    "text": "In Capricorn the Moon makes the native devoted to spouse and children and virtuous, but slow, careful with money and fond of wandering.",
+    "source": "Brihat Jataka 17"
+   },
+   {
+    "text": "In Aquarius the Moon makes the native tall and fond of flowers and perfumes, with a roving eye and fortunes that rise and fall.",
+    "source": "Brihat Jataka 17"
+   },
+   {
+    "text": "In Pisces the Moon gives wealth from the sea or trade, learning, victory over enemies and a love of the spouse and of fine clothes.",
+    "source": "Brihat Jataka 17"
+   }
+  ],
+  "Ma": [
+   {
+    "text": "In its own Aries, moolatrikona to 12°, Mars brings honour from rulers, command of an army or a trade, wealth and travel, with scars and a daring, sensual nature.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Taurus, Venus's sign, Mars makes the native swayed by passion, careless of friends, vain and timid, with a rough body.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Gemini, Mercury's sign, Mars makes the native handsome and fearless, skilled in music and wrestling, with children but few friends.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "Debilitated in Cancer, deepest at 28°, Mars gives wealth through sea voyages but a defect of a limb and an ill-disposed nature.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Leo Mars makes the native fearless and patient in hardship, a wanderer of forests, poor, with few spouses or children.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Virgo, Mercury's sign, Mars makes the native handsome and fearless, skilled in music and wrestling and careful with money, with children but few friends.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Libra, Venus's sign, Mars makes the native swayed by passion, careless of friends and vain.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In its own Scorpio Mars brings honour from rulers, command, wealth and travel, with scars and a daring, sensual nature.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Sagittarius, Jupiter's sign, Mars makes the native a famous and fearless minister, with many enemies and few children.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "Exalted in Capricorn, deepest at 28°, Mars gives great wealth, many sons and a kingly position.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Aquarius Mars brings grief, poverty and wandering, and an independent, untruthful nature.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Pisces, Jupiter's sign, Mars makes the native a famous and fearless minister, with many enemies and few children.",
+    "source": "Brihat Jataka 18"
+   }
+  ],
+  "Me": [
+   {
+    "text": "In Aries, Mars's sign, Mercury makes the native deceitful and given to gambling, drink and debt, poor and unbelieving.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Taurus, Venus's sign, Mercury gives steady earnings, generosity, many children and the gift of teaching; the native honours the teacher.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In its own Gemini Mercury gives sweet, ready speech and learning in the sciences, music, dance and painting, and comfort, though the tongue may stretch the truth.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Cancer Mercury gives earnings from water and trade over it, and estrangement from kin.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Leo Mercury brings poverty, wandering and disgrace, little learning or comfort, and the dislike of the other sex.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "Exalted and at home in Virgo, deepest at 15° and moolatrikona to 20°, Mercury makes the native generous, learned, virtuous, patient, ingenious, fearless and comfortable.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Libra, Venus's sign, Mercury gives steady earnings, generosity, many children and the gift of teaching.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Scorpio, Mars's sign, Mercury makes the native deceitful and given to gambling, drink and debt.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Sagittarius Mercury brings honour from rulers and learning in the sciences and the law.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Capricorn, Saturn's sign, Mercury makes the native work for others, poor and in debt, though skilled with the hands.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Aquarius, Saturn's sign, Mercury makes the native work for others, poor and in debt, though skilled with the hands.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "Debilitated in Pisces, deepest at 15°, Mercury still makes friends easily and reads others' minds, but its learning runs to humble crafts.",
+    "source": "Brihat Jataka 18"
+   }
+  ],
+  "Ju": [
+   {
+    "text": "In Aries, Mars's sign, Jupiter makes the native a commander, very rich and famous, generous, with many children and good servants.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Taurus, Venus's sign, Jupiter gives health, comfort, wealth, many friends and children, generosity and popularity.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Gemini, Mercury's sign, Jupiter gives clothes, houses, servants, children and friends, and a minister's comfort.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "Exalted in Cancer, deepest at 5°, Jupiter gives gems, children, wealth, a good spouse, influence, intelligence and comfort.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Leo Jupiter gives all that it gives in Cancer, and command of an army besides.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Virgo, Mercury's sign, Jupiter gives clothes, houses, servants, children and friends, and a minister's comfort.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Libra, Venus's sign, Jupiter gives health, comfort, wealth, many friends and children, and popularity.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Scorpio, Mars's sign, Jupiter makes the native a commander, very rich and famous, with many children.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In its own Sagittarius, moolatrikona to 10°, Jupiter makes the native a ruler, minister or commander, or very rich.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "Debilitated in Capricorn, deepest at 5°, Jupiter brings disgraceful conduct, little wealth and grief.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Aquarius, Saturn's sign, Jupiter gives learning, a sense of service and moderate, steady wealth.",
+    "source": ""
+   },
+   {
+    "text": "In its own Pisces Jupiter makes the native a ruler, minister or commander, or very rich.",
+    "source": "Brihat Jataka 18"
+   }
+  ],
+  "Ve": [
+   {
+    "text": "In Aries, Mars's sign, Venus brings desire for others' spouses, loss of property through them and disgrace to the family.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In its own Taurus Venus gives wealth by one's own effort, royal favour, fame and fearlessness, and leadership of the kin.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Gemini Venus gives wealth, skill in music and work about the court.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Cancer Venus brings timidity with pride, grief and want, and perhaps two marriages.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Leo Venus gives money through the spouse and a good partner, but few children.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "Debilitated in Virgo, deepest at 27°, Venus brings hard labour and little ease.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In its own Libra, moolatrikona to 15°, Venus gives wealth by one's own effort, royal favour, fame and leadership of the kin.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Scorpio, Mars's sign, Venus brings desire for others' spouses, loss through them and disgrace.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Sagittarius Venus gives excellent qualities and wealth.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Capricorn, Saturn's sign, Venus makes the native liked by all, but swayed by passion and fond of low company.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Aquarius, Saturn's sign, Venus makes the native liked by all, but swayed by passion and fond of low company.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "Exalted in Pisces, deepest at 27°, Venus makes the native learned, wealthy and authoritative, liked and honoured by rulers.",
+    "source": "Brihat Jataka 18"
+   }
+  ],
+  "Sa": [
+   {
+    "text": "Debilitated in Aries, deepest at 20°, Saturn makes the native foolish, vain and wandering, parted from friends.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Taurus Saturn gives little wealth, several marriages and low company.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Gemini, Mercury's sign, Saturn brings grief, poverty and few children, though perhaps an officer's post.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Cancer Saturn brings poverty, few children, separation from the mother and trouble to the teeth.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Leo Saturn brings grief and heavy burdens, little respect and few children.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Virgo, Mercury's sign, Saturn brings grief, poverty and few children, though perhaps an officer's post.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "Exalted in Libra, deepest at 20°, Saturn makes the native rich, the leader of a group in town, army or village.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Scorpio Saturn brings confinement and hardship, idleness at work and a merciless nature.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Sagittarius, Jupiter's sign, Saturn gives a good spouse and children, wealth, a trusted post and a good end: the head of a town, army or village.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In its own Capricorn Saturn gives lasting wealth and authority, the head of a town, village or army, though weak eyes and loose morals.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In its own Aquarius, moolatrikona to 20°, Saturn gives lasting wealth and authority, the head of a town, village or army, though weak eyes.",
+    "source": "Brihat Jataka 18"
+   },
+   {
+    "text": "In Pisces, Jupiter's sign, Saturn gives a good spouse and children, wealth, a trusted post and a good end.",
+    "source": "Brihat Jataka 18"
+   }
+  ],
+  "Ra": [
+   {
+    "text": "Rahu in Aries, Mars's sign, gives bold, restless ambition and sudden, daring ventures; it acts through Mars, its dispositor, and needs restraint.",
+    "source": ""
+   },
+   {
+    "text": "Rahu is exalted in Taurus (BPHS 47): in its dasa it brings wealth, comforts, vehicles and the favour of the powerful, and a hunger for possessions.",
+    "source": ""
+   },
+   {
+    "text": "In Gemini, its moolatrikona, Rahu sharpens the intellect, gives cleverness in trade, communication and foreign tongues, and success by unusual means.",
+    "source": ""
+   },
+   {
+    "text": "In Cancer Rahu unsettles the mind and the home, stirring emotional cravings and changes of residence, often toward foreign places.",
+    "source": ""
+   },
+   {
+    "text": "In Leo Rahu stirs a hunger for power and recognition; it can give a sudden rise in politics or public life, and pride.",
+    "source": ""
+   },
+   {
+    "text": "In Virgo, which some count its own sign, Rahu is clever and analytical, successful in service, medicine and competition.",
+    "source": ""
+   },
+   {
+    "text": "In Libra Rahu brings ambition through trade, partnership and the foreign, and unconventional relationships.",
+    "source": ""
+   },
+   {
+    "text": "Rahu is debilitated in Scorpio (BPHS 47): secret fears, hidden troubles and sudden crises, but also deep occult insight.",
+    "source": ""
+   },
+   {
+    "text": "In Sagittarius Rahu brings unorthodox beliefs and a questioning of tradition, and learning or travel in foreign lands.",
+    "source": ""
+   },
+   {
+    "text": "In Capricorn, Saturn's sign, Rahu works steadily for standing, giving success in large organisations and in politics.",
+    "source": ""
+   },
+   {
+    "text": "In Aquarius, its own sign by BPHS, Rahu gives success through groups, science and the new, and gains through foreigners.",
+    "source": ""
+   },
+   {
+    "text": "In Pisces Rahu clouds the mind with imagination and illusion; it can give spiritual or artistic gifts, or escapism.",
+    "source": ""
+   }
+  ],
+  "Ke": [
+   {
+    "text": "Ketu in Aries, Mars's sign, gives sudden, fearless action and intuition, sharp but detached, with injuries to the head a risk.",
+    "source": ""
+   },
+   {
+    "text": "Ketu is debilitated in Taurus (BPHS 47): detachment from wealth and the family's comforts, trouble to the face or speech, and losses.",
+    "source": ""
+   },
+   {
+    "text": "In Gemini Ketu gives an intuitive but scattered intellect, an interest in the hidden and in mantra, and sudden learning.",
+    "source": ""
+   },
+   {
+    "text": "In Cancer Ketu brings emotional detachment, distance from the home or the mother, and a spiritual inner life.",
+    "source": ""
+   },
+   {
+    "text": "In Leo Ketu humbles pride and gives detachment from standing, with insight and occult ability.",
+    "source": ""
+   },
+   {
+    "text": "In Virgo Ketu gives skill in healing, analysis and the older systems of medicine, and victory over enemies.",
+    "source": ""
+   },
+   {
+    "text": "In Libra Ketu brings detachment or separation in partnership and a search for a spiritual balance.",
+    "source": ""
+   },
+   {
+    "text": "Ketu is exalted in Scorpio (BPHS 47), its own sign: deep insight into the hidden, occult and healing powers, and transformation through crisis.",
+    "source": ""
+   },
+   {
+    "text": "In Sagittarius, its moolatrikona, Ketu gives spiritual wisdom, detachment from dogma and the pull of pilgrimage and liberation.",
+    "source": ""
+   },
+   {
+    "text": "In Capricorn Ketu brings detachment from worldly ambition and sudden changes in work, with hidden skill.",
+    "source": ""
+   },
+   {
+    "text": "In Aquarius Ketu gives detachment from desires and from groups, and sudden gains by unusual means.",
+    "source": ""
+   },
+   {
+    "text": "In Pisces, which some count its own sign, Ketu gives a deeply spiritual nature, intuition and the pull toward liberation.",
+    "source": ""
+   }
+  ]
+ }
+}

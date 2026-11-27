@@ -1,0 +1,12 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "traditions"
+version = "0.1.0"
+description = "The Traditions tab's calculations for Sudarshana (server/traditions.py), from the XALEN Ephemeris crates"
+requires-python = ">=3.9"
+
+[tool.maturin]
+bindings = "pyo3"

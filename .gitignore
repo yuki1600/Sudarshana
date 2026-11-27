@@ -1,0 +1,87 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+*.env
+.env
+
+# Generated databases (rebuild via databases/build_places_db.py, databases/build_rodden_db.py)
+databases/places.db
+databases/rodden.db
+# The Rodden AA and A text files (BTS/rodden_AA, BTS/rodden_A; about 250 MB) that databases/build_rodden_db.py reads
+BTS/
+databases/raw/
+*.db-shm
+*.db-wal
+
+# Node (legacy, kept for safety)
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Stray archives at the repo root (e.g. a migration bundle)
+/*.zip
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+.opencode/
+
+# Logs & temp
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.tmp/
+
+# Settings > Ephemeris "XALEN": NASA JPL's DE442 kernel (114 MB, start.sh downloads it) and the native module's build
+ephemeris/jpl/
+native/jpl_kernel/target/
+native/traditions/target/
+
+# Accounts (server/auth.py)
+databases/accounts.db
+
+# host.sh: pid files and logs
+.host/
+
+# The owner's plain-text login for the sign-in form on this Mac (server/auth.py OWNER_LOGIN)
+.owner-login.json
+
+# graphify knowledge graph (see CLAUDE.md): the report is shared, the graph and caches are local; rebuild with `graphify update .`
+graphify-out/*
+!graphify-out/GRAPH_REPORT.md
+
+# Local only, never pushed: reference material, the comparisons made against it, and notes about them (CLAUDE.local.md)
+archive/
+CLAUDE.local.md
+docs/PENDING_CHECKS.md
+core_logic/tests/golden.py
+core_logic/tests/pe_reader.py
+core_logic/tests/test_binary_tables.py
+core_logic/tests/test_citations.py
+core_logic/tests/test_golden_*.py
+core_logic/tests/test_reference_binaries.py
+core_logic/tests/test_spec_*.py
+core_logic/tests/test_ui_docs.py
+server/tests/test_api.py
+server/tests/test_dasas.py
+server/tests/test_modes.py
+server/tests/test_more_views.py
+server/tests/test_settings.py
+server/tests/test_tables.py
+server/tests/test_transits_misc.py
+server/tests/test_views.py
+server/tests/test_windows.py

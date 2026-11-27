@@ -1,0 +1,6 @@
+pyswisseph>=2.10,<3
+tzdata                 # IANA zones for zoneinfo (Windows has no system database)
+fastapi>=0.115         # server/ (local web app)
+uvicorn>=0.30
+httpx                  # FastAPI TestClient in server/tests + Yahoo Finance chart fetch
+ccxt>=4.0              # crypto/spot OHLCV for the Finance tab (https://github.com/ccxt/ccxt)

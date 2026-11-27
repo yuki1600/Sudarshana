@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "core-logic"
+version = "4.1.0"
+description = "Sudarshana's Jyotish calculation engines"
+requires-python = ">=3.10"
+dependencies = ["pyswisseph>=2.10,<3", "tzdata"]
+
+[tool.setuptools.packages.find]
+include = ["core_logic*"]
+exclude = ["core_logic.tests*"]

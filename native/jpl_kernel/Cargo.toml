@@ -1,0 +1,22 @@
+[package]
+name = "jpl-kernel"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Graha positions for Sudarshana from NASA JPL's DE442 kernel, read with the XALEN Ephemeris crates (Settings > Ephemeris)"
+
+[lib]
+name = "jpl_kernel"
+crate-type = ["cdylib"]
+
+[dependencies]
+# abi3: one wheel for every CPython from 3.9 (the venv's 3.12, the Dockerfile's 3.11)
+pyo3 = { version = "0.30", features = ["abi3-py39", "extension-module"] }
+# XALEN Ephemeris (Apache-2.0, NOTICE-xalen): the SPK reader, the IAU 2006 precession and IAU 2000B nutation, the mean node
+xalen-ephem = "=0.7.0"
+xalen-coords = "=0.7.0"
+xalen-time = "=0.7.0"
+
+[profile.release]
+codegen-units = 1
+lto = true

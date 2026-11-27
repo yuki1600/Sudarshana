@@ -1,0 +1,315 @@
+{
+  "banner": "These Bṛhat Parāśara Horā Śāstra remedies are secondary supports. The Primary path—Nyāsa / worship of Śrīman Nārāyaṇa—is the recommended ultimate remedy (see the Primary tab).",
+  "general": [
+    {
+      "id": "ch84-intro",
+      "scope": "general",
+      "planet": null,
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "1-2",
+      "title": "Why worship the Grahas",
+      "translation": "Maitreya asked for remedial measures for the malevolent Grahas. Parāśara replied: joys and sorrows of all creatures depend on these Grahas. Therefore those desirous of peace, wealth, prosperity, rainfall, good health and longevity should worship the Grahas by prayers, recitation of Mantras, charity and so on."
+    },
+    {
+      "id": "ch84-idols",
+      "scope": "general",
+      "planet": null,
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "3-5",
+      "title": "Idol materials for the nine Grahas",
+      "translation": "Idols of Sūrya, Candra, Maṅgala, Budha, Guru, Śukra, Śani, Rāhu and Ketu should be made of copper, rock crystal (sphaṭika), red sandal wood, gold (both Budha and Guru), silver, iron, glass and bell metal respectively. Alternatively, sketches of the Grahas may be drawn in their colours on cloth with sandal etc., and placed in their own directions."
+    },
+    {
+      "id": "ch84-sun",
+      "scope": "general",
+      "planet": "Sun",
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "6",
+      "title": "Sūrya — contemplation form",
+      "translation": "Contemplate Sūrya well adorned with two arms, seated on a lotus, with a lotus flower in one hand, red-coloured like a lotus, aboard a chariot of seven horses."
+    },
+    {
+      "id": "ch84-moon",
+      "scope": "general",
+      "planet": "Moon",
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "7",
+      "title": "Candra — contemplation form",
+      "translation": "Contemplate Candra white-coloured, dressed in white robes, with two arms, carrying a mace in one hand and varada in the other, adorned with white ornaments, aboard a chariot of ten horses."
+    },
+    {
+      "id": "ch84-mars",
+      "scope": "general",
+      "planet": "Mars",
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "8",
+      "title": "Maṅgala — contemplation form",
+      "translation": "Contemplate Maṅgala with a red necklace, dressed in red robes, with four arms, carrying śakti, śūla, gadā and varada, mounted on a lamb."
+    },
+    {
+      "id": "ch84-mercury",
+      "scope": "general",
+      "planet": "Mercury",
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "9",
+      "title": "Budha — contemplation form",
+      "translation": "Contemplate Budha with a yellow garland, dressed in yellow robes, with four arms, carrying sword, shield, mace and varada, mounted on a lion."
+    },
+    {
+      "id": "ch84-jupiter",
+      "scope": "general",
+      "planet": "Jupiter",
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "10",
+      "title": "Guru — contemplation form",
+      "translation": "Contemplate Guru of yellow complexion with four arms, carrying daṇḍa, akṣasūtra, kamaṇḍalu and varada."
+    },
+    {
+      "id": "ch84-venus",
+      "scope": "general",
+      "planet": "Venus",
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "10",
+      "title": "Śukra — contemplation form",
+      "translation": "Contemplate Śukra of fair complexion with four arms, carrying daṇḍa, akṣasūtra, kamaṇḍalu and varada."
+    },
+    {
+      "id": "ch84-saturn",
+      "scope": "general",
+      "planet": "Saturn",
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "11",
+      "title": "Śani — contemplation form",
+      "translation": "Contemplate Śani with the lustre of indranīla, with four arms, carrying śūla, bow, arrow and varada, mounted on a donkey."
+    },
+    {
+      "id": "ch84-rahu",
+      "scope": "general",
+      "planet": "Rahu",
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "12",
+      "title": "Rāhu — contemplation form",
+      "translation": "Contemplate Rāhu with a hideous face, four arms, carrying sword, shield, śūla and varada, blue-coloured, mounted on a lion."
+    },
+    {
+      "id": "ch84-ketu",
+      "scope": "general",
+      "planet": "Ketu",
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "13",
+      "title": "Ketu — contemplation form",
+      "translation": "There are many Ketus. All are of smoky colour, with two arms, carrying a mace and varada, with a hideous face, mounted on a donkey."
+    },
+    {
+      "id": "ch84-worship",
+      "scope": "general",
+      "planet": null,
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "14-16",
+      "title": "Size, offerings and distribution",
+      "translation": "All idols should be 108 fingers tall by one’s own fingers (middle finger). Dedicate with devotion to the Graha concerned the flowers and garments of his colour, sandal, dīpa, guggulu etc., his metal and the grains dear to him, and distribute these to Brāhmaṇas to appease the Graha."
+    },
+    {
+      "id": "ch84-japa",
+      "scope": "general",
+      "planet": null,
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "17-20",
+      "title": "Prescribed japa counts",
+      "translation": "After worship as in vv. 15–16, recite the Graha mantras the prescribed number of times: Sūrya 7000, Candra 11000, Maṅgala 11000, Budha 9000, Guru 19000, Śukra 16000, Śani 23000, Rāhu 18000, Ketu 17000. (Mantra syllables in the source extract are damaged by OCR; use a learned priest’s standard BPHS graha-mantra schedule for this verse range.)"
+    },
+    {
+      "id": "ch84-havan",
+      "scope": "general",
+      "planet": null,
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "21-22",
+      "title": "Havan woods",
+      "translation": "Havan should be performed with āk, palāśa, khair, chirchiri, pīpal, gūlar, śamī wood pieces, dūrvā and kuśa for Sūrya, Candra, Maṅgala, Budha, Guru, Śukra, Śani, Rāhu and Ketu respectively, mixed with honey, ghī, curd or milk. Offerings to the fire: 108 or 28."
+    },
+    {
+      "id": "ch84-feeding",
+      "scope": "general",
+      "planet": null,
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "23-25",
+      "title": "Feeding Brāhmaṇas and charity",
+      "translation": "To appease Sūrya and the other eight Grahas, Brāhmaṇas should be fed respectively with cream of rice cooked with jaggery; rice cooked in milk; haviṣya; paddy cooked in milk; curd and rice; rice with ghī; rice with sesame powder; rice cooked with meat; rice cooked with cereals. Charity: cow with calf, conch, bullock, gold, robes, horse, black cow, iron weapons and goat respectively."
+    },
+    {
+      "id": "ch84-boon",
+      "scope": "general",
+      "planet": null,
+      "condition": null,
+      "source": "BPHS",
+      "chapter": 84,
+      "verses": "26-27",
+      "title": "Appease the Graha causing harm",
+      "translation": "The Graha who causes adverse effects at any time should be handled by worship and appeasing, because Brahmā blessed the Grahas with the boon ‘Do unto the persons who worship you.’ Progress and downfall of people and creation and destruction of the universe are under the Grahas’ administration; therefore they are most venerable. (Still secondary to Primary Nārāyaṇa-śaraṇāgati in this app.)"
+    }
+  ],
+  "conditional": [
+    {
+      "id": "ch85-list",
+      "scope": "chart",
+      "planet": null,
+      "condition": "inauspicious_list",
+      "source": "BPHS",
+      "chapter": 85,
+      "verses": "1-4",
+      "title": "Inauspicious births (overview)",
+      "translation": "Births are inauspicious despite a well-disposed Lagna if they occur on Amāvāsyā, Kṛṣṇa Caturdaśī, in Kṛṣṇa-pakṣa circumstances listed, in Bhadra karaṇa, in the nakṣatra of brother/parents, at Sūrya’s saṅkrānti, at Pāta, solar or lunar eclipse, Vyātīpāta, the three gandāntas, Yamaghaṇṭa, tithi-kṣaya, dagdha yoga, etc., or certain sibling patterns. Remedial chapters follow."
+    },
+    {
+      "id": "ch86-amavasya",
+      "scope": "chart",
+      "planet": null,
+      "condition": "amavasya",
+      "source": "BPHS",
+      "chapter": 86,
+      "verses": "1-9",
+      "title": "Remedies for Amāvāsyā birth",
+      "translation": "One born on Amāvāsyā is said to be poverty-stricken; remedies are essential. Prepare a kalaśa with fresh leaves of gūlar, vaṭa, pīpal, mango and nīma, cover with two cloths, install in the south-west. Worship idols of Sūrya and Candra (ruling deities of Amāvāsyā) of gold and silver mixed with copper. Perform havan with 108 or 28 oblations. Sprinkle the water on the child and parents; give gold, silver and a black cow in charity and feed Brāhmaṇas according to means."
+    },
+    {
+      "id": "ch87-chaturdashi",
+      "scope": "chart",
+      "planet": null,
+      "condition": "krishna_chaturdashi",
+      "source": "BPHS",
+      "chapter": 87,
+      "verses": "1-13",
+      "title": "Remedies for Kṛṣṇa Caturdaśī birth",
+      "translation": "Divide Caturdaśī into six parts: first auspicious; later parts threaten father, mother, maternal uncle, family, or wealth/life of the native. Have an affordable idol of Śiva (described with white robes, bull, etc.). Worship with prescribed mantras, place a kalaśa in the north-east, abhiṣeka of Śiva, worship the nine Grahas, havan with ghī and listed woods 108 or 28 times, sprinkle kalaśa water on native and parents, feed Brāhmaṇas."
+    },
+    {
+      "id": "ch88-bhadra",
+      "scope": "chart",
+      "planet": null,
+      "condition": "bhadra_yoga",
+      "source": "BPHS",
+      "chapter": 88,
+      "verses": "1-5",
+      "title": "Remedies for Bhadra and inauspicious yogas",
+      "translation": "For birth in Bhadra, tithi-kṣaya, Vyātīpāta, Parigha, Vajra etc. and Yamaghaṇṭa: perform rites when the same yoga operates again. On an auspicious day and Lagna advised by a jyotiṣī: pūjā of Viṣṇu and other deities, burning a ghee lamp in a Śiva temple, abhiṣeka of Śiva, circumambulating a pīpal 108 times, havan with 108 oblations with Viṣṇu mantra, and feeding Brāhmaṇas."
+    },
+    {
+      "id": "ch89-nakshatra",
+      "scope": "chart",
+      "planet": null,
+      "condition": "family_nakshatra",
+      "source": "BPHS",
+      "chapter": 89,
+      "verses": "1-7",
+      "title": "Remedies for birth in family nakṣatras",
+      "translation": "Birth in the nakṣatra of brother or parents can cause death or death-like suffering for them. On a muhūrta free of rikta-bhadra doṣa with favourable Moon and stars: install an idol of the janma-nakṣatra on a kalaśa in the north-east, worship with its mantras, havan 108 times with ghī, sprinkle water on the concerned relatives, give dakṣiṇā and feed Brāhmaṇas."
+    },
+    {
+      "id": "ch90-sankranti",
+      "scope": "chart",
+      "planet": null,
+      "condition": "sankranti",
+      "source": "BPHS",
+      "chapter": 90,
+      "verses": "1-18",
+      "title": "Remedies for Saṅkrānti birth",
+      "translation": "One born at Sūrya’s entry into a new rāśi is poor and unhappy unless remedies are done. Perform navagraha yajña: purify an eastern spot with cow dung; heaps of paddy, rice and sesame with aṣṭadala lotus; install kalaśas and idols of Saṅkrānti with Ādhideva Sūrya and Pratyādhideva Candra; worship; Mṛtyuñjaya japa 1008/108/28; havan; sprinkle water on child and parents; feed Brāhmaṇas."
+    },
+    {
+      "id": "ch91-eclipse",
+      "scope": "chart",
+      "planet": null,
+      "condition": "eclipse",
+      "source": "BPHS",
+      "chapter": 91,
+      "verses": "1-14",
+      "title": "Remedies for birth during eclipses",
+      "translation": "Birth at solar or lunar eclipse brings ailments, distress, poverty and danger of death. Prepare idols: gold deity of the eclipse nakṣatra; gold Sūrya (solar) or silver Candra (lunar); lead Rāhu. Install on a clean cloth-covered spot; offer coloured articles dear to each; worship and havan with specified woods; sprinkle kalaśa water; honour the priest and feed Brāhmaṇas."
+    },
+    {
+      "id": "ch92-gandanta",
+      "scope": "chart",
+      "planet": null,
+      "condition": "gandanta",
+      "source": "BPHS",
+      "chapter": 92,
+      "verses": "1-11",
+      "title": "Remedies for Gandānta birth",
+      "translation": "Gandānta is of tithi, nakṣatra and Lagna kinds—dangerous for birth and auspicious acts. Charity: bullock (tithi), cow with calf (nakṣatra), gold (Lagna). Abhiṣeka of the child with father or mother according to which half of gandānta. Worship idols of the relevant deities on a kalaśa (gold as affordable), havan, abhiṣeka, feed Brāhmaṇas."
+    },
+    {
+      "id": "ch93-abhukta-mula",
+      "scope": "chart",
+      "planet": null,
+      "condition": "abhukta_mula",
+      "source": "BPHS",
+      "chapter": 93,
+      "verses": "1-20",
+      "title": "Remedies for Abhukta Mūla birth",
+      "translation": "Last 6 ghaṭīs of Jyeṣṭhā and first 8 of Mūla are Abhukta Mūla—most evil because Indra and Rākṣasa are inimical. After the 12th day or on an auspicious day: canopy and kuṇḍa; gold idol of Rākṣasa (or gold piece); kalaśa with pañcagavya; worship with Indra and Jala; havan 1008 or 108; Mṛtyuñjaya; bath of parents and child; cow with calf as dakṣiṇā; see faces in melted ghī."
+    },
+    {
+      "id": "ch94-jyeshtha",
+      "scope": "chart",
+      "planet": null,
+      "condition": "jyeshtha_gandanta",
+      "source": "BPHS",
+      "chapter": 94,
+      "verses": "1-13",
+      "title": "Remedies for Jyeṣṭhā Gandānta",
+      "translation": "Same canopy/kalaśa pattern as Abhukta Mūla; chief deity Indra on Airāvata with vajra and aṅkuśa; Adhideva Agni; Pratyadhideva Rākṣasa. Worship, havan, abhiṣeka, feed Brāhmaṇas; Indra-sūkta and Mṛtyuñjaya. If means are limited, give a cow in charity. Specific cow-counts for various gandāntas and marriage-time remedies for certain nakṣatra quarters are also given."
+    },
+    {
+      "id": "ch95-daughter",
+      "scope": "chart",
+      "planet": null,
+      "condition": "daughter_after_three_sons",
+      "source": "BPHS",
+      "chapter": 95,
+      "verses": "1-9",
+      "title": "Daughter after three sons / son after three daughters",
+      "translation": "Such births are ominous for maternal and paternal families. After sūtaka or on an auspicious day: install four kalaśas with gold idols of Brahmā, Viṣṇu, Maheśa and Indra; Rudra and Śānti sūktas; havan 1008/108/28; abhiṣeka of child with family; dakṣiṇā; feed Brāhmaṇas; parents see reflections in ghī; distribute grain and clothes to the needy."
+    },
+    {
+      "id": "ch96-unusual",
+      "scope": "chart",
+      "planet": null,
+      "condition": "unusual_delivery",
+      "source": "BPHS",
+      "chapter": 96,
+      "verses": "1-10",
+      "title": "Unusual delivery",
+      "translation": "Very early/late delivery, limb defects, animal-shaped births etc. are ominous for household and region. Strongest measure stated: abandon such births from the house context as described; otherwise remedies of Ch. 95 vv. 3–9. Special notes on pregnancy age and cattle delivering in Leo/Capricorn sun. When any ariṣṭa arises, proper remedies ensure long life and happiness."
+    }
+  ]
+}

@@ -1,0 +1,466 @@
+{
+  "topics": [
+    {
+      "id": "chart-core",
+      "chapter": "moment",
+      "title": "The sky at the moment of birth",
+      "lede": "Every other calculation starts from three numbers: where each body stands against the fixed stars, which degree of the zodiac is rising in the east, and how long after sunrise the birth fell.",
+      "source": "Sūrya Siddhānta; BPHS ch. 3–4",
+      "tab": "Basics",
+      "sections": [
+        {
+          "id": "ayanamsa",
+          "heading": "From the seasons to the stars",
+          "body": "The ephemeris gives tropical longitudes, measured from the spring equinox. Jyotiṣa measures from a fixed star instead, and the equinox drifts back against the stars by about 50″ a year. The gap between the two zero points is the ayanāṃśa. Take it away and the tropical longitude becomes the sidereal (nirayaṇa) one. This app uses the Puṣya-pakṣa ayanāṃśa unless you choose another in the settings.",
+          "formula": "λ sidereal = (λ tropical − ayanāṃśa) mod 360°"
+        },
+        {
+          "id": "lagna",
+          "heading": "The rising degree (Lagna)",
+          "body": "The Lagna is the point of the zodiac on the eastern horizon at the place and moment of birth. It comes from the local sidereal time (how far the sky has turned), the latitude, and the tilt of the earth's axis (the obliquity, ε). The result is tropical, so the ayanāṃśa is taken away as for any planet. The Lagna moves a whole sign in about two hours, which is why the birth time matters so much.",
+          "formula": "RAMC = sidereal time × 15°\nλ = atan2(cos RAMC, −(sin RAMC · cos ε + tan φ · sin ε))\nLagna = λ − ayanāṃśa"
+        },
+        {
+          "id": "ghati",
+          "heading": "Time since sunrise (Janma ghaṭī)",
+          "body": "The Vedic day runs from sunrise to sunrise, so someone born before dawn belongs to the previous day. Time within the day is counted in ghaṭīs of 24 minutes, 60 to the day. The birth ghaṭī drives the special lagnas, Gulika and the planetary hours.",
+          "formula": "ghaṭīs = (birth time − sunrise) in hours × 2.5\n1 ghaṭī = 24 min = 60 vighaṭīs"
+        }
+      ]
+    },
+    {
+      "id": "panchanga",
+      "chapter": "moment",
+      "title": "The five limbs of the day (Pañcāṅga)",
+      "lede": "A Vedic calendar names a moment by five things: the lunar day, the weekday, the Moon's star, the yoga of Sun and Moon together, and the half lunar day. Four of them are simple divisions of the Sun's and Moon's longitudes.",
+      "source": "Vedāṅga Jyotiṣa; Muhūrta Cintāmaṇi",
+      "tab": "Basics",
+      "sections": [
+        {
+          "id": "limbs",
+          "heading": "Tithi, nakṣatra, yoga and karaṇa",
+          "body": "A tithi is each 12° the Moon gains on the Sun: thirty in a lunar month, fifteen waxing (śukla) and fifteen waning (kṛṣṇa). The nakṣatra is the Moon's own place in steps of 13°20′. The yoga adds the two longitudes and divides by 13°20′, giving 27 yogas from Viṣkambha to Vaidhṛti. A karaṇa is half a tithi, 6°. Each limb also has a share left: how much of it remained at the moment of birth.",
+          "formula": "tithi = ⌊(λ☾ − λ☉) mod 360° ÷ 12°⌋ + 1\nnakṣatra = ⌊λ☾ ÷ 13°20′⌋ + 1\nyoga = ⌊(λ☾ + λ☉) mod 360° ÷ 13°20′⌋ + 1\nkaraṇa = ⌊(λ☾ − λ☉) mod 360° ÷ 6°⌋ + 1"
+        },
+        {
+          "id": "rahukala",
+          "heading": "Rāhu kāla",
+          "body": "The daylight from sunrise to sunset is cut into eight equal parts, and one of them, fixed by the weekday, belongs to Rāhu. It is avoided for starting anything new. Yamagaṇḍa and Gulika kāla are found the same way, from their own parts of the day.",
+          "formula": "part = (sunset − sunrise) ÷ 8\nRāhu's part, Sunday to Saturday: 8, 2, 7, 5, 6, 4, 3"
+        }
+      ]
+    },
+    {
+      "id": "vargas",
+      "chapter": "map",
+      "title": "Divisional charts (Vargas)",
+      "lede": "Each sign can be cut into equal parts, and each part is mapped onto a sign again. That gives a whole new chart, a varga, which is read for one field of life: the navāṃśa (D9) for dharma and marriage, the daśāṃśa (D10) for work, the dvādaśāṃśa (D12) for parents.",
+      "source": "BPHS ch. 6–7 (Ṣoḍaśavarga)",
+      "tab": "Chakras",
+      "sections": [
+        {
+          "id": "segment",
+          "heading": "Which part of the sign",
+          "body": "In a D-N chart each sign holds N parts of 30°/N. The degree within the sign tells which part a body falls in. Where that part lands in the zodiac depends on the varga's own rule. For the dvādaśāṃśa it is simple: the parts run on from the sign itself.",
+          "formula": "part = ⌊(λ mod 30°) ÷ (30° ÷ N)⌋\nD12 sign = (sign + part) mod 12"
+        },
+        {
+          "id": "navamsa",
+          "heading": "Navāṃśa and vargottama",
+          "body": "The navāṃśa cuts each sign into nine parts of 3°20′, one nakṣatra quarter each. Fire signs start counting from Aries, earth from Capricorn, air from Libra and water from Cancer. That is the same as counting nine parts per sign straight round the zodiac. A body in the same sign in the birth chart and the navāṃśa is vargottama, and it holds its results firmly.",
+          "formula": "D9 sign = (sign × 9 + ⌊(λ mod 30°) ÷ 3°20′⌋) mod 12\nvargottama: D1 sign = D9 sign"
+        },
+        {
+          "id": "shodasa",
+          "heading": "The sixteen vargas",
+          "body": "Parāśara names sixteen: D1 the body, D2 wealth, D3 siblings and courage, D4 fortune and property, D7 children, D9 dharma and the spouse, D10 work, D12 parents, D16 vehicles and comforts, D20 spiritual practice, D24 learning, D27 strength and weakness, D30 misfortune, D40 and D45 auspicious and general matters, D60 the karma carried from past lives. The Chakras tab draws all of them.",
+          "formula": null
+        }
+      ]
+    },
+    {
+      "id": "aspects",
+      "chapter": "map",
+      "title": "Aspects and friendships",
+      "lede": "Planets act on the signs they look at, and they treat one another as friends or enemies. The friendship has two layers: the natural one each planet always holds, and the temporary one made by where they happen to sit at birth.",
+      "source": "BPHS ch. 3 and 26; Phaladīpikā",
+      "tab": "Basics",
+      "sections": [
+        {
+          "id": "drishti",
+          "heading": "Graha dṛṣṭi (planetary aspect)",
+          "body": "Every planet looks fully at the 7th sign from itself. Mars also looks fully at the 4th and 8th, Jupiter at the 5th and 9th, Saturn at the 3rd and 10th. The other planets give the 3rd and 10th a quarter, the 5th and 9th a half, and the 4th and 8th three quarters of a full aspect; in Parāśara's scheme only the full aspects count for results.",
+          "formula": "all: 7th\nMars: 4th, 7th, 8th\nJupiter: 5th, 7th, 9th\nSaturn: 3rd, 7th, 10th\npartial: 3rd, 10th ¼ · 5th, 9th ½ · 4th, 8th ¾"
+        },
+        {
+          "id": "maitri",
+          "heading": "Five-fold friendship (Pañcadhā maitrī)",
+          "body": "A planet in the 2nd, 3rd, 4th, 10th, 11th or 12th sign from another is its temporary friend; anywhere else, its temporary enemy. Add that to the natural relationship (friend +1, neutral 0, enemy −1) and you get five grades, from great friend to great enemy.",
+          "formula": "temporary friend: 2, 3, 4, 10, 11, 12 from the planet\nnatural (+1, 0, −1) + temporary (+1, −1)\n+2 great friend · +1 friend · 0 neutral · −1 enemy · −2 great enemy"
+        },
+        {
+          "id": "sambandha",
+          "heading": "Association (Sambandha)",
+          "body": "Two planets are joined when they exchange signs (each in the other's sign, parivartana), sit in the same sign, aspect each other, or when one aspects the other from the sign it owns. Exchange is the strongest of the four.",
+          "formula": "exchange: lord(sign of A) = B and lord(sign of B) = A"
+        }
+      ]
+    },
+    {
+      "id": "upagrahas-special-lagnas",
+      "chapter": "map",
+      "title": "Special lagnas and shadow points",
+      "lede": "Beside the real Lagna there are lagnas that rise at fixed speeds from the Sun at sunrise, and invisible points worked out from the Sun or from the parts of the day. None of them is a body in the sky. Each is a sensitive point read like one.",
+      "source": "BPHS ch. 3–4",
+      "tab": "Basics",
+      "sections": [
+        {
+          "id": "special",
+          "heading": "Bhāva, Horā and Ghaṭī lagnas",
+          "body": "All three start at the Sun's longitude at sunrise and move at a steady rate. The Bhāva Lagna moves one sign every 5 ghaṭīs (two hours), the Horā Lagna one sign every 2½ ghaṭīs (an hour), and the Ghaṭī Lagna one sign every ghaṭī. The Horā Lagna is read for wealth, the Ghaṭī Lagna for power and position.",
+          "formula": "BL = Sun at sunrise + hours since sunrise × 15°\nHL = Sun at sunrise + hours × 30°\nGL = Sun at sunrise + hours × 75°"
+        },
+        {
+          "id": "aprakasha",
+          "heading": "The five shadow points (Aprakāśa grahas)",
+          "body": "These follow from the Sun alone, each from the one before. Dhūma is 133°20′ ahead of the Sun. Vyatīpāta mirrors it, Parivesha stands opposite Vyatīpāta, Indracāpa mirrors Parivesha, and Upaketu is 16°40′ on from Indracāpa, which lands exactly 30° behind the Sun.",
+          "formula": "Dhūma = Sun + 133°20′\nVyatīpāta = 360° − Dhūma\nPariveśa = Vyatīpāta + 180°\nIndracāpa = 360° − Pariveśa\nUpaketu = Indracāpa + 16°40′ = Sun − 30°"
+        },
+        {
+          "id": "gulika",
+          "heading": "Gulika and Māndi",
+          "body": "The day (or the night) is cut into eight parts. The first seven are ruled by the seven planets in weekday order, starting from the day's own lord by day, and from the fifth lord on from it by night. The eighth part has no lord. Saturn's part belongs to Gulika, and the degree rising when that part begins is Gulika's longitude.",
+          "formula": "part = (sunset − sunrise) ÷ 8 by day\nGulika = the Lagna rising at the start of Saturn's part"
+        }
+      ]
+    },
+    {
+      "id": "shadbala",
+      "chapter": "strength",
+      "title": "Six-fold strength (Ṣaḍbala)",
+      "lede": "Parāśara measures how able each planet is to give its results by adding six kinds of strength. They are counted in virūpas, sixty to a rūpa, and every planet has a minimum it needs.",
+      "source": "BPHS ch. 27",
+      "tab": "Strengths",
+      "sections": [
+        {
+          "id": "six",
+          "heading": "The six strengths",
+          "body": "Sthāna bala is strength of place: exaltation, own and friendly signs, the vargas. Dig bala is strength of direction: Jupiter and Mercury in the east (the 1st), the Sun and Mars in the south (the 10th), Saturn in the west, the Moon and Venus in the north. Kāla bala comes from time: day or night, the Moon's phase, the lords of the year, month, day and hour. Ceṣṭā bala comes from motion, highest when a planet is retrograde. The Sun's and Moon's ceṣṭā are their ayana and pakṣa balas, which kāla bala already holds, so they are not added again. Naisargika bala is fixed by nature, the Sun the brightest and Saturn the dimmest. Dṛk bala is what the aspects of other planets add or take away.",
+          "formula": "Ṣaḍbala = sthāna + dig + kāla + ceṣṭā + naisargika + dṛk (virūpas)\nrūpas = virūpas ÷ 60"
+        },
+        {
+          "id": "required",
+          "heading": "Enough strength",
+          "body": "A planet with at least its minimum can give what it promises. The minimums are 5 rūpas for the Sun, Mars and Saturn, 6 for the Moon, 7 for Mercury, 6½ for Jupiter and 5½ for Venus.",
+          "formula": "strength ratio = rūpas ÷ minimum\nminimum: Sun 5 · Moon 6 · Mars 5 · Mercury 7 · Jupiter 6.5 · Venus 5.5 · Saturn 5"
+        },
+        {
+          "id": "ishta",
+          "heading": "Good and bad fruit (Iṣṭa and Kaṣṭa phala)",
+          "body": "From the exaltation strength and the motional strength, each out of 60, Parāśara draws two numbers: how much good the planet will do, and how much harm. A planet near exaltation and moving strongly has a large iṣṭa and a small kaṣṭa.",
+          "formula": "iṣṭa = √(uccha bala × ceṣṭā bala)\nkaṣṭa = √((60 − uccha bala) × (60 − ceṣṭā bala))"
+        }
+      ]
+    },
+    {
+      "id": "ashtakavarga",
+      "chapter": "strength",
+      "title": "Eight-fold points (Aṣṭakavarga)",
+      "lede": "Each of the seven planets and the Lagna gives a point (a bindu) to certain signs counted from itself. Each planet's own table, the bhinnāṣṭakavarga, collects the points it receives in every sign. The totals show which signs are strong to transit and to live through.",
+      "source": "BPHS ch. 66–72",
+      "tab": "Strengths",
+      "sections": [
+        {
+          "id": "sav",
+          "heading": "Each planet's table and the total (BAV and SAV)",
+          "body": "A planet's table (BAV) gives each sign 0 to 8 points, one from each of the eight givers. Add the seven planets' tables and you get the sarvāṣṭakavarga (SAV). Its twelve signs always sum to 337. A sign with more than 28 is good for its affairs and for transits; fewer is weak.",
+          "formula": "SAV[sign] = Σ BAV[Sun … Saturn][sign]\nΣ SAV = 337 · average 28 per sign"
+        },
+        {
+          "id": "trikona",
+          "heading": "Trinal reduction (Trikoṇa śodhana)",
+          "body": "The signs fall into four trines of one element each: Aries, Leo, Sagittarius; Taurus, Virgo, Capricorn; Gemini, Libra, Aquarius; Cancer, Scorpio, Pisces. In each trine, the smallest of the three counts is taken from all three. A trine with a zero in it is left as it is, and one with three equal counts falls to zero.",
+          "formula": "reduced[s] = BAV[s] − min(BAV of the three signs of its trine)"
+        },
+        {
+          "id": "pinda",
+          "heading": "Ownership reduction and the piṇḍa",
+          "body": "A second reduction (ekādhipatya) works on each pair of signs that share a lord, depending on which of them is occupied. The reduced points are then multiplied by fixed weights for each sign and each planet. The sum of the products is the rāśi piṇḍa and the graha piṇḍa, and together they make the śodhya piṇḍa, used for longevity and for timing.",
+          "formula": "śodhya piṇḍa = rāśi piṇḍa + graha piṇḍa"
+        }
+      ]
+    },
+    {
+      "id": "yogas",
+      "chapter": "strength",
+      "title": "Yogas (combinations)",
+      "lede": "A yoga is a pattern in the chart with a named result. Most are tests on signs, houses and lordships, which is why they can be checked mechanically. This chart is tested against several hundred of them.",
+      "source": "BPHS ch. 34–41; Sarāvalī; Phaladīpikā",
+      "tab": "Strengths",
+      "sections": [
+        {
+          "id": "mahapurusha",
+          "heading": "The five great persons (Pañca mahāpuruṣa)",
+          "body": "When Mars, Mercury, Jupiter, Venus or Saturn sits in a kendra (the 1st, 4th, 7th or 10th) in its own sign or its exaltation, it makes a mahāpuruṣa: Rucaka, Bhadra, Haṃsa, Mālavya or Śaśa. The native carries that planet's best qualities.",
+          "formula": "planet ∈ {Mars, Mercury, Jupiter, Venus, Saturn}\nsign ∈ own or exaltation · house from Lagna ∈ {1, 4, 7, 10}"
+        },
+        {
+          "id": "raja",
+          "heading": "Rāja and dhana yogas",
+          "body": "The kendras (1, 4, 7, 10) are the houses of effort, the trikoṇas (1, 5, 9) the houses of fortune. When a kendra lord and a trikoṇa lord are associated, by sitting together, exchanging or aspecting, they make a rāja yoga. Associations among the lords of the 1st, 2nd, 5th, 9th and 11th make dhana yogas for wealth.",
+          "formula": "rāja yoga = kendra lord (1, 4, 7, 10) + trikoṇa lord (1, 5, 9), associated"
+        },
+        {
+          "id": "neecha",
+          "heading": "Cancelled debility and reversal",
+          "body": "A debilitated planet can have its weakness cancelled (nīcabhaṅga), for example when the lord of the sign it is in stands in a kendra from the Lagna or the Moon. The lords of the 6th, 8th and 12th placed in those same houses make the viparīta rāja yogas (Harṣa, Sarala, Vimala): trouble that destroys trouble.",
+          "formula": "nīcabhaṅga: lord of the debility sign in a kendra from Lagna or Moon"
+        }
+      ]
+    },
+    {
+      "id": "dasas",
+      "chapter": "timing",
+      "title": "Planetary periods (Daśās)",
+      "lede": "A daśā gives each part of life to one planet. In the Vimśottarī system the Moon's star at birth decides which planet starts, and how much of its period is already used up.",
+      "source": "BPHS ch. 46–50",
+      "tab": "Dasas",
+      "sections": [
+        {
+          "id": "balance",
+          "heading": "The opening period and its balance",
+          "body": "The nine planets rule 120 years in a fixed order: Ketu 7, Venus 20, Sun 6, Moon 10, Mars 7, Rāhu 18, Jupiter 16, Saturn 19, Mercury 17. Each nakṣatra belongs to one of them. The share of the Moon's star still ahead of the Moon at birth is the share of that planet's period still to run.",
+          "formula": "share left = (end of the star − λ☾) ÷ 13°20′\nbalance = share left × years of the star's lord"
+        },
+        {
+          "id": "antardasa",
+          "heading": "Sub-periods (Antardaśā)",
+          "body": "Each period is split among all nine planets in the same order, starting with its own lord, in proportion to their years. In months, a sub-period is the product of the two lords' years divided by ten.",
+          "formula": "antardaśā (months) = years of main lord × years of sub lord ÷ 10"
+        },
+        {
+          "id": "year",
+          "heading": "How long a year is",
+          "body": "The texts count daśās in years, but which year? The settings offer the sāvana year of 360 days, the tropical solar year of 365.2422 days, the sidereal year of 365.2564 days, and the year of the Sun's true sidereal return. The choice moves the dates of later periods by weeks or months.",
+          "formula": "days = balance years × days in the chosen year"
+        },
+        {
+          "id": "conditional",
+          "heading": "Conditional daśās",
+          "body": "Parāśara gives other nakṣatra daśās that apply only when the chart meets their condition: Aṣṭottarī, Ṣoḍaśottarī, Dvādaśottarī, Pañcottarī, Śatābdikā, Caturaśīti-samā, Dvisaptati-samā and Ṣaṭtriṃśat-samā. Each condition is a test on the Lagna, the Moon or a lord. When none holds, Vimśottarī stays the daśā to use.",
+          "formula": null
+        }
+      ]
+    },
+    {
+      "id": "transits-chakras",
+      "chapter": "timing",
+      "title": "Transits (Gocara)",
+      "lede": "Transits read today's sky against the birth chart, counted from the natal Moon's sign. Each planet does well from certain signs and badly from others, and a good transit can be blocked by another planet.",
+      "source": "Phaladīpikā ch. 26; BPHS",
+      "tab": "Transits",
+      "sections": [
+        {
+          "id": "gocara",
+          "heading": "Good signs from the Moon",
+          "body": "Counting the Moon's sign as the 1st, the Sun does well in the 3rd, 6th, 10th and 11th; the Moon in the 1st, 3rd, 6th, 7th, 10th and 11th; Mars, Saturn and the nodes in the 3rd, 6th and 11th; Mercury in the 2nd, 4th, 6th, 8th, 10th and 11th; Jupiter in the 2nd, 5th, 7th, 9th and 11th; Venus everywhere but the 6th, 7th and 10th.",
+          "formula": "house = (transit sign − natal Moon sign) mod 12 + 1"
+        },
+        {
+          "id": "vedha",
+          "heading": "Obstruction (Vedha)",
+          "body": "Every good house has a partner. If another planet transits the partner house at the same time, the good result is blocked. The Sun and Saturn never block each other, and neither do the Moon and Mercury. For example, the Sun in the 3rd is blocked by any planet in the 9th.",
+          "formula": "Sun 3↔9 6↔12 10↔4 11↔5\nMoon 1↔5 3↔9 6↔12 7↔2 10↔4 11↔8\nMars, Saturn, nodes 3↔12 6↔9 11↔5\nMercury 2↔5 4↔3 6↔9 8↔1 10↔8 11↔12\nJupiter 2↔12 5↔4 7↔3 9↔10 11↔8\nVenus 1↔8 2↔7 3↔1 4↔10 5↔9 8↔5 9↔11 11↔6 12↔3"
+        },
+        {
+          "id": "sbc",
+          "heading": "Sarvatobhadra and Koṭa",
+          "body": "The Sarvatobhadra cakra lays the 28 nakṣatras (Abhijit included), the vowels and consonants, the signs and the weekdays on a grid of 81 squares. A transiting planet strikes everything on its row, its column and its diagonals. The Koṭa cakra arranges the stars as a fort with four rings, and reads the planets entering or leaving it. The Chakras tab draws both.",
+          "formula": null
+        }
+      ]
+    },
+    {
+      "id": "tajaka-tp",
+      "chapter": "timing",
+      "title": "The annual chart (Tājaka)",
+      "lede": "A Tājaka chart, the varṣaphala, is cast each year for the moment the Sun returns to its exact birth longitude. It is read for that one year, with its own points and its own aspects.",
+      "source": "Tājaka Nīlakaṇṭhī",
+      "tab": "Tajaka",
+      "sections": [
+        {
+          "id": "muntha",
+          "heading": "Munthā",
+          "body": "The Munthā starts in the birth Lagna's sign and moves on one sign each year. The house it falls in of the annual chart colours the year.",
+          "formula": "Munthā sign = (Lagna sign + completed years) mod 12"
+        },
+        {
+          "id": "tajaka-yogas",
+          "heading": "The sixteen Tājaka yogas",
+          "body": "Tājaka aspects work by orbs (dīptāṃśa), and the sixteen yogas describe how two planets meet: Ikkavāla, Induvāra, Itthaśāla, Īśarāpha, Nakta, Yamayā, Maṇaū, Kambūla, Gairi-kambūla, Khallāsara, Radda, Duḥphāli-kuttha, Dutthottha-davīra, Tambīra, Kuttha and Durupha. In Itthaśāla, the one that matters most, the faster planet is behind the slower one and closing on it within the mean of their two orbs: the matter will happen.",
+          "formula": "Itthaśāla: faster planet behind the slower, gap < (orb₁ + orb₂) ÷ 2"
+        },
+        {
+          "id": "saham",
+          "heading": "Year lord and sahams",
+          "body": "The lord of the year is chosen from five office-holders: the Munthā's lord, the birth Lagna's lord, the annual Lagna's lord, the lord of the triplicity, and the lord of the Sun's or Moon's sign (by day or by night). The strongest of them that aspects the annual Lagna wins. Sahams are sensitive points made by adding and subtracting longitudes. Puṇya Saham, the point of merit, is the best known.",
+          "formula": "Puṇya Saham by day = Lagna + Moon − Sun\nby night = Lagna + Sun − Moon"
+        }
+      ]
+    },
+    {
+      "id": "tithi-pravesha",
+      "chapter": "timing",
+      "title": "The lunar birthday (Tithi Praveśa)",
+      "lede": "The Vedic birthday is not the calendar date. It is the moment each year when the Sun is back in its birth sign and the Moon stands at the same angle from the Sun as at birth, so that the birth tithi returns.",
+      "source": "Tithi Praveśa tradition",
+      "tab": "Tithi Pravesha",
+      "sections": [
+        {
+          "id": "angle",
+          "heading": "The angle to return to",
+          "body": "At birth the Moon was a certain angle ahead of the Sun. That angle is the tithi, to the minute. The Tithi Praveśa chart is cast when the same angle comes round again while the Sun is in its birth sign.",
+          "formula": "target = (λ☾ − λ☉) mod 360° at birth"
+        },
+        {
+          "id": "tp-lord",
+          "heading": "Lord of the year",
+          "body": "The weekday on which the Tithi Praveśa falls, counted from sunrise, gives the lord of the year. The planet ruling the hour (horā) at that moment shows what the year will be busy with.",
+          "formula": "year lord = lord of the Vedic weekday of the return\nhorā lord = lord of the planetary hour of the return"
+        }
+      ]
+    },
+    {
+      "id": "jaimini",
+      "chapter": "schools",
+      "title": "Jaimini's method",
+      "lede": "Jaimini reads the chart through signs more than planets. It names its significators by degree, not by nature, and looks at each house through its image, the ārūḍha.",
+      "source": "Jaimini Upadeśa Sūtras",
+      "tab": "Basics",
+      "sections": [
+        {
+          "id": "karakas",
+          "heading": "Movable significators (Cara kārakas)",
+          "body": "Rank the planets by how far each has moved through its own sign. The furthest along is the ātmakāraka, the soul's significator. Then come the amātya (career), bhrātṛ (siblings), mātṛ (mother), pitṛ (father), putra (children), jñāti (rivals and relatives) and dāra (spouse) kārakas. In the eight-kāraka scheme Rāhu joins them, and because it moves backwards its degrees are counted from the end of its sign.",
+          "formula": "rank by degrees in sign, highest first\nRāhu: 30° − degrees in sign\nAK, AmK, BK, MK, PiK, PK, GK, DK"
+        },
+        {
+          "id": "arudha",
+          "heading": "The image of a house (Ārūḍha pada)",
+          "body": "Count from a house to its lord, then the same number again from the lord. The sign reached is the house's ārūḍha, how its affairs appear to the world. The ārūḍha of the 1st is the Ārūḍha Lagna (AL). It may not fall in the house itself or the 7th from it. If it lands in the house (the lord sits in the 1st or 7th from it), take the 10th from the house instead. If it lands in the 7th (the lord in the 4th or 10th), take the 4th.",
+          "formula": "n = count from house to lord\npada = n signs on from the lord\npada in the house → 10th from it · in the 7th → 4th from it"
+        },
+        {
+          "id": "argala",
+          "heading": "Intervention (Argala)",
+          "body": "Planets in the 2nd, 4th and 11th from a house intervene in its affairs, and planets in the 5th do so more weakly. Planets in the 12th, 10th, 3rd and 9th respectively obstruct that intervention (virodhārgala). Whichever side has more planets wins.",
+          "formula": "argala 2 ↔ obstruction 12\nargala 4 ↔ obstruction 10\nargala 11 ↔ obstruction 3\nargala 5 ↔ obstruction 9"
+        }
+      ]
+    },
+    {
+      "id": "kp",
+      "chapter": "schools",
+      "title": "Krishnamurti Paddhati (KP)",
+      "lede": "KP cuts every nakṣatra again into nine unequal parts in the proportions of the Vimśottarī years. The planet ruling the part a body or a house cusp falls in, its sub-lord, decides whether that house's promise is kept.",
+      "source": "K. S. Krishnamurti, KP Readers I–VI",
+      "tab": "Basics",
+      "sections": [
+        {
+          "id": "sub",
+          "heading": "Star lord and sub-lord",
+          "body": "A nakṣatra of 13°20′ is ruled by its Vimśottarī lord. Its nine subs start with that same lord and run in daśā order, each as wide as its lord's share of 120 years. There are 249 subs round the zodiac, because the subs that cross a sign boundary are split in two. Cutting a sub the same way again gives the sub-sub lord.",
+          "formula": "sub width = 13°20′ × years of the sub's lord ÷ 120"
+        },
+        {
+          "id": "cusps",
+          "heading": "Cuspal sub-lords",
+          "body": "KP uses Placidus houses. The sub-lord of a cusp decides whether that house's matters will come to pass. A planet gives results through four layers: itself, its star lord, its sub-lord, and the star lord of its sub-lord.",
+          "formula": null
+        }
+      ]
+    },
+    {
+      "id": "longevity",
+      "chapter": "applied",
+      "title": "Span of life (Āyurdāya)",
+      "lede": "Parāśara gives several independent ways to estimate the span of life, and asks the astrologer to use them together. Here are the arithmetic at the root of each one and Jaimini's quick test by signs. The Longevity tab applies every reduction.",
+      "source": "BPHS ch. 43–44; Jaimini Upadeśa Sūtras",
+      "tab": "Longevity",
+      "sections": [
+        {
+          "id": "pindayu",
+          "heading": "Years by arc (Piṇḍāyu and Nisargāyu)",
+          "body": "Each planet gives its full years at its deep exaltation and half of them at deep debility, by the rule of three in between. In Piṇḍāyu the full years are Sun 19, Moon 25, Mars 15, Mercury 12, Jupiter 15, Venus 21, Saturn 20. In Nisargāyu they are Moon 1, Mars 2, Mercury 9, Venus 20, Jupiter 18, Sun 20, Saturn 50, which make 120. Aṃśāyu instead gives a year for each navāṃśa a planet has travelled from Aries, with multiples of twelve removed. The strongest of the Lagna, the Sun and the Moon decides which of the three applies.",
+          "formula": "arc = (deep exaltation − λ) mod 360°\nyears = full × (arc < 180° ? 360° − arc : arc) ÷ 360°"
+        },
+        {
+          "id": "pairs",
+          "heading": "Jaimini's three pairs",
+          "body": "Take three pairs: the lords of the Lagna and the 8th, Saturn and the Moon, and the Lagna and the Horā Lagna. For each pair, look at whether its two signs are movable, fixed or dual. Two movable signs, or fixed with dual, mean long life. Movable with fixed, or two duals, mean medium. Movable with dual, or two fixed, mean short. The class two of the pairs agree on is the span.",
+          "formula": "long: movable + movable · fixed + dual\nmedium: movable + fixed · dual + dual\nshort: movable + dual · fixed + fixed\nshort < 32 · medium 32–64 · long 64–100 years (BPHS 44)"
+        }
+      ]
+    },
+    {
+      "id": "matching",
+      "chapter": "applied",
+      "title": "Marriage matching (Aṣṭa kūṭa)",
+      "lede": "The traditional match compares the birth stars of the bride and groom on eight counts, worth 36 points in all, and checks each chart for Mars in a difficult house.",
+      "source": "Muhūrta Cintāmaṇi",
+      "tab": "Matching",
+      "sections": [
+        {
+          "id": "kutas",
+          "heading": "The eight counts",
+          "body": "There are eight counts. Varṇa (1 point) compares temperament, vaśya (2) mutual pull, tārā (3) the stars counted from each other, and yoni (4) physical nature. Graha maitrī (5) checks whether the lords of the Moon signs are friends, and gaṇa (6) whether the natures are divine, human or demonic. Bhakūṭa (7) looks at the distance between the Moon signs, with 2–12, 6–8 and 5–9 avoided. Nāḍī (8) is the constitution, and a match is avoided when both share it. Eighteen points or more is the usual minimum.",
+          "formula": "varṇa 1 + vaśya 2 + tārā 3 + yoni 4 + maitrī 5 + gaṇa 6 + bhakūṭa 7 + nāḍī 8 = 36"
+        },
+        {
+          "id": "kuja",
+          "heading": "Mars (Kuja doṣa)",
+          "body": "Mars in the 1st, 2nd, 4th, 7th, 8th or 12th from the Lagna, the Moon or Venus makes kuja doṣa. Mars in its own sign or exaltation softens it, and when both partners have it, it cancels.",
+          "formula": "Mars in {1, 2, 4, 7, 8, 12} from Lagna, Moon or Venus"
+        }
+      ]
+    },
+    {
+      "id": "mundane-eclipses",
+      "chapter": "applied",
+      "title": "Eclipses and the world",
+      "lede": "Mundane astrology reads charts for countries and for the year: the Sun's ingresses, new moons and eclipses. An eclipse also touches a person when it falls on a sensitive point of the birth chart.",
+      "source": "Bṛhat Saṃhitā ch. 5; BPHS ch. 91",
+      "tab": "Mundane",
+      "sections": [
+        {
+          "id": "eclipse",
+          "heading": "Eclipses on the birth chart",
+          "body": "An eclipse within a few degrees of the birth Lagna, Sun or Moon marks a turn in the matters of that point. Birth during an eclipse has its own śānti (BPHS ch. 91, see the Remedies tab).",
+          "formula": "|λ eclipse − λ natal point| ≤ 3.5°"
+        }
+      ]
+    },
+    {
+      "id": "astro-finance",
+      "chapter": "applied",
+      "title": "Places and markets",
+      "lede": "Two tools in this app reach beyond the birth chart: the map of where each planet was on an angle at birth, and the comparison of planetary events with market prices.",
+      "source": "Modern research tools",
+      "tab": "Astrocartography",
+      "sections": [
+        {
+          "id": "lines",
+          "heading": "Astrocartography",
+          "body": "For every place on earth, each planet at the birth moment was rising, culminating, setting or at the lowest point for some line of longitudes and latitudes. The Astrocartography tab draws those lines, and the signs and houses as bands across the map.",
+          "formula": null
+        },
+        {
+          "id": "markets",
+          "heading": "Market cycles",
+          "body": "The Finance tab lays sign ingresses, conjunctions, retrograde stations and eclipses over a price chart, so you can look for patterns yourself. It is a research aid, not a forecast.",
+          "formula": null
+        }
+      ]
+    }
+  ]
+}

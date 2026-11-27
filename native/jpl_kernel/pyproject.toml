@@ -1,0 +1,12 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "jpl-kernel"
+version = "0.1.0"
+description = "Graha positions from NASA JPL's DE442 kernel for Sudarshana (core_logic/ephemeris/jpl.py)"
+requires-python = ">=3.9"
+
+[tool.maturin]
+bindings = "pyo3"

@@ -1,0 +1,870 @@
+{
+ "source": "Brihat Parashara Hora Shastra, Ch. 24 (Effects of the Bhava Lords)",
+ "note": "Those are the effects of Bhava Lords, which are to be deduced, considering their strengths and weaknesses. In the case of a graha, owning two Bhavas, the results are to be deducted based on its two lordships. If contrary results are thus indicated, the results will be nullified, while results of varied nature will come to pass. The graha will yield full, half, or a quarter of the effects according to its strength being full, medium and negligible, respectively. Thus I have told you about the effects, due to Bhava Lords in various Bhavas.",
+ "slokas": [
+  {
+   "lord": 1,
+   "house": 1,
+   "sloka": 1,
+   "text": "Should the 1st lord be in the 1st itself, the native will be endowed with physical happiness and prowess. He will be intelligent, fickle-minded, will have two wives and will unite with other females."
+  },
+  {
+   "lord": 1,
+   "house": 2,
+   "sloka": 2,
+   "text": "If the 1st lord is in the 2nd, he will be gainful, scholarly, happy, endowed with good qualities, be religious, honourable and will have many wives."
+  },
+  {
+   "lord": 1,
+   "house": 3,
+   "sloka": 3,
+   "text": "If the 1st lord is in the 3rd bhava, the native will equal a lion in valour, be endowed with all kinds of wealth, be honourable, will have two wives, be intelligent and happy."
+  },
+  {
+   "lord": 1,
+   "house": 4,
+   "sloka": 4,
+   "text": "If the 1st lord is in the 4th bhava, the native will be endowed with paternal and maternal happiness, will have many brothers, be lustful, virtuous and charming."
+  },
+  {
+   "lord": 1,
+   "house": 5,
+   "sloka": 5,
+   "text": "If the 1st lord is in the 5th bhava, the native will have mediocre progenic happiness, will lose his first child, be honourable, given to anger and be dear to king."
+  },
+  {
+   "lord": 1,
+   "house": 6,
+   "sloka": 6,
+   "text": "If the 1st lord is in the 6th bhava and related to a malefic the native will be devoid of physical happiness and will be troubled by enemies, if there is no benefic Drishti."
+  },
+  {
+   "lord": 1,
+   "house": 7,
+   "sloka": 7,
+   "text": "If the 1st lord is a malefic and is placed in the 7th bhava, the natives wife will not live (long). If the graha in question is a benefic, one will wander aimlessly, face penury and be dejected. He will alternatively become a king (if the said graha is strong)."
+  },
+  {
+   "lord": 1,
+   "house": 8,
+   "sloka": 8,
+   "text": "If the 1st lord is in the 8th bhava, the native will be an accomplished scholar, be sickly, thievish, be given to much anger, be a gambler and will join others' wives."
+  },
+  {
+   "lord": 1,
+   "house": 9,
+   "sloka": 9,
+   "text": "If the 1st lord is in the 9th bhava, the native will be fortunate, dear to people, be a devotee of Śrī Vishnu, be skilful, eloquent in speech and be endowed with wife, sons and wealth."
+  },
+  {
+   "lord": 1,
+   "house": 10,
+   "sloka": 10,
+   "text": "If the 1st lord is in the 10th bhava, the native will be endowed with paternal happiness, royal honour, fame among men and will doubtlessly have self-earned wealth."
+  },
+  {
+   "lord": 1,
+   "house": 11,
+   "sloka": 11,
+   "text": "If the 1st lord is in the 11th bhava, the native will always be endowed with gains, good qualities, fame and many wives."
+  },
+  {
+   "lord": 1,
+   "house": 12,
+   "sloka": 12,
+   "text": "If the 1st lord is in the 12th bhava and is devoid of benefic Drishti and/or Yuti, the native will be bereft of physical happiness, will spend unfruitfully and be given to much anger."
+  },
+  {
+   "lord": 2,
+   "house": 1,
+   "sloka": 13,
+   "text": "If the 2nd lord is in the 1st bhava, the native will be endowed with sons and wealth, be inimical to his family, lustful, hard-hearted and will do others' jobs."
+  },
+  {
+   "lord": 2,
+   "house": 2,
+   "sloka": 14,
+   "text": "If the 2nd lord is in the 2nd bhava, the native will be wealthy, proud, will have two, or more wives and be bereft of progeny."
+  },
+  {
+   "lord": 2,
+   "house": 3,
+   "sloka": 15,
+   "text": "If the 2nd lord is in the 3rd bhava, the native will be valorous, wise, virtuous, lustful and miserly; all these, when related to a benefic. If related to a malefic, the native will be a heterodox."
+  },
+  {
+   "lord": 2,
+   "house": 4,
+   "sloka": 16,
+   "text": "If the 2nd lord is in the 4th bhava, the native will acquire all kinds of wealth. If the 2nd lord is exalted and is yuti with Jupiter, one will be equal to a king."
+  },
+  {
+   "lord": 2,
+   "house": 5,
+   "sloka": 17,
+   "text": "If the 2nd lord is in the 5th bhava, the native will be wealthy. Not only the native, but also his sons will be intent on earning wealth."
+  },
+  {
+   "lord": 2,
+   "house": 6,
+   "sloka": 18,
+   "text": "If the 2nd lord is in the 6th bhava along with a benefic, the native will gain wealth through his enemies; if the 2nd lord is yuti with a malefic, there will be loss through enemies apart from mutilation of shanks."
+  },
+  {
+   "lord": 2,
+   "house": 7,
+   "sloka": 19,
+   "text": "If the 2nd lord is in the 7th bhava, the native will be addicted to others' wives and he will be a doctor. If a malefic is related to the said placement by yuti with the 2nd lord, or by Drishti, the native's wife will be of questionable character."
+  },
+  {
+   "lord": 2,
+   "house": 8,
+   "sloka": 20,
+   "text": "If the 2nd lord is in the 8th bhava, the native will be endowed with abundant land and wealth. But he will have limited marital felicity and be bereft of happiness from his elder brother."
+  },
+  {
+   "lord": 2,
+   "house": 9,
+   "sloka": 21,
+   "text": "If the 2nd lord is in the 9th bhava, the native will be wealthy, diligent, skilful, sick during childhood and will later on be happy and will visit shrines, observing religious code etc."
+  },
+  {
+   "lord": 2,
+   "house": 10,
+   "sloka": 22,
+   "text": "If the 2nd lord is in the 10th bhava, the native will be libidinous, honourable and learned; he will have many wives and much wealth, but he will be bereft of filial happiness."
+  },
+  {
+   "lord": 2,
+   "house": 11,
+   "sloka": 23,
+   "text": "If the 2nd lord is in the 11th bhava, the native will have all kinds of wealth, be ever diligent, honourable and famous."
+  },
+  {
+   "lord": 2,
+   "house": 12,
+   "sloka": 24,
+   "text": "If the 2nd lord is in the 12th bhava, the native will be adventurous, be devoid of wealth and be interested in other's wealth, while his eldest child will not keep him happy."
+  },
+  {
+   "lord": 3,
+   "house": 1,
+   "sloka": 25,
+   "text": "If the 3rd lord is in the 1st bhava, the native will have self-made wealth, be disposed to worship, be valorous and be intelligent, although devoid of learning."
+  },
+  {
+   "lord": 3,
+   "house": 2,
+   "sloka": 26,
+   "text": "If the 3rd lord is in the 2nd bhava, the native will be corpulent, devoid of valour, will not make much efforts, be not happy and will have an eye on others' wives and others' wealth."
+  },
+  {
+   "lord": 3,
+   "house": 3,
+   "sloka": 27,
+   "text": "If the 3rd lord is in the 3rd bhava, the native will be endowed with happiness through co-born and will have wealth and sons, be cheerful and extremely happy."
+  },
+  {
+   "lord": 3,
+   "house": 4,
+   "sloka": 28,
+   "text": "If the 3rd lord is in the 4th bhava, the native will be happy, wealthy and intelligent, but will acquire a wicked spouse."
+  },
+  {
+   "lord": 3,
+   "house": 5,
+   "sloka": 29,
+   "text": "If the 3rd lord is in the 5th bhava, the native will have sons and be virtuous. If in the process the 3rd lord be yuti with, or receives a Drishti from a malefic, the native will have a formidable wife."
+  },
+  {
+   "lord": 3,
+   "house": 6,
+   "sloka": 30,
+   "text": "If the 3rd lord is in the 6th bhava, the native will be inimical to his co-born, be affluent, will not be well disposed to his maternal uncle and be dear to his maternal aunt."
+  },
+  {
+   "lord": 3,
+   "house": 7,
+   "sloka": 31,
+   "text": "If the 3rd lord is in the 7th bhava, the native will be interested in serving the king. He will not be happy during boyhood, but the end of his life he will be happy."
+  },
+  {
+   "lord": 3,
+   "house": 8,
+   "sloka": 32,
+   "text": "If the 3rd lord is in the 8th bhava, the native will be a thief, will derive his livelihood serving others and will die at the gate of the royal palace."
+  },
+  {
+   "lord": 3,
+   "house": 9,
+   "sloka": 33,
+   "text": "If the 3rd lord is in the 9th bhava, the native will lack paternal bliss, will make fortunes through wife and will enjoy progenic and other pleasures."
+  },
+  {
+   "lord": 3,
+   "house": 10,
+   "sloka": 34,
+   "text": "If the 3rd lord is in the 10th bhava, the native will have all lands of happiness and self-made wealth and be interested in nurturing wicked females."
+  },
+  {
+   "lord": 3,
+   "house": 11,
+   "sloka": 35,
+   "text": "If the 3rd lord is in the 11th bhava, then native will always gain in trading, be intelligent, although not literate, be adventurous and will serve others."
+  },
+  {
+   "lord": 3,
+   "house": 12,
+   "sloka": 36,
+   "text": "If the 3rd lord is in the 12th, the native will spend on evil deeds, will have a wicked father and will be fortunate through a female."
+  },
+  {
+   "lord": 4,
+   "house": 1,
+   "sloka": 37,
+   "text": "If the 4th lord is in the 1st bhava, the native will be endowed with learning, virtues, ornaments, lands, conveyances and maternal happiness."
+  },
+  {
+   "lord": 4,
+   "house": 2,
+   "sloka": 38,
+   "text": "If the 4th lord is in the 2nd bhava, the native will enjoy pleasures, all kinds of wealth, family life and honour and be adventurous. He will be cunning in disposition."
+  },
+  {
+   "lord": 4,
+   "house": 3,
+   "sloka": 39,
+   "text": "If the 4th lord is in the 3rd bhava, the native will be valorous, will have servants, be liberal, virtuous and charitable and will possess self-earned wealth. He will be free from diseases."
+  },
+  {
+   "lord": 4,
+   "house": 4,
+   "sloka": 40,
+   "text": "If the 4th lord is in the 4th, the native will be a minister and will possess all kinds of wealth. He will be skilful, virtuous, honourable, learned, happy and be well disposed to his spouse."
+  },
+  {
+   "lord": 4,
+   "house": 5,
+   "sloka": 41,
+   "text": "If the 4th lord is in the 5th bhava, the native will be happy and be liked by all. He will be devoted to Śrī Vishnu, be virtuous, honourable and will have self-earned wealth."
+  },
+  {
+   "lord": 4,
+   "house": 6,
+   "sloka": 42,
+   "text": "If the 4th lord is in the 6th bhava, the native will be devoid of maternal happiness, be given to anger, be a thief and a conjurer, be independent in action and be indisposed."
+  },
+  {
+   "lord": 4,
+   "house": 7,
+   "sloka": 43,
+   "text": "If the 4th lord is in the 7th bhava, the native will be endowed with a high degree of education, will sacrifice his patrimony and be akin to the dumb in an assembly."
+  },
+  {
+   "lord": 4,
+   "house": 8,
+   "sloka": 44,
+   "text": "If the 4th lord is in the 8th bhava, the native will be devoid of domestic and other comforts, will not enjoy much parental happiness and be equal to a neuter."
+  },
+  {
+   "lord": 4,
+   "house": 9,
+   "sloka": 45,
+   "text": "If the 4th lord is in the 9th bhava, the native will be dear to one and all, be devoted to God, be virtuous, honourable and endowed with every land of happiness."
+  },
+  {
+   "lord": 4,
+   "house": 10,
+   "sloka": 46,
+   "text": "If the 4th lord is in the 10th bhava, the native will enjoy royal honours, be an alchemist, be extremely pleased, will enjoy pleasures and will conquer his five senses."
+  },
+  {
+   "lord": 4,
+   "house": 11,
+   "sloka": 47,
+   "text": "If the 4th lord is in the 11th bhava, the native will have fear of secret disease, he will be liberal, virtuous, charitable and helpful to others."
+  },
+  {
+   "lord": 4,
+   "house": 12,
+   "sloka": 48,
+   "text": "If the 4th lord is in the 12th bhava the native will be devoid of domestic and other comforts, will have vices and be foolish and indolent."
+  },
+  {
+   "lord": 5,
+   "house": 1,
+   "sloka": 49,
+   "text": "If the 5th lord is in the 1st, the native will be scholarly, be endowed with progenic happiness, be a miser, be crooked and will steal others' wealth."
+  },
+  {
+   "lord": 5,
+   "house": 2,
+   "sloka": 50,
+   "text": "If the 5th lord is in the 2nd bhava, the native will have many sons and wealth, be a pater familias, be honourable, be attached to his spouse and be famous in the world."
+  },
+  {
+   "lord": 5,
+   "house": 3,
+   "sloka": 51,
+   "text": "If the 5th lord is in the 3rd, the native will be attached to his co-born, be a tale bearer and a miser and be always interested in his own work."
+  },
+  {
+   "lord": 5,
+   "house": 4,
+   "sloka": 52,
+   "text": "If the 5th lord is in the 4th bhava, the native will be happy, endowed with maternal happiness, wealth and intelligence and be a king, or a minister, or a preceptor."
+  },
+  {
+   "lord": 5,
+   "house": 5,
+   "sloka": 53,
+   "text": "If the 5th lord is in the 5th bhava, the native will have progeny, if related to a benefic; there will be no issues, if malefic is related to the 5th lord, placed in the 5th bhava. the 5th lord in the 5th bhava will, however, make one virtuous and dear to friends."
+  },
+  {
+   "lord": 5,
+   "house": 6,
+   "sloka": 54,
+   "text": "If the 5th lord is in the 6th bhava, the native will obtain such sons, who will be equal to his enemies, or will lose them, or will acquire an adopted, or purchased son."
+  },
+  {
+   "lord": 5,
+   "house": 7,
+   "sloka": 55,
+   "text": "If the 5th lord is in the 7th bhava, the native will be honourable, very religious, endowed with progenic happiness and be helpful to others."
+  },
+  {
+   "lord": 5,
+   "house": 8,
+   "sloka": 56,
+   "text": "If the 5th lord is in the 8th bhava, the native will not have much progenic happiness, be troubled by cough and pulmonary disorders, be given to anger and be devoid of happiness."
+  },
+  {
+   "lord": 5,
+   "house": 9,
+   "sloka": 57,
+   "text": "If the 5th lord is in the 9th bhava, the native will be a prince, or equal to him, will author treatises, be famous and will shine in his race."
+  },
+  {
+   "lord": 5,
+   "house": 10,
+   "sloka": 58,
+   "text": "If the 5th lord is in the 10th bhava, the native will enjoy a Raj Yog and various pleasures and be very famous."
+  },
+  {
+   "lord": 5,
+   "house": 11,
+   "sloka": 59,
+   "text": "If the 5th lord is in the 11th bhava, the native will be learned, dear to people, be an author of treatises, be very skilful and be endowed with many sons and wealth."
+  },
+  {
+   "lord": 5,
+   "house": 12,
+   "sloka": 60,
+   "text": "If the 5th lord is in the 12th bhava, the native will be bereft of happiness from his own sons, will have an adopted, or purchased son."
+  },
+  {
+   "lord": 6,
+   "house": 1,
+   "sloka": 61,
+   "text": "If the 6th lord is in the 1st bhava, the native will be sickly, famous, inimical to his own men, rich, honourable, adventurous and virtuous."
+  },
+  {
+   "lord": 6,
+   "house": 2,
+   "sloka": 62,
+   "text": "If the 6th lord is in the 2nd bhava, the native will be adventurous, famous among his people, will live in alien countries, be happy, be a skilful speaker and be always interested in his own work."
+  },
+  {
+   "lord": 6,
+   "house": 3,
+   "sloka": 63,
+   "text": "If the 6th lord is in the 3rd bhava, the native will be given to anger, be bereft of courage, inimical to all of his co-born and will have disobedient servants."
+  },
+  {
+   "lord": 6,
+   "house": 4,
+   "sloka": 64,
+   "text": "If the 6th lord is in the 4th bhava, the native will be devoid maternal happiness, be intelligent, be a tale bearer, be jealous, evil-minded and very rich."
+  },
+  {
+   "lord": 6,
+   "house": 5,
+   "sloka": 65,
+   "text": "If the 6th lord is in the 5th bhava, the native will have fluctuating finances. He will incur enmity with his sons and friends. He will be happy, selfish and kind."
+  },
+  {
+   "lord": 6,
+   "house": 6,
+   "sloka": 66,
+   "text": "If the 6th lord is in the 6th bhava, the native will have enmity with the group of his kinsmen, but be friendly to others and will enjoy mediocre happiness in matters, like wealth."
+  },
+  {
+   "lord": 6,
+   "house": 7,
+   "sloka": 67,
+   "text": "If the 6th lord is in the 7th bhava, the native will be deprived of happiness through wedlock. He will be famous, virtuous, honourable, adventurous and wealthy."
+  },
+  {
+   "lord": 6,
+   "house": 8,
+   "sloka": 68,
+   "text": "If the 6th lord is in the 8th bhava, the native will be sickly, inimical, will desire others' wealth, be interested in others' wives and be impure."
+  },
+  {
+   "lord": 6,
+   "house": 9,
+   "sloka": 69,
+   "text": "If the 6th lord is in the 9th bhava, the native will trade in wood and stones ('Pashan' also means poison) and will have fluctuating professional fortunes."
+  },
+  {
+   "lord": 6,
+   "house": 10,
+   "sloka": 70,
+   "text": "If the 6th lord is in the 10th bhava, the native will be well known among his men, will not be respectfully disposed to his father and will be happy in foreign countries. He will be a gifted speaker."
+  },
+  {
+   "lord": 6,
+   "house": 11,
+   "sloka": 71,
+   "text": "If the 6th lord is in the 11th bhava, the native will gain wealth through his enemies, be virtuous, adventurous and will be somewhat bereft of progenic happiness."
+  },
+  {
+   "lord": 6,
+   "house": 12,
+   "sloka": 72,
+   "text": "If the 6th lord is in the 12th bhava, the native will always spend on vices, be hostile to learned people and will torture living beings."
+  },
+  {
+   "lord": 7,
+   "house": 1,
+   "sloka": 73,
+   "text": "If the 7th lord is in the 1st bhava, the native will go to others' wives, be wicked, skilful, devoid of courage and afflicted by windy diseases."
+  },
+  {
+   "lord": 7,
+   "house": 2,
+   "sloka": 74,
+   "text": "If the 7th lord is in the 2nd bhava, the native will have many wives, will gain wealth through his wife and be procrastinating in nature."
+  },
+  {
+   "lord": 7,
+   "house": 3,
+   "sloka": 75,
+   "text": "If the 7th lord is in the 3rd bhava, the native will face loss of children and sometimes with great difficulty there will exist a living son. There is also the possibility of birth of a daughter."
+  },
+  {
+   "lord": 7,
+   "house": 4,
+   "sloka": 76,
+   "text": "If the 7th lord is in the 4th bhava, the wife of the native will not be under his control. He will be fond of truth, intelligent and religious. He will suffer from dental diseases."
+  },
+  {
+   "lord": 7,
+   "house": 5,
+   "sloka": 77,
+   "text": "If the 7th lord is in the 5th bhava, the native will be honourable, endowed with all (i.e. seven principal) virtues, always delighted and endowed with all kinds of wealth."
+  },
+  {
+   "lord": 7,
+   "house": 6,
+   "sloka": 78,
+   "text": "If the 7th lord is in the 6th bhava, the native will beget a sickly wife and he will be inimical to her. He will be given to anger and will be devoid of happiness."
+  },
+  {
+   "lord": 7,
+   "house": 7,
+   "sloka": 79,
+   "text": "If the 7th lord is in the 7th bhava, the native will be endowed with happiness through wife, be courageous, skilful and intelligent, but only afflicted by windy diseases."
+  },
+  {
+   "lord": 7,
+   "house": 8,
+   "sloka": 80,
+   "text": "If the 7th lord is in the 8th bhava, the native will be deprived of marital happiness. His wife will be troubled by diseases, be devoid of good disposition and will not obey the native."
+  },
+  {
+   "lord": 7,
+   "house": 9,
+   "sloka": 81,
+   "text": "If the 7th lord is in the 9th bhava, the native will have union with many women, be well disposed to his own wife and will have many undertakings."
+  },
+  {
+   "lord": 7,
+   "house": 10,
+   "sloka": 82,
+   "text": "If the 7th lord is in the 10th bhava, the native will beget a disobedient wife, will be religious and endowed with wealth, sons etc."
+  },
+  {
+   "lord": 7,
+   "house": 11,
+   "sloka": 83,
+   "text": "If the 7th lord is in the 11th bhava, the native will gain wealth through his wife, be endowed with less happiness from sons etc. and will have daughters."
+  },
+  {
+   "lord": 7,
+   "house": 12,
+   "sloka": 84,
+   "text": "If the 7th lord is in the 12th bhava, the native will incur penury, be a miser and his livelihood will be related to clothes. His wife will be a spendthrift."
+  },
+  {
+   "lord": 8,
+   "house": 1,
+   "sloka": 85,
+   "text": "If the 8th lord is in the 1st bhava, the native will be devoid of physical felicity and will suffer from wounds. He will be hostile to gods and Brahmins."
+  },
+  {
+   "lord": 8,
+   "house": 2,
+   "sloka": 86,
+   "text": "If the 8th lord is in the 2nd bhava, the native will be devoid of bodily vigour, will enjoy a little wealth and will not regain lost wealth."
+  },
+  {
+   "lord": 8,
+   "house": 3,
+   "sloka": 87,
+   "text": "If the 8th lord is in the 3rd bhava, the native will be devoid of fraternal happiness, be indolent and devoid of servants and strength."
+  },
+  {
+   "lord": 8,
+   "house": 4,
+   "sloka": 88,
+   "text": "If the 8th lord is in the 4th bhava, the child will be deprived of its mother. He will be devoid of a house, lands and happiness and will doubtlessly betray his friends."
+  },
+  {
+   "lord": 8,
+   "house": 5,
+   "sloka": 89,
+   "text": "If the 8th lord is in the 5th bhava, the native will be dull witted, will have limited number of children, be long-lived and wealthy."
+  },
+  {
+   "lord": 8,
+   "house": 6,
+   "sloka": 90,
+   "text": "If the 8th lord is in the 6th bhava, the native will win over his enemies, be afflicted by diseases and during childhood will incur danger through snakes and water."
+  },
+  {
+   "lord": 8,
+   "house": 7,
+   "sloka": 91,
+   "text": "If the 8th lord is in the 7th bhava, the native will have two wives. If the 8th lord is yuti with a malefic in the 7th bhava, there will surely be downfall in his business."
+  },
+  {
+   "lord": 8,
+   "house": 8,
+   "sloka": 92,
+   "text": "If the 8th lord is in the 8th bhava, the native will be long-lived. If the said graha is weak, being in the 8th bhava, the longevity will be medium, while the native will be a thief, be blameworthy and will blame others as well."
+  },
+  {
+   "lord": 8,
+   "house": 9,
+   "sloka": 93,
+   "text": "If the 8th lord is in the 9th bhava, the native will betray his religion, be a heterodox, will beget a wicked wife and will steal others' wealth."
+  },
+  {
+   "lord": 8,
+   "house": 10,
+   "sloka": 94,
+   "text": "If the 8th lord is in the 10th bhava, the native will be devoid of paternal bliss, be a talebearer and be bereft of livelihood. If there is a Drishti in the process from a benefic, then these evils will not mature."
+  },
+  {
+   "lord": 8,
+   "house": 11,
+   "sloka": 95,
+   "text": "If the 8th lord along with a malefic is in the 11th bhava, the native will be devoid of wealth and will be miserable in boyhood, but happy later on. Should the 8th lord be yuti with a benefic and be in the 11th bhava, the native will be long-lived."
+  },
+  {
+   "lord": 8,
+   "house": 12,
+   "sloka": 96,
+   "text": "If the 8th lord is in the 12th bhava, the native will spend on evil deeds and will incur a short life. More so, if there be additionally a malefic in the said Bhava."
+  },
+  {
+   "lord": 9,
+   "house": 1,
+   "sloka": 97,
+   "text": "If the 9th lord is in the 1st, the native will be fortunate, will be honoured by the king, be virtuous, charming, learned and honoured by the public."
+  },
+  {
+   "lord": 9,
+   "house": 2,
+   "sloka": 98,
+   "text": "If the 9th lord is in the 2nd bhava, the native will be a scholar, be dear to all, wealthy, sensuous and endowed with happiness from wife, sons etc."
+  },
+  {
+   "lord": 9,
+   "house": 3,
+   "sloka": 99,
+   "text": "If the 9th lord is in the 3rd bhava, the native will be endowed with fraternal bliss, be wealthy, virtuous and charming."
+  },
+  {
+   "lord": 9,
+   "house": 4,
+   "sloka": 100,
+   "text": "If the 9th lord is in the 4th bhava, the native will enjoy houses, conveyances and happiness, will have all kinds of wealth and be devoted to his mother."
+  },
+  {
+   "lord": 9,
+   "house": 5,
+   "sloka": 101,
+   "text": "If the 9th lord is in the 5th bhava, the native will be endowed with sons and prosperity, devoted to elders, bold, charitable and learned."
+  },
+  {
+   "lord": 9,
+   "house": 6,
+   "sloka": 102,
+   "text": "If the 9th lord is in the 6th bhava, the native will enjoy meagre prosperity, be devoid of happiness from maternal relatives and be always troubled by enemies."
+  },
+  {
+   "lord": 9,
+   "house": 7,
+   "sloka": 103,
+   "text": "If the 9th lord is in the 7th bhava, the native beget happiness after marriage, be virtuous and famous."
+  },
+  {
+   "lord": 9,
+   "house": 8,
+   "sloka": 104,
+   "text": "If the 9th lord is in the 8th bhava, the native will not be prosperous and will not enjoy happiness from his elder brother."
+  },
+  {
+   "lord": 9,
+   "house": 9,
+   "sloka": 105,
+   "text": "If the 9th lord is in the 9th bhava, the native will be endowed with abundant fortunes, virtues and beauty and will enjoy much happiness from co-born."
+  },
+  {
+   "lord": 9,
+   "house": 10,
+   "sloka": 106,
+   "text": "If the 9th lord is in the 10th bhava, the native will be a king, or equal to him, or be a minister, or an Army chief, be virtuous and dear to all."
+  },
+  {
+   "lord": 9,
+   "house": 11,
+   "sloka": 107,
+   "text": "If the 9th lord is in the 11th bhava, the native will enjoy financial gains day by day, be devoted to elders, virtuous and meritorious in acts."
+  },
+  {
+   "lord": 9,
+   "house": 12,
+   "sloka": 108,
+   "text": "If the 9th lord is in the 12th bhava, the native will incur loss of fortunes, will always spend on auspicious acts and will become poor on account of entertaining guests."
+  },
+  {
+   "lord": 10,
+   "house": 1,
+   "sloka": 109,
+   "text": "If the 10th lord is in the 1st bhava, the native will be scholarly, famous, be a poet, will incur diseases in boyhood and be happy later on. His wealth will increase day by day."
+  },
+  {
+   "lord": 10,
+   "house": 2,
+   "sloka": 110,
+   "text": "If the 10th lord is in the 2nd bhava, the native will be wealthy, virtuous, honoured by the king, charitable and will enjoy happiness from father and others."
+  },
+  {
+   "lord": 10,
+   "house": 3,
+   "sloka": 111,
+   "text": "If the 10th lord is in the 3rd bhava, the native will enjoy happiness from brothers and servants, be valorous, virtuous, eloquent and truthful."
+  },
+  {
+   "lord": 10,
+   "house": 4,
+   "sloka": 112,
+   "text": "If the 10th lord is in the 4th bhava, the native will be happy, be always interested in his mother's welfare, will Lord over conveyances, lands and houses, be virtuous and wealthy."
+  },
+  {
+   "lord": 10,
+   "house": 5,
+   "sloka": 113,
+   "text": "If the 10th lord is in the 5th bhava, the native will be endowed with all kinds of learning, he will be always delighted and he will be wealthy and endowed with sons."
+  },
+  {
+   "lord": 10,
+   "house": 6,
+   "sloka": 114,
+   "text": "If the 10th lord is in the 6th bhava, the native will be bereft of paternal bliss. Although he may be skilful, he will be bereft of wealth and be troubled by enemies."
+  },
+  {
+   "lord": 10,
+   "house": 7,
+   "sloka": 115,
+   "text": "If the 10th lord is in the 7th bhava, the native will be endowed with happiness through wife, be intelligent, virtuous, eloquent, truthful and religious."
+  },
+  {
+   "lord": 10,
+   "house": 8,
+   "sloka": 116,
+   "text": "If the 10th lord is in the 8th bhava, the native will be devoid of acts, long-lived and intent on blaming others."
+  },
+  {
+   "lord": 10,
+   "house": 9,
+   "sloka": 117,
+   "text": "If the 10th lord is in the 9th bhava, one born of royal scion will become a king, whereas an ordinary native will be equal to a king. This placement will confer wealth and progenic happiness etc."
+  },
+  {
+   "lord": 10,
+   "house": 10,
+   "sloka": 118,
+   "text": "If the 10th lord is in the 10th bhava, the native will be skilful in all jobs, be valorous, truthful and devoted to elders."
+  },
+  {
+   "lord": 10,
+   "house": 11,
+   "sloka": 119,
+   "text": "If the 10th lord is in the 11th bhava, the native will be endowed with wealth, happiness and sons. He will be virtuous, truthful and always delighted."
+  },
+  {
+   "lord": 10,
+   "house": 12,
+   "sloka": 120,
+   "text": "If the 10th lord is in the 12th bhava, the native will spend through royal abodes, will have fear from enemies and will be worried in spite of being skilful."
+  },
+  {
+   "lord": 11,
+   "house": 1,
+   "sloka": 121,
+   "text": "If the 11th lord is in the 1st bhava, the native will be genuine in disposition, be rich, happy, even-sighted, be a poet, be eloquent in speech and be always endowed with gains."
+  },
+  {
+   "lord": 11,
+   "house": 2,
+   "sloka": 122,
+   "text": "If the 11th lord is in the 2nd bhava, the native will be endowed with all kinds of wealth and all kinds of accomplishments, charitable, religious and always happy."
+  },
+  {
+   "lord": 11,
+   "house": 3,
+   "sloka": 123,
+   "text": "If the 11th lord is in the 3rd bhava, the native will be skilful in all jobs, wealthy, endowed with fraternal bliss and may sometimes incur gout pains."
+  },
+  {
+   "lord": 11,
+   "house": 4,
+   "sloka": 124,
+   "text": "If the 11th lord is in the 4th bhava, the native will gain from maternal relatives, will undertake visits to shrines and will possess happiness of house and lands."
+  },
+  {
+   "lord": 11,
+   "house": 5,
+   "sloka": 125,
+   "text": "If the 11th lord is in the 5th bhava, the native will be happy, educated and virtuous. He will be religious and happy."
+  },
+  {
+   "lord": 11,
+   "house": 6,
+   "sloka": 126,
+   "text": "If the 11th lord is in the 6th bhava, the native will be afflicted by diseases, be cruel, living in foreign places and troubled by enemies."
+  },
+  {
+   "lord": 11,
+   "house": 7,
+   "sloka": 127,
+   "text": "If the 11th lord is in the 7th bhava, the native will always gain through his wife's relatives, be liberal, virtuous, sensuous and will remain at the command of his spouse."
+  },
+  {
+   "lord": 11,
+   "house": 8,
+   "sloka": 128,
+   "text": "If the 11th lord is in the 8th bhava, the native will incur reversals in his undertakings and will live long, while his wife will predecease him."
+  },
+  {
+   "lord": 11,
+   "house": 9,
+   "sloka": 129,
+   "text": "If the 11th lord is in the 9th bhava, the native will be fortunate, skilful, truthful, honoured by the king and be affluent."
+  },
+  {
+   "lord": 11,
+   "house": 10,
+   "sloka": 130,
+   "text": "If the 11th lord is in the 10th bhava, the native will be honoured by the king, be virtuous, attached to his religion, intelligent, truthful and will subdue his senses."
+  },
+  {
+   "lord": 11,
+   "house": 11,
+   "sloka": 131,
+   "text": "If the 11th lord is in the 11th bhava, the native will gain in all his undertakings, while his learning and happiness will be on the increase day by day."
+  },
+  {
+   "lord": 11,
+   "house": 12,
+   "sloka": 132,
+   "text": "If the 11th lord is in the 12th bhava, the native will always depend on good deeds, be sensuous, will have many wives and will befriend barbarians."
+  },
+  {
+   "lord": 12,
+   "house": 1,
+   "sloka": 133,
+   "text": "If the 12th lord is in the 1st bhava, the native will be a spendthrift, be weak in constitution, will suffer from phlegmatic disorders and be devoid of wealth and learning."
+  },
+  {
+   "lord": 12,
+   "house": 2,
+   "sloka": 134,
+   "text": "If the 12th lord is in the 2nd bhava, the native will always spend on inauspicious deeds, be religious, will speak sweetly and will be endowed with virtues and happiness."
+  },
+  {
+   "lord": 12,
+   "house": 3,
+   "sloka": 135,
+   "text": "If the 12th lord is in the 3rd bhava, the native will be devoid of fraternal bliss, will hate others and will promote self-nourishment."
+  },
+  {
+   "lord": 12,
+   "house": 4,
+   "sloka": 136,
+   "text": "If the 12th lord is in the 4th bhava, the native will be devoid of maternal happiness and will day by day accrue losses with respect to lands, conveyances and houses."
+  },
+  {
+   "lord": 12,
+   "house": 5,
+   "sloka": 137,
+   "text": "If the 12th lord is in the 5th bhava, the native will be bereft of sons and learning. He will spend, as well as visit shrines in order to beget a son."
+  },
+  {
+   "lord": 12,
+   "house": 6,
+   "sloka": 138,
+   "text": "If the 12th lord is in the 6th bhava, the native will incur enmity with his own men, be given to anger, be sinful, miserable and will go to others' wives."
+  },
+  {
+   "lord": 12,
+   "house": 7,
+   "sloka": 139,
+   "text": "If the 12th lord is in the 7th bhava, the native will incur expenditure on account of his wife, will not enjoy conjugal bliss and will be bereft of learning and strength."
+  },
+  {
+   "lord": 12,
+   "house": 8,
+   "sloka": 140,
+   "text": "If the 12th lord is in the 8th bhava, the native will always gain, will speak affably, will enjoy a medium span of life and be endowed with all good qualities."
+  },
+  {
+   "lord": 12,
+   "house": 9,
+   "sloka": 141,
+   "text": "If the 12th lord is in the 9th bhava, the native will dishonour his elders, be inimical even to his friends and be always intent on achieving his own ends."
+  },
+  {
+   "lord": 12,
+   "house": 10,
+   "sloka": 142,
+   "text": "If the 12th lord is in the 10th bhava, the native will incur expenditure through royal persons and will enjoy only moderate paternal bliss."
+  },
+  {
+   "lord": 12,
+   "house": 11,
+   "sloka": 143,
+   "text": "If the 12th lord is in the 11th bhava, the native will incur losses, be brought up by others and will sometimes gain through others."
+  },
+  {
+   "lord": 12,
+   "house": 12,
+   "sloka": 144,
+   "text": "If the 12th lord is in the 12th bhava, the native will only face heavy expenditure, will not have physical felicity, be irritable and spiteful."
+  }
+ ]
+}

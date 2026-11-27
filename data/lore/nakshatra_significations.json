@@ -1,0 +1,1246 @@
+{
+ "source": "Sudarshana's summary from the classics: the peoples and things each nakshatra rules (Brihat Samhita 15) and its nature. The server adds each one's body part, yoni and tree, careers and places from nakshatras.json.",
+ "nakshatras": [
+  {
+   "n": 1,
+   "jiva": {
+    "people": [
+     "Horse-dealers and riders",
+     "Commanders",
+     "Physicians",
+     "Attendants",
+     "Merchants",
+     "Handsome people"
+    ],
+    "body": [
+     "Healing and quick recovery"
+    ],
+    "mind": [
+     "Swiftness",
+     "Initiative",
+     "Youthfulness",
+     "Helpfulness"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Medicine and healing",
+     "Horse trade and riding",
+     "Command",
+     "Transport"
+    ],
+    "wealth": [],
+    "property": [
+     "Vehicles and horses"
+    ],
+    "things": [
+     "Medicines and herbs",
+     "Vehicles"
+    ],
+    "places": [
+     "Stables",
+     "Hospitals"
+    ],
+    "pursuits": [
+     "Beginnings",
+     "Healing",
+     "Fast travel",
+     "Rescue"
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "jiva": {
+    "people": [
+     "Those who live by blood and flesh",
+     "Executioners and the cruel",
+     "Jailers and punishers",
+     "The low-born",
+     "The timid"
+    ],
+    "body": [
+     "Birth and the womb",
+     "Fertility"
+    ],
+    "mind": [
+     "Restraint",
+     "Endurance",
+     "Moral judgement",
+     "Passion"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Midwifery and childbirth",
+     "Judging and punishing",
+     "Butchery",
+     "Work around death"
+    ],
+    "wealth": [],
+    "property": [],
+    "things": [
+     "Cereals"
+    ],
+    "places": [
+     "Prisons",
+     "Places of birth and death"
+    ],
+    "pursuits": [
+     "Birth and death",
+     "Bearing burdens",
+     "Justice"
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "jiva": {
+    "people": [
+     "Brahmins who keep the sacred fire",
+     "Knowers of the Vedas",
+     "Grammarians",
+     "Miners",
+     "Barbers",
+     "Potters",
+     "Priests and astrologers"
+    ],
+    "body": [
+     "Digestive fire",
+     "Burns and fevers"
+    ],
+    "mind": [
+     "Sharpness",
+     "Purity",
+     "Determination",
+     "A critical eye"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Fire rites and priesthood",
+     "Pottery and metalwork",
+     "Mining",
+     "Cutting and barbering",
+     "Cooking"
+    ],
+    "wealth": [],
+    "property": [],
+    "things": [
+     "White flowers",
+     "Fire",
+     "Knives and sharp tools"
+    ],
+    "places": [
+     "Fire altars",
+     "Kitchens and furnaces",
+     "Mines"
+    ],
+    "pursuits": [
+     "Purification",
+     "Cutting away",
+     "Fire rites"
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "jiva": {
+    "people": [
+     "Merchants and kings",
+     "The wealthy",
+     "Cultivators",
+     "Cart drivers",
+     "The truthful and pure"
+    ],
+    "body": [
+     "Fertility and growth",
+     "Beauty"
+    ],
+    "mind": [
+     "Steadiness",
+     "Sweet speech",
+     "Charm",
+     "Love of comfort"
+    ],
+    "creatures": [
+     "Cows and bulls",
+     "Water creatures"
+    ]
+   },
+   "ajiva": {
+    "work": [
+     "Farming",
+     "Trade",
+     "Food and dairy",
+     "Fashion and the arts"
+    ],
+    "wealth": [
+     "Prosperity",
+     "Crops and cattle"
+    ],
+    "property": [
+     "Farms and orchards"
+    ],
+    "things": [
+     "Crops and food",
+     "Jewels and fine clothes"
+    ],
+    "places": [
+     "Fields and orchards",
+     "Ponds"
+    ],
+    "pursuits": [
+     "Growth and fertility",
+     "Creation",
+     "Beauty and comfort"
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "jiva": {
+    "people": [
+     "Forest dwellers",
+     "Those who drink soma at sacrifices",
+     "Musicians",
+     "Lovers",
+     "Letter carriers"
+    ],
+    "body": [],
+    "mind": [
+     "Curiosity",
+     "Searching",
+     "Gentleness",
+     "Restlessness"
+    ],
+    "creatures": [
+     "Deer",
+     "Birds and beasts"
+    ]
+   },
+   "ajiva": {
+    "work": [
+     "Music",
+     "Trade in garments and perfumes",
+     "Carrying letters and messages",
+     "Forestry"
+    ],
+    "wealth": [],
+    "property": [],
+    "things": [
+     "Fragrant articles",
+     "Garments",
+     "Aquatic products",
+     "Flowers, fruits and gems"
+    ],
+    "places": [
+     "Forests",
+     "Meadows"
+    ],
+    "pursuits": [
+     "Searching and travel",
+     "Love",
+     "Music"
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "jiva": {
+    "people": [
+     "Executioners and animal-catchers",
+     "Liars and adulterers",
+     "Thieves and rogues",
+     "Makers of discord",
+     "Charmers and sorcerers"
+    ],
+    "body": [
+     "Fevers",
+     "Ailments of the head and eyes"
+    ],
+    "mind": [
+     "Intensity",
+     "Grief and its release",
+     "Questioning",
+     "Destruction and renewal"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Catching and trapping",
+     "Spells and sorcery",
+     "Breaking down and rebuilding",
+     "Research"
+    ],
+    "wealth": [],
+    "property": [],
+    "things": [
+     "Cereals"
+    ],
+    "places": [
+     "Places of storms"
+    ],
+    "pursuits": [
+     "Destruction and renewal",
+     "Hard effort",
+     "The storms of life"
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "jiva": {
+    "people": [
+     "The truthful and generous",
+     "The pure and high-born",
+     "The handsome and intelligent",
+     "The famous and rich",
+     "Merchants, servants and artisans"
+    ],
+    "body": [
+     "Recovery and renewal"
+    ],
+    "mind": [
+     "Goodness",
+     "Contentment",
+     "Generosity",
+     "Return to the self"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Trade",
+     "Crafts",
+     "Service"
+    ],
+    "wealth": [
+     "Wealth renewed"
+    ],
+    "property": [
+     "What was lost, returned"
+    ],
+    "things": [
+     "The best grains (Kalama paddy)"
+    ],
+    "places": [
+     "Homes and dwellings",
+     "Riversides"
+    ],
+    "pursuits": [
+     "Return and renewal",
+     "Travel and homecoming",
+     "Teaching"
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "jiva": {
+    "people": [
+     "Ministers and kings",
+     "Fishermen",
+     "The virtuous",
+     "Those who perform sacrifices"
+    ],
+    "body": [
+     "Nourishment and growth"
+    ],
+    "mind": [
+     "Nurturing",
+     "Devotion",
+     "Contentment",
+     "Conservatism"
+    ],
+    "creatures": [
+     "Goats"
+    ]
+   },
+   "ajiva": {
+    "work": [
+     "Priesthood",
+     "Government and ministry",
+     "Food and dairy",
+     "Fishing"
+    ],
+    "wealth": [
+     "Nourishing wealth"
+    ],
+    "property": [],
+    "things": [
+     "Barley, wheat and rice",
+     "Sugarcane"
+    ],
+    "places": [
+     "Forests",
+     "Temples and places of sacrifice"
+    ],
+    "pursuits": [
+     "Sacrifice and worship",
+     "Nourishment",
+     "Teaching"
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "jiva": {
+    "people": [
+     "Physicians of every kind",
+     "Robbers",
+     "Snake-charmers"
+    ],
+    "body": [
+     "Poison",
+     "Troubles of the joints and nerves"
+    ],
+    "mind": [
+     "Cunning",
+     "Penetration",
+     "Secrecy",
+     "Hypnotic charm"
+    ],
+    "creatures": [
+     "Insects and reptiles",
+     "Serpents"
+    ]
+   },
+   "ajiva": {
+    "work": [
+     "Medicine",
+     "Poisons and chemicals",
+     "Snake-charming"
+    ],
+    "wealth": [],
+    "property": [],
+    "things": [
+     "Artificial things",
+     "Bulbs, roots and fruits",
+     "Poison",
+     "Cereals"
+    ],
+    "places": [
+     "Holes and burrows",
+     "Places of serpents"
+    ],
+    "pursuits": [
+     "Binding and entwining",
+     "Secrets",
+     "Healing with poison"
+    ]
+   }
+  },
+  {
+   "n": 10,
+   "jiva": {
+    "people": [
+     "The rich in gold and corn",
+     "Mountaineers",
+     "Those devoted to parents and ancestors",
+     "Traders",
+     "Heroes",
+     "Women-haters"
+    ],
+    "body": [],
+    "mind": [
+     "Pride of lineage",
+     "Dignity",
+     "Generosity",
+     "Authority"
+    ],
+    "creatures": [
+     "Carnivorous beasts"
+    ]
+   },
+   "ajiva": {
+    "work": [
+     "Rule and administration",
+     "Trade",
+     "Ancestral rites"
+    ],
+    "wealth": [
+     "Gold and corn",
+     "Inheritance"
+    ],
+    "property": [
+     "Granaries",
+     "Ancestral seats"
+    ],
+    "things": [
+     "Gold"
+    ],
+    "places": [
+     "Granaries",
+     "Mountains"
+    ],
+    "pursuits": [
+     "Rites to the ancestors (shraddha)",
+     "Honour of the lineage",
+     "Rule"
+    ]
+   }
+  },
+  {
+   "n": 11,
+   "jiva": {
+    "people": [
+     "Actors",
+     "Young women",
+     "Amiable people",
+     "Musicians and artists",
+     "Boys"
+    ],
+    "body": [
+     "Sexual health"
+    ],
+    "mind": [
+     "Pleasure",
+     "Charm",
+     "Rest and ease",
+     "Generosity"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Acting and the stage",
+     "Music and the arts",
+     "Trade in goods"
+    ],
+    "wealth": [
+     "Commodities",
+     "Luxury"
+    ],
+    "property": [],
+    "things": [
+     "Cotton",
+     "Salt, honey and oil"
+    ],
+    "places": [
+     "Places of entertainment",
+     "Bedrooms"
+    ],
+    "pursuits": [
+     "Marriage and union",
+     "Pleasure and rest",
+     "Festivals"
+    ]
+   }
+  },
+  {
+   "n": 12,
+   "jiva": {
+    "people": [
+     "The kind-hearted",
+     "The pure in conduct",
+     "The modest",
+     "Heretics",
+     "The charitable and learned",
+     "The very rich",
+     "Those devoted to duty",
+     "Kings"
+    ],
+    "body": [],
+    "mind": [
+     "Kindness",
+     "Duty",
+     "Loyalty",
+     "Patronage"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Administration",
+     "Charity",
+     "Teaching",
+     "Rule"
+    ],
+    "wealth": [
+     "Great wealth"
+    ],
+    "property": [],
+    "things": [
+     "Fine corn (Kalama rice)"
+    ],
+    "places": [
+     "Public buildings",
+     "Assemblies"
+    ],
+    "pursuits": [
+     "Marriage and contracts",
+     "Patronage",
+     "Duty"
+    ]
+   }
+  },
+  {
+   "n": 13,
+   "jiva": {
+    "people": [
+     "Thieves",
+     "Elephant-drivers",
+     "Those who travel in chariots",
+     "Artisans",
+     "Men learned in the Vedas",
+     "Traders",
+     "Men of prowess"
+    ],
+    "body": [
+     "Hands and dexterity"
+    ],
+    "mind": [
+     "Skill",
+     "Cleverness",
+     "Resourcefulness",
+     "Humour"
+    ],
+    "creatures": [
+     "Elephants"
+    ]
+   },
+   "ajiva": {
+    "work": [
+     "Crafts and handwork",
+     "Trade",
+     "Driving"
+    ],
+    "wealth": [],
+    "property": [],
+    "things": [
+     "Commodities",
+     "Cereals"
+    ],
+    "places": [
+     "Workshops",
+     "Markets"
+    ],
+    "pursuits": [
+     "Making and crafting",
+     "Gaining what one seeks"
+    ]
+   }
+  },
+  {
+   "n": 14,
+   "jiva": {
+    "people": [
+     "Jewellers and jewel-examiners",
+     "Dyers and painters",
+     "Writers",
+     "Singers and perfumers",
+     "Mathematicians",
+     "Weavers",
+     "Eye surgeons"
+    ],
+    "body": [],
+    "mind": [
+     "Creativity",
+     "Beauty",
+     "Precision",
+     "Vanity"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Jewellery and design",
+     "Painting and dyeing",
+     "Architecture and building",
+     "Weaving",
+     "Surgery"
+    ],
+    "wealth": [],
+    "property": [],
+    "things": [
+     "Ornaments and jewels",
+     "Perfumes",
+     "The king's corn"
+    ],
+    "places": [
+     "Workshops and studios"
+    ],
+    "pursuits": [
+     "Creation and design",
+     "Art"
+    ]
+   }
+  },
+  {
+   "n": 15,
+   "jiva": {
+    "people": [
+     "Traders",
+     "Unsteady friends",
+     "The weak in character",
+     "Ascetics",
+     "Connoisseurs of goods",
+     "Experts in forest produce"
+    ],
+    "body": [
+     "Breath",
+     "Wind disorders"
+    ],
+    "mind": [
+     "Independence",
+     "Flexibility",
+     "Restlessness",
+     "Diplomacy"
+    ],
+    "creatures": [
+     "Birds and beasts",
+     "Horses"
+    ]
+   },
+   "ajiva": {
+    "work": [
+     "Trade and business",
+     "Forest produce"
+    ],
+    "wealth": [
+     "Gains from trade"
+    ],
+    "property": [],
+    "things": [
+     "Grains that cause wind (Bengal gram)"
+    ],
+    "places": [
+     "Windy places",
+     "Markets"
+    ],
+    "pursuits": [
+     "Travel",
+     "Trade",
+     "Freedom"
+    ]
+   }
+  },
+  {
+   "n": 16,
+   "jiva": {
+    "people": [
+     "Devotees of Indra and Agni",
+     "The ambitious"
+    ],
+    "body": [],
+    "mind": [
+     "Determination",
+     "Ambition",
+     "Single-minded purpose",
+     "Jealousy"
+    ],
+    "creatures": [
+     "Trees with red blossoms and fruits"
+    ]
+   },
+   "ajiva": {
+    "work": [
+     "Agriculture",
+     "Religious rites"
+    ],
+    "wealth": [
+     "The harvest"
+    ],
+    "property": [],
+    "things": [
+     "Sesame and green gram",
+     "Black gram and Bengal gram",
+     "Cotton"
+    ],
+    "places": [
+     "Fields of grain"
+    ],
+    "pursuits": [
+     "Reaching goals",
+     "Harvest",
+     "Rites to Indra and Agni"
+    ]
+   }
+  },
+  {
+   "n": 17,
+   "jiva": {
+    "people": [
+     "Men of prowess",
+     "Heads of groups",
+     "Friends of the virtuous",
+     "Lovers of assemblies",
+     "Travellers",
+     "The honest"
+    ],
+    "body": [],
+    "mind": [
+     "Friendship",
+     "Devotion",
+     "Cooperation",
+     "Loyalty"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Leading organisations",
+     "Diplomacy"
+    ],
+    "wealth": [],
+    "property": [],
+    "things": [
+     "What grows in autumn"
+    ],
+    "places": [
+     "Assemblies",
+     "Foreign lands"
+    ],
+    "pursuits": [
+     "Friendship and alliances",
+     "Devotion",
+     "Travel"
+    ]
+   }
+  },
+  {
+   "n": 18,
+   "jiva": {
+    "people": [
+     "Great warriors",
+     "Those of noble lineage, wealth and fame",
+     "Thieves",
+     "Conquering kings",
+     "Commanders"
+    ],
+    "body": [],
+    "mind": [
+     "Seniority",
+     "Protectiveness",
+     "Pride",
+     "Cunning"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Command and rule",
+     "Police and defence"
+    ],
+    "wealth": [
+     "Wealth and fame"
+    ],
+    "property": [],
+    "things": [],
+    "places": [
+     "Seats of power"
+    ],
+    "pursuits": [
+     "Conquest",
+     "Protection",
+     "Fame"
+    ]
+   }
+  },
+  {
+   "n": 19,
+   "jiva": {
+    "people": [
+     "Physicians",
+     "Leaders of groups",
+     "Dealers in flowers, roots, fruits and seeds",
+     "The very wealthy",
+     "Those who live on fruits and roots"
+    ],
+    "body": [],
+    "mind": [
+     "Investigation",
+     "Getting to the root",
+     "Detachment",
+     "Destruction"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Medicine",
+     "Herbs and roots",
+     "Research"
+    ],
+    "wealth": [
+     "Great wealth"
+    ],
+    "property": [],
+    "things": [
+     "Medicines",
+     "Flowers, roots, fruits and seeds"
+    ],
+    "places": [
+     "Forests of herbs",
+     "Depths and roots"
+    ],
+    "pursuits": [
+     "Uprooting",
+     "Investigation",
+     "Renunciation"
+    ]
+   }
+  },
+  {
+   "n": 20,
+   "jiva": {
+    "people": [
+     "The tender-hearted",
+     "Sailors and fishermen",
+     "The truthful, pure and wealthy",
+     "Builders of bridges",
+     "Those who live by water"
+    ],
+    "body": [],
+    "mind": [
+     "Invincibility",
+     "Pride",
+     "Persuasion",
+     "Optimism"
+    ],
+    "creatures": [
+     "Water creatures",
+     "Water flowers and fruits"
+    ]
+   },
+   "ajiva": {
+    "work": [
+     "Shipping and fishing",
+     "Building bridges",
+     "Water works"
+    ],
+    "wealth": [],
+    "property": [],
+    "things": [
+     "Water flowers and fruits"
+    ],
+    "places": [
+     "Waters, rivers and seas"
+    ],
+    "pursuits": [
+     "Purification",
+     "Victory",
+     "Travel by water"
+    ]
+   }
+  },
+  {
+   "n": 21,
+   "jiva": {
+    "people": [
+     "Elephant-drivers",
+     "Wrestlers",
+     "Devotees of the gods",
+     "Warriors",
+     "Pleasure-lovers",
+     "Men of valour"
+    ],
+    "body": [],
+    "mind": [
+     "Righteousness",
+     "Endurance",
+     "Final victory",
+     "Leadership"
+    ],
+    "creatures": [
+     "Elephants and horses",
+     "Trees and fixed things"
+    ]
+   },
+   "ajiva": {
+    "work": [
+     "The army",
+     "Wrestling and sport",
+     "Religious service"
+    ],
+    "wealth": [],
+    "property": [],
+    "things": [
+     "Fixed, immovable things"
+    ],
+    "places": [
+     "Forests",
+     "Seats of government"
+    ],
+    "pursuits": [
+     "Lasting victory",
+     "Dharma",
+     "Protection"
+    ]
+   }
+  },
+  {
+   "n": 22,
+   "jiva": {
+    "people": [
+     "Jugglers",
+     "The ever-active and efficient",
+     "The energetic",
+     "The righteous",
+     "Devotees of Vishnu",
+     "The truthful"
+    ],
+    "body": [
+     "Ears and hearing"
+    ],
+    "mind": [
+     "Listening",
+     "Learning",
+     "Devotion",
+     "Discipline"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Teaching",
+     "Scholarship",
+     "Storytelling"
+    ],
+    "wealth": [],
+    "property": [],
+    "things": [],
+    "places": [
+     "Temples of Vishnu",
+     "Places of learning"
+    ],
+    "pursuits": [
+     "Learning by listening",
+     "Pilgrimage",
+     "Connection"
+    ]
+   }
+  },
+  {
+   "n": 23,
+   "jiva": {
+    "people": [
+     "The humble",
+     "Eunuchs",
+     "Steadfast friends",
+     "Those disliked by women",
+     "The charitable",
+     "The very wealthy",
+     "The self-controlled"
+    ],
+    "body": [],
+    "mind": [
+     "Rhythm",
+     "Generosity",
+     "Ambition",
+     "Self-control"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Music and drumming",
+     "Managing wealth"
+    ],
+    "wealth": [
+     "Great wealth",
+     "Abundance"
+    ],
+    "property": [],
+    "things": [
+     "Musical instruments",
+     "Gems and precious metals"
+    ],
+    "places": [
+     "Places of music"
+    ],
+    "pursuits": [
+     "Prosperity",
+     "Music",
+     "Charity"
+    ]
+   }
+  },
+  {
+   "n": 24,
+   "jiva": {
+    "people": [
+     "Snarers and anglers",
+     "Dealers in fish",
+     "Boar hunters",
+     "Washermen",
+     "Distillers",
+     "Fowlers"
+    ],
+    "body": [
+     "Healing (a hundred physicians)"
+    ],
+    "mind": [
+     "Secrecy",
+     "Independence",
+     "Philosophy",
+     "Solitude"
+    ],
+    "creatures": [
+     "Fish and water creatures"
+    ]
+   },
+   "ajiva": {
+    "work": [
+     "Fishing",
+     "Hunting and trapping",
+     "Distilling",
+     "Washing",
+     "Medicine"
+    ],
+    "wealth": [],
+    "property": [],
+    "things": [
+     "Water produce",
+     "Liquor"
+    ],
+    "places": [
+     "Waters",
+     "Distilleries"
+    ],
+    "pursuits": [
+     "Healing",
+     "Concealment",
+     "Seeking the truth"
+    ]
+   }
+  },
+  {
+   "n": 25,
+   "jiva": {
+    "people": [
+     "Thieves",
+     "Cowherds",
+     "The murderous",
+     "Misers",
+     "The roguish",
+     "Those without religious observance",
+     "Skilled single fighters"
+    ],
+    "body": [],
+    "mind": [
+     "Intensity",
+     "Idealism",
+     "The fire of austerity",
+     "Anxiety"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Cowherding",
+     "Single combat",
+     "Work with fire and death"
+    ],
+    "wealth": [],
+    "property": [],
+    "things": [],
+    "places": [
+     "Cremation grounds"
+    ],
+    "pursuits": [
+     "Austerity (tapas)",
+     "Transformation",
+     "Struggle"
+    ]
+   }
+  },
+  {
+   "n": 26,
+   "jiva": {
+    "people": [
+     "Brahmins",
+     "Those given to sacrifice, charity and penance",
+     "The very wealthy",
+     "Recluses",
+     "Heretics",
+     "Monarchs"
+    ],
+    "body": [],
+    "mind": [
+     "Depth",
+     "Wisdom",
+     "Restraint",
+     "Compassion"
+    ],
+    "creatures": []
+   },
+   "ajiva": {
+    "work": [
+     "Priesthood and rites",
+     "Charity",
+     "Meditation and teaching"
+    ],
+    "wealth": [
+     "Great wealth"
+    ],
+    "property": [],
+    "things": [
+     "Valuable corn"
+    ],
+    "places": [
+     "Temples",
+     "Retreats"
+    ],
+    "pursuits": [
+     "Sacrifice, charity and penance",
+     "Renunciation",
+     "Depth of practice"
+    ]
+   }
+  },
+  {
+   "n": 27,
+   "jiva": {
+    "people": [
+     "Traders",
+     "Sailors and helmsmen"
+    ],
+    "body": [],
+    "mind": [
+     "Nourishment",
+     "Kindness",
+     "Imagination",
+     "Faith"
+    ],
+    "creatures": [
+     "Water creatures",
+     "Lotuses"
+    ]
+   },
+   "ajiva": {
+    "work": [
+     "Trade",
+     "Sailing",
+     "Guiding travellers",
+     "Perfumes and gems"
+    ],
+    "wealth": [
+     "Gems and pearls"
+    ],
+    "property": [],
+    "things": [
+     "Water produce",
+     "Fruits and flowers",
+     "Salt",
+     "Gems, conch shells and pearls",
+     "Lotuses and perfumes"
+    ],
+    "places": [
+     "Seas and waters",
+     "Roads"
+    ],
+    "pursuits": [
+     "Safe journeys",
+     "Nourishment",
+     "Endings and completion"
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "about": "Every graha, rashi, nakshatra and bhava stands for living and non-living things. Jiva is the living: the people a thing stands for, the body and its health, the mind, animals and plants. Ajiva is the non-living: work, wealth, property and vehicles, things, places, and life's pursuits and events. Read a question by its side: a question of health, a child or a spouse is Jiva; a question of a job, a house, a vehicle or money is Ajiva.",
+ "groups": [
+  {"id": "jiva", "name": "Jiva", "gloss": "the living", "about": "Who and what lives: the people it stands for, the body and its health, the mind, animals and plants.",
+   "parts": [
+    {"id": "people", "name": "People", "about": "Relations and the kinds of people it stands for"},
+    {"id": "body", "name": "Body & health", "about": "Limbs, dhatus, constitution and ailments"},
+    {"id": "mind", "name": "Mind & nature", "about": "Temperament, faculties and character"},
+    {"id": "creatures", "name": "Creatures & plants", "about": "Animals, birds and plants"}
+   ]},
+  {"id": "ajiva", "name": "Ajiva", "gloss": "the non-living", "about": "What one has and does: work, wealth, property and vehicles, things, places, and the pursuits and events of a life.",
+   "parts": [
+    {"id": "work", "name": "Work", "about": "Occupations and fields of work"},
+    {"id": "wealth", "name": "Wealth", "about": "Money, income, gains, debts and treasure"},
+    {"id": "property", "name": "Property & vehicles", "about": "Land, buildings, conveyances and possessions"},
+    {"id": "things", "name": "Things", "about": "Metals, gems, cloth, food, grains, colours and objects"},
+    {"id": "places", "name": "Places", "about": "Places, kinds of land and directions"},
+    {"id": "pursuits", "name": "Pursuits & events", "about": "Learning, rites, travel, honour, disputes and the events of a life"}
+   ]}
+ ],
+ "classical": [
+  {"text": "The classics divide what the grahas and signs stand for in three: dhatu (minerals and metals), mula (roots, plants and what grows) and jiva (living beings). Rahu, Mars, Saturn and the Moon are dhatu grahas, the Sun and Venus mula grahas, and Mercury, Jupiter and Ketu rule jivas.", "source": "BPHS 3.47"},
+  {"text": "Counted from Aries the signs are in turn dhatu, mula and jiva: the movable signs dhatu, the fixed signs mula, the dual signs jiva.", "source": "Phaladeepika 1.9"}
+ ]
+}

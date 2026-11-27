@@ -1,0 +1,562 @@
+{
+ "source": "Sudarshana's summary of the classics: the grahas' natures (BPHS 3.10-55), their karakatwas (BPHS 32.18-24; Phaladeepika 2.1-37 and 15.15-16) and the peoples and things they govern (Brihat Samhita 16)",
+ "aspects_note": "Every graha aspects the 7th in full and the 3rd and 10th by a quarter, the 5th and 9th by half, the 4th and 8th by three quarters; Mars sees the 4th and 8th, Jupiter the 5th and 9th and Saturn the 3rd and 10th in full as well (BPHS 26).",
+ "grahas": [
+  {
+   "id": "Su", "name": "Sun", "sanskrit": "Surya", "names": ["Ravi", "Aditya", "Bhanu", "Arka", "Mitra", "Savitri", "Dinakara"],
+   "about": "The Sun is the soul of all, the king among the grahas: light, life and the self that knows itself. He gives vitality, will, honour and authority, stands for the father and for those who rule, and governs the bones and the right eye. Hot, bilious and royal, he is strong by day and in the south, exalted in Aries and debilitated in Libra. Where he shines in a chart the native seeks to be seen and to lead.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Governs", "v": "The soul (atma)", "src": "BPHS 3.12-13", "tile": true},
+     {"k": "Cabinet", "v": "King", "src": "BPHS 3.14-15", "tile": true},
+     {"k": "Nature", "v": "Malefic (krura)", "src": "BPHS 3.11"},
+     {"k": "Gender", "v": "Male", "src": "BPHS 3.19", "tile": true},
+     {"k": "Caste", "v": "Kshatriya (royal)", "src": "BPHS 3.21"},
+     {"k": "Guna", "v": "Sattva", "src": "BPHS 3.22", "tile": true},
+     {"k": "Element", "v": "Fire (agni)", "src": "the tradition"},
+     {"k": "Class", "v": "Mula (roots and plants)", "src": "BPHS 3.47"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Form", "v": "Honey-coloured eyes, a square body, clean habits, bilious, intelligent, little hair", "src": "BPHS 3.23"},
+     {"k": "Colour", "v": "Blood red", "src": "BPHS 3.16-17"},
+     {"k": "Dhatu", "v": "Bones", "src": "BPHS 3.31", "tile": true},
+     {"k": "Dosha", "v": "Pitta (bile)", "src": "BPHS 3.23"},
+     {"k": "Eye", "v": "The right eye", "src": "Phaladeepika 2.25"}]},
+    {"name": "In nature", "rows": [
+     {"k": "Deity", "v": "Agni (fire)", "src": "BPHS 3.18", "tile": true},
+     {"k": "Abode", "v": "A temple", "src": "BPHS 3.32"},
+     {"k": "Direction", "v": "East", "src": "Phaladeepika 2.15", "tile": true},
+     {"k": "Period", "v": "An ayana (half a year)", "src": "BPHS 3.33"},
+     {"k": "Taste", "v": "Pungent", "src": "BPHS 3.34"},
+     {"k": "Trees", "v": "Strong trees with stout trunks", "src": "BPHS 3.39-40"},
+     {"k": "Cloth", "v": "Red silk", "src": "BPHS 3.41-44"},
+     {"k": "Grain", "v": "Wheat", "src": "Phaladeepika 2.28"},
+     {"k": "Gem", "v": "Ruby", "src": "Phaladeepika 2.29", "tile": true},
+     {"k": "Metal", "v": "Copper", "src": "Phaladeepika 2.30"},
+     {"k": "Day", "v": "Sunday", "src": "the tradition", "tile": true}]},
+    {"name": "Strength", "rows": [
+     {"k": "Strong", "v": "By day", "src": "BPHS 3.35-38"},
+     {"k": "Dig bala", "v": "In the 10th (the south)", "src": "BPHS 3.35-38"},
+     {"k": "Exalted", "v": "Aries, deepest at 10°", "src": "BPHS 3.49-50"},
+     {"k": "Debilitated", "v": "Libra, deepest at 10°", "src": "BPHS 3.49-50"},
+     {"k": "Moolatrikona", "v": "Leo 0°-20°", "src": "BPHS 3.51-54"},
+     {"k": "Own sign", "v": "Leo", "src": "BPHS 3.51-54"},
+     {"k": "Aspects", "v": "The 7th in full", "src": "BPHS 26"},
+     {"k": "Vimshottari dasa", "v": "6 years", "src": "BPHS 46"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Father", "Kings and rulers", "Government officials", "Ministers", "Physicians", "Worshippers of Shiva", "Sacrificers", "Shepherds and hill-men"],
+     "body": ["Bones", "Right eye", "Heart", "Head", "Vitality", "Fevers and bilious troubles", "Eye diseases", "Burns and inflammation"],
+     "mind": ["The soul and self (atma)", "Courage and valour", "Patience", "Will and confidence", "Pride", "Enthusiasm"],
+     "creatures": ["Tigers and deer", "The ruddy goose", "Quadrupeds and serpents", "Tall, strong-trunked trees"]
+    },
+    "ajiva": {
+     "work": ["Government and royal service", "Administration and politics", "Medicine", "Fire rites (homa, yajna)", "Service of Shiva temples"],
+     "wealth": ["Wealth from the state", "Gold"],
+     "property": [],
+     "things": ["Copper and gold", "Ruby", "Wheat", "Red silk", "Medicines, seeds and fire", "Quicksilver and poison"],
+     "places": ["Temples", "Open, sunlit places", "Waterless land and deserts", "Forests and mountains", "The east"],
+     "pursuits": ["Power and kingdom", "Glory and fame", "Victory in war", "Journeys to forests and hills", "Fire rites"]
+    }
+   },
+   "reading": {
+    "strong": "A strong Sun gives confidence, vitality, a good name and favour from those in power; the father is a support, and the native leads, governs or serves the state with dignity.",
+    "weak": "A weak or afflicted Sun brings low vitality, trouble to the eyes, heart or bones, strain with the father or with authority, and a wavering sense of self.",
+    "atmakaraka": "As the Atmakaraka the Sun asks the soul to learn humility in power: the native is drawn to lead and to serve dharma and the state, and is tested through pride and ego."
+   }
+  },
+  {
+   "id": "Mo", "name": "Moon", "sanskrit": "Chandra", "names": ["Soma", "Indu", "Shashi", "Nisha", "Sudhakara", "Nishakara"],
+   "about": "The Moon is the mind, the queen among the grahas: feeling, memory and the moods that rise and fall with her phases. She stands for the mother, for women and for the public, governs the blood and the body's fluids, and rules water, milk, silver and pearls. Waxing she is a benefic and waning a malefic; she is exalted in Taurus and debilitated in Scorpio. Her strength decides how content and steady the native's mind is.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Governs", "v": "The mind (manas)", "src": "BPHS 3.12-13", "tile": true},
+     {"k": "Cabinet", "v": "Queen (royal)", "src": "BPHS 3.14-15", "tile": true},
+     {"k": "Nature", "v": "Benefic when waxing, malefic when waning", "src": "BPHS 3.11"},
+     {"k": "Gender", "v": "Female", "src": "BPHS 3.19", "tile": true},
+     {"k": "Caste", "v": "Vaishya (commercial)", "src": "BPHS 3.21"},
+     {"k": "Guna", "v": "Sattva", "src": "BPHS 3.22", "tile": true},
+     {"k": "Element", "v": "Water (jala)", "src": "the tradition"},
+     {"k": "Class", "v": "Dhatu (minerals)", "src": "BPHS 3.47"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Form", "v": "Windy and phlegmatic, learned, round-bodied, with auspicious looks and sweet speech, fickle-minded", "src": "BPHS 3.24"},
+     {"k": "Colour", "v": "Tawny", "src": "BPHS 3.16-17"},
+     {"k": "Dhatu", "v": "Blood", "src": "BPHS 3.31", "tile": true},
+     {"k": "Dosha", "v": "Vata and kapha", "src": "BPHS 3.24"},
+     {"k": "Eye", "v": "The left eye", "src": "Phaladeepika 2.25"},
+     {"k": "Sense", "v": "Taste", "src": "Phaladeepika 2.27"}]},
+    {"name": "In nature", "rows": [
+     {"k": "Deity", "v": "Varuna (water)", "src": "BPHS 3.18", "tile": true},
+     {"k": "Abode", "v": "A watery place", "src": "BPHS 3.32"},
+     {"k": "Direction", "v": "North-west", "src": "Phaladeepika 2.15", "tile": true},
+     {"k": "Period", "v": "A muhurta", "src": "BPHS 3.33"},
+     {"k": "Taste", "v": "Saline", "src": "BPHS 3.34"},
+     {"k": "Trees", "v": "Milky trees", "src": "BPHS 3.39-40"},
+     {"k": "Cloth", "v": "White silk", "src": "BPHS 3.41-44"},
+     {"k": "Season", "v": "Varsha (the rains)", "src": "BPHS 3.45-46"},
+     {"k": "Grain", "v": "Rice", "src": "Phaladeepika 2.28"},
+     {"k": "Gem", "v": "Pearl", "src": "Phaladeepika 2.29", "tile": true},
+     {"k": "Metal", "v": "Bell-metal", "src": "Phaladeepika 2.30"},
+     {"k": "Day", "v": "Monday", "src": "the tradition", "tile": true}]},
+    {"name": "Strength", "rows": [
+     {"k": "Strong", "v": "At night, and in the bright half", "src": "BPHS 3.35-38"},
+     {"k": "Dig bala", "v": "In the 4th (the north)", "src": "BPHS 3.35-38"},
+     {"k": "Exalted", "v": "Taurus, deepest at 3°", "src": "BPHS 3.49-50"},
+     {"k": "Debilitated", "v": "Scorpio, deepest at 3°", "src": "BPHS 3.49-50"},
+     {"k": "Moolatrikona", "v": "Taurus 3°-30°", "src": "BPHS 3.51-54"},
+     {"k": "Own sign", "v": "Cancer", "src": "BPHS 3.51-54"},
+     {"k": "Aspects", "v": "The 7th in full", "src": "BPHS 26"},
+     {"k": "Vimshottari dasa", "v": "10 years", "src": "BPHS 46"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Mother", "Women", "Queens", "The public", "Washermen and cultivators", "Learned Brahmins", "Charming young women"],
+     "body": ["Blood", "Left eye", "Breasts", "Body fluids", "Sleep", "Colds and coughs", "Kapha disorders"],
+     "mind": ["The mind (manas)", "Peace of mind", "Emotions and moods", "Memory", "Imagination", "Fickleness"],
+     "creatures": ["Water creatures", "Hares and antelopes", "Cranes", "White horses and horned animals", "Flowers, fruits and medicinal herbs", "Milky trees"]
+    },
+    "ajiva": {
+     "work": ["Agriculture", "Dairy, food and drink", "Shipping and water trades", "Nursing and care", "Trade with the public"],
+     "wealth": ["Silver and pearls", "Cattle"],
+     "property": [],
+     "things": ["Pearls, silver and bell-metal", "Milk and sweets", "Water, salt and sweet juices", "Rice, barley and wheat", "Clothes", "Umbrellas, fans and chowries", "Conch shells"],
+     "places": ["Watery places", "Seas and bathing places", "Temples of Parvati", "Women's quarters", "Places of herbs and plants", "The north-west"],
+     "pursuits": ["Fame and popularity", "Travel by water", "Health and beauty", "Meals and hospitality"]
+    }
+   },
+   "reading": {
+    "strong": "A strong Moon, waxing, well placed and aspected by benefics, gives a calm and happy mind, good health, popularity and a caring mother; the native connects easily with people.",
+    "weak": "A weak or afflicted Moon gives a restless or anxious mind, changeable moods, colds and disorders of the fluids, worry for the mother and a life that feels unsettled.",
+    "atmakaraka": "As the Atmakaraka the Moon makes the soul's lessons emotional: compassion, care for others and the mastery of moods; the native may be drawn to nurture or to serve the public, and is tested through attachment."
+   }
+  },
+  {
+   "id": "Ma", "name": "Mars", "sanskrit": "Mangala", "names": ["Kuja", "Bhauma", "Angaraka", "Lohitanga", "Kruradrik"],
+   "about": "Mars is strength itself, the commander of the grahas' army: energy, courage, conflict and the will to act. He stands for younger brothers and sisters, for land, soldiers and surgeons, and governs the marrow, blood heat and wounds. Bilious and fiery, he is strong at night and in the south, exalted in Capricorn and debilitated in Cancer, and his aspect falls on the 4th, 7th and 8th. Well placed he gives the courage to win; afflicted he burns.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Governs", "v": "Strength (bala)", "src": "BPHS 3.12-13", "tile": true},
+     {"k": "Cabinet", "v": "Commander of the army", "src": "BPHS 3.14-15", "tile": true},
+     {"k": "Nature", "v": "Malefic (krura)", "src": "BPHS 3.11"},
+     {"k": "Gender", "v": "Male", "src": "BPHS 3.19", "tile": true},
+     {"k": "Caste", "v": "Kshatriya", "src": "the tradition"},
+     {"k": "Guna", "v": "Tamas", "src": "BPHS 3.22", "tile": true},
+     {"k": "Element", "v": "Fire (agni)", "src": "BPHS 3.20"},
+     {"k": "Class", "v": "Dhatu (minerals)", "src": "BPHS 3.47"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Form", "v": "Blood-red eyes, fickle-minded, liberal, bilious, quick to anger, thin-waisted and slight", "src": "BPHS 3.25"},
+     {"k": "Colour", "v": "Blood red, not very tall", "src": "BPHS 3.16-17"},
+     {"k": "Dhatu", "v": "Marrow", "src": "BPHS 3.31", "tile": true},
+     {"k": "Dosha", "v": "Pitta (bile)", "src": "BPHS 3.25"},
+     {"k": "Body mark", "v": "On the back", "src": "Phaladeepika 2.32"}]},
+    {"name": "In nature", "rows": [
+     {"k": "Deity", "v": "Subrahmanya (Skanda)", "src": "BPHS 3.18", "tile": true},
+     {"k": "Abode", "v": "A place of fire", "src": "BPHS 3.32"},
+     {"k": "Direction", "v": "South", "src": "Phaladeepika 2.15", "tile": true},
+     {"k": "Period", "v": "A day (a day and a night)", "src": "BPHS 3.33"},
+     {"k": "Taste", "v": "Bitter", "src": "BPHS 3.34"},
+     {"k": "Trees", "v": "Bitter and thorny plants, like the lemon", "src": "BPHS 3.39-40, Phaladeepika 2.37"},
+     {"k": "Cloth", "v": "Red", "src": "BPHS 3.41-44"},
+     {"k": "Season", "v": "Grishma (summer)", "src": "BPHS 3.45-46"},
+     {"k": "Grain", "v": "Red gram (tuvara)", "src": "Phaladeepika 2.28"},
+     {"k": "Gem", "v": "Coral", "src": "Phaladeepika 2.29", "tile": true},
+     {"k": "Metal", "v": "Copper ore", "src": "Phaladeepika 2.30"},
+     {"k": "Day", "v": "Tuesday", "src": "the tradition", "tile": true}]},
+    {"name": "Strength", "rows": [
+     {"k": "Strong", "v": "At night", "src": "BPHS 3.35-38"},
+     {"k": "Dig bala", "v": "In the 10th (the south)", "src": "BPHS 3.35-38"},
+     {"k": "Exalted", "v": "Capricorn, deepest at 28°", "src": "BPHS 3.49-50"},
+     {"k": "Debilitated", "v": "Cancer, deepest at 28°", "src": "BPHS 3.49-50"},
+     {"k": "Moolatrikona", "v": "Aries 0°-12°", "src": "BPHS 3.51-54"},
+     {"k": "Own signs", "v": "Aries, Scorpio", "src": "BPHS 3.51-54"},
+     {"k": "Aspects", "v": "The 4th, 7th and 8th in full", "src": "BPHS 26"},
+     {"k": "Vimshottari dasa", "v": "7 years", "src": "BPHS 46"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Younger brothers and sisters", "Brothers-in-law", "Soldiers and commanders", "Police", "Cooks, smiths and goldsmiths", "Surgeons", "Firemen and butchers", "Thieves and enemies"],
+     "body": ["Marrow", "Blood heat", "Muscular strength", "Wounds and injuries", "Burns", "Fevers and inflammation", "Bleeding", "Surgery"],
+     "mind": ["Courage and daring", "Energy", "Anger", "Cruelty", "Competitiveness", "Command"],
+     "creatures": ["Rams and cocks", "Jackals, monkeys and vultures", "Elephants", "Thorny and bitter plants", "Red flowers and fruits"]
+    },
+    "ajiva": {
+     "work": ["Army, police and defence", "Engineering and metalwork", "Surgery", "Cooking and work with fire", "Chemistry", "Land and building"],
+     "wealth": ["Land", "Gold"],
+     "property": ["Lands and real estate", "The produce of the earth"],
+     "things": ["Weapons", "Coral", "Copper", "Red things", "Jaggery and wine", "Metal mines"],
+     "places": ["Places of fire", "Kitchens and forges", "Battlefields", "Haunts of thieves", "The south"],
+     "pursuits": ["Battle and war", "Daring deeds", "Sports and contests", "Quarrels and litigation", "Command of an army"]
+    }
+   },
+   "reading": {
+    "strong": "A strong Mars gives courage, energy and a strong body, leadership in action, success in competition and over enemies, and gains of land; brothers are a support.",
+    "weak": "A weak or afflicted Mars brings accidents, wounds, fevers and disorders of the blood, quarrels and rash acts, trouble with brothers and over land, and anger that harms the self.",
+    "atmakaraka": "As the Atmakaraka Mars makes the soul's path one of courage and right action: the native must learn to fight only for dharma; violence, haste and anger are the tests."
+   }
+  },
+  {
+   "id": "Me", "name": "Mercury", "sanskrit": "Budha", "names": ["Saumya", "Bodhana", "Vid", "Jna", "Chandraputra"],
+   "about": "Mercury is speech and intelligence, the prince of the grahas: learning, wit, trade and skill with words and numbers. He stands for maternal relatives, friends and the young, and governs the skin and the nerves. Of mixed humours and neuter, he takes on the nature of whatever he joins: a benefic alone or with benefics, a malefic with malefics. He is exalted in Virgo and debilitated in Pisces.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Governs", "v": "Speech", "src": "BPHS 3.12-13", "tile": true},
+     {"k": "Cabinet", "v": "Prince (heir apparent)", "src": "BPHS 3.14-15", "tile": true},
+     {"k": "Nature", "v": "Benefic; a malefic when joined with malefics", "src": "BPHS 3.11"},
+     {"k": "Gender", "v": "Neuter", "src": "BPHS 3.19", "tile": true},
+     {"k": "Caste", "v": "Vaishya (commercial)", "src": "BPHS 3.21"},
+     {"k": "Guna", "v": "Rajas", "src": "BPHS 3.22", "tile": true},
+     {"k": "Element", "v": "Earth (prithvi)", "src": "BPHS 3.20"},
+     {"k": "Class", "v": "Jiva (living beings)", "src": "BPHS 3.47"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Form", "v": "An attractive body, words of many meanings, fond of jokes, of all three humours", "src": "BPHS 3.26"},
+     {"k": "Colour", "v": "Green, like grass", "src": "BPHS 3.16-17"},
+     {"k": "Dhatu", "v": "Skin", "src": "BPHS 3.31", "tile": true},
+     {"k": "Dosha", "v": "All three mixed", "src": "BPHS 3.26"},
+     {"k": "Sense", "v": "Smell", "src": "Phaladeepika 2.27"}]},
+    {"name": "In nature", "rows": [
+     {"k": "Deity", "v": "Maha Vishnu", "src": "BPHS 3.18", "tile": true},
+     {"k": "Abode", "v": "A sports ground", "src": "BPHS 3.32"},
+     {"k": "Direction", "v": "North", "src": "Phaladeepika 2.15", "tile": true},
+     {"k": "Period", "v": "A ritu (a season)", "src": "BPHS 3.33"},
+     {"k": "Taste", "v": "Mixed", "src": "BPHS 3.34"},
+     {"k": "Trees", "v": "Fruitless ones", "src": "BPHS 3.39-40"},
+     {"k": "Cloth", "v": "Black silk", "src": "BPHS 3.41-44"},
+     {"k": "Season", "v": "Sharad (autumn)", "src": "BPHS 3.45-46"},
+     {"k": "Grain", "v": "Green gram (mudga)", "src": "Phaladeepika 2.28"},
+     {"k": "Gem", "v": "Emerald", "src": "Phaladeepika 2.29", "tile": true},
+     {"k": "Metal", "v": "Lead", "src": "Phaladeepika 2.30"},
+     {"k": "Day", "v": "Wednesday", "src": "the tradition", "tile": true}]},
+    {"name": "Strength", "rows": [
+     {"k": "Strong", "v": "By day and by night", "src": "BPHS 3.35-38"},
+     {"k": "Dig bala", "v": "In the 1st (the east)", "src": "BPHS 3.35-38"},
+     {"k": "Exalted", "v": "Virgo, deepest at 15°", "src": "BPHS 3.49-50"},
+     {"k": "Debilitated", "v": "Pisces, deepest at 15°", "src": "BPHS 3.49-50"},
+     {"k": "Moolatrikona", "v": "Virgo 15°-20°", "src": "BPHS 3.51-54"},
+     {"k": "Own signs", "v": "Gemini, Virgo", "src": "BPHS 3.51-54"},
+     {"k": "Aspects", "v": "The 7th in full", "src": "BPHS 26"},
+     {"k": "Vimshottari dasa", "v": "17 years", "src": "BPHS 46"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Maternal uncle and maternal relatives", "Friends and relatives", "Sister's children", "An adopted son", "Scholars and accountants", "Artisans and sculptors", "Writers, poets and messengers", "The young"],
+     "body": ["Skin", "Nerves", "Speech organs", "Breath and lungs", "Skin diseases", "Nervous disorders"],
+     "mind": ["Intelligence (buddhi)", "Speech and eloquence", "Wit and humour", "Analysis", "Truthfulness", "Adaptability"],
+     "creatures": ["Parrots and cats", "Chataka birds", "Mules", "Fruitless trees"]
+    },
+    "ajiva": {
+     "work": ["Accounts and mathematics", "Writing, editing and publishing", "Trade and commerce", "Teaching", "Astrology", "Mechanical and fine arts"],
+     "wealth": ["Gains through trade and skill"],
+     "property": [],
+     "things": ["Books and documents", "Emerald", "Green gram", "Ghee and oils", "Green things", "Black silk"],
+     "places": ["Places of learning", "Temples of Vishnu", "Assembly halls", "Recreation grounds", "The north"],
+     "pursuits": ["Learning and education", "Eloquence and debate", "Fine arts", "Rites to Vishnu", "Games and humour"]
+    }
+   },
+   "reading": {
+    "strong": "A strong Mercury gives a quick, clear intellect, skill with words, numbers and trade, a youthful manner and good friends; learning and business both prosper.",
+    "weak": "A weak or afflicted Mercury brings nervousness, poor speech or judgement, skin and nerve troubles, losses in trade and deceit; joined with malefics it turns cunning.",
+    "atmakaraka": "As the Atmakaraka Mercury makes the soul's lessons those of the intellect and of speech: the native learns to speak truth and use knowledge rightly; cleverness without wisdom is the test."
+   }
+  },
+  {
+   "id": "Ju", "name": "Jupiter", "sanskrit": "Guru", "names": ["Brihaspati", "Deva Guru", "Vachaspati", "Ijya", "Jiva", "Suracharya"],
+   "about": "Jupiter is knowledge and happiness, the minister and preceptor of the gods: wisdom, dharma, faith and expansion. He stands for children, for the teacher and the priest, for a woman's husband and for wealth rightly gained, and governs fat, the liver and hearing. The greatest benefic, he is exalted in Cancer and debilitated in Capricorn, and aspects the 5th, 7th and 9th in full. Where he looks, he protects.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Governs", "v": "Knowledge and happiness", "src": "BPHS 3.12-13", "tile": true},
+     {"k": "Cabinet", "v": "Minister", "src": "BPHS 3.14-15", "tile": true},
+     {"k": "Nature", "v": "Benefic, the greatest", "src": "BPHS 3.11"},
+     {"k": "Gender", "v": "Male", "src": "BPHS 3.19", "tile": true},
+     {"k": "Caste", "v": "Brahmin", "src": "BPHS 3.21"},
+     {"k": "Guna", "v": "Sattva", "src": "BPHS 3.22", "tile": true},
+     {"k": "Element", "v": "Space (akasha)", "src": "BPHS 3.20"},
+     {"k": "Class", "v": "Jiva (living beings)", "src": "BPHS 3.47"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Form", "v": "A big body, tawny hair and eyes, phlegmatic, intelligent and learned in the Shastras", "src": "BPHS 3.27"},
+     {"k": "Colour", "v": "Tawny", "src": "BPHS 3.16-17"},
+     {"k": "Dhatu", "v": "Fat", "src": "BPHS 3.31", "tile": true},
+     {"k": "Dosha", "v": "Kapha (phlegm)", "src": "BPHS 3.27"},
+     {"k": "Sense", "v": "Sound (hearing)", "src": "Phaladeepika 2.26"},
+     {"k": "Body mark", "v": "On the shoulder", "src": "Phaladeepika 2.32"}]},
+    {"name": "In nature", "rows": [
+     {"k": "Deity", "v": "Indra", "src": "BPHS 3.18", "tile": true},
+     {"k": "Abode", "v": "A treasure-house", "src": "BPHS 3.32"},
+     {"k": "Direction", "v": "North-east", "src": "Phaladeepika 2.16", "tile": true},
+     {"k": "Period", "v": "A month", "src": "BPHS 3.33"},
+     {"k": "Taste", "v": "Sweet", "src": "BPHS 3.34"},
+     {"k": "Trees", "v": "Fruit-bearing ones", "src": "BPHS 3.39-40"},
+     {"k": "Cloth", "v": "Saffron", "src": "BPHS 3.41-44"},
+     {"k": "Season", "v": "Hemanta (early winter)", "src": "BPHS 3.45-46"},
+     {"k": "Grain", "v": "Bengal gram (chana)", "src": "Phaladeepika 2.28"},
+     {"k": "Gem", "v": "Topaz (pushparaga)", "src": "Phaladeepika 2.29", "tile": true},
+     {"k": "Metal", "v": "Gold", "src": "Phaladeepika 2.30"},
+     {"k": "Day", "v": "Thursday", "src": "the tradition", "tile": true}]},
+    {"name": "Strength", "rows": [
+     {"k": "Strong", "v": "By day", "src": "BPHS 3.35-38"},
+     {"k": "Dig bala", "v": "In the 1st (the east)", "src": "BPHS 3.35-38"},
+     {"k": "Exalted", "v": "Cancer, deepest at 5°", "src": "BPHS 3.49-50"},
+     {"k": "Debilitated", "v": "Capricorn, deepest at 5°", "src": "BPHS 3.49-50"},
+     {"k": "Moolatrikona", "v": "Sagittarius 0°-10°", "src": "BPHS 3.51-54"},
+     {"k": "Own signs", "v": "Sagittarius, Pisces", "src": "BPHS 3.51-54"},
+     {"k": "Aspects", "v": "The 5th, 7th and 9th in full", "src": "BPHS 26"},
+     {"k": "Vimshottari dasa", "v": "16 years", "src": "BPHS 46"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Children", "A woman's husband", "Elder brother", "Paternal grandfather", "Gurus and preceptors", "Priests, astrologers and ministers", "Brahmins", "Lawyers and the wealthy"],
+     "body": ["Fat", "Liver", "Hearing and the ears", "Thighs", "Growth and girth", "Obesity and kapha disorders"],
+     "mind": ["Wisdom and knowledge", "Faith and devotion", "Compassion", "Self-control", "Generosity", "Optimism"],
+     "creatures": ["Pigeons, horses and swans", "Elephants", "Fruit-bearing trees", "The pipal tree"]
+    },
+    "ajiva": {
+     "work": ["Teaching and preaching", "Priesthood", "Law and the judiciary", "Advising and ministry", "Astrology", "Banking and the treasury"],
+     "wealth": ["The treasury", "Gold", "Prosperity", "Wealth through children and learning"],
+     "property": [],
+     "things": ["Gold", "Topaz", "Bengal gram", "Saffron cloth", "Ensigns of royalty: umbrella, flag and chowrie", "Salt and beans"],
+     "places": ["Treasuries", "Temples and the homes of priests", "Places of learning", "The north-east"],
+     "pursuits": ["The Vedas and Shastras", "Sacrifice, penance and worship", "Dharma", "Teaching", "Marriage and children", "Charity and gifts"]
+    }
+   },
+   "reading": {
+    "strong": "A strong Jupiter gives wisdom, good children, faith, wealth and respect; teachers and elders help, and the native's counsel is sought.",
+    "weak": "A weak or afflicted Jupiter brings poor judgement, trouble through children or teachers, loss of faith or of wealth, disorders of the liver and of fat, and misplaced optimism.",
+    "atmakaraka": "As the Atmakaraka Jupiter makes the soul a teacher and a seeker: its path is knowledge, dharma and the guidance of others; pride in learning and dogma are the tests."
+   }
+  },
+  {
+   "id": "Ve", "name": "Venus", "sanskrit": "Shukra", "names": ["Bhrigu", "Bhargava", "Kavi", "Sita", "Asphujit", "Daityaguru"],
+   "about": "Venus is love, beauty and potency, the preceptor of the asuras and a minister among the grahas: desire, refinement, art and the pleasures of life. He stands for the wife, for music, vehicles, jewels and comforts, and governs the semen and the reproductive organs. A benefic, phlegmatic and windy, he is exalted in Pisces and debilitated in Virgo. A strong Venus makes life sweet; an afflicted one makes it indulgent.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Governs", "v": "Semen and potency", "src": "BPHS 3.12-13", "tile": true},
+     {"k": "Cabinet", "v": "Minister", "src": "BPHS 3.14-15", "tile": true},
+     {"k": "Nature", "v": "Benefic", "src": "BPHS 3.11"},
+     {"k": "Gender", "v": "Female", "src": "BPHS 3.19", "tile": true},
+     {"k": "Caste", "v": "Brahmin", "src": "BPHS 3.21"},
+     {"k": "Guna", "v": "Rajas", "src": "BPHS 3.22", "tile": true},
+     {"k": "Element", "v": "Water (jala)", "src": "BPHS 3.20"},
+     {"k": "Class", "v": "Mula (roots and plants)", "src": "BPHS 3.47"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Form", "v": "Charming, of splendid body and noble disposition, with charming eyes, a poet, phlegmatic and windy, curly-haired", "src": "BPHS 3.28"},
+     {"k": "Colour", "v": "Variegated", "src": "BPHS 3.16-17"},
+     {"k": "Dhatu", "v": "Semen", "src": "BPHS 3.31", "tile": true},
+     {"k": "Dosha", "v": "Kapha and vata", "src": "BPHS 3.28"},
+     {"k": "Sense", "v": "Taste", "src": "Phaladeepika 2.27"},
+     {"k": "Body mark", "v": "On the face", "src": "Phaladeepika 2.32"}]},
+    {"name": "In nature", "rows": [
+     {"k": "Deity", "v": "Shachi (Indrani)", "src": "BPHS 3.18", "tile": true},
+     {"k": "Abode", "v": "A bedroom", "src": "BPHS 3.32"},
+     {"k": "Direction", "v": "South-east", "src": "Phaladeepika 2.16", "tile": true},
+     {"k": "Period", "v": "A fortnight (paksha)", "src": "BPHS 3.33"},
+     {"k": "Taste", "v": "Sour", "src": "BPHS 3.34"},
+     {"k": "Trees", "v": "Flowering plants and creepers", "src": "BPHS 3.39-40, Phaladeepika 2.37"},
+     {"k": "Cloth", "v": "Silk", "src": "BPHS 3.41-44"},
+     {"k": "Season", "v": "Vasanta (spring)", "src": "BPHS 3.45-46"},
+     {"k": "Grain", "v": "Field beans (nishpava)", "src": "Phaladeepika 2.28"},
+     {"k": "Gem", "v": "Diamond", "src": "Phaladeepika 2.29", "tile": true},
+     {"k": "Metal", "v": "Silver", "src": "Phaladeepika 2.30"},
+     {"k": "Day", "v": "Friday", "src": "the tradition", "tile": true}]},
+    {"name": "Strength", "rows": [
+     {"k": "Strong", "v": "By day", "src": "BPHS 3.35-38"},
+     {"k": "Dig bala", "v": "In the 4th (the north)", "src": "BPHS 3.35-38"},
+     {"k": "Exalted", "v": "Pisces, deepest at 27°", "src": "BPHS 3.49-50"},
+     {"k": "Debilitated", "v": "Virgo, deepest at 27°", "src": "BPHS 3.49-50"},
+     {"k": "Moolatrikona", "v": "Libra 0°-15°", "src": "BPHS 3.51-54"},
+     {"k": "Own signs", "v": "Taurus, Libra", "src": "BPHS 3.51-54"},
+     {"k": "Aspects", "v": "The 7th in full", "src": "BPHS 26"},
+     {"k": "Vimshottari dasa", "v": "20 years", "src": "BPHS 46"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Wife", "Lovers", "Mother (for a day birth)", "Musicians, dancers and artists", "Merchants and the rich", "Weavers", "Young men and women", "Courtesans"],
+     "body": ["Semen and reproductive health", "Face", "Eyes and beauty", "Kidneys", "Venereal and urinary diseases", "Complexion"],
+     "mind": ["Love and desire", "Refinement and taste", "Poetry and imagination", "Charm of speech", "Love of pleasure"],
+     "creatures": ["Peacocks and parrots", "Buffaloes and cows", "Birds, elephants and horses", "Flowering plants and creepers", "Sandal, nutmeg and fragrant plants"]
+    },
+    "ajiva": {
+     "work": ["Music, dance and the arts", "Fashion, jewellery and perfumes", "Luxury goods and hospitality", "Trade in vehicles", "Poetry and literature", "Diplomacy"],
+     "wealth": ["Wealth and prosperity", "Silver", "Ornaments and jewels"],
+     "property": ["Vehicles", "Houses and beds", "Gardens"],
+     "things": ["Clothes, ornaments and perfumes", "Diamonds and silver", "Flowers", "Beds and couches", "Silk and woollen cloth", "Chariots"],
+     "places": ["Bedrooms", "Dance halls and harems", "Gardens and waters", "The south-east"],
+     "pursuits": ["Marriage and festivities", "Sexual pleasure", "Music and sport", "Poetry", "Comfort and luxury"]
+    }
+   },
+   "reading": {
+    "strong": "A strong Venus gives a loving spouse, beauty, comforts, vehicles and fine things, artistic talent and a pleasant social life.",
+    "weak": "A weak or afflicted Venus brings strain in marriage or love, indulgence, troubles of the reproductive and urinary organs, and loss of comforts.",
+    "atmakaraka": "As the Atmakaraka Venus makes the soul's lessons those of love and desire: refinement, devotion and the right use of pleasure; attachment to beauty and indulgence are the tests."
+   }
+  },
+  {
+   "id": "Sa", "name": "Saturn", "sanskrit": "Shani", "names": ["Manda", "Shanaischara", "Sauri", "Konastha", "Asita", "Chhayasuta"],
+   "about": "Saturn is grief and endurance, the servant among the grahas and the eldest of them: time, labour, discipline, delay and the lessons of hardship. He stands for servants and workers, for the old and the poor, for longevity and for the cause of death, and governs the muscles, sinews and joints. Windy, slow and malefic, he is strong at night and in the west, exalted in Libra and debilitated in Aries, and aspects the 3rd, 7th and 10th in full. What he gives comes late and lasts.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Governs", "v": "Grief", "src": "BPHS 3.12-13", "tile": true},
+     {"k": "Cabinet", "v": "Servant", "src": "BPHS 3.14-15", "tile": true},
+     {"k": "Nature", "v": "Malefic (krura)", "src": "BPHS 3.11"},
+     {"k": "Gender", "v": "Neuter", "src": "BPHS 3.19", "tile": true},
+     {"k": "Caste", "v": "Shudra", "src": "BPHS 3.21"},
+     {"k": "Guna", "v": "Tamas", "src": "BPHS 3.22", "tile": true},
+     {"k": "Element", "v": "Air (vayu)", "src": "BPHS 3.20"},
+     {"k": "Class", "v": "Dhatu (minerals)", "src": "BPHS 3.47"}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Form", "v": "An emaciated, long body, tawny eyes, windy, big teeth, indolent and lame, coarse hair", "src": "BPHS 3.29"},
+     {"k": "Colour", "v": "Dark", "src": "BPHS 3.16-17"},
+     {"k": "Dhatu", "v": "Muscles and sinews", "src": "BPHS 3.31", "tile": true},
+     {"k": "Dosha", "v": "Vata (wind)", "src": "BPHS 3.29"},
+     {"k": "Sense", "v": "Touch", "src": "Phaladeepika 2.27"},
+     {"k": "Body mark", "v": "On the leg", "src": "Phaladeepika 2.32"}]},
+    {"name": "In nature", "rows": [
+     {"k": "Deity", "v": "Brahma", "src": "BPHS 3.18", "tile": true},
+     {"k": "Abode", "v": "Filthy ground", "src": "BPHS 3.32"},
+     {"k": "Direction", "v": "West", "src": "Phaladeepika 2.16", "tile": true},
+     {"k": "Period", "v": "A year", "src": "BPHS 3.33"},
+     {"k": "Taste", "v": "Astringent", "src": "BPHS 3.34"},
+     {"k": "Trees", "v": "Useless, sapless trees", "src": "BPHS 3.39-40, Phaladeepika 2.37"},
+     {"k": "Cloth", "v": "Multi-coloured", "src": "BPHS 3.41-44"},
+     {"k": "Season", "v": "Shishira (winter)", "src": "BPHS 3.45-46"},
+     {"k": "Grain", "v": "Sesame (tila)", "src": "Phaladeepika 2.28"},
+     {"k": "Gem", "v": "Blue sapphire (indranila)", "src": "Phaladeepika 2.29", "tile": true},
+     {"k": "Metal", "v": "Iron", "src": "Phaladeepika 2.30"},
+     {"k": "Day", "v": "Saturday", "src": "the tradition", "tile": true},
+     {"k": "Age", "v": "The eldest of the grahas", "src": "BPHS 3.48"}]},
+    {"name": "Strength", "rows": [
+     {"k": "Strong", "v": "At night", "src": "BPHS 3.35-38"},
+     {"k": "Dig bala", "v": "In the 7th (the west)", "src": "BPHS 3.35-38"},
+     {"k": "Exalted", "v": "Libra, deepest at 20°", "src": "BPHS 3.49-50"},
+     {"k": "Debilitated", "v": "Aries, deepest at 20°", "src": "BPHS 3.49-50"},
+     {"k": "Moolatrikona", "v": "Aquarius 0°-20°", "src": "BPHS 3.51-54"},
+     {"k": "Own signs", "v": "Capricorn, Aquarius", "src": "BPHS 3.51-54"},
+     {"k": "Aspects", "v": "The 3rd, 7th and 10th in full", "src": "BPHS 26"},
+     {"k": "Vimshottari dasa", "v": "19 years", "src": "BPHS 46"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Servants and workers", "Labourers", "The old and the poor", "Oil-mongers, hunters and blacksmiths", "Boatmen and fishermen", "Widows", "The low-born and outcastes"],
+     "body": ["Muscles and sinews", "Legs and knees", "Teeth and nails", "Chronic and long illness", "Rheumatism and stiffness", "Paralysis and lameness", "Old age", "Longevity"],
+     "mind": ["Grief and sorrow", "Patience and endurance", "Discipline", "Fear", "Detachment", "Pessimism"],
+     "creatures": ["Elephants", "Crows and cuckoos", "Buffaloes, asses and camels", "Serpents", "Sapless trees"]
+    },
+    "ajiva": {
+     "work": ["Labour and service", "Farming with tools", "Iron and oil trades", "Mining", "Construction", "Prisons and the courts"],
+     "wealth": ["Debts", "Poverty", "Slow, lasting gains", "Old property"],
+     "property": ["Old buildings", "Farm tools"],
+     "things": ["Iron", "Blue sapphire", "Sesame and oils", "Black and multi-coloured cloth", "Beans and pulses"],
+     "places": ["Filthy and waste ground", "Outcaste settlements", "Temples of Shasta", "Jails", "Ant-hills", "The west"],
+     "pursuits": ["Longevity and death", "Hardship and disgrace", "Servitude and duty", "Renunciation", "Imprisonment"]
+    }
+   },
+   "reading": {
+    "strong": "A strong Saturn gives endurance, discipline and a long life, lasting success won slowly, authority over people and land, and the respect earned by service.",
+    "weak": "A weak or afflicted Saturn brings delays, poverty and hardship, chronic illness of the joints and nerves, grief, servitude and loneliness.",
+    "atmakaraka": "As the Atmakaraka Saturn makes the soul's path one of service, patience and detachment: the native is tested through sorrow and hardship until humility and endurance are learned."
+   }
+  },
+  {
+   "id": "Ra", "name": "Rahu", "sanskrit": "Rahu", "names": ["Svarbhanu", "Tamas", "Agu", "Asura", "Sarpa", "Abhra"],
+   "about": "Rahu is the head of the demon who drank the nectar, the north node of the Moon: insatiable desire, illusion, the foreign and the unorthodox. He swallows the luminaries at eclipses, stands for the paternal grandfather, outcastes and foreigners, and governs poisons, skin troubles and fears. A malefic of the army with Ketu, he acts like Saturn and gives the results of his sign's lord; he is exalted in Taurus and debilitated in Scorpio. Well placed he lifts the native in the world beyond expectation.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Nature", "v": "Malefic", "src": "BPHS 3.11", "tile": true},
+     {"k": "Cabinet", "v": "The army, with Ketu", "src": "BPHS 3.14-15", "tile": true},
+     {"k": "Gender", "v": "Female", "src": "Phaladeepika 2.27", "tile": true},
+     {"k": "Caste", "v": "Outcaste", "src": "BPHS 3.41-44"},
+     {"k": "Class", "v": "Dhatu (minerals)", "src": "BPHS 3.47"},
+     {"k": "Acts like", "v": "Saturn", "src": "the tradition", "tile": true}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Form", "v": "Smoky, with a bluish body; lives in forests, fearsome, windy and intelligent", "src": "BPHS 3.30"},
+     {"k": "Dosha", "v": "Vata (wind)", "src": "BPHS 3.30"},
+     {"k": "Sense", "v": "Touch", "src": "Phaladeepika 2.27"}]},
+    {"name": "In nature", "rows": [
+     {"k": "Abode", "v": "Ant-hills, serpents' holes and dark places", "src": "BPHS 3.41-44, Phaladeepika 2.16", "tile": true},
+     {"k": "Direction", "v": "South-west", "src": "Phaladeepika 2.16", "tile": true},
+     {"k": "Period", "v": "Eight months", "src": "BPHS 3.45-46"},
+     {"k": "Cloth", "v": "Multi-coloured", "src": "BPHS 3.41-44"},
+     {"k": "Grain", "v": "Black gram (masha)", "src": "Phaladeepika 2.28"},
+     {"k": "Gem", "v": "Hessonite (gomedha)", "src": "Phaladeepika 2.29", "tile": true},
+     {"k": "Metal", "v": "Lead", "src": "BPHS 3.41-44"}]},
+    {"name": "Strength", "rows": [
+     {"k": "Exalted", "v": "Taurus (Gemini by some)", "src": "BPHS 47.34-39"},
+     {"k": "Debilitated", "v": "Scorpio", "src": "BPHS 47.34-39"},
+     {"k": "Moolatrikona", "v": "Gemini", "src": "BPHS 47.34-39"},
+     {"k": "Own sign", "v": "Aquarius (Virgo by some)", "src": "BPHS 47.34-39"},
+     {"k": "Aspects", "v": "The 7th in full, as every graha; the 5th and 9th by some", "src": "BPHS 26"},
+     {"k": "Vimshottari dasa", "v": "18 years", "src": "BPHS 46"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Paternal grandfather", "Outcastes and foreigners", "Snake-catchers", "Thieves and the deceitful", "Hill tribes", "Unconventional people"],
+     "body": ["Skin diseases", "Hiccups", "Poison and snake-bite", "Mysterious, hard-to-name illness", "Phobias", "Vata disorders"],
+     "mind": ["Cunning", "Obsession and craving", "Ambition beyond one's station", "Illusion (maya)", "Unorthodox thinking"],
+     "creatures": ["Serpents", "Asses, wolves and camels", "Owls", "Mosquitoes, bugs and insects"]
+    },
+    "ajiva": {
+     "work": ["Work among foreigners", "Unconventional trades", "Speculation and gambling", "Poisons and drugs", "Politics"],
+     "wealth": ["Sudden gains and losses", "Gains through foreigners"],
+     "property": [],
+     "things": ["Lead", "Hessonite", "Multi-coloured clothes", "Black gram and sesame", "Old garments"],
+     "places": ["Ant-hills and serpents' holes", "Dark places", "Forests", "Mountain peaks and caves", "Foreign lands", "The south-west"],
+     "pursuits": ["Foreign travel", "Heterodoxy", "Falsehood and slander", "Sudden events", "Eclipses"]
+    }
+   },
+   "reading": {
+    "strong": "A well-placed Rahu, in an upachaya or in a friend's sign and with a strong dispositor, fulfils worldly ambition: success with foreigners and in unconventional fields, cleverness in politics and a sudden rise.",
+    "weak": "An afflicted Rahu brings confusion, deceit and fear, mysterious illness, trouble from poison and snakes, scandal, and desires that never rest.",
+    "atmakaraka": "Counted among the karakas by those who use eight (BPHS 32.1-2), Rahu as the Atmakaraka makes the soul's path one of untangling illusion: worldly desire drives the native until its emptiness is seen."
+   }
+  },
+  {
+   "id": "Ke", "name": "Ketu", "sanskrit": "Ketu", "names": ["Shikhi", "Dhvaja", "Mrityuputra", "Kabandha"],
+   "about": "Ketu is the headless body of the demon, the south node of the Moon: detachment, insight, separation and liberation. He stands for the maternal grandfather, for ascetics and mystics, flags and hidden things, and governs wounds and obscure ailments. A malefic of the army with Rahu, he acts like Mars and gives the results of his sign's lord; he is exalted in Scorpio and debilitated in Taurus, and is the karaka of moksha. What he takes away frees the native for something higher.",
+   "facts": [
+    {"name": "What it is", "rows": [
+     {"k": "Nature", "v": "Malefic", "src": "BPHS 3.11", "tile": true},
+     {"k": "Cabinet", "v": "The army, with Rahu", "src": "BPHS 3.14-15", "tile": true},
+     {"k": "Gender", "v": "Neuter", "src": "Phaladeepika 2.27", "tile": true},
+     {"k": "Caste", "v": "Mixed caste", "src": "BPHS 3.41-44"},
+     {"k": "Class", "v": "Jiva (living beings)", "src": "BPHS 3.47"},
+     {"k": "Acts like", "v": "Mars", "src": "the tradition", "tile": true}]},
+    {"name": "Body and bearing", "rows": [
+     {"k": "Form", "v": "Like Rahu's; red and fierce of look, sharp of tongue, tall, smoky in colour, lean, with bruised limbs", "src": "BPHS 3.30, Phaladeepika 2.34"},
+     {"k": "Sense", "v": "Touch", "src": "Phaladeepika 2.27"}]},
+    {"name": "In nature", "rows": [
+     {"k": "Abode", "v": "Ant-hills and dark places, as Rahu's", "src": "BPHS 3.41-44, Phaladeepika 2.16", "tile": true},
+     {"k": "Period", "v": "Three months", "src": "BPHS 3.45-46"},
+     {"k": "Cloth", "v": "Rags", "src": "BPHS 3.41-44"},
+     {"k": "Grain", "v": "Horse gram (kulattha)", "src": "Phaladeepika 2.28"},
+     {"k": "Gem", "v": "Cat's eye (vaidurya)", "src": "Phaladeepika 2.29", "tile": true},
+     {"k": "Things", "v": "Mud vessels and mixed-colour cloth", "src": "Phaladeepika 2.35"}]},
+    {"name": "Strength", "rows": [
+     {"k": "Exalted", "v": "Scorpio (Sagittarius by some)", "src": "BPHS 47.34-39"},
+     {"k": "Debilitated", "v": "Taurus", "src": "BPHS 47.34-39"},
+     {"k": "Moolatrikona", "v": "Sagittarius", "src": "BPHS 47.34-39"},
+     {"k": "Own sign", "v": "Scorpio (Pisces by some)", "src": "BPHS 47.34-39"},
+     {"k": "Aspects", "v": "The 7th in full, as every graha; the 5th and 9th by some", "src": "BPHS 26"},
+     {"k": "Vimshottari dasa", "v": "7 years", "src": "BPHS 46"}]}
+   ],
+   "significations": {
+    "jiva": {
+     "people": ["Maternal grandfather", "Ascetics and mystics", "Outcastes and mixed castes", "Valiant and industrious men", "Those who pry into secrets"],
+     "body": ["Wounds and bruises", "Sudden or obscure ailments", "Emaciation", "Infections and boils"],
+     "mind": ["Detachment and renunciation", "Spiritual insight", "Intuition", "A sharp tongue", "Confusion"],
+     "creatures": ["Serpents and insects", "Bushes and clumps"]
+    },
+    "ajiva": {
+     "work": ["Spiritual and occult work", "Healing", "Weapons and armed work", "Research into the hidden"],
+     "wealth": ["Sudden losses and gains"],
+     "property": [],
+     "things": ["Cat's eye", "Horse gram", "Rags and mixed-colour cloth", "Mud vessels", "Flags and banners"],
+     "places": ["Ant-hills and dark places", "Mountains and fortified cities", "Places of pilgrimage"],
+     "pursuits": ["Liberation (moksha)", "Mantra and the occult", "Pilgrimage", "Victory", "Separation"]
+    }
+   },
+   "reading": {
+    "strong": "A well-placed Ketu gives spiritual insight, freedom from attachment, skill in the occult and healing arts, and help that comes suddenly when it is least expected.",
+    "weak": "An afflicted Ketu brings wounds, obscure illness, confusion, separation and losses, and an emptiness that worldly gains cannot fill.",
+    "atmakaraka": "Ketu is not counted among the chara karakas; as the karaka of moksha it points the soul toward liberation wherever it stands."
+   }
+  }
+ ]
+}

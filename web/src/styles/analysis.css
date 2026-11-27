@@ -1,0 +1,1607 @@
+/* --- The analysis tabs: Strengths, Dasas, Tajaka, Tithi Pravesha, Transits ------------------------------ */
+/* red to green through yellow: --tone is how strong, 0% weak to 100% strong (tone.ts sets it). Two straight mixes,
+   red to yellow then yellow to green, so the middle is a clear yellow, not the olive of one red-green mix */
+.tone {
+  --tc: color-mix(in oklch, var(--strong) clamp(0%, calc((var(--tone, 50%) - 50%) * 2), 100%),
+    color-mix(in oklch, var(--middling) clamp(0%, calc(var(--tone, 50%) * 2), 100%), var(--weak)));     /* oklch keeps the in-betweens vivid: orange, lime */
+}
+
+.lab-head {
+  flex: none;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .25rem 1.25rem;
+  padding: 2px 2px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.lab-head h1 {
+  margin: 0 0 .5rem;
+  font-size: calc(1.3125rem * var(--list-scale, 1));
+  font-weight: 600;
+  letter-spacing: -.015em;
+  line-height: 1.2;
+}
+
+.lab-head p {
+  margin: 0;
+  padding: .375rem 0 .5625rem;   /* the box of a tab, so a page with a line in place of tabs starts its cards level with the rest */
+  line-height: 1.25rem;
+}
+
+/* Starlight drops the page's name (Strengths, Transits, Tajaka ..): the top bar already says which page is open */
+.star-basics .lab-head h1 {
+  display: none;
+}
+
+.lab-head .seg {
+  align-self: flex-end;
+}
+
+/* a view's tabs sit on the heading's rule, the chosen one underlined like the top bar's: every page's row of sub tabs looks like this */
+.lab-head .seg button,
+.tab-head .seg[role="tablist"] button,
+.mc-section-head .seg[role="tablist"] button,
+.star-tabbar .seg button {
+  position: relative;
+  padding: .375rem .625rem .5625rem;
+  border-radius: .375rem .375rem 0 0;
+}
+
+.lab-head .seg button[aria-selected="true"],
+.tab-head .seg[role="tablist"] button[aria-selected="true"],
+.mc-section-head .seg[role="tablist"] button[aria-selected="true"],
+.star-tabbar .seg button[aria-selected="true"] {
+  background: none;
+  color: var(--ink);
+}
+
+.lab-head .seg button[aria-selected="true"]::after,
+.tab-head .seg[role="tablist"] button[aria-selected="true"]::after,
+.mc-section-head .seg[role="tablist"] button[aria-selected="true"]::after,
+.star-tabbar .seg button[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  left: .5rem;
+  right: .5rem;
+  bottom: -1px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+/* a card's heading holding the page's tabs: the tabs sit on its bottom rule */
+.tab-head {
+  align-items: baseline;   /* the heading, notes and buttons line up with the tabs' names */
+  flex-wrap: wrap;
+  padding-bottom: 0;
+}
+
+/* the verdict above the tables */
+.stat-strip {
+  flex: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.375rem, 1fr));
+  gap: .5rem;
+}
+
+.stat {
+  display: grid;
+  align-content: start;
+  gap: 1px;
+  min-width: 0;
+  padding: .625rem .75rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+}
+
+/* a card that opens where its number comes from */
+button.stat {
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+button.stat:hover,
+button.stat:focus-visible {
+  border-color: var(--accent);
+}
+
+.stat-label {
+  display: flex;
+  align-items: center;
+  gap: .375rem;
+  font-size: calc(.75rem * var(--list-scale, 1));
+  color: var(--muted);
+}
+
+.stat.tone .stat-label::before {
+  content: "";
+  flex: none;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background: var(--tc);
+}
+
+.stat-value {
+  font-size: calc(1.125rem * var(--list-scale, 1));
+  font-weight: 600;
+  letter-spacing: -.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stat-sub {
+  font-size: calc(.75rem * var(--list-scale, 1));
+  color: var(--muted);
+}
+
+/* meters: the bar is the number beside it, coloured by how strong it is */
+.meter {
+  position: relative;
+  display: block;
+  height: .375rem;
+  min-width: 3.5rem;
+  border-radius: .1875rem;
+  background: var(--shade);
+}
+
+.meter i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: .1875rem;
+  background: var(--tc);
+}
+
+.meter b {
+  position: absolute;
+  top: -.1875rem;
+  bottom: -.1875rem;
+  width: 2px;
+  margin-left: -1px;
+  border-radius: 1px;
+  background: var(--ink);
+}
+
+.points .meter-col {
+  width: 8.25rem;
+}
+
+/* one bar length in every strength table, whatever the table's width */
+.points .meter-col .meter {
+  width: 7.5rem;
+}
+
+/* a long bar heading wraps rather than widening the bar's column */
+.points th.meter-col {
+  white-space: normal;
+}
+
+/* tighter cells, so the grahas' table shows Ishta and Kashta without scrolling */
+.pane.shadbala .points th,
+.pane.shadbala .points td {
+  padding-left: .375rem;
+  padding-right: .375rem;
+}
+
+/* cusp and longitude stay on one line */
+.pane.shadbala.cusp td {
+  white-space: nowrap;
+}
+
+.cell-meter {
+  display: grid;
+  gap: .1875rem;
+  min-width: 4.375rem;
+}
+
+.tone-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: .1875rem;
+  font-size: calc(.71875rem * var(--list-scale, 1));
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.tone-legend i {
+  width: .625rem;
+  height: .625rem;
+  border-radius: .1875rem;
+  background: var(--tc);
+}
+
+.tone-legend i:first-of-type {
+  margin-left: .25rem;
+}
+
+.tone-legend i:last-of-type {
+  margin-right: .25rem;
+}
+
+.points .tone-text {
+  color: color-mix(in srgb, var(--tc) 78%, var(--ink));
+  font-weight: 600;
+}
+
+.points .good-text,
+.v-good {
+  color: var(--good-ink);
+}
+
+.points .bad-text,
+.v-bad {
+  color: var(--bad-ink);
+}
+
+.points tr td.heat.tone {
+  background: color-mix(in srgb, var(--tc) 18%, transparent);
+}
+
+.points td.strong {
+  font-weight: 600;
+}
+
+table.strength td {
+  vertical-align: middle;
+}
+
+table.strength th {
+  white-space: nowrap;
+}
+
+/* the grahas' and cusp boxes keep their own height; the houses' box under them runs to the foot, level with the charts */
+.right>.pane.shadbala.graha,
+.right>.pane.shadbala.cusp {
+  flex: none;
+}
+
+.right>.pane.shadbala.graha>.scroll,
+.right>.pane.shadbala.cusp>.scroll {
+  flex: none;
+}
+
+/* the three boxes run taller than the window, so the page scrolls: each box keeps its full height and hands the wheel to the page */
+.right>.pane.shadbala.bhava {
+  flex: 1 0 auto;
+}
+
+.right>.pane.shadbala>.scroll {
+  max-height: none;
+  overscroll-behavior-y: auto;
+}
+
+.right>.pane.shadbala.bhava>.scroll {
+  flex: 1 0 auto;
+}
+
+/* the houses' rows share out the box's height, so the 12th ends at its foot */
+.right>.pane.shadbala.bhava table {
+  height: 100%;
+}
+
+/* a transit result marked good or bad: a dot of its colour before the words */
+.v-good::before,
+.v-bad::before {
+  content: "";
+  display: inline-block;
+  width: .4375rem;
+  height: .4375rem;
+  margin-right: .375rem;
+  border-radius: 50%;
+  vertical-align: 1px;
+  background: var(--strong);
+}
+
+.v-bad::before {
+  background: var(--weak);
+}
+
+/* ashtakavarga grids: each box red to green by its bindus; a highlighted rasi is outlined */
+.grid .box.toned {
+  fill: color-mix(in srgb, var(--tc) 24%, var(--panel));
+}
+
+.grid .box.toned.shaded,
+.av-big .box.toned.shaded {
+  fill: color-mix(in srgb, var(--tc) 24%, var(--panel));
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.bar.tone {
+  fill: var(--tc);
+}
+
+/* yogas: one entry each, the result first */
+.yoga-count {
+  margin: 0;
+}
+
+.yoga-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 .75rem .75rem;
+}
+
+.yoga {
+  display: grid;
+  gap: .25rem;
+  max-width: 84ch;
+  padding: .75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.yoga:last-child {
+  border-bottom: 0;
+}
+
+.yoga header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .375rem .5rem;
+}
+
+.yoga h3 {
+  margin: 0 .25rem 0 0;
+  font-size: calc(.9375rem * var(--list-scale, 1));
+  font-weight: 600;
+}
+
+.yoga p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.yoga dl {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 2px .75rem;
+  margin: 2px 0 0;
+  font-size: calc(.78125rem * var(--list-scale, 1));
+}
+
+.yoga dl div {
+  display: contents;
+}
+
+.yoga dt {
+  color: var(--muted);
+}
+
+.yoga dd {
+  margin: 0;
+}
+
+/* Starlight yogas: kinds as tabs, each yoga a card with what it reads (rasi gold, bhava purple, both black) and where its givers sit */
+.star-yogas .pane-head {
+  display: grid;
+  gap: .5rem;
+}
+
+.sy-legend {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .375rem .875rem;
+  font-size: calc(.875rem * var(--list-scale, 1));
+}
+
+.sy-legend button {
+  display: inline-flex;
+  align-items: center;
+  gap: .3125rem;
+  padding: 2px .5rem 2px 2px;
+  border: 1px solid transparent;
+  border-radius: 62.4375rem;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.sy-legend button:hover {
+  border-color: var(--line);
+}
+
+.sy-legend button[aria-pressed="true"] {
+  border-color: var(--ink);
+  font-weight: 700;
+}
+
+/* while one basis is picked, the others fade */
+.sy-legend:has([aria-pressed="true"]) button[aria-pressed="false"] {
+  opacity: .5;
+}
+
+.sy-group:first-child {
+  padding-top: .75rem;
+}
+
+.sy-basis {
+  padding: 1px .5rem;
+  border-radius: 62.4375rem;
+  font-style: normal;
+  font-size: calc(.78125rem * var(--list-scale, 1));
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sy-basis.rasi { background: var(--gold); color: var(--gold-ink); }
+.sy-basis.bhava { background: var(--accent); color: var(--accent-ink); }
+.sy-basis.both { background: var(--ink); color: var(--panel); }
+
+.sy-group {
+  padding: .625rem .75rem .25rem;
+}
+
+.sy-group h3 {
+  margin: 0 0 .5rem;
+  font-size: calc(.9375rem * var(--list-scale, 1));
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.sy-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16.25rem), 1fr));
+  gap: .625rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sy-card {
+  display: grid;
+  align-content: start;
+  gap: .375rem;
+  padding: .75rem;
+  border: 1px solid var(--line);
+  border-radius: .625rem;
+  background: var(--panel);
+}
+
+.sy-card header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.sy-card h4 {
+  margin: 0;
+  font-size: calc(1.125rem * var(--list-scale, 1));
+  font-weight: 700;
+}
+
+.sy-card p {
+  margin: 0;
+  font-size: calc(.9375rem * var(--list-scale, 1));
+  line-height: 1.45;
+}
+
+.sy-givers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: calc(.84375rem * var(--list-scale, 1));
+  font-variant-numeric: tabular-nums;
+}
+
+.sy-givers li {
+  padding: 1px .5rem;
+  border-radius: .375rem;
+  background: var(--shade);
+}
+
+.sy-card .sy-rule {
+  color: var(--muted);
+  font-size: calc(.875rem * var(--list-scale, 1));
+}
+
+.chip {
+  padding: 0 .5rem;
+  border: 1px solid var(--line);
+  border-radius: 62.4375rem;
+  background: var(--shade);
+  font-size: calc(.71875rem * var(--list-scale, 1));
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+/* Dasas: each open level as a strip of its periods */
+
+.progress {
+  grid-column: 1 / -1;
+  height: .375rem;
+  overflow: hidden;
+  border-radius: .1875rem;
+  background: var(--shade);
+}
+
+.progress i {
+  display: block;
+  height: 100%;
+  border-radius: .1875rem;
+  background: var(--here);
+}
+
+.bands {
+  display: grid;
+  align-content: start;
+  gap: .375rem;
+  min-width: 0;
+}
+
+.band {
+  display: grid;
+  grid-template-columns: 3.2em minmax(0, 1fr);
+  align-items: center;
+  gap: .5rem;
+}
+
+.band-track {
+  position: relative;
+  display: flex;
+  height: calc(1.875rem * var(--list-scale, 1));
+  overflow: hidden;
+  border-radius: .5rem;
+  background: var(--shade);
+}
+
+.band-track button {
+  flex: none;
+  min-width: 0;
+  height: 100%;
+  padding: 0 .25rem;
+  overflow: hidden;
+  border: 0;
+  border-right: 1px solid var(--panel);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--ink) 5%, var(--panel));
+  color: var(--ink);
+  font-size: calc(.75rem * var(--list-scale, 1));
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.band-track button:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--accent) 14%, var(--panel));
+}
+
+.band-track button.running {
+  background: color-mix(in srgb, var(--running) 20%, var(--panel));
+  font-weight: 600;
+}
+
+.band-track button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.band-track button:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.band-now {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: .1875rem;
+  margin-left: -1.5px;
+  background: var(--here);
+  box-shadow: 0 0 0 1px var(--panel);
+  pointer-events: none;
+}
+
+/* Tajaka, Tithi Pravesha, Transits: the form beside the chart it found */
+.finder {
+  flex: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: .75rem;
+}
+
+.finder>.pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+@media (max-width: 1100px) {
+  .finder {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.mode-form .big-field input {
+  padding: .375rem .625rem;
+  font-size: calc(1.25rem * var(--list-scale, 1));
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.field-note {
+  align-self: end;
+  margin: 0;
+  padding-bottom: .5625rem;
+  font-size: calc(.75rem * var(--list-scale, 1));
+}
+
+.finer {
+  grid-column: 1 / -1;
+  padding: .375rem .625rem;
+  border: 1px solid var(--line);
+  border-radius: .625rem;
+}
+
+.finer summary {
+  cursor: pointer;
+  font-size: calc(.78125rem * var(--list-scale, 1));
+  color: var(--muted);
+}
+
+.finer .mode-form {
+  padding: .5rem 0 .25rem;
+}
+
+.mode-result {
+  display: grid;
+  gap: .625rem;
+  padding: .75rem;
+}
+
+.mode-result p {
+  margin: 0;
+}
+
+.mode-title {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: calc(1.0625rem * var(--list-scale, 1));
+  font-weight: 600;
+  letter-spacing: -.01em;
+}
+
+.live-dot {
+  flex: none;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background: var(--here);
+  box-shadow: 0 0 0 .1875rem color-mix(in srgb, var(--here) 28%, transparent);
+}
+
+.mode-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.625rem, 1fr));
+  gap: .5rem;
+  margin: 0;
+}
+
+.mode-stats div {
+  min-width: 0;
+  padding: .5rem .625rem;
+  border-radius: .625rem;
+  background: var(--shade);
+}
+
+.mode-stats dt {
+  font-size: calc(.75rem * var(--list-scale, 1));
+  color: var(--muted);
+}
+
+.mode-stats dd {
+  margin: 2px 0 0;
+  font-family: var(--mono);
+  font-size: calc(.8125rem * var(--list-scale, 1));
+  overflow-wrap: anywhere;
+}
+
+.mode-links {
+  display: grid;
+  gap: .5rem;
+  padding: 0 .75rem .75rem;
+}
+
+.mode-links h3 {
+  margin: 0;
+  font-size: calc(.75rem * var(--list-scale, 1));
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.link-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .375rem;
+}
+
+.tile {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .375rem;
+  padding: .25rem .625rem;
+  border-radius: 62.4375rem;
+  font-weight: 500;
+}
+
+.tile-sub {
+  font-size: calc(.71875rem * var(--list-scale, 1));
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.tile[aria-pressed="true"] {
+  border-color: var(--accent);
+}
+
+/* the analysis tabs scroll as a page: a results pane, or a pane with its own form (Transit Calendar, Special Search ..), keeps its
+   full height instead of being squeezed to the window, which left its table 0px tall under the form */
+.right.lab>.pane.transit-results,
+.right.lab>.pane:has(>.mode-form) {
+  flex: none;
+}
+
+.right.lab>.pane.transit-results>.scroll,
+.right.lab>.pane:has(>.mode-form)>.scroll {
+  flex: none;
+  max-height: none;
+  overscroll-behavior-y: auto;   /* it never scrolls up and down itself: hand the wheel to the page, or over the table nothing moves */
+}
+
+/* every page's row of sub tabs stays put while the page under it scrolls, as on Home */
+.right>.seg,
+.right>.lab-head {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--bg);
+  box-shadow: 0 .75rem 0 var(--bg);   /* covers the flex gap under it too */
+}
+
+.right.lab:has(.finder)>.key-stack {
+  flex: none;
+  height: 23.75rem;
+}
+
+.right.lab:has(.finder)>.lower {
+  flex: none;
+  min-height: 18.75rem;
+}
+
+/* a step select among a form's buttons keeps its own width */
+.mode-buttons select {
+  width: auto;
+}
+
+/* Sign in / create account (Login.tsx): split in two, exactly one screen tall, its own colours whatever the theme:
+   black, white and the intro's gold, nothing else. The right half is white: the name, a two-way toggle and the form. The
+   left half is black: the invocation; the zodiac's band of sky drifting past, each nakshatra drawn in gold as its division
+   reaches the centre; and the three slokas (Ramayana Yuddha 18.33, Gita 18.66, Bhagavatam 8.17.17) scrolling by under it.
+   Eczar for the verse and the name; Plex for the form. */
+.vk {
+  --vk-gold: #ffc766;        /* the intro's gold */
+  --vk-quiet-gold: #b8860b;  /* the one colour on the white side: a true gold, deep enough to read on white */
+  --vk-display: "Eczar", "Tiro Devanagari Sanskrit", var(--serif, Georgia, serif);
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  padding: 0;                /* the app's main carries a gutter; this page runs edge to edge */
+  overflow: hidden;
+  background: #fff;
+}
+
+/* the form side, on white in either theme; it scrolls on its own only if a window is too short even for the compact form */
+.vk-side {
+  --ink: #0a0a0a;
+  --muted: #5f636b;
+  --line: #dcdee3;
+  --panel: #fff;
+  --accent: #0a0a0a;         /* what you act on is black here: the button, the tab bar, focus */
+  --accent-ink: #fff;
+  --error: #c4231b;
+  color-scheme: light;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.25rem, 4vh, 3rem) 2rem;
+  overflow-y: auto;
+  background: #fff;
+  color: var(--ink);
+}
+.vk-form-box { width: 100%; max-width: 22.5rem; animation: vk-arrive .8s ease-out .2s backwards; }
+.vk-name { margin-bottom: clamp(1.625rem, 5vh, 3rem); }
+.vk-name h1 { margin: 0; font: 600 clamp(2.625rem, min(4.6vw, 7.5vh), 4rem)/1 var(--vk-display); letter-spacing: -.015em; }
+/* the name and its Devanagari as one lockup: the Sanskrit always centred under the English, in the intro's gold */
+.vk-lockup { display: inline-grid; justify-items: center; }
+.vk-lockup .about-emblem { width: clamp(3rem, 8vh, 4.5rem); height: auto; margin-bottom: clamp(.5rem, 1.6vh, .875rem); stroke: var(--vk-quiet-gold); }
+.vk-name p[lang="sa"] { margin: .375rem 0 0; color: var(--vk-quiet-gold); font: 500 clamp(1.375rem, 3.2vh, 1.75rem)/1.2 var(--vk-display); }
+
+/* sign in / create account: two words over a hairline, a bar under the one you're on that slides across */
+.vk-tabs {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: clamp(1.125rem, 3.4vh, 1.875rem);
+  border-bottom: 1px solid var(--line);
+}
+.vk-tabs::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: var(--accent);
+  transition: translate .5s cubic-bezier(.6, 0, .2, 1);
+}
+.vk[data-tab="up"] .vk-tabs::after { translate: 100% 0; }
+.vk-tabs button {
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--muted);
+  font-size: .9375rem;
+  font-weight: 500;
+  transition: color .3s;
+}
+.vk-tabs button:hover, .vk-tabs button[aria-selected="true"] { color: var(--ink); }
+
+/* the fields come in one after another when the form changes */
+.vk-form { display: grid; gap: clamp(.875rem, 2.6vh, 1.375rem); }
+.vk-form > * { animation: vk-arrive .45s ease-out backwards; }
+.vk-form > :nth-child(2) { animation-delay: .05s; }
+.vk-form > :nth-child(3) { animation-delay: .1s; }
+.vk-form > :nth-child(4) { animation-delay: .15s; }
+.vk-form > :nth-child(n+5) { animation-delay: .2s; }
+.vk-form label { display: grid; gap: 2px; color: var(--muted); font-size: .84375rem; font-weight: 500; }
+.vk-form label small { font-size: .78125rem; font-weight: 400; }
+.vk-form input {
+  height: clamp(2.5rem, 5.6vh, 2.875rem);
+  padding: 0 1px;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 30%, transparent);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 400;
+  transition: border-color .25s, box-shadow .25s;
+}
+.vk-form input:hover { border-bottom-color: color-mix(in srgb, var(--ink) 60%, transparent); }
+.vk-form input:focus { border-bottom-color: var(--accent); outline: 0; box-shadow: 0 1px 0 var(--accent); }
+.vk-form input:-webkit-autofill { -webkit-text-fill-color: var(--ink); box-shadow: 0 0 0 2.5rem #fff inset; }
+.vk-form button.primary { height: clamp(2.75rem, 6vh, 3.125rem); margin-top: .625rem; border-radius: 62.4375rem; font-size: .9375rem; font-weight: 500; }
+.vk-error { margin: 0; font-size: .84375rem; }
+
+/* the verse side, on black: the invocation, one sloka at a time, and a bar for each verse at the foot */
+.vk-verse {
+  order: -1;                 /* on the left; the form stays first in the source, so it leads on phones and for screen readers */
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  padding: clamp(1.75rem, 5vh, 3rem) clamp(1.5rem, 6vw, 6rem);
+  overflow: hidden;
+  background: #000;
+  color: #ececee;
+  font-family: var(--vk-display);
+}
+.vk-invocation { margin: 0; color: var(--vk-gold); font-size: 1.0625rem; font-weight: 500; letter-spacing: .02em; text-align: center; }
+.vk-verse figure { align-self: center; max-width: 34rem; margin: 0; }
+.vk-sloka { display: grid; margin: 0; color: var(--vk-gold); font: 500 clamp(1.5rem, min(2.6vw, 4.6vh), 2.5rem)/1.4 var(--vk-display); }
+/* the padas rise out of a blur one after another, then the rest follows */
+.vk-sloka span, .vk-iast, .vk-verse figcaption { animation: vk-rise 1.1s cubic-bezier(.2, .7, .2, 1) backwards; }
+.vk-sloka span { animation-delay: calc(var(--i) * .35s); }
+.vk-sloka span:nth-child(odd) { margin-top: .25em; }          /* a little air between the two lines of the verse */
+.vk-sloka span:first-child { margin-top: 0; }
+.vk-iast { margin: 1.4em 0 0; color: #8f9098; font-size: .9375rem; line-height: 1.6; animation-delay: 1.4s; }
+.vk-verse figcaption { margin-top: 1.4em; padding-top: 1.4em; border-top: 1px solid rgb(255 255 255 / .14); animation-delay: 1.7s; }
+.vk-meaning { margin: 0; font-size: clamp(1rem, 1.25vw, 1.1875rem); line-height: 1.6; }
+.vk-verse cite { display: block; margin-top: .8em; color: #8f9098; font: normal .8125rem/1.4 var(--sans, system-ui); }
+@keyframes vk-rise { from { opacity: 0; translate: 0 .5em; filter: blur(.375rem); } }
+@keyframes vk-arrive { from { opacity: 0; transform: translateY(.375rem); } }
+
+/* the bars: a hairline over each name; the current one fills in gold over 14s, and when it is full the next verse comes */
+.vk-bars { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; max-width: 34rem; }
+.vk-bars button {
+  position: relative;
+  padding: .875rem 0 0;
+  border: 0;
+  border-top: 2px solid rgb(255 255 255 / .16);
+  border-radius: 0;
+  background: none;
+  color: #8f9098;
+  font: 500 .78125rem/1.2 var(--sans, system-ui);
+  text-align: left;
+  transition: color .3s;
+}
+.vk-bars button::before { content: ""; position: absolute; top: -2px; left: 0; width: 0; height: 2px; background: var(--vk-gold); }
+.vk-bars button:hover, .vk-bars button[aria-current="true"] { color: #fff; }
+.vk-bars button[aria-current="true"]::before { width: 100%; animation: vk-fill 14s linear; }
+.vk-verse:hover .vk-bars button::before, .vk-verse:focus-within .vk-bars button::before { animation-play-state: paused; }
+.vk-bars button:focus-visible { outline-color: #fff; box-shadow: none; }
+@keyframes vk-fill { from { width: 0; } }
+
+/* the garden look (the default; ?verses brings back the archived one): the painting fills the left half in place of the verses, cropped to fit, never stretched */
+.vk-art { order: -1; position: relative; overflow: hidden; background: #000; container-type: size; }
+.vk-art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 66%; animation: vk-arrive 1s ease-out backwards; }   /* 66%: the edge of the moon at the top, Krishna centred */
+/* crossfade with no dip: the new painting fades in on top, the old one fades out only once it's covered */
+.vk-art { --fade: 1.2s; }
+.vk-art[data-quick] { --fade: .35s; }
+.vk-art img { opacity: 0; transition: opacity var(--fade) ease-in-out var(--fade); }
+.vk-art img[data-on] { opacity: 1; z-index: 1; transition-delay: 0s; }
+.vk-dots { z-index: 2; }
+.vk-dots { position: absolute; left: 0; right: 0; bottom: 1.5rem; display: flex; justify-content: center; gap: .625rem; }
+.vk-dots button { width: .5rem; height: .5rem; padding: 0; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .35); box-shadow: 0 0 .25rem rgba(0, 0, 0, .6); cursor: pointer; transition: background .3s; }
+.vk-dots button[aria-current="true"] { background: rgba(255, 255, 255, .85); }
+.vk-art img[src$="krishna-chakra-eyes.jpg"] { object-position: 40% 12%; }   /* the chakra sits 10–19% down and 19–47% across: kept whole even in a tall narrow window, Krishna near the middle */
+/* zoomed from the arc of chakras down to just below his waist (the top 46%), Krishna centred; in a tall narrow panel the zoom
+   stops once 72% of the width shows, so his arms and the arc aren't cut */
+.vk-art img[src$="krishna-runes.jpg"] { inset: 0 auto auto 50%; translate: -50% 0; width: auto; min-width: 100%; height: max(100cqh, min(217cqh, 229cqw)); object-position: 50% 0; }
+
+/* show / hide password: a quiet word at the field's right end, in both looks */
+.vk-pw { position: relative; display: block; }
+.vk-pw input { width: 100%; padding-right: 3.5rem; }
+.vk-reveal {
+  position: absolute;
+  top: 50%;
+  right: .25rem;
+  translate: 0 -50%;
+  height: 1.875rem;
+  padding: 0 .625rem;
+  border: 0;
+  border-radius: .5rem;
+  background: none;
+  color: var(--muted);
+  font-size: .8125rem;
+  font-weight: 600;
+}
+.vk-reveal:hover { color: var(--ink); background: #f1f2f4; }
+
+/* or continue with: a hairline either side of the words, then the four providers in a row, logo over white */
+.vk-or { display: flex; align-items: center; gap: .875rem; margin: clamp(1.125rem, 3vh, 1.625rem) 0 clamp(.75rem, 2vh, 1rem); color: var(--muted); font-size: .78125rem; }
+.vk-or::before, .vk-or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.vk-social { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; }
+.vk-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4375rem;
+  height: 2.75rem;
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+  color: var(--ink);
+  font-size: .8125rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color .2s, background .2s;
+}
+.vk-social a:hover { border-color: var(--ink); }
+.vk-social a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.vk-social svg { flex: none; width: 1rem; height: 1rem; fill: currentColor; }
+/* too narrow for a name beside each logo: logos only (each link keeps its aria-label) */
+@media (max-width: 480px), (min-width: 901px) and (max-width: 1100px) { .vk-social span { display: none; } }
+
+/* the garden look's right half: the invocation crowns it, the form sits centred under it, everything centred on the axis */
+.vk[data-garden] .vk-side { grid-template: auto minmax(0, 1fr) / minmax(0, 1fr); justify-items: center; }
+.vk[data-garden] .vk-form-box { align-self: safe center; max-width: 25rem; }   /* safe: a tall form starts under the invocation instead of riding up over it */
+.vk-top { display: grid; justify-items: center; gap: .75rem; animation: vk-arrive .8s ease-out backwards; }
+.vk[data-garden] .vk-invocation { color: var(--vk-quiet-gold); font: 400 .9375rem/1.3 var(--vk-display); letter-spacing: .08em; }
+.vk[data-garden] .vk-name { text-align: center; }
+
+/* minimal: the tabs and fields keep the plain look above (two words over a hairline; underlined fields), and focus is a thin black line */
+.vk[data-garden] .vk-pw input { padding-right: 3.75rem; }
+.vk-side :focus-visible { outline-width: 1px; outline-offset: .1875rem; box-shadow: none; }
+.vk[data-garden] .vk-form button.primary { display: flex; align-items: center; justify-content: center; gap: .625rem; }
+.vk-arrow { transition: translate .25s; }
+/* one screen, never a scroll: every gap and height below shrinks with the window's height, so even create account
+   fits a 1024×640 window; the larger values are the ones a tall screen gets */
+.vk[data-garden] .vk-side { padding-top: clamp(1rem, 4.5vh, 3rem); }
+.vk[data-garden] .vk-top { gap: clamp(.375rem, 1.3vh, .75rem); }
+.vk[data-garden] .vk-form-box { padding: clamp(.625rem, 3vh, 2.5rem) 0; }
+.vk[data-garden] .vk-name { margin-bottom: clamp(.875rem, 4vh, 3rem); }
+.vk[data-garden] .vk-name h1 { font-size: clamp(2.125rem, min(4.6vw, 7vh), 4rem); }
+.vk[data-garden] .vk-name p[lang="sa"] { margin-top: clamp(2px, .6vh, .375rem); font-size: clamp(1.1875rem, 3.2vh, 1.75rem); }
+.vk[data-garden] .vk-tabs { margin-bottom: clamp(.75rem, 2.8vh, 1.875rem); }
+.vk[data-garden] .vk-tabs button { height: clamp(2rem, 4.8vh, 2.5rem); }
+.vk[data-garden] .vk-form { gap: clamp(.5625rem, 2.2vh, 1.375rem); }
+.vk[data-garden] .vk-form label { gap: clamp(.1875rem, .8vh, .4375rem); }
+.vk[data-garden] .vk-form input { height: clamp(2.25rem, 5.6vh, 3.125rem); }
+.vk[data-garden] .vk-form button.primary { height: clamp(2.5rem, 6vh, 3.25rem); margin-top: clamp(2px, .6vh, .375rem); }
+.vk[data-garden] .vk-or { margin: clamp(.625rem, 2.6vh, 1.625rem) 0 clamp(.5rem, 1.6vh, 1rem); }
+.vk[data-garden] .vk-social a { height: clamp(2.25rem, 5.2vh, 2.75rem); }
+/* create account is a row taller: the page edges and the gaps give up that row (the chakra keeps its size) so it still fits one screen */
+.vk[data-garden][data-tab="up"] .vk-side { padding-block: clamp(.5rem, 2vh, 2rem); }
+.vk[data-garden][data-tab="up"] .vk-form-box { padding-block: clamp(0px, 1vh, 1.5rem); }
+.vk[data-garden][data-tab="up"] .vk-name { margin-bottom: clamp(.5rem, 2vh, 2rem); }
+.vk[data-garden][data-tab="up"] .vk-tabs { margin-bottom: clamp(.5rem, 1.8vh, 1.5rem); }
+.vk[data-garden][data-tab="up"] .vk-form { gap: clamp(.375rem, 1.6vh, 1.125rem); }
+.vk[data-garden][data-tab="up"] .vk-or { margin: clamp(.5rem, 1.8vh, 1.25rem) 0 clamp(.375rem, 1.2vh, .75rem); }
+
+/* create account on a wide screen: name and username share a row, so the form is only one row taller than sign in */
+@media (min-width: 901px) {
+  /* the picture takes everything left of the form; the form's column is just the form plus the same gutter either side */
+  .vk[data-garden] { --vk-gutter: clamp(2.5rem, 5vw, 5rem); grid-template-columns: minmax(0, 1fr) calc(25rem + 2 * var(--vk-gutter)); }
+  .vk[data-garden] .vk-side { padding-inline: var(--vk-gutter); }
+  .vk[data-garden][data-tab="up"] .vk-form { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: .875rem; }
+  .vk[data-garden][data-tab="up"] .vk-form > :nth-child(n+3) { grid-column: 1 / -1; }
+}
+.vk[data-garden] .vk-form button.primary:hover:not(:disabled) .vk-arrow { translate: .25rem 0; }
+
+/* less motion: nothing rises or fills on its own; the bars just pick a verse */
+@media (prefers-reduced-motion: reduce) {
+  .vk *, .vk *::before, .vk *::after { animation: none !important; }
+}
+
+/* narrow screens can't hold both halves: the form first, the verses below it, and the page scrolls */
+@media (max-width: 900px) {
+  .vk { grid-template-columns: minmax(0, 1fr); grid-auto-rows: max-content; overflow-y: auto; }
+  .vk-side { padding: 2.5rem 1rem; overflow: visible; }
+  .vk-verse { order: 0; gap: 2rem; padding: 2.25rem 1rem 1.75rem; }
+  .vk-art { order: 0; aspect-ratio: 4 / 5; }   /* the painting's own shape */
+}
+
+/* Home: Key Info as a modern list — a coloured dot per body, tags for karaka and retrograde, pada as four pips */
+.key-stack .key-points .points th {
+  padding: .625rem .5rem .5rem;
+  font-size: calc(.8125rem * var(--list-scale, 1));
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.key-stack .key-points .points td {
+  padding: .375rem .5rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);   /* opaque, so a pinned first column covers what scrolls under it */
+  white-space: nowrap;
+  font-size: calc(.96875rem * var(--list-scale, 1));   /* bodies, longitudes, nakshatras and navamsas: big and bold enough to read at a glance */
+  font-weight: 600;
+}
+
+.key-stack .key-points .points td .kp-tag,
+.key-stack .key-points .points td .kp-deg small {
+  font-weight: 500;
+}
+
+.key-stack .key-points .points tbody tr {
+  background: none;
+}
+
+.key-stack .key-points .points tbody tr:hover td {
+  background: var(--shade);
+}
+
+.key-stack .key-points .points td:first-child {
+  width: 1%;   /* name column hugs the longest name, so the tags sit just after it */
+  padding-right: .75rem;
+}
+
+/* Starlight's Grahas tab: its headings in --th as every table's (the Windows layout's stay white), the columns closer together */
+.star .key-stack .key-points .points th {
+  color: var(--th);
+}
+
+.star .key-stack .key-points .points td {
+  padding-left: .3125rem;
+  padding-right: .3125rem;
+}
+
+.star .key-stack .key-points .points td:first-child {
+  padding-right: .375rem;
+}
+
+.key-points tr.lagna td:first-child {
+  color: var(--lagna);
+  font-weight: 600;
+}
+
+/* Starlight: the Lagna's name black as the other rows', only bold (the user's ask, 2026-11-19) */
+:root[data-layout="starlight"] .key-points tr.lagna td:first-child {
+  color: var(--ink);
+}
+
+.key-stack .key-points .points td.kp-tags {
+  padding-left: 0;   /* tags sit in their own column so they line up one below the other */
+}
+
+.kp-tags .kp-tag {
+  display: inline-block;
+  min-width: 2.4em;   /* AK, AmK, PiK all the same width, so the column is even */
+  text-align: center;
+}
+
+.rel-great-friend { color: var(--great-friend); }
+.rel-friend { color: var(--friend); }
+.rel-enemy { color: var(--enemy); }
+.rel-great-enemy { color: var(--great-enemy); }
+
+.kp-rel {
+  margin-left: .375rem;
+  font-size: calc(.75rem * var(--list-scale, 1));
+  font-weight: 500;
+}
+
+.kp-rel.rel-neutral { color: var(--muted); }
+
+.kp-dig {
+  margin-left: .25rem;
+  font-weight: 700;
+}
+
+.kp-dig.up { color: var(--good-ink); }
+.kp-dig.down { color: var(--bad-ink); }
+
+.kp-combust {
+  display: inline-block;
+  width: .4em;
+  height: .4em;
+  margin-left: .375rem;
+  border-radius: 50%;
+  background: var(--ink);   /* black, white on a dark theme */
+  vertical-align: middle;
+}
+
+/* a dignity tag after the sign or name it marks (ui.tsx Dignity), a space from it */
+.dig-tag { display: inline-block; margin-left: .375rem; }
+
+/* a partner's current age beside "Girl" or "Boy" (ui.tsx WhoAge) */
+.who-age { margin-left: .5rem; color: var(--muted); font-size: .95em; font-weight: 700; }
+
+.kp-tag.moola {
+  color: var(--moola);
+  box-shadow: inset 0 0 0 1px var(--moola);
+  background: none;
+}
+
+.kp-tag.own {
+  color: var(--here-ink);
+  background: var(--here);   /* its own home: the gold of "where you are" */
+}
+
+.kp-tag {
+  padding: 0 .375rem;
+  border-radius: .25rem;
+  background: var(--shade);
+  color: var(--muted);
+  font-size: calc(.78125rem * var(--list-scale, 1));
+  font-weight: 600;
+  letter-spacing: .03em;
+  line-height: 1.6;
+}
+
+.kp-deg small {
+  margin-left: 2px;
+  font-size: .85em;
+  color: var(--muted);
+}
+
+.kp-sign {
+  margin-left: .25rem;
+  font-family: var(--font);
+  font-weight: 600;
+}
+
+.pips {
+  display: inline-flex;
+  gap: .1875rem;
+  margin-left: .5rem;
+  vertical-align: middle;
+}
+
+.pips i {
+  width: .3125rem;
+  height: .3125rem;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.pips i.on {
+  background: var(--ink);
+}
+
+/* Starlight: the padas as small five-point stars */
+.star .pips i {
+  width: .5rem;
+  height: .5rem;
+  border-radius: 0;
+  clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.kp-varga.same {
+  color: var(--lagna);
+  font-weight: 600;
+}
+
+/* Highlights: four strength tiles, then the conditions as chips */
+.hl-stats {
+  grid-template-columns: repeat(auto-fit, minmax(8.125rem, 1fr));
+  padding: .75rem .75rem 0;
+}
+
+.hl-stats .stat {
+  padding: .5rem .625rem;
+}
+
+.hl-stats .stat-value {
+  font-size: calc(.9375rem * var(--list-scale, 1));
+}
+
+/* Starlight's graha cards: "Mars (1st & 8th) in 12th" on one line, the houses it rules small and grey, the bhava it is in in ink */
+.star .hl-stats .stat-value {
+  white-space: nowrap;
+}
+
+.hl-stats .stat-value small {
+  font-size: .75rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.hl-stats .stat-in {
+  color: var(--ink);
+}
+
+.hl-rows {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: baseline;
+  gap: .5rem .875rem;
+  margin: 0;
+  padding: .875rem .75rem .625rem;
+}
+
+.hl-rows div {
+  display: contents;
+}
+
+.hl-rows dt {
+  font-size: calc(.75rem * var(--list-scale, 1));
+  color: var(--muted);
+}
+
+/* the ⓘ after a fact's label: its rule and this chart's reasons, on hover (IconTips) */
+.hl-info {
+  display: inline-flex;
+  vertical-align: -2px;
+  margin-left: .25rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  cursor: help;
+}
+
+.hl-info svg {
+  width: .8125rem;
+  height: .8125rem;
+}
+
+.hl-info:hover,
+.hl-info:focus-visible {
+  color: var(--accent);
+}
+
+.hl-rows dd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  margin: 0;
+}
+
+.hl-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .3125rem;
+  padding: 1px .5625rem;
+  border: 1px solid var(--line);
+  border-radius: 62.4375rem;
+  font-size: calc(.75rem * var(--list-scale, 1));
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.hl-chip.good {
+  color: var(--good-ink);
+  border-color: color-mix(in srgb, var(--good-ink) 35%, var(--line));
+}
+
+.hl-chip.bad {
+  color: var(--bad-ink);
+  border-color: color-mix(in srgb, var(--bad-ink) 35%, var(--line));
+}
+
+/* Starlight's Overview: the facts in two newspaper columns, each fact whole in one, so neither half is left empty */
+.star .chart-highlights {
+  container-type: inline-size;
+}
+
+.star .hl-rows {
+  display: block;
+  column-gap: 1.375rem;
+}
+
+@container (min-width: 40rem) {
+  .star .hl-rows {
+    columns: 2;
+  }
+
+  /* the second column starts at Pushkara bhaga, level with Exalted, and its bands restart there too */
+  .star .hl-rows .hl-break {
+    break-before: column;
+  }
+
+  .star .hl-rows .hl-break ~ div:nth-child(odd) {
+    background: none;
+  }
+
+  .star .hl-rows .hl-break,
+  .star .hl-rows .hl-break ~ div:nth-child(even) {
+    background: var(--shade);
+  }
+}
+
+/* a fact per row on alternating grey bands; its one dot says strength or affliction, the grahas are plain words */
+.star .hl-rows div {
+  display: flex;
+  align-items: baseline;
+  gap: .5rem;
+  min-width: 0;
+  break-inside: avoid;
+  padding: .3125rem .5rem;
+  border-radius: .375rem;
+}
+
+.star .hl-rows div:nth-child(odd) {
+  background: var(--shade);
+}
+
+.star .hl-rows dt {
+  flex: 0 0 13.4em;     /* one label width (dot, label, ⓘ), so every fact's grahas start on the same line down a column ("Marana karaka sthana" fits) */
+  display: flex;
+  align-items: center;
+  gap: .4375rem;
+  font-size: .875rem;     /* the birth details' size under it */
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.star .hl-rows dd {
+  flex: 1;
+  min-width: 0;
+  gap: 2px .875rem;
+  color: var(--muted);
+}
+
+.hl-tone {
+  flex: none;
+  width: .4375rem;
+  height: .4375rem;
+  border-radius: 50%;
+  background: var(--weak);
+}
+
+.hl-good .hl-tone {
+  background: var(--strong);
+}
+
+/* Starlight's Pushkara and Mrityu Bhagas: a body in its pushkara bhaga is a green row, in its mrityu bhaga a red one, with the tone's dot before its name */
+.points.bhagas tr.good td {
+  background: color-mix(in srgb, var(--strong) 14%, transparent);
+}
+
+.points.bhagas tr.bad td {
+  background: color-mix(in srgb, var(--weak) 14%, transparent);
+  color: color-mix(in srgb, var(--weak) 45%, var(--ink));
+}
+
+.points.bhagas tr.good .hl-tone {
+  background: var(--strong);
+}
+
+.points.bhagas .hl-tone {
+  display: inline-block;
+  margin-right: .5rem;
+  vertical-align: middle;
+}
+
+.hl-mixed .hl-tone {
+  background: none;
+  box-shadow: inset 0 0 0 1.5px var(--chart-line);
+}
+
+.hl-val {
+  white-space: nowrap;
+  font-size: calc(.8125rem * var(--list-scale, 1));
+  font-weight: 500;
+  color: var(--ink);
+}
+
+button.hl-val {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+button.hl-val:hover,
+button.hl-val:focus-visible {
+  color: var(--accent);
+}
+
+.hl-val small {
+  margin-left: .25rem;
+  font-size: calc(.75rem * var(--list-scale, 1));
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.hl-clear {
+  margin: 0;
+  padding: 0 .75rem .75rem;
+  font-size: calc(.75rem * var(--list-scale, 1));
+}
+
+/* Core info: quiet labels, the chart kind as a pill */
+.core-card .core-head h2 {
+  font-size: calc(.9375rem * var(--list-scale, 1));
+}
+
+.core-mode {
+  padding: 0 .5rem;
+  border-radius: 62.4375rem;
+  background: var(--shade);
+  color: var(--muted);
+  font-size: calc(.71875rem * var(--list-scale, 1));
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.core-card dl.core dt {
+  font-weight: 500;
+  color: var(--c-CoreViewItemDescription, var(--muted));
+}
+
+.core-card dl.core dd {
+  font-weight: 500;
+}
+
+/* Best dasa at a glance: what runs now with how far through it is, then each level as a timeline rail */
+.glance-now {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: .25rem .5rem;
+  padding: .5rem .625rem;
+  border: 1px solid var(--line);
+  border-radius: .625rem;
+}
+
+.glance-now strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.glance-now>.muted {
+  font-size: calc(.71875rem * var(--list-scale, 1));
+  font-variant-numeric: tabular-nums;
+}
+
+.glance-now-label,
+.glance-tag {
+  font-size: calc(.65625rem * var(--list-scale, 1));
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.glance-tag {
+  flex: none;
+  padding: 2px 0 .25rem 1rem;
+}
+
+.glance-col button {
+  position: relative;
+  flex: 1 0 1.875rem;
+  max-height: 2.875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2px .375rem 2px 1.125rem;
+  border: 0;
+  border-radius: .375rem;
+  background: none;
+  text-align: left;
+  line-height: 1.15;
+}
+
+/* the rail, and each period's dot on it */
+.glance-col button::before {
+  content: "";
+  position: absolute;
+  left: .375rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--line);
+}
+
+.glance-col button::after {
+  content: "";
+  position: absolute;
+  left: .1875rem;
+  top: 50%;
+  width: .3125rem;
+  height: .3125rem;
+  margin-top: -.21875rem;
+  border: 1px solid var(--chart-line);
+  border-radius: 50%;
+  background: var(--panel);
+}
+
+.glance-col button b {
+  font-size: calc(.78125rem * var(--list-scale, 1));
+  font-weight: 600;
+}
+
+.glance-col button span {
+  font-size: calc(.65625rem * var(--list-scale, 1));
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.glance-col button:hover:not(:disabled) {
+  background: var(--shade);
+}
+
+.glance-col button:disabled {
+  opacity: 1;
+  color: inherit;
+  cursor: default;
+}
+
+.glance-col button.open {
+  background: var(--shade);
+}
+
+.glance-col button.open::after {
+  border-color: var(--ink);
+  background: var(--ink);
+}
+
+.glance-col button.on {
+  background: color-mix(in srgb, var(--running) 12%, var(--panel));
+}
+
+.glance-col button.on b {
+  color: var(--accent);
+}
+
+.glance-col button.on::after {
+  border-color: var(--here);
+  background: var(--here);
+  box-shadow: 0 0 0 .1875rem color-mix(in srgb, var(--here) 30%, transparent);
+}
+

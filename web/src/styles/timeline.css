@@ -1,0 +1,1141 @@
+/* --- Timeline: a calendar year of the sky --------------------------------------------------------------- */
+.tl { --name-w: calc(4.75rem * var(--list-scale, 1)); --row-h: calc(1.5rem * var(--list-scale, 1)); }
+.tl-head { justify-content: flex-start; gap: .5rem 1.375rem; }
+.tl-year { display: inline-flex; align-items: center; gap: 2px; }
+.tl-year button { display: inline-grid; place-items: center; width: 1.875rem; height: 1.875rem; padding: 0; border: 0; background: none; color: var(--muted); }
+.tl-year button:hover { background: var(--shade); color: var(--ink); }
+.tl-year .icon { width: 1.125rem; height: 1.125rem; }
+.tl-year input { width: 5.2em; font-size: calc(1.0625rem * var(--list-scale, 1)); font-weight: 600; text-align: center; border-color: transparent; background: none; }
+.tl-year input:hover, .tl-year input:focus { border-color: var(--line); }
+.tl-samvat { display: inline-flex; flex-wrap: wrap; gap: .25rem 1.125rem; font-size: calc(.8125rem * var(--list-scale, 1)); }
+/* the strip's key, at the right end of the bar */
+.tl-legend { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .25rem .75rem; margin-left: auto; font-size: calc(.71875rem * var(--list-scale, 1)); }
+.tl-legend>span { display: inline-flex; align-items: center; gap: .3125rem; }
+.tl-key { display: inline-block; width: .875rem; height: .25rem; }
+.tl-key.retro { height: .625rem; background: color-mix(in srgb, var(--accent) 35%, transparent); }
+.tl-key.gandanta { background: var(--error); }
+.tl-key.combust { background: var(--ink); }
+.tl-key.conj { width: .5rem; height: .5rem; border-radius: 50%; background: var(--good-ink); }
+.tl-key.solar, .tl-key.lunar { width: .625rem; height: .625rem; border-radius: 50%; }
+.tl-key.solar { background: var(--ink); box-shadow: 0 0 0 2px var(--gold); }
+.tl-key.conj.sun { background: var(--gold); }
+.tl-key.lunar { border: 1.5px solid var(--ink); background: var(--panel); }
+
+/* the strip on top at its own height; the two lists share the rest, as tall as each other, each scrolling inside */
+.tl-body { flex: 1; min-height: 0; overflow: auto; container-type: size; padding: .75rem 1rem 1rem; display: flex; flex-direction: column; gap: .875rem; }
+.tl-strip { flex: 1 0 auto; position: relative; display: flex; flex-direction: column; gap: .1875rem; }
+.tl-row { display: grid; grid-template-columns: var(--name-w) 1fr; align-items: center; }
+/* the graha rows share the page's height: a strip as tall as the tab */
+/* Sun to Ketu fill the page: each row an eighth of what the months, eclipses, gaps and padding leave; more bodies scroll */
+.tl-row:not(.tl-months, .tl-eclipses) { flex: 1 0 max(var(--row-h), calc((100cqh - 3.4375rem - 2 * var(--row-h)) / 8)); align-items: stretch; }
+.tl-months { position: sticky; top: 0; z-index: 4; background: var(--panel); box-shadow: 0 -.75rem 0 var(--panel); }     /* the shadow fills the padding above, so no row peeks over it */     /* the months stay put while the rows scroll */
+.tl-row:not(.tl-months, .tl-eclipses)>.tl-name { align-self: center; }
+.tl-row:not(.tl-months, .tl-eclipses)>.tl-track { height: auto; }
+.tl-name { font-size: calc(.75rem * var(--list-scale, 1)); font-weight: 600; }
+.tl-track { position: relative; height: var(--row-h); overflow: hidden; }     /* nothing past 31 December */
+.tl-months .tl-track { height: calc(1.5rem * var(--list-scale, 1)); border-bottom: 1px solid var(--line); }
+.tl-months .tl-track>* { position: absolute; padding: 0; border: 0; background: none; bottom: .1875rem; padding-left: .25rem; border-left: 1px solid var(--line); font-size: calc(.6875rem * var(--list-scale, 1)); color: var(--muted); line-height: 1; }
+.tl-eclipses .tl-name { color: var(--muted); font-weight: 500; }
+.tl-eclipse { position: absolute; top: 50%; translate: -.375rem -50%; display: inline-flex; align-items: center; gap: .3125rem; font-size: calc(.6875rem * var(--list-scale, 1)); white-space: nowrap; z-index: 2; }
+.tl-eclipse.flip { flex-direction: row-reverse; translate: calc(.375rem - 100%) -50%; }
+.tl-eclipse i { flex: none; width: .6875rem; height: .6875rem; border-radius: 50%; }
+.tl-eclipse.solar i { background: var(--ink); box-shadow: 0 0 0 2px var(--gold); }
+.tl-eclipse.lunar i { border: 1.5px solid var(--ink); background: var(--panel); }
+.tl-sign { position: absolute; top: 0; bottom: 0; overflow: hidden; padding: 0 .25rem; border-left: 1.5px solid var(--ink); font-size: calc(.6875rem * var(--list-scale, 1)); font-weight: 700; display: flex; align-items: center; white-space: nowrap; color: var(--ink); }
+.tl-sign.s0 { background: var(--shade); }
+.tl-sign.s1 { background: color-mix(in srgb, var(--line) 70%, var(--panel)); }
+.tl-retro { position: absolute; top: 0; bottom: 0; background: color-mix(in srgb, var(--accent) 35%, transparent); }     /* the whole box, sign name showing through */
+.tl-gandanta { position: absolute; top: 0; height: .375rem; background: var(--error); }
+.tl-combust { position: absolute; top: .5rem; height: .375rem; background: var(--ink); }
+.tl-conj { position: absolute; top: 50%; width: .75rem; height: .75rem; translate: -50% -50%; border: 2px solid var(--panel); border-radius: 50%; background: var(--good-ink); z-index: 2; }
+.tl-conj.in-gandanta { background: var(--error); }
+.tl-conj.sun { background: var(--gold); }     /* with the Sun: combustion */
+.tl-months .tl-track>button { top: 0; bottom: 0; overflow: hidden; padding: 0 0 0 .375rem; text-align: left; white-space: nowrap; font-size: calc(.84375rem * var(--list-scale, 1)); color: var(--ink); cursor: pointer; }
+.tl-months .tl-track>button { border-radius: 0; outline: none; box-shadow: none; }
+.tl-months .tl-track>button:hover, .tl-months .tl-track>button:focus-visible { border-color: var(--line); background: color-mix(in srgb, var(--accent) 12%, transparent); }     /* only the month's own box lights up */
+.tl-conj.flip b { left: auto; right: 100%; translate: -2px -50%; }
+.tl-back { display: inline-flex; align-items: center; gap: .25rem; padding: .1875rem .625rem .1875rem .375rem; font-size: .875rem; line-height: 1.26875rem; border: 1px solid var(--line); border-radius: 62.4375rem; background: none; color: var(--ink); font-weight: 600; }
+.tl-back:hover { background: var(--shade); }
+.tl-back .icon { width: 1.0625rem; height: 1.0625rem; }
+/* the other graha of the conjunction, named to the right of the dot */
+.tl-conj b { position: absolute; left: 100%; top: 50%; translate: 2px -50%; padding: 1px .1875rem; border-radius: .1875rem; background: var(--panel); font-size: calc(.65625rem * var(--list-scale, 1)); line-height: 1; color: var(--ink); white-space: nowrap; }
+.tl-lines { position: absolute; top: calc(1.5rem * var(--list-scale, 1)); bottom: 0; left: var(--name-w); right: 0; pointer-events: none; }
+.tl-line { position: absolute; top: 0; bottom: 0; width: 0; }
+.tl-line.today { border-left: 1.5px dotted var(--accent); }
+.tl-line.today b { position: absolute; top: calc(var(--row-h) / 2); translate: .25rem -50%; color: var(--accent); font-size: calc(.6875rem * var(--list-scale, 1)); line-height: 1; }     /* "Now", in the eclipse row */
+
+/* conjunctions and eclipses | sign changes, then retrogressions | gandanta */
+.tl-lists { flex: 1 0 35rem; min-height: 0; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); grid-template-rows: minmax(16.25rem, 1fr) minmax(16.25rem, 1fr); gap: .75rem; }
+.tl-card { min-height: 0; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.tl-card>header { flex: none; display: flex; align-items: center; justify-content: space-between; gap: .625rem; min-height: 2.625rem; padding: .25rem .75rem; border-bottom: 1px solid var(--line); }
+.tl-card h3 { margin: 0; font-size: calc(.84375rem * var(--list-scale, 1)); }
+.tl-card .check { font-size: calc(.75rem * var(--list-scale, 1)); color: var(--muted); }
+.tl-scroll { flex: 1; min-height: 0; overflow: auto; }
+.tl-grahas { display: flex; gap: .25rem; }
+.tl-grahas button { padding: .3125rem .75rem; border: 1px solid var(--line); border-radius: 62.4375rem; background: none; color: var(--muted); font-size: calc(.8125rem * var(--list-scale, 1)); }
+.tl-grahas button:hover { color: var(--ink); background: var(--shade); }
+.tl-grahas button[aria-selected="true"] { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); }
+.tl-table { width: 100%; border-collapse: collapse; font-size: calc(.78125rem * var(--list-scale, 1)); }
+.tl-table td { padding: .375rem .75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tl-table tr:last-child td { border-bottom: 0; }
+.tl-table b { font-weight: 600; }
+.tl-table .cap { text-transform: capitalize; }
+.tl-table .tl-key { vertical-align: -1px; margin-right: 2px; }
+.tl-when { white-space: nowrap; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tl-badge { display: inline-block; margin-left: .25rem; padding: 0 .375rem; border-radius: 62.4375rem; background: var(--error); color: var(--panel); font-size: calc(.65625rem * var(--list-scale, 1)); font-weight: 600; }
+.tl-r { margin-left: .25rem; color: var(--accent); font-size: .85em; font-weight: 700; }
+.tl-table td:not(:last-child) { width: 1%; white-space: nowrap; }     /* date and names hug their text; the place takes the rest */
+
+/* Terms of Service: the pop-up (Terms.tsx), the sign-up box that links to it, and Settings, Account (Account.tsx) */
+.dialog.terms { width: min(47.5rem, calc(100vw - 2rem)); height: min(51.25rem, calc(100dvh - 2rem)); padding: 0; }
+.dialog.terms[open] { display: flex; flex-direction: column; }
+.terms-head { padding: .875rem 1.25rem; border-bottom: 1px solid var(--line); }
+.terms-head h2 { margin: 0; }
+.terms-body { flex: 1; min-height: 0; overflow: auto; padding: .25rem 1.25rem 1rem; }
+.terms-foot { padding: .75rem 1.25rem; border-top: 1px solid var(--line); }
+.terms-foot menu { margin: .5rem 0 0; }
+.dialog.terms .terms-foot label.check { gap: .5rem; margin: 0; color: var(--ink); }
+.terms-text { font-size: calc(.84375rem * var(--list-scale, 1)); line-height: 1.6; text-wrap: pretty; }
+.terms-text h3 { margin: 1.125rem 0 .375rem; font-size: calc(.90625rem * var(--list-scale, 1)); }
+.terms-text p, .terms-text ul { margin: 0 0 .5rem; }
+.terms-text ul { padding-left: 1.25rem; }
+.terms-text li { margin-bottom: .25rem; }
+.vk-terms { margin: 1.25rem 0 0; font-size: .8125rem; line-height: 1.45; text-wrap: pretty; }
+.vk-forgot { justify-self: start; font-size: .8125rem; }
+.vk-forgot-note { margin: 0; font-size: .8125rem; line-height: 1.5; }
+.account form, .account section { padding: .25rem 0 .875rem; border-bottom: 1px solid var(--line); margin-bottom: .75rem; }
+.account h4 { margin: .25rem .5rem .375rem; font-size: calc(.875rem * var(--list-scale, 1)); }
+.account > * > p { margin: 0 .5rem .5rem; }
+.account .setting input { width: 100%; min-width: 0; }
+.account .setting input[readonly] { color: var(--muted); }
+.account menu { margin: .375rem .5rem 0; }
+.account-danger h4 { color: var(--error); }
+.account-avatar { display: flex; align-items: center; gap: .625rem; }
+.account .avatar { width: 3.5rem; height: 3.5rem; border-radius: 50%; overflow: hidden; display: grid; place-items: center; flex: none;
+  background: var(--accent); color: var(--accent-ink); font-size: 1.5rem; font-weight: 600; }
+.account .avatar img { width: 100%; height: 100%; object-fit: cover; }
+.account label.button { background: var(--panel); border: 1px solid var(--line); border-radius: .5rem; padding: .3125rem .625rem; cursor: pointer; }
+.account label.button:hover { border-color: color-mix(in srgb, var(--ink) 45%, var(--line)); }
+.account-themes { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 .5rem; }
+.account-theme { display: inline-flex; }
+.account-theme > button:first-child { border-radius: .5rem 0 0 .5rem; }
+.account-theme .icon-x { border-radius: 0 .5rem .5rem 0; border-left: 0; padding: .3125rem .5rem; }
+.account-themes button[aria-pressed="true"] { background: var(--here); color: var(--here-ink); border-color: var(--here); }
+.account-danger { border-bottom: 0 !important; }
+button.danger { background: var(--error); border-color: var(--error); color: #fff; }
+
+/* the time zone: signed hours in bold, the world's zones listed under it */
+.zone-input {
+  font-weight: 600;
+}
+
+/* a whole row: the hours and the zone's full name */
+.mode-form>.zone-field {
+  grid-column: 1 / -1;
+}
+
+.zone-list {
+  position: fixed;
+  z-index: 1000;
+  margin: 0;
+}
+
+/* the three Shad & Bhava tables share one first-column width; names and ruled houses each sit in fixed slots so they line up row to row */
+.pane.shadbala .points th:first-child,
+.pane.shadbala .points td:first-child {
+  width: 9.6em;
+  white-space: nowrap;
+}
+
+.pane.shadbala .points th:first-child>strong,
+.pane.shadbala .points td:first-child>strong {
+  display: inline-block;
+  width: 4.4em;
+}
+
+/* the houses' table: "10th" needs less room than "Mercury", so the lord sits close */
+.pane.shadbala.bhava .points th:first-child>strong,
+.pane.shadbala.bhava .points td:first-child>strong {
+  width: 3.4em;
+}
+
+/* the houses' table: a wider gap between the Bhava · Lord column and the bar */
+.pane.shadbala.bhava .points th:first-child,
+.pane.shadbala.bhava .points td:first-child {
+  padding-right: 1.125rem;
+}
+
+/* the houses a graha rules, side by side beside its name, each in its own centred slot */
+.points .rules {
+  display: inline-flex;
+  font-size: 0.85em;
+}
+
+.points .rules>span {
+  width: 2.4em;
+  text-align: center;
+}
+
+/* "Lord" over the ruled houses (and over each house's lord) */
+.pane.shadbala .points th:first-child>strong {
+  font-weight: inherit;
+}
+
+.pane.shadbala .points .rules-head {
+  margin-left: .375rem;
+}
+
+/* Starlight's Transits: beside the cast form, a button per view of the box under it (Home, the transit lists, the Transit Calendar), two across in
+   four rows, one slot free; the chosen one purple */
+.tone-good { --tone: var(--strong); }
+.tone-bad { --tone: var(--weak); }
+.tone-mixed { --tone: var(--gold); }
+
+.view-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1.875rem;
+  gap: .375rem;
+  padding: .75rem;
+}
+
+/* beside the form (two columns), the form alone sets the row's height: this box takes it, and its buttons shrink to fit it, 30px at most */
+@media (min-width: 1101px) {
+  /* the form and this box share the row equally */
+  .finder:has(>.finder-result>.view-tiles) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .finder>.pane.finder-result:has(>.view-tiles) {
+    contain: size;
+  }
+
+  .finder>.pane.finder-result>.view-tiles {
+    flex: 1 1 auto;
+    min-height: 0;
+    grid-template-rows: repeat(4, minmax(0, 1.875rem));
+    gap: .625rem;
+    padding-block: min(.75rem, 3%);
+  }
+}
+
+.view-tiles button {
+  min-width: 0;
+  padding: 0 .25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  border-radius: .375rem;
+  background: var(--panel);
+}
+
+.view-tiles button:hover {
+  background: var(--shade);
+}
+
+.view-tiles button[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* Home: natal and transit birth details side by side in one box; each column sizes its own list, so it stays one label/value pair wide */
+.finder>.pane.transit-info {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.transit-info>div {
+  container-type: inline-size;
+  min-width: 0;
+}
+
+/* under the form, the domain's transits as one table: a tone bar on each row, its contacts as chips with when each is exact,
+   each date with how far from now under it (past ones muted, the row's next to come bold), then "Coming up" */
+.finder>.pane.domain-timeline {
+  grid-column: 1 / -1;
+}
+
+/* as the other transit results: the table keeps its full height and the page scrolls; a scroller of its own caught the wheel short of "Coming up" */
+.domain-timeline>.scroll {
+  max-height: none;
+  overscroll-behavior-y: auto;
+}
+
+/* a row per graha, every column on one line but the contacts: wider than the box, it scrolls sideways (its Graha column frozen) */
+.domain-table {
+  width: max-content;
+  min-width: 100%;
+}
+
+/* the column heads each on one line */
+.domain-table th {
+  white-space: nowrap;
+}
+
+.domain-table td {
+  padding: .4375rem .75rem;
+  white-space: normal;
+  vertical-align: top;
+}
+
+.domain-table tbody td:first-child {
+  box-shadow: inset .1875rem 0 0 var(--tone, transparent);
+}
+
+.domain-table td>small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+.domain-table td.past {
+  color: var(--muted);
+}
+
+.domain-table td.next {
+  font-weight: 700;
+}
+
+.domain-table .key,
+.domain-table td.key {
+  font-weight: 700;
+}
+
+.domain-table .contact {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0 .375rem .25rem 0;
+  padding: .1875rem .5rem;
+  border-left: .1875rem solid var(--tone);
+  border-radius: .25rem;
+  background: color-mix(in srgb, var(--tone) 14%, var(--panel));
+  font-weight: 600;
+}
+
+.domain-table .contact small {
+  font-weight: 400;
+}
+
+.domain-table .contact small.past {
+  color: var(--muted);
+}
+
+.domain-table td.dt-contacts {
+  min-width: 22rem;
+  max-width: 34rem;
+}
+
+/* a contact with a natal graha that does not tie it to the domain: its tone as a bar only, the chip itself plain */
+.domain-table .contact.other {
+  background: var(--panel);
+  font-weight: 500;
+}
+
+.domain-table td.good>small { color: var(--strong); }
+.domain-table td.bad>small { color: var(--weak); }
+
+/* a graha's name (its reading) and a nakshatra's name (its pop-up): things to click, in purple */
+.dt-graha,
+.nak-link {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  cursor: pointer;
+}
+
+.dt-graha {
+  font-weight: 700;
+}
+
+/* the Grahas table's nakshatra cell: all of it, the pada pips too, opens the pop-up */
+.nak-cell {
+  cursor: pointer;
+}
+
+.nak-cell:hover .nak-link,
+.nak-link:hover,
+.dt-graha:hover {
+  text-decoration: underline;
+}
+
+.domain-table tr.divider th {
+  position: static;
+  padding-top: .875rem;
+  color: var(--ink);
+}
+
+/* Starlight's Transit Calendar view: over its box, the Outlook / Day by day toggle, the domain and how far ahead; it stays put, the tables scroll */
+.outlook-bar {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem 1rem;
+  padding: .625rem .75rem .375rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.outlook-bar select {
+  width: auto;
+}
+
+/* the Outlook's "Coming up": a row per graha, its events as chips in time order, each year's first after its year */
+.ahead-table {
+  margin-top: 1rem;
+}
+
+.ahead-table td {
+  padding: .4375rem .75rem;
+  vertical-align: top;
+}
+
+.ahead-table td:first-child {
+  width: 3.5rem;
+}
+
+.ahead-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: .375rem;
+}
+
+.ahead-ev {
+  display: inline-flex;
+  flex-direction: column;
+  padding: .1875rem .5rem;
+  border-left: .1875rem solid var(--tone, var(--line));
+  border-radius: .25rem;
+  background: color-mix(in srgb, var(--tone, var(--line)) 14%, var(--panel));
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ahead-ev small {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.ahead-ev small.inline {
+  display: inline;
+}
+
+.ahead-ev small b {
+  color: var(--ink);
+}
+
+/* a contact with a natal graha that does not tie it to the domain: its tone as a bar only */
+.ahead-ev.other {
+  background: var(--panel);
+  font-weight: 500;
+}
+
+.ahead-year {
+  align-self: center;
+  padding: 0 .25rem 0 .5rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.ahead-flow>.ahead-year:first-child {
+  padding-left: 0;
+}
+
+.ahead-more,
+.ahead-reach {
+  align-self: center;
+}
+
+/* the Outlook's Day by day: the weekday under each date; a graha's sign on the day it changes, arrowed in gold (purple is for what you click) */
+.calendar.days td>small {
+  display: block;
+  color: var(--muted);
+  font-size: .85em;
+}
+
+.calendar.days strong.moved {
+  color: var(--gold);
+}
+
+/* What the books say (Lore.tsx): a nakshatra's pop-up and a transit's info. The head (title, a line, the tab row) stays; the body scrolls */
+.dialog.lore {
+  width: min(52rem, calc(100vw - 2rem));
+  height: min(46rem, calc(100dvh - 2rem));
+  padding: 0;
+}
+
+.dialog.lore[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.lore-head {
+  padding: .875rem 1.25rem .625rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.lore-head h2 {
+  margin: 0;
+}
+
+/* the head's top line: the title and its line on the left, the nakshatra picker (back, the list, forward) on the right */
+.lore-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.lore-pick {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  flex: none;
+}
+
+.lore-pick {
+  position: relative;
+}
+
+.lore-pick .icon-btn {
+  font-size: 1.25em;
+  line-height: 1;
+  padding: 0 .5rem;
+}
+
+/* the drop-down's button: the open nakshatra and a caret */
+.lore-pick-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-width: 11.5rem;
+  justify-content: space-between;
+}
+
+.lore-pick-btn span {
+  color: var(--muted);
+  font-size: .8em;
+}
+
+/* the 27, in the app's menu look, inside the pop-up under its button: three columns of nine, read down */
+.lore-pick-list {
+  position: absolute;
+  top: calc(100% + .25rem);
+  right: 0;
+  z-index: 5;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(9, auto);
+  grid-template-columns: repeat(3, minmax(9.5rem, auto));
+  gap: 1px .25rem;
+  max-width: calc(100vw - 4rem);
+}
+
+.lore-pick-list button[aria-checked="true"] {
+  background: var(--here);
+  color: var(--here-ink);
+}
+
+.lore-pick-n {
+  min-width: 1.5em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.lore-pick-list button[aria-checked="true"] .lore-pick-n {
+  color: inherit;
+}
+
+@media (max-width: 40rem) {
+  .lore-pick-list {
+    grid-template-rows: repeat(14, auto);
+    grid-template-columns: repeat(2, minmax(8.5rem, auto));
+  }
+}
+
+/* a nakshatra read as the Lagna's, the Moon's and the Sun's: three side by side, one under the other when narrow */
+.lore-readings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: .5rem;
+}
+
+.lore-readings>div {
+  padding: .5rem .75rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+}
+
+.lore-readings>div.here {
+  border-color: var(--here);
+}
+
+.lore-readings>div>span {
+  color: var(--muted);
+  font-size: .8em;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.lore-readings p {
+  margin: .25rem 0 0;
+}
+
+.lore-head p {
+  margin: .25rem 0 0;
+}
+
+.lore-head .seg {
+  margin-top: .625rem;
+}
+
+.lore-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: .5rem 1.25rem 1rem;
+  line-height: 1.5;
+}
+
+/* the head's top right: the kind's drop-down (in the panel) and the picker, side by side, one over the other when narrow; Close after them */
+.lore-aside {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: .375rem .5rem;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.lore-close {
+  flex: none;
+  margin: .125rem -.5rem 0 0;
+}
+
+.lore-pick.plain .lore-pick-btn {
+  min-width: 8.5rem;
+}
+
+.lore-lede {
+  font-size: 1.05em;
+}
+
+.lore-sec {
+  margin-top: 1rem;
+}
+
+.lore-sec h3 {
+  margin: 0 0 .375rem;
+  font-size: 1em;
+}
+
+.lore-sec h3 small {
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.lore-sec p {
+  margin: .25rem 0;
+}
+
+.lore-points {
+  margin: .25rem 0;
+  padding-left: 1.125rem;
+}
+
+.lore-points li {
+  margin: .25rem 0;
+}
+
+.lore-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .375rem;
+  margin: .25rem 0 .5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.lore-chips li {
+  padding: .125rem .5rem;
+  border: 1px solid var(--line);
+  border-radius: .375rem;
+  background: var(--panel);
+}
+
+.lore-chips.good li { border-left: .1875rem solid var(--strong); }
+.lore-chips.bad li { border-left: .1875rem solid var(--weak); }
+
+.lore-padas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: .625rem;
+  margin: .75rem 0;
+}
+
+.lore-padas>div {
+  display: flex;
+  flex-direction: column;
+  gap: .125rem;
+  padding: .5rem .625rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+}
+
+.lore-padas small {
+  color: var(--muted);
+}
+
+.lore-padas small.lore-flag {
+  color: var(--strong);
+  font-weight: 600;
+}
+
+.lore-graha {
+  margin: .5rem 0;
+}
+
+.lore-graha.here>b {
+  color: var(--accent);
+}
+
+.lore-sec blockquote {
+  margin: .5rem 0;
+  padding: .25rem 0 .25rem .75rem;
+  border-left: .1875rem solid var(--gold);
+}
+
+.lore-sec blockquote cite {
+  color: var(--muted);
+  font-size: .85em;
+  font-style: normal;
+}
+
+/* a transit's info: each part a card, the classical verdict's tone as its bar */
+.lore-note {
+  padding: .625rem .75rem;
+  border: 1px solid var(--line);
+  border-left: .1875rem solid var(--tone, var(--line));
+  border-radius: .5rem;
+}
+
+.lore-src {
+  font-size: .85em;
+}
+
+/* a nakshatra's pop-up at a glance: what rules it and its nature as tiles, a word each (its gloss under it, smaller) */
+.lore-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+  gap: .5rem;
+  margin: .75rem 0 .25rem;
+}
+
+.lore-tiles>div {
+  display: flex;
+  flex-direction: column;
+  gap: .0625rem;
+  padding: .4375rem .625rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+}
+
+.lore-tiles>div>span {
+  color: var(--muted);
+  font-size: .8em;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.lore-tiles small,
+.lore-kv small {
+  display: block;
+  color: var(--muted);
+  font-size: .85em;
+  line-height: 1.35;
+}
+
+/* two sections side by side (strengths beside shadows, good beside avoid); one under the other when the pop-up is narrow */
+.lore-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 0 1.5rem;
+}
+
+/* a section's colour: a dot before its heading, green for what helps, red for what to watch */
+.lore-dot {
+  display: inline-block;
+  width: .5rem;
+  height: .5rem;
+  margin-right: .4375rem;
+  border-radius: 50%;
+  vertical-align: 1px;
+  background: var(--strong);
+}
+
+.lore-dot.bad {
+  background: var(--weak);
+}
+
+/* facts as key and value, a line each */
+.lore-kv {
+  margin: .25rem 0;
+}
+
+.lore-kv>div {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: .75rem;
+  padding: .3125rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.lore-kv>div:last-child {
+  border-bottom: none;
+}
+
+.lore-kv dt {
+  color: var(--muted);
+  font-size: .9em;
+}
+
+.lore-kv dd {
+  margin: 0;
+}
+
+/* "more", "+12 more": the rest of a passage or a row of chips, in purple as everything to click */
+.lore-more {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: .9em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lore-more:hover {
+  text-decoration: underline;
+}
+
+.lore-chips li.lore-chip-more {
+  border: none;
+  background: none;
+  padding-inline: .25rem;
+}
+
+/* Starlight's lore panel: over the right half beside the charts, not modal, so the charts stay live (Lore.tsx LoreHost sets its box) */
+.dialog.lore.side {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  max-width: none;
+  max-height: none;
+  z-index: 40;      /* under the menus (50) and the tips */
+  box-shadow: var(--shadow);
+}
+
+.lore-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.lore-back {
+  flex: none;
+  margin: -.125rem .25rem 0 -.5rem;
+  padding: 0 .5rem;
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+/* where a fact, a test or a reading comes from: small and grey under it */
+.lore-cite {
+  display: block;
+  color: var(--muted);
+  font-size: .8em;
+}
+
+/* what it signifies: Jiva (the living) beside Ajiva (the non-living), each part's chips under its name */
+.lore-jiva {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: .25rem 1.5rem;
+  margin-top: .5rem;
+}
+
+.lore-side h3 {
+  margin: .5rem 0 .25rem;
+  padding-bottom: .25rem;
+  border-bottom: 2px solid var(--accent);
+  font-size: 1.05em;
+}
+
+.lore-side.ajiva h3 {
+  border-bottom-color: var(--gold);
+}
+
+.lore-side h3 small {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.lore-part {
+  margin: .5rem 0 0;
+}
+
+.lore-part .lore-chips {
+  margin-top: .1875rem;
+}
+
+.lore-colour p,
+.lore-ja p {
+  margin: .375rem 0;
+}
+
+.lore-colour .g-kicker,
+.lore-ja .g-kicker {
+  display: block;
+}
+
+/* a reading in two: what it says of the living (jiva) beside the non-living (ajiva) */
+.lore-ja {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0 1rem;
+}
+
+/* one row per bhava, rashi, nakshatra or graha: its name (a link) and its reading; the chart's own marked */
+.lore-rows {
+  margin: .25rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lore-rows li {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: .75rem;
+  padding: .4375rem .5rem;
+  border-bottom: 1px solid var(--line);
+  border-left: .1875rem solid transparent;
+}
+
+.lore-rows li.here {
+  border-left-color: var(--here);
+  background: var(--shade);
+}
+
+.lore-row-head small.lore-here {
+  display: block;
+  color: var(--muted);
+  font-size: .8em;
+}
+
+@media (max-width: 40rem) {
+  .lore-rows li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .125rem;
+  }
+}
+
+/* BPHS 11's tests of a bhava: a green dot for what helps it, a red one for what harms it */
+.lore-checks {
+  margin: .25rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lore-checks li {
+  position: relative;
+  padding: .1875rem 0 .1875rem 1rem;
+}
+
+.lore-checks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .6875rem;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background: var(--strong);
+}
+
+.lore-checks li.bad::before {
+  background: var(--weak);
+}
+
+/* the aspects on a bhava's cusp, as the Grahas card draws them: the graha (a link), its bar, its virupas */
+.lore-bars {
+  max-width: 28rem;
+}
+
+.lore-bars li>span:first-child {
+  font-weight: 600;
+}
+
+.lore-seg {
+  margin: .5rem 0 .25rem;
+}
+
+.lore-quote b {
+  font-weight: 600;
+}
+
+/* the Grahas card's way into the graha's own pop-up */
+.g-lore {
+  margin: .5rem 0 0;
+}
+
+/* Starlight's Transits, view Chakras: the chakra's wheel alone fills the left half where the transit square was */
+.star-chart.transit-chakra {
+  place-items: stretch;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+}
+
+.chakra-only-draw {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  padding: .75rem;
+}
+
+.chakra-only-draw>.chakra-draw {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* under the cast form, the chakras' row stays put over the picked one's controls, card and reading, which scroll in the box */
+.finder:has(>.pane.chakra-view) {
+  grid-template-rows: minmax(0, 1fr);
+  overflow: hidden;
+}
+
+.finder>.pane.chakra-view {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.chakra-view .one-row-tabs {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.chakra-only-side {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.chakra-only-side>.chakra-side {
+  flex: 1 1 0;
+  align-content: flex-start;
+  padding: .625rem .75rem .75rem;
+}
+
+/* the divisional charts in the left half: four at a time, two across and two down as Home's charts, each a quarter of the half (100cqh:
+   the half's height, .star-chart's); it scrolls on to the next row, stopping with a row at the top */
+.chakra-only-vargas {
+  --mv-gap: .5rem;
+  min-height: 0;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--mv-gap);
+}
+
+.chakra-only-vargas>.many-vargas {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: calc((100cqh - 3 * var(--mv-gap)) / 2);
+  gap: var(--mv-gap);
+  padding: var(--mv-gap);
+}
+
+.chakra-only-vargas .many-vargas .mv-chart {
+  min-height: 0;
+  scroll-snap-align: start;
+}
+
+/* each chart fills its quarter, as Home's: not square, it draws to the box's shape */
+.chakra-only-vargas .many-vargas .chart-panel {
+  height: 100%;
+}
+
+.chakra-only-vargas .many-vargas svg.grid {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+/* beside them, under the chakras' row, Home's All Divisional Longitudes: its box is this one, the table scrolling in it (sideways too) */
+.chakra-view>.key-stack {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  border-radius: 0;
+}
+
+.chakra-view>.key-stack>.scroll {
+  flex: 1 1 0;
+  min-height: 0;
+  max-height: none;
+  overflow: auto;
+}
+
+/* Transits > Jamakkol: the chart with the eight Jama grahas round the outside, no boxes of their own (Jamakkol.tsx RING) */
+.jamakkol {
+  --ring: 5.5rem;
+  display: grid;
+  grid-template-columns: var(--ring) repeat(4, minmax(0, 1fr)) var(--ring);
+  grid-template-rows: var(--ring) repeat(4, minmax(0, auto)) var(--ring);
+  gap: .25rem;
+  padding: .625rem;
+}
+
+.jamakkol-chart {
+  grid-row: 2 / 6;
+  grid-column: 2 / 6;
+  min-width: 0;
+}
+
+.jama-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .125rem;
+  min-width: 0;
+  color: var(--accent);     /* the Jama grahas purple, set apart from the grahas in the chart */
+  font-size: calc(1rem * var(--list-scale, 1));
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.jama-box strong {
+  font-weight: 700;
+}
+
+/* its table: the bodies as Key Info writes them; the Jama grahas purple, as round the chart */
+.jamakkol-table td {
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.jamakkol-table .jama-row td,
+.jamakkol-table .jama-row .kp-deg small {
+  color: var(--accent);
+}
+
+.jamakkol-table .jama-row .pips i.on {
+  background: var(--accent);
+}

@@ -1,0 +1,1209 @@
+{
+ "groups": [
+  {
+   "index": 0,
+   "name": "Chart frames",
+   "first": 21,
+   "last": 52
+  },
+  {
+   "index": 1,
+   "name": "Dasa frames",
+   "first": 8,
+   "last": 16
+  },
+  {
+   "index": 2,
+   "name": "All frames with lists",
+   "first": 0,
+   "last": 7
+  },
+  {
+   "index": 3,
+   "name": "Form frames (Tajaka, Transit, Mundane etc)",
+   "first": 17,
+   "last": 20
+  },
+  {
+   "index": 4,
+   "name": "Ashtakavarga frame",
+   "first": 53,
+   "last": 61
+  },
+  {
+   "index": 5,
+   "name": "Core info frame",
+   "first": 62,
+   "last": 65
+  },
+  {
+   "index": 6,
+   "name": "Sarvatobhadra chakra frame",
+   "first": 77,
+   "last": 89
+  },
+  {
+   "index": 7,
+   "name": "Kota chakra frame",
+   "first": 66,
+   "last": 76
+  },
+  {
+   "index": 8,
+   "name": "Kala chakra frame",
+   "first": 90,
+   "last": 95
+  },
+  {
+   "index": 9,
+   "name": "Panchanga frame",
+   "first": 96,
+   "last": 98
+  },
+  {
+   "index": 10,
+   "name": "Strength bar graph frame",
+   "first": 99,
+   "last": 105
+  },
+  {
+   "index": 11,
+   "name": "Transit calendar window",
+   "first": 106,
+   "last": 123
+  },
+  {
+   "index": 12,
+   "name": "General",
+   "first": 124,
+   "last": 124
+  }
+ ],
+ "colours": [
+  {
+   "index": 0,
+   "key": "ColorListViewTitle",
+   "label": "Text in first column",
+   "group": "All frames with lists",
+   "group_index": 2,
+   "default_rgb": "#750c3e",
+   "preview_kind": "text"
+  },
+  {
+   "index": 1,
+   "key": "ColorListViewItem",
+   "label": "Text in other columns",
+   "group": "All frames with lists",
+   "group_index": 2,
+   "default_rgb": "#002878",
+   "preview_kind": "text"
+  },
+  {
+   "index": 2,
+   "key": "ColorListViewOddLineBackground",
+   "label": "Background color in odd lines",
+   "group": "All frames with lists",
+   "group_index": 2,
+   "default_rgb": "#ffffff",
+   "preview_kind": "background"
+  },
+  {
+   "index": 3,
+   "key": "ColorListViewEvenLineBackground",
+   "label": "Background color in even lines",
+   "group": "All frames with lists",
+   "group_index": 2,
+   "default_rgb": "#f1eade",
+   "preview_kind": "background"
+  },
+  {
+   "index": 4,
+   "key": "ColorListViewBackground",
+   "label": "Overall Background",
+   "group": "All frames with lists",
+   "group_index": 2,
+   "default_rgb": "#f8f8f2",
+   "preview_kind": "background"
+  },
+  {
+   "index": 5,
+   "key": "ColorListViewHighlight",
+   "label": "Highlight",
+   "group": "All frames with lists",
+   "group_index": 2,
+   "default_rgb": "#e6c8dc",
+   "preview_kind": "background"
+  },
+  {
+   "index": 6,
+   "key": "ColorListViewTitleDescription",
+   "label": "First column text in any special rows",
+   "group": "All frames with lists",
+   "group_index": 2,
+   "default_rgb": "#c81e82",
+   "preview_kind": "text"
+  },
+  {
+   "index": 7,
+   "key": "ColorListViewItemDescription",
+   "label": "Other column text in any special rows",
+   "group": "All frames with lists",
+   "group_index": 2,
+   "default_rgb": "#1e64c8",
+   "preview_kind": "text"
+  },
+  {
+   "index": 8,
+   "key": "ColorDasaViewBackground",
+   "label": "Window/frame background",
+   "group": "Dasa frames",
+   "group_index": 1,
+   "default_rgb": "#f5f4f3",
+   "preview_kind": "background"
+  },
+  {
+   "index": 9,
+   "key": "ColorDasaViewHeader",
+   "label": "Period title",
+   "group": "Dasa frames",
+   "group_index": 1,
+   "default_rgb": "#002878",
+   "preview_kind": "text"
+  },
+  {
+   "index": 10,
+   "key": "ColorDasaViewOwner",
+   "label": "Period owner's name",
+   "group": "Dasa frames",
+   "group_index": 1,
+   "default_rgb": "#006450",
+   "preview_kind": "text"
+  },
+  {
+   "index": 11,
+   "key": "ColorDasaViewDate",
+   "label": "Period start/end date",
+   "group": "Dasa frames",
+   "group_index": 1,
+   "default_rgb": "#c80000",
+   "preview_kind": "text"
+  },
+  {
+   "index": 12,
+   "key": "ColorDasaViewTime",
+   "label": "Period start/end time",
+   "group": "Dasa frames",
+   "group_index": 1,
+   "default_rgb": "#be5a3c",
+   "preview_kind": "text"
+  },
+  {
+   "index": 13,
+   "key": "ColorDasaViewHyphen",
+   "label": "Hyphen between start and end",
+   "group": "Dasa frames",
+   "group_index": 1,
+   "default_rgb": "#a03cc8",
+   "preview_kind": "text"
+  },
+  {
+   "index": 14,
+   "key": "ColorDasaViewFocus",
+   "label": "Focus rectangle of selected period",
+   "group": "Dasa frames",
+   "group_index": 1,
+   "default_rgb": "#8c2864",
+   "preview_kind": "line"
+  },
+  {
+   "index": 15,
+   "key": "ColorDasaViewHint",
+   "label": "Mini-help at the bottom",
+   "group": "Dasa frames",
+   "group_index": 1,
+   "default_rgb": "#966487",
+   "preview_kind": "text"
+  },
+  {
+   "index": 16,
+   "key": "ColorDasaViewYear",
+   "label": "Display of dasa year used",
+   "group": "Dasa frames",
+   "group_index": 1,
+   "default_rgb": "#826e5a",
+   "preview_kind": "text"
+  },
+  {
+   "index": 17,
+   "key": "ColorFornViewBackground",
+   "label": "Window/frame background",
+   "group": "Form frames (Tajaka, Transit, Mundane etc)",
+   "group_index": 3,
+   "default_rgb": "#e3dbcc",
+   "preview_kind": "background"
+  },
+  {
+   "index": 18,
+   "key": "ColorFornViewText",
+   "label": "Static text",
+   "group": "Form frames (Tajaka, Transit, Mundane etc)",
+   "group_index": 3,
+   "default_rgb": "#780046",
+   "preview_kind": "text"
+  },
+  {
+   "index": 19,
+   "key": "ColorFornViewControlBackground",
+   "label": "Background of controls (edit, combobox)",
+   "group": "Form frames (Tajaka, Transit, Mundane etc)",
+   "group_index": 3,
+   "default_rgb": "#fafaf0",
+   "preview_kind": "background"
+  },
+  {
+   "index": 20,
+   "key": "ColorFornViewControlText",
+   "label": "Text in controls (edit, combobox)",
+   "group": "Form frames (Tajaka, Transit, Mundane etc)",
+   "group_index": 3,
+   "default_rgb": "#106475",
+   "preview_kind": "text"
+  },
+  {
+   "index": 21,
+   "key": "ColorChartViewFrame",
+   "label": "Frame background outside charts",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#e9e1d8",
+   "preview_kind": "background"
+  },
+  {
+   "index": 22,
+   "key": "ColorChartViewCartBackground",
+   "label": "Background inside charts",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#e6e6e6",
+   "preview_kind": "background"
+  },
+  {
+   "index": 23,
+   "key": "ColorChartViewChartLine",
+   "label": "Lines in charts",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#0a0a0a",
+   "preview_kind": "line"
+  },
+  {
+   "index": 24,
+   "key": "ColorChartViewLagna",
+   "label": "Lagna",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#c81eaa",
+   "preview_kind": "text"
+  },
+  {
+   "index": 25,
+   "key": "ColorChartViewPlanet",
+   "label": "Planets",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#b43c3c",
+   "preview_kind": "text"
+  },
+  {
+   "index": 26,
+   "key": "ColorChartViewAL",
+   "label": "Arudha Lagna",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#7828c8",
+   "preview_kind": "text"
+  },
+  {
+   "index": 27,
+   "key": "ColorChartViewSpecialLagna",
+   "label": "Specials lagnas (HL, GL, SL)",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#8c7050",
+   "preview_kind": "text"
+  },
+  {
+   "index": 28,
+   "key": "ColorChartViewBhavaArudha",
+   "label": "Bhava arudhas",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#5078b4",
+   "preview_kind": "text"
+  },
+  {
+   "index": 29,
+   "key": "ColorChartViewUpagraha",
+   "label": "Upagrahas",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#465f55",
+   "preview_kind": "text"
+  },
+  {
+   "index": 30,
+   "key": "ColorChartViewOuterPlanets",
+   "label": "Uranus, Neptune and Pluto",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#d38d63",
+   "preview_kind": "text"
+  },
+  {
+   "index": 31,
+   "key": "ColorChartViewGrahaArudha",
+   "label": "Graha arudhas",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#143282",
+   "preview_kind": "text"
+  },
+  {
+   "index": 32,
+   "key": "ColorChartViewVarnada",
+   "label": "Varnadas",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#505a50",
+   "preview_kind": "text"
+  },
+  {
+   "index": 33,
+   "key": "ColorChartViewCharaKaraka",
+   "label": "Chara karakas",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#0a6414",
+   "preview_kind": "text"
+  },
+  {
+   "index": 34,
+   "key": "ColorChartViewSpecialPoint",
+   "label": "Special points  like muntha",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#aa6e8c",
+   "preview_kind": "text"
+  },
+  {
+   "index": 35,
+   "key": "ColorChartViewGrahaArudhaTitle",
+   "label": "Graha arudha chart title",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#646482",
+   "preview_kind": "text"
+  },
+  {
+   "index": 36,
+   "key": "ColorChartViewSelectedPlanet",
+   "label": "Selected planet",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#ff0000",
+   "preview_kind": "text"
+  },
+  {
+   "index": 37,
+   "key": "ColorChartViewSelectedRasi",
+   "label": "Selected rasi",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#fadcdc",
+   "preview_kind": "background"
+  },
+  {
+   "index": 38,
+   "key": "ColorChartViewHighlightedRasi",
+   "label": "Highlighted rasi",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#dcfadc",
+   "preview_kind": "background"
+  },
+  {
+   "index": 39,
+   "key": "ColorChartViewStartRasi",
+   "label": "Rasi indices in north Indian charts",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#3c783c",
+   "preview_kind": "background"
+  },
+  {
+   "index": 40,
+   "key": "ColorChartViewAdhimitraBackground",
+   "label": "Adhimitra planet background",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#00ff00",
+   "preview_kind": "background"
+  },
+  {
+   "index": 41,
+   "key": "ColorChartViewAdhimitraForeground",
+   "label": "Adhimitra planet name",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#0a0a0a",
+   "preview_kind": "text"
+  },
+  {
+   "index": 42,
+   "key": "ColorChartViewMitraBackground",
+   "label": "Mitra planet background",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#82c882",
+   "preview_kind": "background"
+  },
+  {
+   "index": 43,
+   "key": "ColorChartViewMitraForeground",
+   "label": "Mitra planet name",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#0a0a0a",
+   "preview_kind": "text"
+  },
+  {
+   "index": 44,
+   "key": "ColorChartViewSamaBackground",
+   "label": "Sama planet background",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#bebeaa",
+   "preview_kind": "background"
+  },
+  {
+   "index": 45,
+   "key": "ColorChartViewSamaForeground",
+   "label": "Sama planet name",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#0a0a0a",
+   "preview_kind": "text"
+  },
+  {
+   "index": 46,
+   "key": "ColorChartViewSatruBackground",
+   "label": "Satru planet background",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#c85050",
+   "preview_kind": "background"
+  },
+  {
+   "index": 47,
+   "key": "ColorChartViewSatruForeground",
+   "label": "Satru planet name",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#0a0a0a",
+   "preview_kind": "text"
+  },
+  {
+   "index": 48,
+   "key": "ColorChartViewAdhisatruBackground",
+   "label": "Adhisatru planet background",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#ff0000",
+   "preview_kind": "background"
+  },
+  {
+   "index": 49,
+   "key": "ColorChartViewAdhisatruForeground",
+   "label": "Adhisatru planet name",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#0a0a0a",
+   "preview_kind": "text"
+  },
+  {
+   "index": 50,
+   "key": "ColorChartViewHint",
+   "label": "Text outside charts in chart frames",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#be5a3c",
+   "preview_kind": "text"
+  },
+  {
+   "index": 51,
+   "key": "ColorChartViewInnerOuterSeparator",
+   "label": "Inner-outer separator in mixed charts",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#969628",
+   "preview_kind": "line"
+  },
+  {
+   "index": 52,
+   "key": "ColorChartViewOuter",
+   "label": "Outer chart background in mixed charts",
+   "group": "Chart frames",
+   "group_index": 0,
+   "default_rgb": "#dcdcbe",
+   "preview_kind": "background"
+  },
+  {
+   "index": 53,
+   "key": "ColorAVViewFrame",
+   "label": "Background of AV frame",
+   "group": "Ashtakavarga frame",
+   "group_index": 4,
+   "default_rgb": "#f5f1e6",
+   "preview_kind": "background"
+  },
+  {
+   "index": 54,
+   "key": "ColorAVViewCartBackground",
+   "label": "Background inside AV charts",
+   "group": "Ashtakavarga frame",
+   "group_index": 4,
+   "default_rgb": "#e6e6e6",
+   "preview_kind": "background"
+  },
+  {
+   "index": 55,
+   "key": "ColorAVViewChartLine",
+   "label": "Lines in AV charts",
+   "group": "Ashtakavarga frame",
+   "group_index": 4,
+   "default_rgb": "#3c3c3c",
+   "preview_kind": "line"
+  },
+  {
+   "index": 56,
+   "key": "ColorAVViewHeader",
+   "label": "Window header",
+   "group": "Ashtakavarga frame",
+   "group_index": 4,
+   "default_rgb": "#780046",
+   "preview_kind": "text"
+  },
+  {
+   "index": 57,
+   "key": "ColorAVViewChartTitle",
+   "label": "Titles of AV charts",
+   "group": "Ashtakavarga frame",
+   "group_index": 4,
+   "default_rgb": "#b43c3c",
+   "preview_kind": "text"
+  },
+  {
+   "index": 58,
+   "key": "ColorAVViewChartText",
+   "label": "Text inside AV charts",
+   "group": "Ashtakavarga frame",
+   "group_index": 4,
+   "default_rgb": "#002878",
+   "preview_kind": "text"
+  },
+  {
+   "index": 59,
+   "key": "ColorAVViewHightlight",
+   "label": "Highlight color of radical positions",
+   "group": "Ashtakavarga frame",
+   "group_index": 4,
+   "default_rgb": "#d2d2d2",
+   "preview_kind": "background"
+  },
+  {
+   "index": 60,
+   "key": "ColorAVViewHelp",
+   "label": "Help within AV frames",
+   "group": "Ashtakavarga frame",
+   "group_index": 4,
+   "default_rgb": "#006478",
+   "preview_kind": "text"
+  },
+  {
+   "index": 61,
+   "key": "ColorAVViewStarRasiNorthIndian",
+   "label": "Rasi indices in north Indian charts",
+   "group": "Ashtakavarga frame",
+   "group_index": 4,
+   "default_rgb": "#3c783c",
+   "preview_kind": "background"
+  },
+  {
+   "index": 62,
+   "key": "ColorCoreViewBackground",
+   "label": "Frame background color",
+   "group": "Core info frame",
+   "group_index": 5,
+   "default_rgb": "#f5f3ef",
+   "preview_kind": "background"
+  },
+  {
+   "index": 63,
+   "key": "ColorCoreViewHeader",
+   "label": "Frame header (e.g. \"Natal chart\")",
+   "group": "Core info frame",
+   "group_index": 5,
+   "default_rgb": "#002878",
+   "preview_kind": "text"
+  },
+  {
+   "index": 64,
+   "key": "ColorCoreViewItemDescription",
+   "label": "Item description (e.g. \"Tithi\")",
+   "group": "Core info frame",
+   "group_index": 5,
+   "default_rgb": "#006450",
+   "preview_kind": "text"
+  },
+  {
+   "index": 65,
+   "key": "ColorCoreViewItemValue",
+   "label": "Item value (e.g. \"Sulka Navami\")",
+   "group": "Core info frame",
+   "group_index": 5,
+   "default_rgb": "#c80000",
+   "preview_kind": "text"
+  },
+  {
+   "index": 66,
+   "key": "ColorKotaViewFrame",
+   "label": "Frame background",
+   "group": "Kota chakra frame",
+   "group_index": 7,
+   "default_rgb": "#dcdcdc",
+   "preview_kind": "background"
+  },
+  {
+   "index": 67,
+   "key": "ColorKotaViewPillar",
+   "label": "Kota stambha (fort pillar)",
+   "group": "Kota chakra frame",
+   "group_index": 7,
+   "default_rgb": "#c8ffb4",
+   "preview_kind": "background"
+  },
+  {
+   "index": 68,
+   "key": "ColorKotaViewInner",
+   "label": "Kotaantara (fort interior)",
+   "group": "Kota chakra frame",
+   "group_index": 7,
+   "default_rgb": "#ebffdc",
+   "preview_kind": "background"
+  },
+  {
+   "index": 69,
+   "key": "ColorKotaViewWall",
+   "label": "Kota praakaara (fort wall)",
+   "group": "Kota chakra frame",
+   "group_index": 7,
+   "default_rgb": "#ffbeaa",
+   "preview_kind": "background"
+  },
+  {
+   "index": 70,
+   "key": "ColorKotaViewOuter",
+   "label": "Kota baahya (fort exterior)",
+   "group": "Kota chakra frame",
+   "group_index": 7,
+   "default_rgb": "#ff9687",
+   "preview_kind": "background"
+  },
+  {
+   "index": 71,
+   "key": "ColorKotaViewAreaName",
+   "label": "Capions of fort areas",
+   "group": "Kota chakra frame",
+   "group_index": 7,
+   "default_rgb": "#965078",
+   "preview_kind": "text"
+  },
+  {
+   "index": 72,
+   "key": "ColorKotaViewStarName",
+   "label": "Names of 28 stars",
+   "group": "Kota chakra frame",
+   "group_index": 7,
+   "default_rgb": "#3c2864",
+   "preview_kind": "text"
+  },
+  {
+   "index": 73,
+   "key": "ColorKotaViewBeneficPlanetName",
+   "label": "Names of benefic planets",
+   "group": "Kota chakra frame",
+   "group_index": 7,
+   "default_rgb": "#005a00",
+   "preview_kind": "text"
+  },
+  {
+   "index": 74,
+   "key": "ColorKotaViewMaleficPlanetName",
+   "label": "Names of malefic planets",
+   "group": "Kota chakra frame",
+   "group_index": 7,
+   "default_rgb": "#960000",
+   "preview_kind": "text"
+  },
+  {
+   "index": 75,
+   "key": "ColorKotaViewSwamiName",
+   "label": "Name of kota swami (fort owner)",
+   "group": "Kota chakra frame",
+   "group_index": 7,
+   "default_rgb": "#145028",
+   "preview_kind": "text"
+  },
+  {
+   "index": 76,
+   "key": "ColorKotaViewPaalaName",
+   "label": "Name of kota pala (fort guard)",
+   "group": "Kota chakra frame",
+   "group_index": 7,
+   "default_rgb": "#f02828",
+   "preview_kind": "text"
+  },
+  {
+   "index": 77,
+   "key": "ColorSBCViewFrame",
+   "label": "Overall frame background",
+   "group": "Sarvatobhadra chakra frame",
+   "group_index": 6,
+   "default_rgb": "#c2c1a4",
+   "preview_kind": "background"
+  },
+  {
+   "index": 78,
+   "key": "ColorSBCViewCartBackground",
+   "label": "Background inside chart",
+   "group": "Sarvatobhadra chakra frame",
+   "group_index": 6,
+   "default_rgb": "#e7ede0",
+   "preview_kind": "background"
+  },
+  {
+   "index": 79,
+   "key": "ColorSBCViewHighlightFrom",
+   "label": "Nakshatra from where vedha is seen",
+   "group": "Sarvatobhadra chakra frame",
+   "group_index": 6,
+   "default_rgb": "#fafadc",
+   "preview_kind": "background"
+  },
+  {
+   "index": 80,
+   "key": "ColorSBCViewHighlightTo",
+   "label": "Boxes receiving vedha",
+   "group": "Sarvatobhadra chakra frame",
+   "group_index": 6,
+   "default_rgb": "#dcfadc",
+   "preview_kind": "background"
+  },
+  {
+   "index": 81,
+   "key": "ColorSBCViewSpecialPoint",
+   "label": "Special point",
+   "group": "Sarvatobhadra chakra frame",
+   "group_index": 6,
+   "default_rgb": "#dcfafa",
+   "preview_kind": "background"
+  },
+  {
+   "index": 82,
+   "key": "ColorSBCViewNakshatra",
+   "label": "Nakshatras (constellations)",
+   "group": "Sarvatobhadra chakra frame",
+   "group_index": 6,
+   "default_rgb": "#64963c",
+   "preview_kind": "text"
+  },
+  {
+   "index": 83,
+   "key": "ColorSBCViewRasi",
+   "label": "Rasis (signs)",
+   "group": "Sarvatobhadra chakra frame",
+   "group_index": 6,
+   "default_rgb": "#14468c",
+   "preview_kind": "text"
+  },
+  {
+   "index": 84,
+   "key": "ColorSBCViewTithi",
+   "label": "Tithis (lunar days)",
+   "group": "Sarvatobhadra chakra frame",
+   "group_index": 6,
+   "default_rgb": "#b464e1",
+   "preview_kind": "text"
+  },
+  {
+   "index": 85,
+   "key": "ColorSBCViewVaara",
+   "label": "Vaaras (weekdays)",
+   "group": "Sarvatobhadra chakra frame",
+   "group_index": 6,
+   "default_rgb": "#3c9696",
+   "preview_kind": "text"
+  },
+  {
+   "index": 86,
+   "key": "ColorSBCViewPlanet",
+   "label": "Planets",
+   "group": "Sarvatobhadra chakra frame",
+   "group_index": 6,
+   "default_rgb": "#b43c3c",
+   "preview_kind": "text"
+  },
+  {
+   "index": 87,
+   "key": "ColorSBCViewPlanetHighlight",
+   "label": "Highlighted planets",
+   "group": "Sarvatobhadra chakra frame",
+   "group_index": 6,
+   "default_rgb": "#1e783c",
+   "preview_kind": "text"
+  },
+  {
+   "index": 88,
+   "key": "ColorSBCViewConsonant",
+   "label": "Consonants",
+   "group": "Sarvatobhadra chakra frame",
+   "group_index": 6,
+   "default_rgb": "#dc78be",
+   "preview_kind": "text"
+  },
+  {
+   "index": 89,
+   "key": "ColorSBCViewVowel",
+   "label": "Vowels",
+   "group": "Sarvatobhadra chakra frame",
+   "group_index": 6,
+   "default_rgb": "#b47828",
+   "preview_kind": "text"
+  },
+  {
+   "index": 90,
+   "key": "ColorKalachakraViewFrame",
+   "label": "Overall frame background",
+   "group": "Kala chakra frame",
+   "group_index": 8,
+   "default_rgb": "#dcdcdc",
+   "preview_kind": "background"
+  },
+  {
+   "index": 91,
+   "key": "ColorKalachakraViewLine",
+   "label": "The lines in chart",
+   "group": "Kala chakra frame",
+   "group_index": 8,
+   "default_rgb": "#000000",
+   "preview_kind": "line"
+  },
+  {
+   "index": 92,
+   "key": "ColorKalachakraViewStarName",
+   "label": "Names of 28 stars",
+   "group": "Kala chakra frame",
+   "group_index": 8,
+   "default_rgb": "#3c2864",
+   "preview_kind": "text"
+  },
+  {
+   "index": 93,
+   "key": "ColorKalachakraViewDikpalaName",
+   "label": "Names of dikpalas",
+   "group": "Kala chakra frame",
+   "group_index": 8,
+   "default_rgb": "#005a00",
+   "preview_kind": "text"
+  },
+  {
+   "index": 94,
+   "key": "ColorKalachakraViewBodyTypeTitle",
+   "label": "Body type header",
+   "group": "Kala chakra frame",
+   "group_index": 8,
+   "default_rgb": "#960000",
+   "preview_kind": "text"
+  },
+  {
+   "index": 95,
+   "key": "ColorKalachakraViewBodyName",
+   "label": "Body names",
+   "group": "Kala chakra frame",
+   "group_index": 8,
+   "default_rgb": "#960000",
+   "preview_kind": "text"
+  },
+  {
+   "index": 96,
+   "key": "ColorPanchangaViewFrame",
+   "label": "Overall frame background",
+   "group": "Panchanga frame",
+   "group_index": 9,
+   "default_rgb": "#f0fefe",
+   "preview_kind": "background"
+  },
+  {
+   "index": 97,
+   "key": "ColorPanchangaViewText",
+   "label": "Panchanga text",
+   "group": "Panchanga frame",
+   "group_index": 9,
+   "default_rgb": "#b43c78",
+   "preview_kind": "text"
+  },
+  {
+   "index": 98,
+   "key": "ColorPanchangaViewWait",
+   "label": "\"Wait\" displayed while copying",
+   "group": "Panchanga frame",
+   "group_index": 9,
+   "default_rgb": "#c82828",
+   "preview_kind": "text"
+  },
+  {
+   "index": 99,
+   "key": "ColorStrengthGraphViewBackground",
+   "label": "Overall frame background",
+   "group": "Strength bar graph frame",
+   "group_index": 10,
+   "default_rgb": "#fefef0",
+   "preview_kind": "background"
+  },
+  {
+   "index": 100,
+   "key": "ColorStrengthGraphViewTtitle",
+   "label": "Graph title",
+   "group": "Strength bar graph frame",
+   "group_index": 10,
+   "default_rgb": "#145028",
+   "preview_kind": "text"
+  },
+  {
+   "index": 101,
+   "key": "ColorStrengthGraphViewItemName",
+   "label": "Name of planet/house",
+   "group": "Strength bar graph frame",
+   "group_index": 10,
+   "default_rgb": "#1414a0",
+   "preview_kind": "text"
+  },
+  {
+   "index": 102,
+   "key": "ColorStrengthGraphViewBar",
+   "label": "Bar in the graph",
+   "group": "Strength bar graph frame",
+   "group_index": 10,
+   "default_rgb": "#aa7878",
+   "preview_kind": "background"
+  },
+  {
+   "index": 103,
+   "key": "ColorStrengthGraphViewValue",
+   "label": "Bar value",
+   "group": "Strength bar graph frame",
+   "group_index": 10,
+   "default_rgb": "#645078",
+   "preview_kind": "text"
+  },
+  {
+   "index": 104,
+   "key": "ColorStrengthGraphViewGraphBackground",
+   "label": "Graph background",
+   "group": "Strength bar graph frame",
+   "group_index": 10,
+   "default_rgb": "#fafffa",
+   "preview_kind": "background"
+  },
+  {
+   "index": 105,
+   "key": "ColorStrengthGraphViewOutline",
+   "label": "Graph area outline",
+   "group": "Strength bar graph frame",
+   "group_index": 10,
+   "default_rgb": "#8c2864",
+   "preview_kind": "line"
+  },
+  {
+   "index": 106,
+   "key": "ColorTransitSearchViewFrame",
+   "label": "Overall frame background",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#ffffff",
+   "preview_kind": "background"
+  },
+  {
+   "index": 107,
+   "key": "ColorTransitSearchViewLines",
+   "label": "Lines outlining various items",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#0a0a0a",
+   "preview_kind": "line"
+  },
+  {
+   "index": 108,
+   "key": "ColorTransitSearchViewBackGood",
+   "label": "Color showing a good house/star",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#d2e6d2",
+   "preview_kind": "background"
+  },
+  {
+   "index": 109,
+   "key": "ColorTransitSearchViewBackBad",
+   "label": "Color showing a bad house/star",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#f0b4b4",
+   "preview_kind": "background"
+  },
+  {
+   "index": 110,
+   "key": "ColorTransitSearchViewVedha",
+   "label": "Color showing vedha on a good house",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#f5141e",
+   "preview_kind": "background"
+  },
+  {
+   "index": 111,
+   "key": "ColorTransitSearchViewTextGood",
+   "label": "Text color of a good transit",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#28963c",
+   "preview_kind": "text"
+  },
+  {
+   "index": 112,
+   "key": "ColorTransitSearchViewTextNeutral",
+   "label": "Text color of a neutral transit",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#3c3c3c",
+   "preview_kind": "text"
+  },
+  {
+   "index": 113,
+   "key": "ColorTransitSearchViewTextBad",
+   "label": "Text color of a bad transit",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#aa283c",
+   "preview_kind": "text"
+  },
+  {
+   "index": 114,
+   "key": "ColorTransitSearchViewMoon",
+   "label": "Moon shown under a house",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#ffffff",
+   "preview_kind": "background"
+  },
+  {
+   "index": 115,
+   "key": "ColorTransitSearchViewSwarna",
+   "label": "Swarna murthi (gold)",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#f5f5a0",
+   "preview_kind": "background"
+  },
+  {
+   "index": 116,
+   "key": "ColorTransitSearchViewRajata",
+   "label": "Rajata murthi (silver)",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#f5f5f5",
+   "preview_kind": "background"
+  },
+  {
+   "index": 117,
+   "key": "ColorTransitSearchViewTaamra",
+   "label": "Taamra murthi (copper)",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#dc82aa",
+   "preview_kind": "background"
+  },
+  {
+   "index": 118,
+   "key": "ColorTransitSearchViewLoha",
+   "label": "Loha murthi (iron)",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#b4bebe",
+   "preview_kind": "background"
+  },
+  {
+   "index": 119,
+   "key": "ColorTransitSearchViewDate",
+   "label": "Date and time",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#642850",
+   "preview_kind": "text"
+  },
+  {
+   "index": 120,
+   "key": "ColorTransitSearchViewPlanet",
+   "label": "Names of planets",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#642850",
+   "preview_kind": "text"
+  },
+  {
+   "index": 121,
+   "key": "ColorTransitSearchViewTitle",
+   "label": "Title of transit calendar",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#c82878",
+   "preview_kind": "text"
+  },
+  {
+   "index": 122,
+   "key": "ColorTransitSearchViewLegendText",
+   "label": "Explanatory text in legend",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#642850",
+   "preview_kind": "text"
+  },
+  {
+   "index": 123,
+   "key": "ColorTransitSearchViewWait",
+   "label": "\"Wait\" displayed when calculating",
+   "group": "Transit calendar window",
+   "group_index": 11,
+   "default_rgb": "#ff141e",
+   "preview_kind": "text"
+  },
+  {
+   "index": 124,
+   "key": "ColorSelectedTab",
+   "label": "Caption of the selected tab",
+   "group": "General",
+   "group_index": 12,
+   "default_rgb": "#d20000",
+   "preview_kind": "text"
+  }
+ ]
+}

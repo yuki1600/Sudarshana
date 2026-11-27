@@ -1,0 +1,642 @@
+{
+ "source": "Sudarshana's synthesis from the classics: each rashi's nature (BPHS 4, Phaladeepika 1 and 9) read on each bhava's matters (BPHS 11, Phaladeepika 1.10-16)",
+ "about": "The rashi on a bhava's cusp colours everything that bhava stands for: its element, its modality, its lord (who becomes the bhava's lord) and its own limb and places. Each reading is split into what it says of the bhava's living matters (jiva) and its non-living ones (ajiva).",
+ "readings": [
+  {
+   "sign": 1,
+   "houses": [
+    {
+     "jiva": "An energetic, lean and active body with a prominent head; quick reflexes, courage and a short temper. Mars as Lagna lord gives vitality and fast recovery, but injuries to the head, fevers and inflammation are the body's weak points.",
+     "ajiva": "Life moves by bold starts and personal initiative; the native makes their own way, is drawn to action, competition and leadership, and fares best where speed and courage count."
+    },
+    {
+     "jiva": "The family is spirited and outspoken; speech is direct, quick and sometimes sharp, and the native enjoys hot, spicy food. Mars as the 2nd lord can bring quarrels in the family and trouble to the teeth or face.",
+     "ajiva": "Money is earned and spent quickly, through enterprise, land, engineering or work with fire and metals; savings come in bursts and need discipline to stay."
+    },
+    {
+     "jiva": "Younger siblings are bold and active, sometimes rivals; the native's own courage is strong, with a fighting spirit. Mars, the karaka of the 3rd, rules it here: great valour and strong arms, but rashness.",
+     "ajiva": "Efforts are energetic and quick, and success comes through daring, sport, the army or engineering; short journeys are frequent and hurried, and speech is blunt."
+    },
+    {
+     "jiva": "The mother is energetic, protective and strong-willed; home life can be lively or quarrelsome, and the heart is passionate rather than calm. Mars as the 4th lord can bring heat to the chest and restlessness.",
+     "ajiva": "Land, buildings and vehicles come through one's own effort and may change often; disputes over property, fire at home and an interest in real estate or machinery are indicated."
+    },
+    {
+     "jiva": "Children are spirited, independent and quick; Aries is not counted among the fruitful signs, so they may be few or come early. The intelligence is sharp, competitive and practical, with a hot temper.",
+     "ajiva": "Learning is quick and hands-on, suited to sport, engineering, the army or surgery; speculation is impulsive, and authority is won by boldness."
+    },
+    {
+     "jiva": "Enemies are open, aggressive and quick to fight, but the native meets them head-on and usually wins; illness comes as fevers, inflammation, injuries and blood troubles, sharp but short. Mars, the 6th's karaka, rules it here.",
+     "ajiva": "Success in competition, litigation and service where courage is needed: police, army, surgery, sports; debts are taken quickly and need care."
+    },
+    {
+     "jiva": "The spouse is active, independent and spirited, perhaps quick-tempered; Mars ruling the 7th makes partnership passionate and sometimes combative, and marriage may come early or suddenly.",
+     "ajiva": "Trade and partnerships move fast, with many new ventures; dealings with energetic or military people, a direct manner with the public, and frequent travel."
+    },
+    {
+     "jiva": "Longevity bears Mars's mark: accidents, injuries, surgery and fevers are the dangers, and the native is resilient in a crisis. The spouse's family may be forceful.",
+     "ajiva": "Sudden events, and gains through land, disputes over inheritance or insurance; an interest in research and the occult comes through crisis."
+    },
+    {
+     "jiva": "The father is strong-willed and active, perhaps a soldier or a leader; teachers are fiery, and the native's faith is a dharma of courage and action.",
+     "ajiva": "Fortune rises through initiative and bold choices; pilgrimages and long journeys are taken eagerly, and higher learning favours practical, technical or martial subjects."
+    },
+    {
+     "jiva": "Superiors are demanding and energetic; in public the native is commanding, decisive and competitive, and the father may be strong-willed.",
+     "ajiva": "A career of action: army, police, engineering, surgery, sports, land and building, or one's own enterprise; status is won by courage, with frequent changes."
+    },
+    {
+     "jiva": "Elder siblings and friends are active and brave, sometimes quarrelsome; the native's circle is of soldiers, sportspeople and doers.",
+     "ajiva": "Gains come quickly through enterprise, land, engineering or competition; income rises and falls with effort, and wishes are pursued boldly."
+    },
+    {
+     "jiva": "Sleep is restless, and the feet and eyes may suffer injury or heat; hidden enemies are aggressive. The native's spiritual life is active, through discipline and effort.",
+     "ajiva": "Expenses come suddenly, on vehicles, land, litigation or accidents; foreign travel is taken boldly, and haste brings losses."
+    }
+   ]
+  },
+  {
+   "sign": 2,
+   "houses": [
+    {
+     "jiva": "A sturdy, well-built body with a strong neck, a broad face and a pleasing voice; steady health and endurance, with a tendency to put on weight and to throat troubles. Venus as Lagna lord gives beauty and charm.",
+     "ajiva": "Life is built slowly and steadily on possessions, comfort and skill in the arts or trade; the native prefers security to adventure and holds on to what they gain."
+    },
+    {
+     "jiva": "A close, comfortable family, sweet and pleasant speech and a love of good food; Venus as the 2nd lord in its own sign gives a beautiful face and voice.",
+     "ajiva": "Wealth grows steadily and stays: earnings from luxury goods, food, the arts, banking or farming; fixed assets and savings accumulate."
+    },
+    {
+     "jiva": "Younger siblings are steady and perhaps artistic; courage is patient rather than rash, and the hands are skilled in crafts and arts.",
+     "ajiva": "Efforts are slow but persistent, in art, music, design or trade; communication is pleasant and practical, and short journeys are for business or pleasure."
+    },
+    {
+     "jiva": "The mother is gentle, affectionate and fond of comfort; the home is peaceful and the heart content. Venus as the 4th lord gives happiness at home.",
+     "ajiva": "Fine houses, land, vehicles and comforts; the home is beautiful and well furnished, property is held for long, and farming or real estate can prosper."
+    },
+    {
+     "jiva": "Children are gentle, artistic and steady, Taurus being moderately fruitful; the mind is practical and creative and loves beauty.",
+     "ajiva": "Learning in the arts, music, finance or design; speculation is cautious and slow, and authority comes through steady merit."
+    },
+    {
+     "jiva": "Enemies are stubborn and persistent, often over money or women; illness comes to the throat, neck and reproductive organs, or from over-indulgence. Venus as the 6th lord asks for moderation.",
+     "ajiva": "Service in luxury trades, finance, food or the arts; debts can arise from comforts, and disputes over property are slow to settle."
+    },
+    {
+     "jiva": "The spouse is attractive, loyal and steady and fond of comfort; Venus, the 7th's karaka, rules it here: strong attraction and affection, and a stable, sensual marriage, though possessive.",
+     "ajiva": "Partnerships in trade, luxury goods, finance or the arts last long; business brings steady profits, and travel is for pleasure."
+    },
+    {
+     "jiva": "A fixed, earthy sign on the 8th favours a long life; the dangers come through the throat, over-indulgence or the reproductive organs. The spouse's family is well off.",
+     "ajiva": "Inheritance of property or money, gains through the spouse's wealth and hidden assets; legacies come slowly but surely."
+    },
+    {
+     "jiva": "The father is steady, comfortable and perhaps wealthy; teachers are kind, and faith is traditional and devotional.",
+     "ajiva": "Fortune comes steadily through wealth, the arts and good conduct; pilgrimages to beautiful places, and learning in the arts or finance."
+    },
+    {
+     "jiva": "Superiors are steady and pleasant; the native is seen as reliable, charming and patient, and Venus as the 10th lord gives charm in public.",
+     "ajiva": "A career in finance, banking, the arts, fashion, luxury goods, food or farming; status is built slowly and lasts."
+    },
+    {
+     "jiva": "Elder siblings and friends are kind, well off and loyal; the social circle is pleasant and artistic.",
+     "ajiva": "Steady gains from fixed assets, the arts, trade or women; income accumulates, and wishes for comfort are fulfilled."
+    },
+    {
+     "jiva": "Sleep is sound and the pleasures of the bed are many; Venus as the 12th lord gives comfort in private life, and the eyes and feet need care.",
+     "ajiva": "Expenses on luxuries, comforts, the arts and the home; spending on pleasure can be heavy, and life abroad is comfortable."
+    }
+   ]
+  },
+  {
+   "sign": 3,
+   "houses": [
+    {
+     "jiva": "A slim, youthful, active body with expressive hands and a quick manner; the nerves and lungs are the weak points. Mercury as Lagna lord gives wit and a restless, curious nature.",
+     "ajiva": "Life moves through learning, communication, trade and many interests at once; the native thrives in writing, teaching, commerce and travel."
+    },
+    {
+     "jiva": "A talkative, intelligent family; speech is witty, clever and fluent, with a gift for languages, and Mercury as the 2nd lord can make the family's fortunes double or changeable.",
+     "ajiva": "Wealth through speech, writing, teaching, trade and accounts; income from more than one source, and early schooling is bright."
+    },
+    {
+     "jiva": "Younger siblings are clever and talkative, perhaps more than one or twins; courage shows as quick wit, and the hands are skilled at writing and crafts.",
+     "ajiva": "Efforts in writing, media, communication, sales and short travel prosper; the native is a natural messenger, with many skills."
+    },
+    {
+     "jiva": "The mother is intelligent and talkative, perhaps learned; home life is busy and changeable, and peace of mind comes through learning.",
+     "ajiva": "More than one home or frequent moves; property through trade, vehicles for travel, and a good early education with books at home."
+    },
+    {
+     "jiva": "Children are intelligent, talkative and curious, though Gemini is counted barren and they may be few or late; the mind is quick, versatile and clever.",
+     "ajiva": "Learning in many subjects: languages, writing, mathematics, commerce; speculation through quick deals, and authority through the intellect."
+    },
+    {
+     "jiva": "Enemies are clever and fight with words; illness affects the nerves, lungs, skin and arms, often from strain or worry.",
+     "ajiva": "Service in writing, accounts, communication or commerce; debts from trade, and litigation over contracts or documents."
+    },
+    {
+     "jiva": "The spouse is youthful, witty and talkative, perhaps younger; partnership is lively but changeable, and a dual sign on the 7th is read for more than one union when other factors agree.",
+     "ajiva": "Partnerships in trade, writing, media or communication; business deals are many and varied, and travel is for business."
+    },
+    {
+     "jiva": "Longevity is middling, with dangers to the nerves and lungs or through travel; the native is curious about the hidden and the occult.",
+     "ajiva": "Gains and losses through documents, contracts and trade; an inheritance may be divided, and research and writing turn to hidden subjects."
+    },
+    {
+     "jiva": "The father is intelligent, perhaps a teacher or a trader; teachers are many, and faith is intellectual, a seeking through study.",
+     "ajiva": "Fortune through learning, writing, commerce and communication; higher education in more than one subject, and journeys for study."
+    },
+    {
+     "jiva": "Superiors are intelligent and communicative; the native is known for wit, skill and versatility.",
+     "ajiva": "A career in writing, media, teaching, commerce, accounts or communication; more than one profession, or frequent changes."
+    },
+    {
+     "jiva": "Elder siblings and friends are clever, talkative and many; the social circle is intellectual.",
+     "ajiva": "Gains through trade, writing, communication and many sources; income is changeable but plentiful."
+    },
+    {
+     "jiva": "Sleep is light and the mind restless at night; the nerves need rest. Spiritual life is intellectual, through study and mantra.",
+     "ajiva": "Expenses on travel, books, communication and education; life abroad for study or trade, and losses through documents."
+    }
+   ]
+  },
+  {
+   "sign": 4,
+   "houses": [
+    {
+     "jiva": "A soft, rounded body and a gentle face; health rises and falls with the Moon, with colds, fluid retention and digestion the weak points. The nature is caring, sensitive and moody.",
+     "ajiva": "Life centres on home, family and the care of others; the native fares well in nursing, food, hospitality, water trades and work with the public."
+    },
+    {
+     "jiva": "A close, emotional family under the mother's influence; speech is gentle and persuasive, and the native loves milk and home cooking.",
+     "ajiva": "Wealth ebbs and flows like the tide, through food, liquids, shipping, hospitality or the public; savings are kept for the family."
+    },
+    {
+     "jiva": "Younger siblings are caring and emotional, close to the mother; courage is protective and rises when loved ones are threatened.",
+     "ajiva": "Efforts in writing, communication and short travels over water; the native's skills serve the family and the public."
+    },
+    {
+     "jiva": "The Moon, the 4th's karaka, rules it here: a loving, devoted mother, a happy home and a contented heart. Emotional security is the ground of the life.",
+     "ajiva": "Houses and land, often near water; vehicles and comforts; property is held for the family, and farming or real estate prospers."
+    },
+    {
+     "jiva": "Cancer is a fruitful, watery sign: children are many or dearly loved, and the native is a nurturing parent; the mind is imaginative, emotional and intuitive.",
+     "ajiva": "Learning in the arts, in caring for others or in the study of the mind; speculation is driven by feeling, and authority comes through popularity."
+    },
+    {
+     "jiva": "Enemies are emotional and change sides; illness affects the chest, stomach and fluids, with colds and digestive upsets, and the Moon as the 6th lord ties health to the mind.",
+     "ajiva": "Service in nursing, food, hospitality or water trades; debts from family needs, and disputes over home and property."
+    },
+    {
+     "jiva": "The spouse is caring, emotional and home-loving, perhaps moody; marriage is the centre of the emotional life, and a movable sign makes partnership changeable.",
+     "ajiva": "Partnerships in food, hospitality, shipping or public trade; business with women and the public, and travel over water."
+    },
+    {
+     "jiva": "Longevity follows the Moon's strength; the dangers come through water, the chest and emotional strain. The spouse's family is caring.",
+     "ajiva": "Inheritance through the mother's side, and gains and losses through liquids or the public; intuition about hidden things."
+    },
+    {
+     "jiva": "The father is gentle and caring, perhaps devoted to the mother; teachers are nurturing, and faith is devotional and full of feeling.",
+     "ajiva": "Fortune through home, family and the public; pilgrimages to rivers and seas, and higher learning in the humanities."
+    },
+    {
+     "jiva": "Superiors are caring but changeable; the native is popular with the public and known for care.",
+     "ajiva": "A career in nursing, food, hospitality, shipping, water trades, farming or public service; position changes with the tides."
+    },
+    {
+     "jiva": "Elder siblings and friends are caring, often women; the social circle is like a family.",
+     "ajiva": "Gains through the public, food, liquids and women; income ebbs and flows, but wishes for home and family are fulfilled."
+    },
+    {
+     "jiva": "Sleep is deep and full of dreams; the native needs solitude to recover emotionally. Spiritual life is devotional, through the Mother.",
+     "ajiva": "Expenses on home, family and charity; life near water or abroad, and losses through decisions made on feeling."
+    }
+   ]
+  },
+  {
+   "sign": 5,
+   "houses": [
+    {
+     "jiva": "A strong, dignified frame with a broad chest and a commanding presence; vitality is good, with the heart, back and stomach the points to watch. The Sun as Lagna lord gives pride and a will to lead.",
+     "ajiva": "Life is built on authority, leadership and recognition; the native fares well in government, administration, management and any field where they can rule."
+    },
+    {
+     "jiva": "A proud, dignified family; speech is authoritative and the native's word carries weight. The eyes need care.",
+     "ajiva": "Wealth through government, authority, gold and royal favour; money is spent generously on display and standing."
+    },
+    {
+     "jiva": "Younger siblings are proud and strong-willed; courage is great, with a lion's daring, and the native leads among companions.",
+     "ajiva": "Efforts in leadership, politics, performance and administration; speech carries authority, and short journeys are on official work."
+    },
+    {
+     "jiva": "The mother is dignified, proud and protective; the home is grand and the heart generous but proud.",
+     "ajiva": "Fine, large houses and land, official residences or property of the state; vehicles of standing, and an education fit for leadership."
+    },
+    {
+     "jiva": "Children are proud and talented, and Leo is counted a sign of few children; the mind is creative, noble and confident.",
+     "ajiva": "Learning in politics, administration, the arts and drama; speculation is bold, and authority and royal favour come easily."
+    },
+    {
+     "jiva": "Enemies are powerful and proud, often people in authority; illness affects the heart, back, stomach and eyes, with fevers and heat. The native defeats foes by strength.",
+     "ajiva": "Service in government or administration; litigation with those in authority, and debts from display and standing."
+    },
+    {
+     "jiva": "The spouse is proud, dignified and strong-willed, perhaps of high standing; marriage is loyal but egos can clash, and the Sun on the 7th asks for humility in partnership.",
+     "ajiva": "Partnerships with people in power or in government; business in administration, gold or politics, and official travel."
+    },
+    {
+     "jiva": "A fixed sign on the 8th favours a long life; the dangers are to the heart and back and from fevers, and the native faces crises with courage.",
+     "ajiva": "Gains through government, an inherited position or hidden power; research into power and its workings."
+    },
+    {
+     "jiva": "The father is dignified, proud and perhaps in authority; teachers are noble, and faith is grand and ceremonial.",
+     "ajiva": "Fortune through government, leadership and royal favour; pilgrimages to great temples, and higher learning in politics or philosophy."
+    },
+    {
+     "jiva": "Superiors are powerful and the native is seen as a leader; the Sun, a karaka of the 10th (Phaladeepika 15.17), rules it here: authority, fame and command.",
+     "ajiva": "A career in government, administration, politics, management or medicine; high standing and lasting fame."
+    },
+    {
+     "jiva": "Elder siblings and friends are influential and proud; the social circle includes people of power.",
+     "ajiva": "Gains through government, authority and leadership; income is steady and honours come."
+    },
+    {
+     "jiva": "Sleep may be disturbed by pride or worry, and the eyes and heart need care; spiritual life is through devotion to the Sun or to a royal deity.",
+     "ajiva": "Expenses on standing, display and the state; life abroad in an official role, and losses through pride."
+    }
+   ]
+  },
+  {
+   "sign": 6,
+   "houses": [
+    {
+     "jiva": "A slender, well-proportioned body with fine features; health is delicate, with the intestines, nerves and skin the weak points. Mercury as Lagna lord gives a careful, analytical and modest nature.",
+     "ajiva": "Life is built on skill, service, analysis and precision; the native fares well in accounts, medicine, writing, crafts and trade."
+    },
+    {
+     "jiva": "A practical, careful family; speech is precise and clear, sometimes critical, and the native is particular about food. Virgo is Mercury's sign of exaltation: a gift for words.",
+     "ajiva": "Wealth through accounts, writing, trade, crafts and service; savings are careful and well kept."
+    },
+    {
+     "jiva": "Younger siblings are clever and helpful; courage is careful, showing as perseverance, and the hands are skilled in fine work.",
+     "ajiva": "Efforts in writing, editing, accounts and crafts prosper; communication is clear and exact, and short journeys are for work."
+    },
+    {
+     "jiva": "The mother is careful, practical and perhaps critical; home life is orderly, and peace of mind needs a clean, well-kept home.",
+     "ajiva": "Property through trade or service, farmland and gardens; more than one house, and a thorough education."
+    },
+    {
+     "jiva": "Children are intelligent and careful, though Virgo is counted a sign of few children; the mind is analytical, discriminating and studious.",
+     "ajiva": "Learning in mathematics, medicine, accounts, languages and crafts; speculation is cautious, and authority comes through skill."
+    },
+    {
+     "jiva": "Virgo is the natural 6th sign: enemies are overcome by care and detail; illness affects the intestines, nerves and skin, and health needs diet and routine.",
+     "ajiva": "Service is the native's strength: medicine, accounts, analysis and administration; debts are managed carefully, and litigation is won on detail."
+    },
+    {
+     "jiva": "The spouse is practical, intelligent and helpful, perhaps critical; Venus, the 7th's karaka, is debilitated in Virgo, so romance is restrained, and a dual sign can point to more than one union.",
+     "ajiva": "Partnerships in trade, accounts, medicine or service; business is careful and detailed."
+    },
+    {
+     "jiva": "Longevity is middling, with dangers to the intestines and nerves; the mind is drawn to analysing hidden things.",
+     "ajiva": "Gains and losses through documents, accounts and trade; research into health and the hidden."
+    },
+    {
+     "jiva": "The father is practical and careful, perhaps in service or trade; teachers are analytical, and faith is practical and keeps the rules.",
+     "ajiva": "Fortune through skill, service and learning; higher studies in medicine, accounts or analysis, and journeys for work."
+    },
+    {
+     "jiva": "Superiors are exacting; the native is known for skill, precision and reliability. Mercury, the 10th's karaka in BPHS, rules it here.",
+     "ajiva": "A career in accounts, medicine, analysis, writing, editing, crafts or trade; position is won by competence."
+    },
+    {
+     "jiva": "Elder siblings and friends are practical and helpful; the social circle includes skilled and learned people.",
+     "ajiva": "Gains through skill, service, trade and writing; income from more than one source."
+    },
+    {
+     "jiva": "Sleep can be restless with worry, and the feet and intestines need care; spiritual life is through service and discipline.",
+     "ajiva": "Expenses on health, service and detail; life abroad for work, and losses through worry or over-caution."
+    }
+   ]
+  },
+  {
+   "sign": 7,
+   "houses": [
+    {
+     "jiva": "A graceful, well-balanced body and a pleasing face; the kidneys, lower back and skin are the weak points. Venus as Lagna lord gives charm, fairness and a love of beauty.",
+     "ajiva": "Life is built through partnership, trade, the arts and diplomacy; the native thrives in law, commerce, fashion and dealings with others."
+    },
+    {
+     "jiva": "A refined, harmonious family; speech is sweet, polite and diplomatic, and tastes in food are refined.",
+     "ajiva": "Wealth through trade, partnership, the arts, fashion and luxury goods; money is gained and spent in balance."
+    },
+    {
+     "jiva": "Younger siblings are charming and artistic; courage is diplomatic, and the hands are skilled in the arts.",
+     "ajiva": "Efforts in the arts, design, trade and negotiation; communication is graceful and persuasive, and short travels are for pleasure or trade."
+    },
+    {
+     "jiva": "The mother is gracious and refined; the home is beautiful and harmonious, and peace of mind comes from balance.",
+     "ajiva": "Beautiful houses and vehicles, property through trade or partnership; homes change, Libra being movable."
+    },
+    {
+     "jiva": "Children are graceful and artistic, Libra being moderately fruitful; the mind is balanced, fair and creative.",
+     "ajiva": "Learning in the arts, law, diplomacy and commerce; speculation through trade, and authority through fairness."
+    },
+    {
+     "jiva": "Enemies are subtle, often former partners; illness affects the kidneys, bladder and lower back, or comes from indulgence. Venus as the 6th lord asks for moderation.",
+     "ajiva": "Service in trade, law or the arts; disputes over contracts and partnerships, and debts from luxuries."
+    },
+    {
+     "jiva": "Libra, the natural 7th sign, on the 7th: an attractive, refined and sociable spouse, a strong urge to partnership and a fair, pleasant marriage.",
+     "ajiva": "Partnerships in trade, law, fashion and the arts prosper; business with the public is a strength, and travel is frequent."
+    },
+    {
+     "jiva": "Longevity is middling, with dangers to the kidneys and from indulgence; the spouse's family is refined.",
+     "ajiva": "Gains through the spouse, partnerships and legacies; Saturn, exalted in Libra, makes legacies slow but sure."
+    },
+    {
+     "jiva": "The father is refined and fair, perhaps a trader; teachers are balanced, and faith values justice.",
+     "ajiva": "Fortune through partnership, trade and the arts; pilgrimages for beauty and peace, and higher learning in law or the arts."
+    },
+    {
+     "jiva": "Superiors are fair and pleasant; the native is known for diplomacy, fairness and charm.",
+     "ajiva": "A career in law, trade, diplomacy, fashion, the arts or public dealings; standing comes through partnership."
+    },
+    {
+     "jiva": "Elder siblings and friends are charming and sociable; the social circle is wide and refined.",
+     "ajiva": "Gains through trade, partnerships, the arts and women; income is pleasant and steady."
+    },
+    {
+     "jiva": "Sleep and the pleasures of the bed are refined, and the feet and kidneys need care; spiritual life is through beauty and devotion.",
+     "ajiva": "Expenses on luxuries, partnerships and the arts; life abroad through marriage or trade."
+    }
+   ]
+  },
+  {
+   "sign": 8,
+   "houses": [
+    {
+     "jiva": "A strong, compact body with a penetrating gaze; the reproductive and excretory organs, and infections, are the weak points. Mars as Lagna lord gives intensity, endurance and secrecy.",
+     "ajiva": "Life is built on research, strategy, healing and transformation; the native fares well in medicine, investigation, mining and the occult."
+    },
+    {
+     "jiva": "A private, intense family; speech is sharp, cutting and truthful, and the native dislikes small talk. The eyes and teeth need care.",
+     "ajiva": "Wealth through research, medicine, mining, insurance or hidden sources; money is kept close and accumulates."
+    },
+    {
+     "jiva": "Younger siblings are intense and strong-willed; courage is great and fearless in a crisis. Mars, the 3rd's karaka, rules it here.",
+     "ajiva": "Efforts in research, investigation, surgery and strategy; communication is penetrating and secretive."
+    },
+    {
+     "jiva": "The mother is intense, protective and strong-willed; home life is private and emotional, and the Moon, the 4th's karaka, is debilitated in Scorpio, so peace of mind is hard won.",
+     "ajiva": "Property through inheritance or hidden means, houses near water; vehicles may bring trouble, and education turns to research."
+    },
+    {
+     "jiva": "Scorpio is a fruitful, watery sign: children are intense and strong-willed; the mind is deep, penetrating and drawn to mysteries.",
+     "ajiva": "Learning in research, medicine, the occult and the study of the mind; speculation is secret and bold, and authority comes through strategy."
+    },
+    {
+     "jiva": "Enemies are secret and persistent, but the native outlasts them; illness affects the reproductive and excretory organs, with infections and piles. Mars, the 6th's karaka, rules it here.",
+     "ajiva": "Success in medicine, surgery, investigation and police work; debts and disputes are handled with strategy."
+    },
+    {
+     "jiva": "The spouse is intense, passionate and possessive; marriage is deep and transforming, sometimes stormy, and Mars ruling the 7th makes passion strong.",
+     "ajiva": "Partnerships in research, medicine, mining or hidden affairs; business deals are kept secret, and travel is for research."
+    },
+    {
+     "jiva": "Scorpio, the natural 8th sign, on the 8th: a long life through deep crises and transformations; the dangers come through infections and surgery, and the native is drawn to the occult.",
+     "ajiva": "Gains through inheritance, insurance, the spouse's wealth and research; occult knowledge is a strength."
+    },
+    {
+     "jiva": "The father is intense and strong-willed; teachers keep secrets, and faith is mystical, through tantra or the occult.",
+     "ajiva": "Fortune through research, strategy and hidden sources; pilgrimages to sacred waters, and higher learning in the occult or medicine."
+    },
+    {
+     "jiva": "Superiors are intense and demanding; the native is known for depth, strategy and determination.",
+     "ajiva": "A career in medicine, surgery, research, investigation, mining, insurance or the occult; standing is won in crises."
+    },
+    {
+     "jiva": "Elder siblings and friends are intense and loyal; the social circle is small and deep.",
+     "ajiva": "Gains through research, hidden sources, inheritance and strategy; income can come suddenly."
+    },
+    {
+     "jiva": "Sleep is deep and dreams intense, and the feet and reproductive organs need care; spiritual life is deep, through tantra and transformation.",
+     "ajiva": "Expenses on research, secrets and hidden matters; life abroad, and losses through hidden enemies."
+    }
+   ]
+  },
+  {
+   "sign": 9,
+   "houses": [
+    {
+     "jiva": "A tall, well-built body with a long face; the thighs, hips and liver are the weak points. Jupiter as Lagna lord gives faith, optimism and a noble, honest nature.",
+     "ajiva": "Life is built on dharma, learning, teaching and travel; the native fares well in law, religion, teaching and sport."
+    },
+    {
+     "jiva": "A religious, learned family; speech is truthful, frank and wise. Jupiter, the 2nd's karaka, rules it here: a good family and wise words.",
+     "ajiva": "Wealth through teaching, religion, law, banking and counsel; savings grow by right means."
+    },
+    {
+     "jiva": "Younger siblings are honest and adventurous; courage is righteous, fighting for principle.",
+     "ajiva": "Efforts in teaching, writing, religion and sport; communication is frank, and short journeys are for learning or pilgrimage."
+    },
+    {
+     "jiva": "The mother is religious, generous and wise; home life is happy and principled, and the heart optimistic.",
+     "ajiva": "Houses and land through good fortune, more than one home, a temple nearby; education is good."
+    },
+    {
+     "jiva": "Children are honest, religious and fortunate; Jupiter, the karaka of children, rules the 5th here: good children and a wise, devoted mind.",
+     "ajiva": "Learning in religion, law, philosophy and teaching; mantras and scriptures, and authority through wisdom."
+    },
+    {
+     "jiva": "Enemies are few and principled; illness affects the liver, hips and thighs, or comes from excess.",
+     "ajiva": "Service in law, teaching or religion; debts from generosity, and litigation over principle."
+    },
+    {
+     "jiva": "The spouse is honest, religious and generous, perhaps a teacher; marriage is principled, and a dual sign can point to more than one union.",
+     "ajiva": "Partnerships in teaching, law, religion and travel; business with foreigners, and long journeys."
+    },
+    {
+     "jiva": "Jupiter's sign on the 8th protects the life; the dangers come through the liver, the hips and excess, and the native is drawn to the philosophy of death.",
+     "ajiva": "Gains through inheritance, religion and the spouse's wealth; occult knowledge comes through religion."
+    },
+    {
+     "jiva": "Sagittarius, the natural 9th sign, on the 9th: a righteous, fortunate father and wise teachers; faith is strong and dharma the guide.",
+     "ajiva": "Great fortune, pilgrimages, higher learning in religion, law or philosophy, and long journeys."
+    },
+    {
+     "jiva": "Superiors are wise and principled; the native is known for honesty and wisdom.",
+     "ajiva": "A career in teaching, law, religion, banking or counsel; standing through dharma."
+    },
+    {
+     "jiva": "Elder siblings and friends are wise, religious and generous; the social circle includes teachers.",
+     "ajiva": "Gains through teaching, religion, law and fortune; income is good and wishes are fulfilled."
+    },
+    {
+     "jiva": "Sleep is peaceful, and the feet and thighs need care; spiritual life is strong, through religion and pilgrimage, leading toward liberation.",
+     "ajiva": "Expenses on religion, charity and travel; life abroad for religion or learning."
+    }
+   ]
+  },
+  {
+   "sign": 10,
+   "houses": [
+    {
+     "jiva": "A lean, enduring body that strengthens with age; the knees, joints and skin are the weak points. Saturn as Lagna lord gives patience, discipline and seriousness.",
+     "ajiva": "Life is built slowly on work, duty and ambition; the native fares well in administration, business, farming and construction."
+    },
+    {
+     "jiva": "A traditional, hard-working family; speech is serious, measured and practical, and food simple.",
+     "ajiva": "Wealth grows slowly through work, business, farming or land; savings are careful and lasting."
+    },
+    {
+     "jiva": "Younger siblings are serious and hard-working, perhaps few; courage is patient and enduring.",
+     "ajiva": "Efforts are slow but persistent, in work, business and administration; communication is practical."
+    },
+    {
+     "jiva": "The mother is serious, hard-working and perhaps strict; home life is disciplined, and peace of mind comes late.",
+     "ajiva": "Old houses and land, property gained slowly; vehicles for work, and farming prospers."
+    },
+    {
+     "jiva": "Children come late and are serious and responsible, Capricorn not being a fruitful sign; the mind is practical, disciplined and ambitious.",
+     "ajiva": "Learning in business, administration, engineering and the sciences; speculation is cautious, and authority comes through hard work."
+    },
+    {
+     "jiva": "Enemies are persistent and powerful but are worn down in time; illness is chronic, in the knees, joints and skin, and Saturn as the 6th lord gives endurance in it.",
+     "ajiva": "Service in administration, labour, construction or business; debts are slow to clear, and litigation is long."
+    },
+    {
+     "jiva": "The spouse is serious, mature and responsible, perhaps older; marriage may come late but is stable.",
+     "ajiva": "Partnerships in business, administration and farming; dealings are practical and long-term."
+    },
+    {
+     "jiva": "Saturn, the 8th's karaka, rules it here: a long life, with chronic ailments of the joints and knees; the spouse's family is traditional.",
+     "ajiva": "Gains through inheritance, old property and the spouse's wealth, slowly; research into history and the hidden."
+    },
+    {
+     "jiva": "The father is serious, hard-working and traditional; teachers are strict, and faith is disciplined.",
+     "ajiva": "Fortune comes slowly through work and duty; pilgrimages are austere, and higher learning is in practical subjects."
+    },
+    {
+     "jiva": "Superiors are demanding; the native is known for discipline and reliability. Saturn, a karaka of the 10th by Phaladeepika, rules it here.",
+     "ajiva": "A career in administration, government, business, farming, construction or mining; position rises slowly but lasts."
+    },
+    {
+     "jiva": "Elder siblings and friends are serious and older; the social circle is small and practical.",
+     "ajiva": "Gains come slowly through work, business and land; income is steady."
+    },
+    {
+     "jiva": "Sleep is disturbed by worry, and the feet and knees need care; spiritual life is through discipline and renunciation.",
+     "ajiva": "Expenses on work, duty and old debts; life abroad for work, and losses through delay."
+    }
+   ]
+  },
+  {
+   "sign": 11,
+   "houses": [
+    {
+     "jiva": "A tall, lean body with a thoughtful face; the calves, ankles and circulation are the weak points. Saturn as Lagna lord gives perseverance, independence and humane ideals.",
+     "ajiva": "Life is built on service to groups, science, reform and perseverance; the native fares well in research, social work and technical fields."
+    },
+    {
+     "jiva": "An unconventional family; speech is thoughtful and idealistic, sometimes cool, and the teeth need care.",
+     "ajiva": "Wealth through groups, science, technology, social service and perseverance; savings are steady."
+    },
+    {
+     "jiva": "Younger siblings are independent and unconventional; courage lies in standing up for ideals.",
+     "ajiva": "Efforts in science, writing, social causes and technology; communication is idealistic."
+    },
+    {
+     "jiva": "The mother is independent and thoughtful, perhaps distant; home life is unconventional, and peace of mind comes through detachment.",
+     "ajiva": "Property through perseverance, old or unusual houses; vehicles shared with others, and an education in the sciences."
+    },
+    {
+     "jiva": "Children are independent and unconventional, perhaps few; the mind is inventive, humane and detached.",
+     "ajiva": "Learning in science, technology, astrology and the study of society; speculation in groups, and authority through ideals."
+    },
+    {
+     "jiva": "Enemies are organised groups; illness affects the circulation, calves and nerves, chronic but manageable.",
+     "ajiva": "Service in social work, science or technology; debts through groups, and disputes over causes."
+    },
+    {
+     "jiva": "The spouse is independent, idealistic and unconventional, perhaps a friend first; the marriage needs freedom.",
+     "ajiva": "Partnerships in groups, science, technology and social causes; business through networks."
+    },
+    {
+     "jiva": "A fixed sign on the 8th favours a long life, with dangers through the circulation and nerves; an interest in the occult and astrology.",
+     "ajiva": "Gains through inheritance, groups and research; sudden events through technology."
+    },
+    {
+     "jiva": "The father is independent and idealistic; teachers are unconventional, and faith is universal and humane.",
+     "ajiva": "Fortune through groups, science and social service; higher learning in the sciences or philosophy."
+    },
+    {
+     "jiva": "Superiors are detached; the native is known for ideals, perseverance and service.",
+     "ajiva": "A career in science, technology, research, social service or large organisations; standing through perseverance."
+    },
+    {
+     "jiva": "Aquarius, the natural 11th sign, on the 11th: many friends and helpful elder siblings; the social circle is wide.",
+     "ajiva": "Gains through groups, networks, science and service; wishes are fulfilled through others."
+    },
+    {
+     "jiva": "Sleep is irregular, and the ankles and feet need care; spiritual life is through service and detachment.",
+     "ajiva": "Expenses on groups, causes and charity; life abroad, and losses through organisations."
+    }
+   ]
+  },
+  {
+   "sign": 12,
+   "houses": [
+    {
+     "jiva": "A soft, well-proportioned body with gentle eyes; the feet, fluids and immunity are the weak points. Jupiter as Lagna lord gives compassion, devotion and imagination.",
+     "ajiva": "Life is built on faith, compassion and creativity; the native fares well in religion, healing, the arts and trades of the sea."
+    },
+    {
+     "jiva": "A religious, kind family; speech is gentle, kind and wise. Jupiter, the 2nd's karaka, rules it here.",
+     "ajiva": "Wealth through religion, healing, the arts, the sea and charity; money is shared freely."
+    },
+    {
+     "jiva": "Younger siblings are gentle and kind; courage is of the spirit rather than the body.",
+     "ajiva": "Efforts in the arts, writing, healing and religion; communication is gentle and imaginative."
+    },
+    {
+     "jiva": "The mother is gentle, religious and devoted; home life is peaceful, and peace of mind comes through faith.",
+     "ajiva": "Houses near water, more than one home; vehicles and comforts, and an education in religion and the arts."
+    },
+    {
+     "jiva": "Pisces is a fruitful, watery sign: children are gentle, devoted and fortunate; the mind is imaginative, intuitive and devotional.",
+     "ajiva": "Learning in religion, the arts, healing and the occult; mantras and devotion, and authority through compassion."
+    },
+    {
+     "jiva": "Enemies are hidden and weak; illness affects the feet, fluids and immunity, or comes from excess.",
+     "ajiva": "Service in healing, religion or charity; debts from generosity, and disputes are avoided."
+    },
+    {
+     "jiva": "The spouse is gentle, compassionate and devoted, perhaps spiritual; a dual sign can point to more than one union, and Venus, exalted in Pisces, makes love devoted.",
+     "ajiva": "Partnerships in religion, healing, the arts or sea trade; travel over water."
+    },
+    {
+     "jiva": "Jupiter's sign on the 8th favours a long life; the dangers come through water, the feet and fluids, and the native is drawn to mysticism.",
+     "ajiva": "Gains through inheritance, religion and the spouse's wealth; occult and spiritual knowledge."
+    },
+    {
+     "jiva": "The father is religious, kind and wise; teachers are spiritual, and faith is deep and devotional.",
+     "ajiva": "Great fortune through religion and charity; pilgrimages to holy waters, and higher learning in spiritual matters."
+    },
+    {
+     "jiva": "Superiors are kind; the native is known for compassion and devotion.",
+     "ajiva": "A career in religion, healing, charity, the arts or the sea; standing through service."
+    },
+    {
+     "jiva": "Elder siblings and friends are kind and spiritual; the social circle includes healers and seekers.",
+     "ajiva": "Gains through religion, healing, the arts and the sea; income flows easily."
+    },
+    {
+     "jiva": "Pisces, the natural 12th sign, on the 12th: deep sleep, a rich dream life and spiritual longing; the feet need care, and moksha is the goal.",
+     "ajiva": "Expenses on charity, religion and pilgrimage; life abroad or in retreat, and liberation through renunciation."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,557 @@
+{
+ "_about": "The Rodden library's AA- and A-rated national charts (Astro-Databank), as rodden_disasters.json does for disasters.",
+ "records": [
+  {
+   "id": "ro-nation-belgium",
+   "date": "1993-02-06",
+   "time": "20:36:00",
+   "tz_east": 1.0,
+   "gregorian": true,
+   "time_confidence": "exact",
+   "time_source": "Rodden AA: Timed official source",
+   "lat": 50.833333,
+   "lon": 4.333333,
+   "place": "Brussels, Belgium",
+   "country": "Belgium",
+   "iso2": "BE",
+   "source": "https://www.astro.com/astro-databank/Nation:_Belgium",
+   "rodden": [
+    "Nation: Belgium"
+   ],
+   "notes": "Decision for a new structure of state:parliament decision with a majority more 2/3\nleads to the official transition to a federal union.\nThe intention was, to bring more autonomy to the Walloon region and to the Flanders.",
+   "chart_name": "Founding (Rodden)",
+   "event": "founding",
+   "primary": false
+  },
+  {
+   "id": "ro-nation-federal-republic-of-germany",
+   "same_as": "na-de-federal-republic-basic-law",
+   "rodden": [
+    "Nation: Federal Republic of Germany"
+   ],
+   "rating": "AA",
+   "outcome": "agree",
+   "delta_min": 0,
+   "km": 1,
+   "source": "https://www.astro.com/astro-databank/Nation:_Federal_Republic_of_Germany"
+  },
+  {
+   "id": "ro-nation-greece-1821-independence-conjunctions",
+   "date": "1821-02-18",
+   "time": "07:30:00",
+   "tz_east": 0.0,
+   "gregorian": true,
+   "time_confidence": "exact",
+   "time_source": "Rodden AA: Timed official source",
+   "lat": 37.966667,
+   "lon": 23.716667,
+   "place": "Athens, Greece",
+   "country": "Greece",
+   "iso2": "GR",
+   "source": "https://www.astro.com/astro-databank/Nation:_Greece_1821:Independence_Conjunctions",
+   "rodden": [
+    "Nation: Greece 1821:Independence Conjunctions"
+   ],
+   "notes": "Greek Revolution and Independence of 1821.They were accompanied by two conjunctions:Jupiter-Pluto in February and Jupiter-Saturn four months later. The Revolution itself began on 25 march.Both charts can be compared with actual events.",
+   "chart_name": "Independence (Rodden)",
+   "event": "independence",
+   "primary": false
+  },
+  {
+   "id": "ro-nation-australia-british-colonisation",
+   "date": "1788-01-26",
+   "time": "05:10:00",
+   "tz_east": 10.081111,
+   "gregorian": true,
+   "time_confidence": "exact",
+   "time_source": "Rodden AA: Quoted BC/BR",
+   "lat": -33.866667,
+   "lon": 151.216667,
+   "place": "Sydney, Australia",
+   "country": "Australia",
+   "iso2": "AU",
+   "source": "https://www.astro.com/astro-databank/Nation:_Australia_(British_Colonisation)",
+   "rodden": [
+    "Nation: Australia (British Colonisation)"
+   ],
+   "notes": "With the loss of its American colonies in 1783, the British Government sent a fleet of ships, the \"First Fleet\", under the command of Captain Arthur Phillip, to establish a new penal colony in New South Wales. On 26 January 1788, the First Fleet weighed anchor and sailed to Port Jackson. The site selected for the anchorage had deep water close to the shore, was sheltered, and had a small stream…",
+   "chart_name": "British Colonisation (Rodden)",
+   "event": "founding",
+   "primary": false
+  },
+  {
+   "id": "ro-nation-india-independence",
+   "same_as": "na-in-independence",
+   "rodden": [
+    "Nation: India (Independence)"
+   ],
+   "rating": "AA",
+   "outcome": "agree",
+   "delta_min": 0,
+   "km": 5,
+   "source": "https://www.astro.com/astro-databank/Nation:_India_(Independence)"
+  },
+  {
+   "id": "ro-nation-pakistan-independence",
+   "same_as": "na-pk-independence",
+   "rodden": [
+    "Nation: Pakistan (Independence)"
+   ],
+   "rating": "AA",
+   "outcome": "agree",
+   "delta_min": -1,
+   "km": 4,
+   "source": "https://www.astro.com/astro-databank/Nation:_Pakistan_(Independence)"
+  },
+  {
+   "id": "ro-nation-east-timor",
+   "same_as": "na-tl-independence",
+   "rodden": [
+    "Nation: East Timor"
+   ],
+   "rating": "AA",
+   "outcome": "time differs",
+   "delta_min": 30,
+   "km": 1,
+   "source": "https://www.astro.com/astro-databank/Nation:_East_Timor"
+  },
+  {
+   "id": "ro-nation-germany-reunification-1990",
+   "same_as": "na-de-reunification",
+   "rodden": [
+    "Nation: Germany (Reunification, 1990)"
+   ],
+   "rating": "AA",
+   "outcome": "agree",
+   "delta_min": 0,
+   "km": 6,
+   "source": "https://www.astro.com/astro-databank/Nation:_Germany_(Reunification,_1990)"
+  },
+  {
+   "id": "ro-nation-ukraine",
+   "same_as": "na-ua-independence",
+   "rodden": [
+    "Nation: Ukraine"
+   ],
+   "rating": "AA",
+   "outcome": "timed from Rodden",
+   "delta_min": 0,
+   "km": 2,
+   "source": "https://www.astro.com/astro-databank/Nation:_Ukraine",
+   "date": "1991-08-24",
+   "time": "15:00:00",
+   "tz_east": 0,
+   "gregorian": true,
+   "time_source": "Rodden AA: Nation: Ukraine"
+  },
+  {
+   "id": "ro-nation-west-germany-federal-republic-1949",
+   "same_as": "na-de-federal-republic-basic-law",
+   "rodden": [
+    "Nation: West Germany (Federal Republic, 1949)"
+   ],
+   "rating": "AA",
+   "outcome": "agree",
+   "delta_min": 0,
+   "km": 1,
+   "source": "https://www.astro.com/astro-databank/Nation:_West_Germany_(Federal_Republic,_1949)"
+  },
+  {
+   "id": "ro-nation-german-democratic-republic-ddr",
+   "date": "1949-10-07",
+   "time": "12:45:00",
+   "tz_east": 1.0,
+   "gregorian": true,
+   "time_confidence": "exact",
+   "time_source": "Rodden A: News report",
+   "lat": 52.483333,
+   "lon": 13.35,
+   "place": "Berlin, Germany",
+   "country": "Germany",
+   "iso2": "DE",
+   "source": "https://www.astro.com/astro-databank/Nation:_German_Democratic_Republic_(DDR)",
+   "rodden": [
+    "Nation: German Democratic Republic (DDR)"
+   ],
+   "notes": "Proclamation of the German Democratic Republic by Wilhelm Pieck:\n\"Am Freitag um 12 Uhr 45 begann (...)in Berlin die Sitzung des (...)\"Volksrates\" die zur Proklamierung der DDR einberufen wurde.\nDie Sitzung wurde von Wilhelm Pieck (...)eröffnet. (...)Er verlas hierauf ein langes Manifest mit folgenden Forderungen:\nAbschaffung des westdeutschen Staates (...)Einsetzung einer deutschen demokratischen…",
+   "chart_name": "DDR (Rodden)",
+   "event": "republic",
+   "primary": false
+  },
+  {
+   "id": "ro-nation-switzerland-1848",
+   "same_as": "na-ch-federal-state",
+   "rodden": [
+    "Nation: Switzerland 1848"
+   ],
+   "rating": "A",
+   "outcome": "timed from Rodden",
+   "delta_min": null,
+   "km": 1,
+   "source": "https://www.astro.com/astro-databank/Nation:_Switzerland_1848",
+   "date": "1848-09-12",
+   "time": "12:20:16",
+   "tz_east": 0,
+   "gregorian": true,
+   "time_source": "Rodden A: Nation: Switzerland 1848"
+  },
+  {
+   "id": "ro-nation-afghanistan",
+   "date": "2001-12-22",
+   "time": "13:12:00",
+   "tz_east": 4.5,
+   "gregorian": true,
+   "time_confidence": "exact",
+   "time_source": "Rodden A: Timed documented source, news",
+   "lat": 34.516667,
+   "lon": 69.2,
+   "place": "Kabul, Afghanistan",
+   "country": "Afghanistan",
+   "iso2": "AF",
+   "source": "https://www.astro.com/astro-databank/Nation:_Afghanistan",
+   "rodden": [
+    "Nation: Afghanistan"
+   ],
+   "notes": "Afghanistan, the time of the swearing in of the post-Taliban new government in Kabul. Hamid Karzai, born December 24 1957 according to media reports was named the interim leader until elections can be held in September 2004.,",
+   "chart_name": "Founding (Rodden)",
+   "event": "founding",
+   "primary": false
+  },
+  {
+   "id": "ro-nation-afghanistan-taliban-rule-1996",
+   "date": "1996-09-27",
+   "time": "03:00:00",
+   "tz_east": 4.5,
+   "gregorian": true,
+   "time_confidence": "exact",
+   "time_source": "Rodden A: Timed documented source, news",
+   "lat": 34.516667,
+   "lon": 69.2,
+   "place": "Kabul, Afghanistan",
+   "country": "Afghanistan",
+   "iso2": "AF",
+   "source": "https://www.astro.com/astro-databank/Nation:_Afghanistan_Taliban_Rule_(1996)",
+   "rodden": [
+    "Nation: Afghanistan Taliban Rule (1996)"
+   ],
+   "notes": "Taliban formation; the date that the organization drove out the existing Afghan government, executing the leader, Najibullah. The beginning of the invasion of Kabul was at 1:00 AM and the city was under Taliban control by 3:00 AM.",
+   "chart_name": "1996 (Rodden)",
+   "event": "founding",
+   "primary": false
+  },
+  {
+   "id": "ro-nation-austria-2nd-republic",
+   "date": "1955-05-15",
+   "time": "11:31:00",
+   "tz_east": 1.0,
+   "gregorian": true,
+   "time_confidence": "exact",
+   "time_source": "Rodden A: Timed documented source, news",
+   "lat": 48.208333,
+   "lon": 16.373056,
+   "place": "Wien, Austria",
+   "country": "Austria",
+   "iso2": "AT",
+   "source": "https://www.astro.com/astro-databank/Nation:_Austria_(2nd_Republic)",
+   "rodden": [
+    "Nation: Austria (2nd Republic)"
+   ],
+   "notes": "The second republic of Austria existed since the end of World War II in 1945, but most Austrian astrologers consider the signing of the Austrian State Treaty (Staatsvertrag) on 15 May 1955 as the significant birth event. The country regained its full autonomy at that moment.",
+   "chart_name": "2nd Republic (Rodden)",
+   "event": "republic",
+   "primary": false
+  },
+  {
+   "id": "ro-nation-brazil",
+   "date": "1960-04-21",
+   "time": "09:30:00",
+   "tz_east": -3.0,
+   "gregorian": true,
+   "time_confidence": "exact",
+   "time_source": "Rodden A: Timed documented source, news",
+   "lat": -15.779722,
+   "lon": -47.929722,
+   "place": "Brasília (Distrito Federal), Brazil",
+   "country": "Brazil",
+   "iso2": "BR",
+   "source": "https://www.astro.com/astro-databank/Nation:_Brazil",
+   "rodden": [
+    "Nation: Brazil"
+   ],
+   "notes": "Brazilian government, the installation of the legislature and the Supreme Court in the capital Brasilia..",
+   "chart_name": "Founding (Rodden)",
+   "event": "founding",
+   "primary": false
+  },
+  {
+   "id": "ro-nation-brazil-empire-independence",
+   "same_as": "na-br-independence-cry-of-ipiranga",
+   "rodden": [
+    "Nation: Brazil (Empire, Independence)"
+   ],
+   "rating": "A",
+   "outcome": "time differs",
+   "delta_min": -22,
+   "km": 0,
+   "source": "https://www.astro.com/astro-databank/Nation:_Brazil_(Empire,_Independence)"
+  },
+  {
+   "id": "ro-nation-brazil-discovery",
+   "date": "1500-04-22",
+   "time": "16:30:00",
+   "tz_east": -2.604315,
+   "gregorian": false,
+   "time_confidence": "exact",
+   "time_source": "Rodden A: Timed documented source, news",
+   "lat": -16.449722,
+   "lon": -39.064722,
+   "place": "Porto Seguro (Bahia), Brazil",
+   "country": "Brazil",
+   "iso2": "BR",
+   "source": "https://www.astro.com/astro-databank/Nation:_Brazil_discovery",
+   "rodden": [
+    "Nation: Brazil discovery"
+   ],
+   "notes": "Sighting of land now known as Brazil  by Cabral and his men.",
+   "chart_name": "Founding (Rodden)",
+   "event": "founding",
+   "primary": false
+  },
+  {
+   "id": "ro-nation-egypt-republic",
+   "same_as": "na-eg-republic",
+   "rodden": [
+    "Nation: Egypt (Republic)"
+   ],
+   "rating": "A",
+   "outcome": "timed from Rodden",
+   "delta_min": null,
+   "km": 1,
+   "source": "https://www.astro.com/astro-databank/Nation:_Egypt_(Republic)",
+   "date": "1953-06-18",
+   "time": "23:30:00",
+   "tz_east": 0,
+   "gregorian": true,
+   "time_source": "Rodden A: Nation: Egypt (Republic)"
+  },
+  {
+   "id": "ro-nation-india-republic",
+   "same_as": "na-in-republic",
+   "rodden": [
+    "Nation: India (Republic)"
+   ],
+   "rating": "A",
+   "outcome": "timed from Rodden",
+   "delta_min": 0,
+   "km": 5,
+   "source": "https://www.astro.com/astro-databank/Nation:_India_(Republic)",
+   "date": "1950-01-26",
+   "time": "04:48:00",
+   "tz_east": 0,
+   "gregorian": true,
+   "time_source": "Rodden A: Nation: India (Republic)"
+  },
+  {
+   "id": "ro-nation-israel",
+   "same_as": "na-il-declaration-of-independence",
+   "rodden": [
+    "Nation: Israel"
+   ],
+   "rating": "A",
+   "outcome": "timed from Rodden",
+   "delta_min": 0,
+   "km": 2,
+   "source": "https://www.astro.com/astro-databank/Nation:_Israel",
+   "date": "1948-05-14",
+   "time": "14:00:00",
+   "tz_east": 0,
+   "gregorian": true,
+   "time_source": "Rodden A: Nation: Israel"
+  },
+  {
+   "id": "ro-nation-kenya",
+   "date": "1964-12-12",
+   "time": "00:00:00",
+   "tz_east": 3.0,
+   "gregorian": true,
+   "time_confidence": "exact",
+   "time_source": "Rodden A: News report",
+   "lat": -1.283333,
+   "lon": 36.816667,
+   "place": "Nairobi, Kenya",
+   "country": "Kenya",
+   "iso2": "KE",
+   "source": "https://www.astro.com/astro-databank/Nation:_Kenya",
+   "rodden": [
+    "Nation: Kenya"
+   ],
+   "notes": "country in East Africa famed for its scenic landscapes and vast wildlife preserves. Its Indian Ocean coast provided historically important ports by which goods from Arabian and Asian traders have entered the continent for many centuries. Along that coast, which holds some of the finest beaches in Africa, are predominantly Muslim Swahili cities such as Mombasa, a historic centre that has…",
+   "chart_name": "Founding (Rodden)",
+   "event": "founding",
+   "primary": false
+  },
+  {
+   "id": "ro-nation-kingdom-of-iraq",
+   "date": "1921-08-23",
+   "time": "06:00:00",
+   "tz_east": 3.0,
+   "gregorian": true,
+   "time_confidence": "exact",
+   "time_source": "Rodden A: Timed documented source, news",
+   "lat": 33.35,
+   "lon": 44.416667,
+   "place": "Baghdad, Iraq",
+   "country": "Iraq",
+   "iso2": "IQ",
+   "source": "https://www.astro.com/astro-databank/Nation:_Kingdom_of_Iraq",
+   "rodden": [
+    "Nation: Kingdom of Iraq"
+   ],
+   "notes": "Kingdom of Iraq established by proclamation.\nIn 1918, the British assumed the rule of Iraq and were given a mandate at the Treaty of San Remo on April 25, 1920.  By November of that year, a provisional Arab government was installed, and a formal proclamation of the Kingdom of Iraq was issued on August 23, 1921.  In his book, \"The Book of World Horoscopes,\" Nick Campion provides a chart for the…",
+   "chart_name": "Founding (Rodden)",
+   "event": "founding",
+   "primary": false
+  },
+  {
+   "id": "ro-nation-portugal-battle-of-sao-mamede",
+   "date": "1128-06-24",
+   "time": "12:30:00",
+   "tz_east": -0.553333,
+   "gregorian": false,
+   "time_confidence": "exact",
+   "time_source": "Rodden A: News report",
+   "lat": 41.45,
+   "lon": -8.3,
+   "place": "Guimaraes, Portugal",
+   "country": "Portugal",
+   "iso2": "PT",
+   "source": "https://www.astro.com/astro-databank/Nation:_Portugal_(Battle_of_Sao_Mamede)",
+   "rodden": [
+    "Nation: Portugal (Battle of Sao Mamede)"
+   ],
+   "notes": "The seminal event for the foundation of the Kingdom of Portugal. Portuguese forces led by Afonso Henriques defeated forces led by his mother Teresa of Portugal and her lover Fernão Peres de Trava. Following São Mamede, the future king styled himself \"Prince of Portugal\". He would be called \"King of Portugal\" in 1139 and was recognised as such by neighbouring kingdoms in 1143.",
+   "chart_name": "Battle of Sao Mamede (Rodden)",
+   "event": "founding",
+   "primary": false
+  },
+  {
+   "id": "ro-nation-republic-of-south-sudan",
+   "same_as": "na-ss-independence",
+   "rodden": [
+    "Nation: Republic of South Sudan"
+   ],
+   "rating": "A",
+   "outcome": "time differs",
+   "delta_min": 815,
+   "km": 4,
+   "source": "https://www.astro.com/astro-databank/Nation:_Republic_of_South_Sudan"
+  },
+  {
+   "id": "ro-nation-republic-of-iraq",
+   "date": "1958-07-14",
+   "time": "07:00:00",
+   "tz_east": 3.0,
+   "gregorian": true,
+   "time_confidence": "exact",
+   "time_source": "Rodden A: Timed documented source, news",
+   "lat": 33.35,
+   "lon": 44.416667,
+   "place": "Baghdad, Iraq",
+   "country": "Iraq",
+   "iso2": "IQ",
+   "source": "https://www.astro.com/astro-databank/Nation:_Republic_of_Iraq",
+   "rodden": [
+    "Nation: Republic of Iraq"
+   ],
+   "notes": "Mesopotamia.  Sumer.  Babylonia.  These names evoke, especially in history lovers, the glories of the ancient world.  In the \"Fertile Crescent\" between the Tigris and Euphrates Rivers, now known as Iraq, a rich and complex culture flourished.  For several centuries, however, this area suffered multiple invading forces and foreign occupation. In 1918, the British assumed the rule of Iraq and were…",
+   "chart_name": "Republic (Rodden)",
+   "event": "republic",
+   "primary": false
+  },
+  {
+   "id": "ro-nation-sri-lanka-independence",
+   "same_as": "na-lk-independence-ceylon",
+   "rodden": [
+    "Nation: Sri Lanka (Independence)"
+   ],
+   "rating": "A",
+   "outcome": "time differs",
+   "delta_min": 360,
+   "km": 0,
+   "source": "https://www.astro.com/astro-databank/Nation:_Sri_Lanka_(Independence)"
+  },
+  {
+   "id": "ro-nation-sri-lanka-republic",
+   "same_as": "na-lk-republic",
+   "rodden": [
+    "Nation: Sri Lanka (Republic)"
+   ],
+   "rating": "A",
+   "outcome": "timed from Rodden",
+   "delta_min": 0,
+   "km": 0,
+   "source": "https://www.astro.com/astro-databank/Nation:_Sri_Lanka_(Republic)",
+   "date": "1972-05-22",
+   "time": "07:13:00",
+   "tz_east": 0,
+   "gregorian": true,
+   "time_source": "Rodden A: Nation: Sri Lanka (Republic)"
+  },
+  {
+   "id": "ro-nation-turkey-republic",
+   "same_as": "na-tr-republic",
+   "rodden": [
+    "Nation: Turkey (Republic)"
+   ],
+   "rating": "A",
+   "outcome": "timed from Rodden",
+   "delta_min": 0,
+   "km": 2,
+   "source": "https://www.astro.com/astro-databank/Nation:_Turkey_(Republic)",
+   "date": "1923-10-29",
+   "time": "18:30:00",
+   "tz_east": 0,
+   "gregorian": true,
+   "time_source": "Rodden A: Nation: Turkey (Republic)"
+  },
+  {
+   "id": "ro-nation-vatican-city-state",
+   "date": "1929-06-07",
+   "time": "11:00:00",
+   "tz_east": 1.0,
+   "gregorian": true,
+   "time_confidence": "exact",
+   "time_source": "Rodden A: Timed documented source, news",
+   "lat": 41.9,
+   "lon": 12.483333,
+   "place": "Rome, Italy",
+   "country": "Italy",
+   "iso2": "IT",
+   "source": "https://www.astro.com/astro-databank/Nation:_Vatican_City_State",
+   "rodden": [
+    "Nation: Vatican City State"
+   ],
+   "notes": "City state, headquarters of the Roman Catholic Church and its head, the Pope. Vatican City is home of the papal apartments, St. Peter's Church, the Vatican museum including its treasures and the famed Sistine Chapel, and the extensive Vatican library.",
+   "chart_name": "Founding (Rodden)",
+   "event": "founding",
+   "primary": false
+  },
+  {
+   "id": "ro-nation-venezuela",
+   "same_as": "na-ve-declaration-of-independence",
+   "rodden": [
+    "Nation: Venezuela"
+   ],
+   "rating": "A",
+   "outcome": "timed from Rodden",
+   "delta_min": null,
+   "km": 6,
+   "source": "https://www.astro.com/astro-databank/Nation:_Venezuela",
+   "date": "1811-07-05",
+   "time": "19:27:44",
+   "tz_east": 0,
+   "gregorian": true,
+   "time_source": "Rodden A: Nation: Venezuela"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+[package]
+name = "traditions"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "The Traditions tab's calculations for Sudarshana (server/traditions.py): Western, Chinese, world traditions, I Ching, numerology and Lal Kitab from the XALEN Ephemeris crates"
+
+[lib]
+name = "traditions"
+crate-type = ["cdylib"]
+
+[dependencies]
+# abi3: one wheel for every CPython from 3.9 (the venv's 3.12, the Dockerfile's 3.11)
+pyo3 = { version = "0.30", features = ["abi3-py39", "extension-module"] }
+serde_json = "1"
+# XALEN Ephemeris (Apache-2.0, ../jpl_kernel/NOTICE-xalen): the traditions' crates, and its houses, Chiron and Lilith
+xalen-western = "=0.7.0"
+xalen-chinese = "=0.7.0"
+xalen-world = "=0.7.0"
+xalen-iching = "=0.7.0"
+xalen-numerology = "=0.7.0"
+xalen-lalkitab = "=0.7.0"
+xalen-houses = "=0.7.0"
+xalen-ephem = "=0.7.0"
+xalen-time = "=0.7.0"
+
+[profile.release]
+codegen-units = 1
+lto = true

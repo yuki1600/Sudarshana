@@ -1,0 +1,55 @@
+/* The Praajna Jyotisha Institute's colours for Starlight (Settings → Brand colours), from its logo: a saffron-to-gold
+   rising sun over a maroon wordmark. Saffron is what you act on (Sudarshana's purple), the sun's gold is where you are,
+   maroon heads the tables. Backgrounds stay plain white and black. Dark blocks carry more attributes so they win. */
+:root[data-layout="starlight"][data-brand="praajna"] {
+  --bg: #f5f5f5;
+  --panel: #ffffff;
+  --ink: #1f0a04;
+  --muted: #6e625c;
+  --line: #ebe3de;
+  --shade: #f4efec;
+  --th: #7a1f0c;
+  --accent: #e0600f;
+  --accent-ink: #ffffff;
+  --bar: #e0600f;
+  --running: #e0600f;
+  --running-ink: #ffffff;
+  --gold: #f5b301;
+  --lagna: #a86500;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-layout="starlight"][data-brand="praajna"]:not([data-theme="light"]) {
+    --bg: #000000;
+    --panel: #0d0907;
+    --ink: #f6efe9;
+    --muted: #9a8f88;
+    --line: #2a201b;
+    --shade: #1a1310;
+    --th: #ffb27a;
+    --accent: #ff8a3d;
+    --accent-ink: #000000;
+    --bar: #ff8a3d;
+    --running: #ff8a3d;
+    --running-ink: #000000;
+    --gold: #ffc94a;
+    --lagna: #ffc94a;
+  }
+}
+
+:root[data-layout="starlight"][data-brand="praajna"][data-theme="dark"] {
+  --bg: #000000;
+  --panel: #0d0907;
+  --ink: #f6efe9;
+  --muted: #9a8f88;
+  --line: #2a201b;
+  --shade: #1a1310;
+  --th: #ffb27a;
+  --accent: #ff8a3d;
+  --accent-ink: #000000;
+  --bar: #ff8a3d;
+  --running: #ff8a3d;
+  --running-ink: #000000;
+  --gold: #ffc94a;
+  --lagna: #ffc94a;
+}

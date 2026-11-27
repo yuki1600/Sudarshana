@@ -1,0 +1,28 @@
+# Paths are from the build root: "**/" matches at any depth
+# Never in an image: secrets and people's accounts
+**/.env
+**/*.env
+.owner-login.json
+databases/accounts.db*
+**/*.db-journal
+**/*.db-shm
+**/*.db-wal
+# Not read at runtime (the image builds web/dist itself)
+.git
+.host
+.venv
+archive
+BTS
+databases/raw
+docs
+graphify-out
+tools
+**/__pycache__
+**/tests
+web/node_modules
+web/dist
+web/e2e
+# Settings > Ephemeris "XALEN": the image builds native/jpl_kernel and downloads the JPL kernel itself
+native/jpl_kernel/target
+ephemeris/jpl
+native/traditions/target

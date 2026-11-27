@@ -1,0 +1,1376 @@
+/* Marriage matching page */
+.match-pane {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+main>.pane.match-pane> :not(.pane-head, dialog) {     /* not its pop-ups: they scroll */
+  overflow: hidden;
+}
+
+.match-body {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+  padding: .5rem .75rem .75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.match-body.matrix-fill {
+  overflow: hidden;
+  padding-bottom: .5rem;
+}
+
+.match-title {
+  align-items: center;
+  gap: .75rem 1rem;
+}
+
+.match-matrix-wrap {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.match-matrix {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: calc(.8125rem * var(--list-scale, 1));
+  width: max-content;
+  min-width: 100%;
+}
+
+.match-matrix th,
+.match-matrix td {
+  padding: 0;
+  text-align: center;
+  border-right: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+}
+
+.match-matrix thead th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: var(--panel);
+  min-width: 2.75em;
+  padding: 0;
+  font-weight: 600;
+  color: var(--th);
+  line-height: 1.2;
+  vertical-align: bottom;
+}
+
+.match-matrix thead th .match-axis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  min-height: 100%;
+  padding: .5rem .1875rem .375rem;
+  box-sizing: border-box;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.match-matrix thead th .match-axis:hover {
+  background-color: color-mix(in srgb, #1a6fd4 10%, transparent);
+}
+
+.match-matrix thead th .col-nak {
+  display: block;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  height: 6.8em;
+  margin: 0 auto .25rem;
+  font-size: calc(.75rem * var(--list-scale, 1));
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.match-matrix thead th .col-rasi {
+  display: block;
+  font-size: calc(.75rem * var(--list-scale, 1));
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.match-matrix thead th .col-pada {
+  display: block;
+  font-size: calc(.625rem * var(--list-scale, 1));
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.match-matrix thead th.corner {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  text-align: left;
+  padding: .5rem;
+  width: 10.5em;
+  min-width: 10.5em;
+  max-width: 10.5em;
+  box-sizing: border-box;
+  vertical-align: middle;
+  font-size: calc(1rem * var(--list-scale, 1));
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: var(--panel);
+  box-shadow: 1px 0 0 var(--panel);
+}
+
+.match-matrix thead th.corner .corner-charts {
+  display: block;
+  margin-top: .5rem;
+  padding: .1875rem .625rem;
+  font-size: calc(.8125rem * var(--list-scale, 1));
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.match-matrix tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 4;
+  background-color: var(--panel);
+  text-align: left;
+  padding: 0;
+  white-space: nowrap;
+  font-weight: 600;
+  width: 10.5em;
+  min-width: 10.5em;
+  max-width: 10.5em;
+  box-sizing: border-box;
+  box-shadow: 1px 0 0 var(--panel);
+  isolation: isolate;
+}
+
+.match-matrix tbody th .row-label,
+.match-matrix tbody th .match-axis.row-label {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1.7em 2.4em;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+  min-height: 2.2em;
+  padding: 2px .375rem 2px .5rem;
+  box-sizing: border-box;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.match-matrix tbody th .match-axis.row-label:hover {
+  background-color: color-mix(in srgb, #1a6fd4 10%, transparent);
+}
+
+.match-matrix tbody th .row-nak {
+  font-size: calc(.75rem * var(--list-scale, 1));
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.match-matrix tbody th .row-rasi {
+  font-size: calc(.75rem * var(--list-scale, 1));
+  font-weight: 800;
+  color: var(--ink);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.match-matrix tbody th .row-pada {
+  font-size: calc(.625rem * var(--list-scale, 1));
+  font-weight: 600;
+  color: var(--muted);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.match-matrix thead th.rasi-start,
+.match-matrix td.rasi-start {
+  border-left: 2px solid var(--ink);
+}
+
+.match-matrix tbody tr.rasi-row-start>th,
+.match-matrix tbody tr.rasi-row-start>td {
+  border-top: 2px solid var(--ink);
+}
+
+.match-matrix thead th.picked {
+  background-color: color-mix(in srgb, var(--accent, #c45) 18%, var(--panel));
+  color: var(--ink);
+}
+
+.match-matrix thead th.hover-col,
+.match-matrix tbody th.hover-label {
+  background-color: color-mix(in srgb, #1a6fd4 12%, var(--panel));
+  color: var(--ink);
+}
+
+.match-matrix tbody th.picked,
+.match-matrix tbody th.picked .row-label {
+  background-color: color-mix(in srgb, var(--accent, #c45) 18%, var(--panel));
+  color: var(--ink);
+}
+
+.match-matrix tbody th.picked {
+  box-shadow: 1px 0 0 color-mix(in srgb, var(--accent, #c45) 18%, var(--panel));
+}
+
+.match-matrix tbody th.hover-label,
+.match-matrix tbody th.hover-label .row-label {
+  background-color: color-mix(in srgb, #1a6fd4 12%, var(--panel));
+}
+
+.match-matrix tbody th.hover-label {
+  box-shadow: 1px 0 0 color-mix(in srgb, #1a6fd4 12%, var(--panel));
+}
+
+.match-matrix tbody th.picked.hover-label,
+.match-matrix tbody th.picked.hover-label .row-label {
+  background-color: color-mix(in srgb, var(--accent, #c45) 18%, var(--panel));
+}
+
+.match-matrix tbody th.picked.hover-label {
+  box-shadow: 1px 0 0 color-mix(in srgb, var(--accent, #c45) 18%, var(--panel));
+}
+
+.match-matrix td.hover-col {
+  background-color: color-mix(in srgb, #1a6fd4 8%, transparent);
+}
+
+.match-matrix td {
+  background-clip: padding-box;
+}
+
+.match-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 2.75em;
+  min-height: 2.2em;
+  padding: .3125rem 2px;
+  border: 0;
+  border-radius: 0;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  cursor: pointer;
+  color: #111;
+  background: #d8d8d8;
+  position: relative;
+  z-index: 0;
+  box-sizing: border-box;
+}
+
+.match-cell.ex {
+  background: #3cb371;
+  color: #062;
+}
+
+.match-cell.gd {
+  background: #b8d96a;
+  color: #243;
+}
+
+.match-cell.av {
+  background: #f4a460;
+  color: #432;
+}
+
+.match-cell.lo {
+  background: #e08080;
+  color: #411;
+}
+
+.match-cell:hover {
+  box-shadow: inset 0 0 0 .1875rem #1a6fd4;
+  z-index: 2;
+}
+
+.match-break {
+  margin-top: .25rem;
+  flex: none;
+}
+
+.match-rank {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .375rem;
+  align-items: start;
+  max-height: min(70vh, 32.5rem);
+  overflow: auto;
+  margin: 2px 0 .375rem;
+}
+
+.match-rank-band {
+  min-width: 0;
+}
+
+.match-rank-band h3 {
+  display: flex;
+  align-items: center;
+  gap: .3125rem;
+  margin: 0 0 .25rem;
+  font-size: calc(.6875rem * var(--list-scale, 1));
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.match-rank-band h3 i {
+  width: .625rem;
+  height: .625rem;
+  border-radius: 2px;
+  display: inline-block;
+  flex: none;
+}
+
+.match-rank-band h3 i.ex {
+  background: #3cb371;
+}
+
+.match-rank-band h3 i.gd {
+  background: #b8d96a;
+}
+
+.match-rank-band h3 i.av {
+  background: #f4a460;
+}
+
+.match-rank-band h3 i.lo {
+  background: #e08080;
+}
+
+.match-rank-band ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.match-rank-row {
+  display: grid;
+  grid-template-columns: 2em minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: .375rem;
+  align-items: baseline;
+  width: 100%;
+  padding: .3125rem .4375rem;
+  border: 1px solid transparent;
+  border-radius: .1875rem;
+  font: inherit;
+  font-size: calc(.75rem * var(--list-scale, 1));
+  text-align: left;
+  cursor: pointer;
+  color: #111;
+  line-height: 1.25;
+}
+
+.match-rank-row.ex {
+  background: color-mix(in srgb, #3cb371 35%, var(--panel));
+}
+
+.match-rank-row.gd {
+  background: color-mix(in srgb, #b8d96a 40%, var(--panel));
+}
+
+.match-rank-row.av {
+  background: color-mix(in srgb, #f4a460 35%, var(--panel));
+}
+
+.match-rank-row.lo {
+  background: color-mix(in srgb, #e08080 30%, var(--panel));
+}
+
+.match-rank-row:hover {
+  border-color: #1a6fd4;
+}
+
+.match-rank-score {
+  grid-row: 1 / span 2;
+  align-self: center;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.match-rank-label {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.match-rank-meta {
+  color: var(--muted);
+  font-size: 0.92em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Charts: laid out as Starlight's Home, no pane around it: the four charts fill the left half, the right half is a panel that scrolls */
+.match-pane.charts-mode {
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
+.match-body.charts-fit.match-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: .5rem;
+  align-items: stretch;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.match-left {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.match-actions {
+  gap: 2px;
+  justify-content: center;
+}
+
+.match-charts {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2px;
+}
+
+/* a chart's centre box (as Home's .star-quick): name, Rasi | Bhava, the bhava reference, the partner's buttons */
+.match-centre {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 46cqw;
+  height: 46cqh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6cqh;
+  font-size: clamp(.625rem, 3.4cqw, .875rem);
+}
+
+.match-centre b {
+  font-size: clamp(.6875rem, 4cqw, 1rem);
+  text-align: center;
+}
+
+/* the ⚡ shortlist toggle, when on */
+.match-actions .icon-btn[aria-pressed="true"],
+.match-actions .icon-btn[aria-pressed="true"]:hover:not(:disabled) { background: var(--accent); color: var(--accent-ink); }
+
+/* ★: one chart against its starred partners, a box each for the ranking, the eight kutas, the ten poruthams and the areas,
+   a row per partner in rank order in every box, so a column reads straight down */
+.match-shortlist + .match-shortlist { margin-top: 1.5rem; }
+/* the last Domain box stretches to the foot, so the right half ends level with the charts */
+.match-scroll > .ms-block { flex: 1 0 auto; display: flex; flex-direction: column; }
+.ms-block > .match-shortlist:last-of-type { flex: 1 0 auto; display: flex; flex-direction: column; }
+.ms-block > .match-shortlist:last-of-type > .ms-domain { flex: 1 0 auto; }
+.ms-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: .5rem 1rem; margin-bottom: .75rem; }
+.ms-head h3 { margin: 0; font-size: 1.1em; }
+.ms-head small { display: block; margin-top: .125rem; }
+.ms-by { gap: .5rem; align-items: center; }
+.match-shortlist > .mc-section:first-of-type { margin-top: 0; }
+.ms-wrap { overflow-x: auto; }
+.ms-table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+/* every column starts on one line, its head, each row's dot and each score's band one below the other */
+.ms-table th, .ms-table td { padding: .3125rem .375rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+.ms-table tbody tr:last-child > * { border-bottom: 0; }
+.ms-table thead th { color: var(--muted); font-size: .85em; font-weight: 700; line-height: 1.2; vertical-align: bottom; }
+.ms-table thead th small { display: block; font-weight: 500; }
+.ms-table tbody th { text-align: left; white-space: nowrap; }
+.ms-table td > .mc-box { justify-content: flex-start; padding-left: 0; padding-right: 0; font-weight: 700; text-align: left; white-space: nowrap; }
+/* an area's factors: a long reading wraps beside its dot, the dot kept on its line */
+.ms-area td > .mc-box { flex-wrap: nowrap; white-space: normal; }
+.ms-area td > .mc-box > .mc-parts { justify-content: flex-start; gap: 0 .625rem; padding: 0; }
+.ms-table tbody tr:hover > * { background: var(--shade); }
+/* the pair shown in the charts */
+.ms-table tr.here > :first-child { box-shadow: inset .1875rem 0 0 var(--here); }
+.ms-table tr.here .ms-name { color: var(--here); }
+.ms-name { border: 0; background: none; color: inherit; font: inherit; font-weight: 700; padding: 0; }
+.ms-name:hover { color: var(--accent); }
+.ms-drop { border: 0; background: none; color: var(--muted); padding: 0 .25rem; font-size: 1.1em; }
+.ms-drop:hover { color: var(--accent); }
+/* the ranking: its place, the partner over their Moon, the two scores, Kuja over the partner's own, the gravest doshas */
+.ms-rank .ms-n { width: 1.75em; color: var(--muted); font-weight: 700; text-align: center; }
+.ms-rank .ms-who { text-align: left; }
+.ms-rank th.ms-who > small { display: block; margin-top: .0625rem; font-weight: 500; }
+.ms-line { display: flex; align-items: baseline; }
+.ms-rank td > small { display: block; font-size: .85em; white-space: nowrap; }
+.ms-score {
+  --tone: #3cb371;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: .0625rem .5rem;
+  border-left: .25rem solid var(--tone);
+  text-align: left;
+  line-height: 1.25;
+}
+.ms-score b { font-size: 1.25em; white-space: nowrap; }
+.ms-score b small { font-size: .65em; color: var(--muted); font-weight: 600; }
+.ms-score > small { color: var(--muted); font-size: .85em; white-space: nowrap; }
+
+.match-kind { gap: .375rem; justify-content: center; }
+
+/* the chart's name is the open-charts drop-down */
+.match-name {
+  font-size: clamp(.6875rem, 4cqw, 1rem);
+  font-weight: 700;
+  padding: 1px .375rem;
+  border: 0;
+  border-radius: .3125rem;
+  background: none;
+  color: inherit;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.match-name:hover:not(:disabled) { background: var(--panel); }
+
+.match-centre .seg button {
+  padding: 1px .5rem;
+  font-size: inherit;
+}
+
+/* Rasi | Bhava on the tinted centre: the pick in solid purple, the other turns purple under the pointer */
+.match-centre .seg button[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); }
+.match-centre .seg button:not([aria-selected="true"]):hover { background: var(--panel); color: var(--accent); }
+.match-refs button:not(:disabled):not([aria-pressed="true"]):hover { color: var(--accent); }
+
+.match-refs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.8cqh 0.8cqw;
+  width: 100%;
+}
+
+.match-refs button {
+  min-width: 0;
+  padding: 1px 0;
+  font-size: inherit;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  border-radius: .3125rem;
+  background: var(--panel);
+}
+
+.match-refs button[aria-pressed="true"]:not(:disabled) {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.match-refs button:disabled {
+  opacity: 0.4;
+}
+
+.match-chart.unpicked {
+  border-style: dashed;
+}
+
+/* the centre: light blue for the boy, light pink for the girl */
+.match-chart.boy { --tint: var(--boy-tint); }
+.match-chart.girl { --tint: var(--girl-tint); }
+.match-chart .grid .centre { fill: var(--tint); }
+.match-chart.pop .match-centre { background: var(--tint); }
+/* on the tint a grey hover reads dirty: the icons' hover is the panel's white */
+.match-centre .icon-btn:hover:not(:disabled) { background: var(--panel); color: var(--accent); }
+
+/* North and East charts: the centre's controls over the chart while the pointer is on it */
+.match-chart.pop .match-centre {
+  padding: 1.4cqh 1.4cqw;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+}
+
+.match-chart.pop:not(:hover, :focus-within) .match-centre {
+  display: none;
+}
+
+.match-right {
+  min-width: 0;
+  width: 100%;
+  justify-self: stretch;
+  align-self: stretch;
+  min-height: 0;
+  max-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+  font-size: calc(.8125rem * var(--list-scale, 1));
+}
+
+.match-briefs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem;
+  align-items: start;
+}
+
+.match-brief {
+  margin: 0;
+  min-width: 0;
+}
+
+.match-brief h4 {
+  margin: 0 0 .375rem;
+  font-size: inherit;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.match-brief-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 0.75em;
+  row-gap: .3125rem;
+  margin: 0;
+  align-items: baseline;
+}
+
+.match-brief-grid dt {
+  margin: 0;
+  font-weight: 700;
+  color: var(--accent, #c45);
+  letter-spacing: 0.01em;
+}
+
+.match-brief-grid dt::after {
+  content: ":";
+}
+
+.match-brief-grid dt {
+  white-space: nowrap;
+}
+
+/* the Moon's nakshatra, the one the matching reads */
+.match-brief-grid .hl {
+  background: var(--shade);
+  padding: 1px .25rem;
+  margin: 0 -.25rem;
+}
+
+.match-brief-grid dd.hl {
+  font-weight: 700;
+}
+
+.match-total {
+  gap: .625rem;
+  align-items: center;
+}
+
+.match-brief-grid dd {
+  margin: 0;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+  line-height: 1.4;
+}
+
+/* below the sub tab row, the only part of the right half that scrolls: the row itself never moves */
+.match-scroll {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: .5rem .75rem .75rem;
+}
+
+.match-right .match-break {
+  margin-top: 2px;
+}
+
+.match-right .match-score {
+  font-size: inherit;
+  margin: 0 0 .25rem;
+}
+
+.match-right .points {
+  font-size: inherit;
+}
+
+.match-right .points th,
+.match-right .points td {
+  padding: .1875rem .3125rem;
+}
+
+@media (max-width: 720px) {
+  .match-briefs {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .match-body.charts-fit.match-split {
+    grid-template-columns: 1fr;
+    overflow: auto;
+  }
+
+  .match-charts {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .match-chart {
+    aspect-ratio: 1;
+  }
+
+  .match-right {
+    max-height: none;
+  }
+
+  .match-scroll {
+    flex: none;
+    overflow: visible;
+  }
+}
+
+/* Overview, the area tabs, Kuta details and Matrix atop the right half, outside its scrolling part */
+.match-top {
+  flex: none;
+  box-sizing: border-box;
+  min-height: 2.5625rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 0 .75rem;
+  padding: .375rem 0 0;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+
+.match-top .match-total> button {
+  padding: .1875rem .625rem;
+}
+
+.match-top .match-total {
+  margin-left: auto;
+  align-self: center;
+  padding-bottom: .25rem;
+}
+
+.mc-meter {
+  display: block;
+  height: .3125rem;
+  border-radius: .1875rem;
+  background: var(--shade);
+  overflow: hidden;
+}
+
+.mc-meter i {
+  display: block;
+  height: 100%;
+  background: var(--lv-2);
+}
+
+/* the comparison tables: per graha (or bhava) a block of lines, its name and checks on the left; on each line
+   the girl's value in a box toward the bold category in the middle, the boy's from it, so the two read across */
+.mc-tablewrap { overflow-x: auto; }
+.mc-table {
+  width: 100%;
+  min-width: 34em;
+  border-collapse: collapse;
+  table-layout: fixed;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+.mc-col-label { width: 10.5em; }
+.mc-table th,
+.mc-table td { padding: 1px .25rem; text-align: left; vertical-align: middle; overflow-wrap: anywhere; }
+.mc-table thead th { padding-top: 0; padding-bottom: .375rem; font-weight: 700; white-space: nowrap; border-bottom: 2px solid var(--line); }
+.mc-table thead .mc-val { text-align: center; }
+.mc-table tbody { border-bottom: 1px solid var(--line); cursor: default; }
+.mc-table tbody:hover,
+.mc-table tbody:focus-visible { background: var(--shade); outline: none; }
+/* a little room above and below each graha's block */
+.mc-table tbody > tr:first-child > * { padding-top: .375rem; }
+.mc-table tbody > tr:last-child > * { padding-bottom: .375rem; }
+/* the graha (or bhava) centred over its block */
+.mc-table .mc-pair-head > th { padding: .5rem .25rem .25rem !important; text-align: center; font-weight: 400; }
+.mc-pair-head b { font-size: 1em; font-weight: 700; }
+.mc-pair-head small { margin-left: .5rem; color: var(--muted); font-size: .85em; }
+/* each value plain, centred in its cell, a dot before it green, amber or red as it is good, middling or bad; none when it only informs */
+.mc-box {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 .375rem;
+  width: 100%;
+  min-height: 1.6em;
+  padding: 1px .25rem;
+  text-align: center;
+}
+.mc-box.good::before, .mc-box.mid::before, .mc-box.bad::before {
+  content: "";
+  flex: none;
+  width: .5em;
+  height: .5em;
+  border-radius: 50%;
+}
+.mc-box.good::before { background: var(--strong); }
+.mc-box.mid::before { background: var(--middling); }
+.mc-box.bad::before { background: var(--weak); }
+.mc-box.bad { color: color-mix(in srgb, var(--weak) 75%, var(--ink)); }
+/* a value in parts (Kuja from Venus, the Moon, the Lagna): each its own dot, side by side */
+.mc-parts { gap: 0 .875rem; }
+.mc-part { display: inline-flex; width: auto; min-height: 0; padding: 0; white-space: nowrap; }
+.mc-table .mc-label { text-align: center; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mc-table .mc-label[title] { cursor: help; }
+.mc-val small { color: var(--muted); font-size: .9em; }
+.mc-val em { font-style: normal; font-size: .85em; padding: 0 .375rem; border: 1px solid var(--line); border-radius: .25rem; background: var(--panel); white-space: nowrap; }
+.mc-asps { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 .375rem; }
+.mc-asp { white-space: nowrap; }
+.mc-hit { color: var(--error); }
+
+.mc-note {
+  margin: .375rem 0 0;
+  font-size: 0.85em;
+}
+
+.mc-rank {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  white-space: nowrap;
+}
+
+.mc-rank .mc-meter {
+  width: 3rem;
+}
+
+.mc-meter i.weak { background: var(--error); }
+
+/* a strength as a ring round its %: it closes at the minimum (100%), anything past it a darker second lap */
+/* the ring beside its %, the % bold */
+.mc-strength { display: inline-flex; align-items: center; gap: .3125rem; flex: none; }
+.mc-strength > b { min-width: 2.75em; font-weight: 800; font-variant-numeric: tabular-nums; }
+.mc-ring {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.mc-ring svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.mc-ring circle { fill: none; stroke-width: 5; }
+.mc-ring-track { stroke: var(--shade); }
+.mc-ring-fill, .mc-ring-over { stroke-linecap: round; }
+.mc-strength.good .mc-ring-fill { stroke: var(--strong); }
+.mc-strength.mid .mc-ring-fill { stroke: var(--middling); }
+.mc-strength.bad .mc-ring-fill { stroke: var(--weak); }
+.mc-strength.good .mc-ring-over { stroke: color-mix(in srgb, var(--strong) 55%, var(--ink)); }
+
+/* a bhava's strength as a house filling up: to the eaves (the line) is the minimum, into the roof past it, darker */
+.mc-house { position: relative; display: inline-grid; flex: none; width: 1.625rem; height: 1.625rem; }
+.mc-house svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mc-house-track { fill: var(--shade); stroke: var(--shade); stroke-width: 2; stroke-linejoin: round; }
+.mc-house-need { stroke: var(--ink); stroke-width: 1.5; opacity: .45; }
+.mc-strength.good .mc-house-fill { fill: var(--strong); }
+.mc-strength.mid .mc-house-fill { fill: var(--middling); }
+.mc-strength.bad .mc-house-fill { fill: var(--weak); }
+.mc-strength .mc-house-over { fill: color-mix(in srgb, var(--strong) 55%, var(--ink)); }
+@keyframes mc-house-rise { from { transform: scaleY(0); } }
+.mc-house-fill { transform-box: fill-box; transform-origin: bottom; animation: mc-house-rise .7s ease-out both; }
+@media (prefers-reduced-motion: reduce) { .mc-house-fill { animation: none; } }
+
+/* the scores as cards in the Overview, coloured as the Matrix's bands */
+.mc-scorecard {
+  --tone: #3cb371;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .3125rem .625rem;
+  border: 1px solid var(--line);
+  border-left: .3125rem solid var(--tone);
+  border-radius: .5rem;
+  background: var(--panel);
+}
+
+.mc-scorecard> span {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.mc-scorecard.gd, .ms-score.gd {
+  --tone: #b8d96a;
+}
+
+.mc-scorecard.av, .ms-score.av {
+  --tone: #f4a460;
+}
+
+.mc-scorecard.lo, .ms-score.lo {
+  --tone: #e08080;
+}
+
+.mc-scorecard b {
+  font-size: 1.6em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.mc-scorecard b small {
+  font-size: 0.5em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Ashtakuta | Dashakuta, side by side: each kuta a row that opens to what it reads */
+.mc-kutas {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: .75rem;
+  align-items: start;
+}
+
+.mc-kutas> section {
+  display: flex;
+  flex-direction: column;
+  gap: .1875rem;
+  min-width: 0;
+}
+
+.mc-kutas .mc-scorecard {
+  margin-bottom: .25rem;
+}
+
+.mc-kuta {
+  border: 1px solid var(--line);
+  border-left: .25rem solid var(--line);
+  border-radius: .375rem;
+  background: var(--panel);
+}
+
+.mc-kuta.same {
+  border-left-color: var(--lv-2);
+}
+
+.mc-kuta.sign {
+  border-left-color: var(--gold);
+}
+
+.mc-kuta.diff {
+  border-left-color: var(--error);
+}
+
+/* a kuta's row, under the Girl | Boy heads: its name, the girl's value, the boy's (or one reason across both), its score */
+.mc-kutas> section {
+  --kname: 6.75em;
+  --kscore: 3em;
+}
+
+.mc-kutas> .mc-dasha {
+  --kname: 7.5em;
+  --kscore: 1.75em;
+}
+
+.mc-kuta summary,
+.mc-kuta-cols {
+  display: grid;
+  grid-template-columns: var(--kname) minmax(0, 1fr) minmax(0, 1fr) var(--kscore);
+  gap: .5rem;
+  padding: .25rem .625rem;
+  white-space: nowrap;      /* one line a kuta: its reason gives way (… and the whole on hover), the rest opens on a click */
+  cursor: pointer;
+  list-style: none;
+}
+
+.mc-kuta summary::-webkit-details-marker {
+  display: none;
+}
+
+.mc-kuta-cols {
+  padding-block: 0;
+  border-left: calc(.25rem + 1px) solid transparent;     /* level with the rows' borders, so the heads sit over their columns */
+  cursor: default;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.mc-kuta-cols span {
+  font-size: .85em;
+}
+
+.mc-kuta summary i {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-style: normal;
+}
+
+.mc-kuta summary i.mc-both {
+  grid-column: span 2;
+  color: var(--muted);
+}
+
+.mc-kuta summary span {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.mc-kuta summary:hover,
+.mc-kuta[open] summary {
+  background: var(--shade);
+}
+
+.mc-kuta p {
+  margin: .375rem .625rem;
+  line-height: 1.4;
+}
+
+.mc-copy {
+  margin-top: .375rem;
+}
+
+/* what this pair's reason adds, when a porutham opens */
+.mc-kuta p.mc-note {
+  padding: .25rem .5rem;
+  background: var(--shade);
+  border-radius: .25rem;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .mc-kutas {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* the Overview's Ashtakuta and Dashakuta under the partners' details: the two totals, either opening both lists of kutas */
+.mf-kutas {
+  margin-top: .25rem;
+  padding-top: .5rem;
+  border-top: 1px solid var(--line);
+}
+
+.mc-fold {
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+.mc-fold { justify-content: flex-start; }
+.mc-fold > b { margin-left: auto; }
+.mc-fold:hover { background: var(--shade); }
+.mc-fold > i { margin-left: .25rem; font-style: normal; color: var(--muted); transition: transform .15s; }
+.mc-fold[aria-expanded="true"] > i { transform: rotate(180deg); }
+
+/* a graha's or bhava's value: the verdict dot, the strength bar (its tick the minimum) and %, the graha and bhava, its dignity,
+   occupants and lord; the bar first and one width, so the strengths read down a column */
+.mf-table td:nth-child(2) > .mc-box, .mf-table td:nth-child(3) > .mc-box { justify-content: flex-start; padding-left: .75rem; text-align: left; }
+.mv { flex-wrap: nowrap; gap: .5rem; }
+/* the strength and what it is under its % (Shadbala, Bhava Bala), one width, a line between it and the words */
+.mv-pct { display: inline-flex; flex-direction: column; align-items: flex-start; gap: .125rem; flex: none; width: 5.75rem; padding-right: .5rem; border-right: 1px solid var(--line); }
+.mf-table td > .mc-box .mv-what { color: var(--muted); font-size: .8em; font-weight: 600; letter-spacing: .02em; white-space: nowrap; }
+.mf-table td > .mc-box .mv-empty { color: var(--muted); font-weight: 600; }
+/* the graha and sign beside where it sits while the box has the room (the Together column gone), over it when narrow */
+.mv-text { display: flex; flex-wrap: wrap; align-items: center; gap: .125rem .625rem; min-width: 0; }
+.mv-line { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .125rem .375rem; }
+.mv-sub { display: block; color: var(--muted); font-size: .9em; white-space: nowrap; }   /* where it sits, under the graha or the sign */
+.mv-holds { padding: 0 .3125rem; border-radius: .25rem; background: var(--shade); }
+.mc-box.bad.mv { color: inherit; }
+.mc-box.mv::before { content: none; }   /* a value with a ring: the ring says it, no verdict dot beside it */
+
+/* the factors: a block per area, its name and verdict, then a row per factor, the girl and the boy */
+.mf-table {
+  width: 100%;
+  margin-top: .75rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.mf-col-factor { width: 10.5em; }
+
+.mf-table th,
+.mf-table td { padding: 2px .25rem; text-align: left; vertical-align: middle; overflow-wrap: anywhere; }
+.mf-table thead th { padding-bottom: .375rem; font-weight: 700; border-bottom: 2px solid var(--line); }
+.mf-table thead th:last-child { text-align: center; }
+.mf-table thead th:nth-child(2), .mf-table thead th:nth-child(3) { padding-left: .5rem; }
+.mf-table tbody th { font-weight: 700; }
+.mf-factor { display: inline-flex; align-items: center; gap: .3125rem; }
+/* the factor, and under it what it tells of ("the body" under "1st bhava") */
+.mf-name { display: inline-flex; flex-direction: column; line-height: 1.2; }
+.mf-name small { color: var(--muted); font-size: .8em; font-weight: 600; }
+/* ⓘ: what a factor reads, on hover */
+.mf-info { display: inline-flex; color: var(--muted); cursor: help; }
+.mf-info .icon { width: 1em; height: 1em; }
+.mf-info:hover { color: var(--accent); }
+.mf-table tbody > tr:last-child > * { padding-bottom: .5rem; }
+
+/* two areas on one sub tab (Mind's doshas, Marriage & Family): each named small, the second a good space below the first */
+.mf-quiet > th { padding: .5rem .25rem .25rem !important; color: var(--muted); font-size: .8em; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1px solid var(--line); }
+.mf-table tbody + tbody > tr.mf-quiet > th { padding-top: 1.75rem !important; }
+.mf-area { --tone: var(--line); }
+.mf-area.good { --tone: var(--strong); }
+.mf-area.mid { --tone: var(--middling); }
+.mf-area.bad { --tone: var(--weak); }
+
+/* an area's name, large and centred, its verdict beside it in the verdict's colour */
+.mf-head > th {
+  padding: 1rem .25rem .5rem !important;
+  text-align: center !important;
+  font-size: 1.35em;
+  font-weight: 700;
+  letter-spacing: .02em;
+  border-bottom: 2px solid var(--tone);
+}
+
+.mf-head button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.mf-head button:hover { color: var(--accent); }
+.mf-head i { display: inline-flex; width: auto; min-height: 0; margin-left: .625rem; padding: 0 .5rem; font-size: .6em; font-style: normal; font-weight: 600; vertical-align: middle; }
+.mf-table tbody > tr.mf-head + tr > * { padding-top: .375rem; }
+
+/* Timing: the girl's and the boy's dasas side by side, each picked beside the name; a mahadasa opens to its antardasas, an
+   antardasa to its pratyantardasas; the running ones shaded where you are, darkest the mahadasa */
+.md-sides { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; align-items: start; margin-top: .25rem; }
+/* the heading (Girl, age, name) and the dasa's drop-down in one row: neither wraps under the other, a long name or dasa title cut with … */
+.md-head { display: flex; align-items: center; flex-wrap: nowrap; gap: .75rem; margin-bottom: .5rem; }
+.md-head h4 { flex: 0 1 auto; min-width: 0; margin: 0; overflow: hidden; font-size: 1.05em; text-overflow: ellipsis; white-space: nowrap; }
+.md-head select { flex: 0 1 auto; min-width: 7rem; max-width: 100%; text-overflow: ellipsis; }
+.md-level { list-style: none; margin: 0; padding: 0; }
+.md-d0 > li { border: 1px solid var(--line); border-radius: .375rem; margin-bottom: .25rem; overflow: hidden; }
+.md-d0 > li.now { border-color: var(--here); }
+.md-d1 > li, .md-d2 > li { border-top: 1px solid var(--line); }
+.md-row { display: grid; grid-template-columns: 5.5em auto 1fr 1em; align-items: center; gap: .625rem; width: 100%; padding: .3125rem .625rem; border: 0; border-radius: 0; background: none; color: inherit; font: inherit; text-align: left; }
+.md-d1 .md-row { padding-left: 1.25rem; grid-template-columns: 4em auto 1fr 1em; }
+.md-d2 .md-row { padding-left: 2.25rem; grid-template-columns: 5.5em auto 1fr 1em; font-size: .95em; }
+.md-row:disabled { opacity: 1; cursor: default; }
+.md-row:not(:disabled):hover, .md-row[aria-expanded="true"] { background: var(--shade); }
+.md-row > i { font-style: normal; color: var(--muted); text-align: right; transition: transform .15s; }
+.md-row[aria-expanded="true"] > i { transform: rotate(180deg); }
+.md-when { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.md-len { color: var(--muted); font-size: .85em; text-align: right; white-space: nowrap; }
+.md-p.now > .md-row { box-shadow: inset .25rem 0 0 var(--here); font-weight: 700; }
+.md-p.now > .md-row .md-len { color: inherit; }
+/* solid for the mahadasa, about half for the antardasa, a light wash for the pratyantardasa: three steps apart at a glance */
+.md-d0 > .md-p.now > .md-row { background: var(--here); color: var(--here-ink); }
+.md-d0 > .md-p.now > .md-row > i { color: inherit; }
+.md-d1 > .md-p.now > .md-row { background: color-mix(in srgb, var(--here) 50%, var(--panel)); }
+.md-d2 > .md-p.now > .md-row { background: color-mix(in srgb, var(--here) 18%, var(--panel)); }
+.md-wait { margin: 0; padding: .25rem 1.25rem; }
+/* a narrow side: the dates only, not the lengths */
+.md-side { container-type: inline-size; }
+@container (max-width: 26em) { .md-len { display: none; } }
+
+@media (max-width: 720px) {
+  .md-sides { grid-template-columns: 1fr; }
+}
+
+/* the sub tabs stay one row with Kuta details and Matrix beside them (scrolling, unseen, on a narrow window) */
+.match-top { flex-wrap: nowrap; }
+.match-top > .seg { flex: 1 1 auto; min-width: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+.match-top > .seg::-webkit-scrollbar { display: none; }
+.match-top > .seg > button { flex: none; padding: .25rem .5rem; white-space: nowrap; }
+.match-top .match-total { flex: none; flex-wrap: nowrap; }
+
+
+
+.birth-inline {
+  margin-top: .375rem;
+}
+
+.birth-inline-form h2 {
+  display: none;
+}
+
+.birth-inline-form label {
+  display: block;
+  margin-bottom: .5rem;
+  font-size: calc(.75rem * var(--list-scale, 1));
+  color: var(--muted);
+}
+
+.birth-inline-form label input,
+.birth-inline-form label select {
+  display: block;
+  width: 100%;
+  margin-top: .1875rem;
+  color: var(--ink);
+  font-size: calc(1rem * var(--list-scale, 1));
+}
+
+.birth-inline-form fieldset {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5.625rem, 1fr));
+  gap: 0 .5rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  margin: 0 0 .5rem;
+  padding: .375rem .5rem 0;
+}
+
+.birth-inline-form legend {
+  font-size: calc(.75rem * var(--list-scale, 1));
+  color: var(--muted);
+  padding: 0 .25rem;
+}
+
+.birth-inline-form menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: .5rem;
+  margin: .5rem 0 0;
+  padding: 0;
+}
+
+[data-theme="dark"] .match-cell {
+  color: #111;
+}
+
+/* every value in a box of one height, ring or not, so the rows run even; room between the boxes and between the rows */
+.mf-table td, .mc-table td.mc-val { padding: .3125rem .375rem; }
+.mf-table tbody th, .mc-table td.mc-label { padding-top: .3125rem; padding-bottom: .3125rem; }
+.mf-table td > .mc-box, .mc-table td > .mc-box {
+  min-height: 3.25rem;
+  padding: .375rem .625rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  background: var(--panel);
+}
+/* Grahas and Bhavas: the boxes smaller than the factors' */
+.mc-table td.mc-val { padding: .1875rem .25rem; }
+.mc-table td.mc-label { padding-top: .1875rem; padding-bottom: .1875rem; }
+.mc-table td > .mc-box.mc-box { min-height: 1.875rem; padding: .1875rem .5rem; border-radius: .375rem; }
+.mc-table tbody > tr:first-child > *, .mf-table tbody > tr.mf-head + tr > * { padding-top: .625rem; }
+.mc-table tbody > tr:last-child > *, .mf-table tbody > tr:last-child > * { padding-bottom: .75rem; }
+.mc-table .mc-pair-head > th { padding: .875rem .25rem .25rem !important; }
+
+/* the rings draw round to their value as they appear */
+@keyframes mc-ring-draw { from { stroke-dasharray: 0 100; } }
+.mc-ring-fill { animation: mc-ring-draw .7s ease-out both; }
+.mc-ring-over { animation: mc-ring-draw .5s ease-out .6s both; }
+@media (prefers-reduced-motion: reduce) { .mc-ring-fill, .mc-ring-over { animation: none; } }
+
+/* inside the boxes one size (the table's own), all bold and in the ink: no small labels, no raised ordinals ("2nd" level with its number) */
+.mf-table td > .mc-box, .mc-table td > .mc-box { font-weight: 700; line-height: 1.3; color: var(--ink); }
+.mf-table td > .mc-box *, .mc-table td > .mc-box * { font-size: inherit; font-weight: inherit; }
+.mf-table td > .mc-box :is(small, em, span, b), .mc-table td > .mc-box :is(small, em, span, b) { color: inherit; }
+.mf-table td > .mc-box sup, .mc-table td > .mc-box sup { vertical-align: baseline; }
+/* the ring large enough to read at a glance */
+.mc-ring { width: 1.625rem; height: 1.625rem; }
+.mf-table td > .mc-box .mc-strength > b, .mc-table td > .mc-box .mc-strength > b { font-weight: 800; }
+.mf-table td > .mc-box, .mc-table td > .mc-box { min-height: 3.25rem; }
+/* the factor and category names to match */
+.mf-table tbody th, .mc-table td.mc-label { font-weight: 700; }
+
+/* a dignity as the Grahas tab marks it (ui.tsx Dignity): its own colours and size inside the all-ink boxes */
+.mf-table td > .mc-box .kp-tag, .mc-table td > .mc-box .kp-tag { padding: 0 .375rem; font-size: .8125em; font-weight: 600; letter-spacing: .03em; line-height: 1.6; color: var(--muted); }
+.mf-table td > .mc-box .kp-tag.moola, .mc-table td > .mc-box .kp-tag.moola { color: var(--moola); }
+.mf-table td > .mc-box .kp-tag.own, .mc-table td > .mc-box .kp-tag.own { color: var(--here-ink); }
+.mf-table td > .mc-box .kp-dig.up, .mc-table td > .mc-box .kp-dig.up { color: var(--good-ink); }
+.mf-table td > .mc-box .kp-dig.down, .mc-table td > .mc-box .kp-dig.down { color: var(--bad-ink); }
+.mf-table th .who-age, .mc-table th .who-age { color: var(--muted); }
+
+/* the overview atop Grahas and Bhavas: a row per graha (or bhava), the girl's columns, it in the middle, the boy's */
+.mc-sum {
+  width: 100%;
+  min-width: 34em;
+  margin-bottom: .75rem;
+  border-collapse: collapse;
+  font-size: calc(.875rem * var(--list-scale, 1));
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+.mc-sum th, .mc-sum td { padding: .125rem .25rem; text-align: center; vertical-align: middle; white-space: nowrap; }
+.mc-sum thead th { font-weight: 700; }
+.mc-sum thead tr:first-child th { padding-bottom: .125rem; }
+.mc-sum .mc-sum-cols th { padding-bottom: .375rem; border-bottom: 2px solid var(--line); color: var(--muted); font-size: .85em; cursor: help; }
+.mc-sum .who-age { color: var(--muted); }
+.mc-sum tbody tr { border-bottom: 1px solid var(--line); cursor: default; }
+.mc-sum tbody tr:hover, .mc-sum tbody tr:focus-visible { background: var(--shade); outline: none; }
+.mc-sum tbody th { font-weight: 800; padding-inline: .5rem; }
+.mc-sum td .mc-box { width: auto; min-height: 0; padding: 0; font-weight: 700; }
+.mc-sum td .mc-box small { color: var(--muted); font-weight: 600; }
+/* the strengths in the overview a little smaller than the factors' */
+.mc-sum .mc-ring, .mc-sum .mc-house { width: 1.375rem; height: 1.375rem; }
+.mc-sum .mc-strength > b { text-align: left; }
+
+/* Grahas' and Bhavas' tables below the overview: per graha (or bhava) two lines, the girl's over the boy's, its name once at
+   the left; a line between grahas, none between the two lines, both lit on hover */
+.mc-duo { margin-top: .5rem; }
+.mc-duo .mc-sum-cols th { white-space: normal; }
+.mc-duo .mc-sum-cols .mc-duo-name { color: var(--ink); font-size: 1em; text-align: left; cursor: default; }
+.mc-duo tbody { border-bottom: 1px solid var(--line); cursor: default; }
+.mc-duo tbody tr { border-bottom: 0; }
+.mc-duo tbody tr:hover { background: none; }
+.mc-duo tbody:hover > tr, .mc-duo tbody:focus-visible > tr { background: var(--shade); }
+.mc-duo tbody:focus-visible { outline: none; }
+.mc-duo tbody > tr:first-child > * { padding-top: .3125rem; }
+.mc-duo tbody > tr:last-child > * { padding-bottom: .3125rem; }
+.mc-duo tbody th { text-align: left; }
+.mc-duo td { white-space: normal; }
+.mc-duo .mc-who { width: 1%; padding-right: .5rem; color: var(--muted); font-size: .85em; font-weight: 600; text-align: left; }
+.mc-duo td .mc-box .mc-asps { display: inline-flex; }
+.mc-duo-bhava { display: inline-flex; flex-direction: column; line-height: 1.15; }
+.mc-duo-bhava small { color: var(--muted); font-size: .8em; font-weight: 600; }
+
+/* each partner's grahas aspecting the other's, as the Home tab's Aspects tables: the girl's (and her totals), a clear gap, the boy's */
+.mc-aspects { display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* the Grahas and Bhavas tabs: each group of tables in its own box, its name small above, room between the boxes */
+.mc-section { margin-top: 1rem; padding: .625rem .75rem .75rem; border: 1px solid var(--line); border-radius: .5rem; background: var(--panel); }
+.match-compare-block > .mc-section:first-child { margin-top: 0; }
+.mc-section-name { margin: 0 0 .5rem; padding-bottom: .375rem; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .8em; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+/* a box with tabs (★'s Areas): its name at the left and the tabs at the right, both on the one rule */
+.mc-section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 0 1rem; margin: 0 0 .5rem; border-bottom: 1px solid var(--line); }
+.mc-section-head > .mc-section-name { margin: 0; padding-bottom: .5625rem; border-bottom: 0; }
+.mc-section .mc-sum { margin-bottom: 0; }
+.mc-section .mc-duo { margin-top: 0; }

@@ -1,0 +1,456 @@
+{
+ "source": "Phaladeepika Ch. 8 (the grahas in the twelve bhavas from the Lagna), in Sudarshana's words",
+ "note": "These are the results the classic gives for a graha in each bhava by itself. A graha strong by sign, in its own or exaltation sign, or aspected by benefics gives its good results more fully and its bad ones less, and a weak or afflicted one the reverse; Rahu gives results like Saturn's and Ketu like Mars's (Phaladeepika 8.34-35).",
+ "readings": {
+  "Su": [
+   {
+    "text": "The Sun in the Lagna makes the native proud, brave and impatient, with little hair, a bilious, heated body and eyes that may be weak; they want to lead and dislike being ruled.",
+    "source": ""
+   },
+   {
+    "text": "In the 2nd the Sun can trouble the face, eyes or teeth and stir quarrels in the family; wealth comes through the state or those in authority, but goes on standing and display.",
+    "source": ""
+   },
+   {
+    "text": "In the 3rd, an upachaya, the Sun gives valour, intelligence, wealth and success by one's own effort; younger brothers and sisters may suffer or be few.",
+    "source": ""
+   },
+   {
+    "text": "In the 4th the Sun disturbs home and heart: little peace, strain with relatives and over land and houses; the native may serve the state and lose ancestral property.",
+    "source": ""
+   },
+   {
+    "text": "In the 5th the Sun gives a sharp intelligence but few children and worry through them; the mind is proud, and fortune comes through authority.",
+    "source": ""
+   },
+   {
+    "text": "In the 6th, an upachaya, the Sun is strong: victory over enemies, fame and authority, good digestion and success in service and litigation.",
+    "source": ""
+   },
+   {
+    "text": "In the 7th the Sun brings wandering, strain in or loss of marriage, and humiliation through others.",
+    "source": "Phaladeepika 8.1-3"
+   },
+   {
+    "text": "In the 8th the Sun takes away wealth and friends, shortens life and harms the eyesight.",
+    "source": "Phaladeepika 8.1-3"
+   },
+   {
+    "text": "In the 9th the Sun may take the father early, but gives children and kin, and reverence for the gods and for Brahmins.",
+    "source": "Phaladeepika 8.4"
+   },
+   {
+    "text": "In the 10th, where it has dig bala, the Sun gives sons, vehicles, praise, intelligence, wealth, strength and fame: the native rises to rule.",
+    "source": "Phaladeepika 8.4"
+   },
+   {
+    "text": "In the 11th the Sun gives great wealth and a long life, royal standing and freedom from sorrow.",
+    "source": "Phaladeepika 8.4"
+   },
+   {
+    "text": "In the 12th the Sun sets the native against the father, weakens the eyes and leaves them short of wealth and children.",
+    "source": "Phaladeepika 8.4"
+   }
+  ],
+  "Mo": [
+   {
+    "text": "Waxing in the Lagna the Moon gives a strong body, long life, fearlessness, power and wealth; waning, the reverse.",
+    "source": "Phaladeepika 8.5"
+   },
+   {
+    "text": "In the 2nd the Moon makes the native rich, learned and soft-spoken and fond of pleasure, though with some defect of a limb.",
+    "source": "Phaladeepika 8.5"
+   },
+   {
+    "text": "In the 3rd the Moon gives brothers, strength and power, a passionate nature and a miserly hand.",
+    "source": "Phaladeepika 8.5"
+   },
+   {
+    "text": "In the 4th, where it has dig bala, the Moon gives happiness and pleasures, generosity, friends, vehicles and renown.",
+    "source": "Phaladeepika 8.6"
+   },
+   {
+    "text": "In the 5th the Moon gives good children and a sharp intelligence, a gentle bearing and a minister's place.",
+    "source": "Phaladeepika 8.6"
+   },
+   {
+    "text": "In the 6th the Moon gives a short life, little learning, troubles of the stomach and humiliation.",
+    "source": "Phaladeepika 8.6"
+   },
+   {
+    "text": "In the 7th the Moon makes the native pleasing to see and loved by a beautiful partner.",
+    "source": "Phaladeepika 8.6"
+   },
+   {
+    "text": "In the 8th the Moon brings disease and a short life.",
+    "source": "Phaladeepika 8.7"
+   },
+   {
+    "text": "In the 9th the Moon gives prosperity, virtue, children and victory; undertakings succeed from the start.",
+    "source": "Phaladeepika 8.7"
+   },
+   {
+    "text": "In the 10th the Moon makes the native do good deeds and help the virtuous.",
+    "source": "Phaladeepika 8.7"
+   },
+   {
+    "text": "In the 11th the Moon gives a lofty mind, a long life, wealth, children and servants.",
+    "source": "Phaladeepika 8.7"
+   },
+   {
+    "text": "In the 12th the Moon makes the native disliked, miserable, insulted and idle.",
+    "source": "Phaladeepika 8.7"
+   }
+  ],
+  "Ma": [
+   {
+    "text": "In the Lagna Mars brings injury to a limb and a short life, and a cruel, adventurous nature.",
+    "source": "Phaladeepika 8.8"
+   },
+   {
+    "text": "In the 2nd Mars spoils the face and speech and leaves the native without learning or wealth, dependent on bad people.",
+    "source": "Phaladeepika 8.8"
+   },
+   {
+    "text": "In the 3rd Mars gives good qualities, wealth, bravery, invincibility and happiness, but no brothers.",
+    "source": "Phaladeepika 8.8"
+   },
+   {
+    "text": "In the 4th Mars takes away friends, mother, lands, happiness and vehicles.",
+    "source": "Phaladeepika 8.8"
+   },
+   {
+    "text": "In the 5th Mars brings unhappiness, few or no children, reverses, a backbiting tongue and a weak mind.",
+    "source": "Phaladeepika 8.9"
+   },
+   {
+    "text": "In the 6th Mars gives passion, wealth and fame: a ruler victorious in battle.",
+    "source": "Phaladeepika 8.9"
+   },
+   {
+    "text": "In the 7th Mars leads to improper acts, disease and wandering, and to loss of the spouse.",
+    "source": "Phaladeepika 8.9"
+   },
+   {
+    "text": "In the 8th Mars gives a deformed body, poverty, a short life and the curses of others.",
+    "source": "Phaladeepika 8.9"
+   },
+   {
+    "text": "In the 9th Mars makes the native hated though befriended by the ruler, fatherless, and capable of violence.",
+    "source": "Phaladeepika 8.10"
+   },
+   {
+    "text": "In the 10th Mars makes a cruel but liberal ruler, praised by the great.",
+    "source": "Phaladeepika 8.10"
+   },
+   {
+    "text": "In the 11th Mars gives riches and happiness, bravery, freedom from sorrow and good character.",
+    "source": "Phaladeepika 8.10"
+   },
+   {
+    "text": "In the 12th Mars harms the eyes and makes the native cruel, without a spouse, a slanderer and mean.",
+    "source": "Phaladeepika 8.10"
+   }
+  ],
+  "Me": [
+   {
+    "text": "In the Lagna Mercury gives a long life, sweet and clever speech, a sharp wit and learning in all the Shastras.",
+    "source": "Phaladeepika 8.11"
+   },
+   {
+    "text": "In the 2nd Mercury earns wealth by talent: the native is a poet, sincere and attractive, and fond of rich food.",
+    "source": "Phaladeepika 8.11"
+   },
+   {
+    "text": "In the 3rd Mercury makes the native brave, with good brothers and a middling life, but often tired and dejected.",
+    "source": "Phaladeepika 8.11"
+   },
+   {
+    "text": "In the 4th Mercury gives learning and wit, happiness, friends, lands, grain, wealth and enjoyment.",
+    "source": "Phaladeepika 8.11"
+   },
+   {
+    "text": "In the 5th Mercury gives learning, happiness, courage, many children and skill in mantras.",
+    "source": "Phaladeepika 8.12"
+   },
+   {
+    "text": "In the 6th Mercury makes the native quarrelsome, harsh of speech and idle, yet able to break the enemies' power.",
+    "source": "Phaladeepika 8.12"
+   },
+   {
+    "text": "In the 7th Mercury gives learning, fine dress and greatness, and a rich spouse.",
+    "source": "Phaladeepika 8.12"
+   },
+   {
+    "text": "In the 8th Mercury gives wide renown and a long life; the native supports the family and may command an army.",
+    "source": "Phaladeepika 8.12"
+   },
+   {
+    "text": "In the 9th Mercury makes the native learned, wealthy, well-behaved, religious and eloquent.",
+    "source": "Phaladeepika 8.13"
+   },
+   {
+    "text": "In the 10th Mercury brings success in undertakings, learning, strength, intelligence, happiness and truthfulness.",
+    "source": "Phaladeepika 8.13"
+   },
+   {
+    "text": "In the 11th Mercury gives a long life, truthfulness, great wealth, happiness and servants.",
+    "source": "Phaladeepika 8.13"
+   },
+   {
+    "text": "In the 12th Mercury makes the native miserable, unlearned, humiliated, cruel and inactive.",
+    "source": "Phaladeepika 8.13"
+   }
+  ],
+  "Ju": [
+   {
+    "text": "In the Lagna Jupiter gives a handsome body, good fortune, a long life, fearlessness and children.",
+    "source": "Phaladeepika 8.14"
+   },
+   {
+    "text": "In the 2nd Jupiter gives eloquence, a fine taste in food, a lovely face, wealth and learning.",
+    "source": "Phaladeepika 8.14"
+   },
+   {
+    "text": "In the 3rd Jupiter brings disrespect and miserliness and a sinful, ill-disposed turn, though a brother may be renowned.",
+    "source": "Phaladeepika 8.14"
+   },
+   {
+    "text": "In the 4th Jupiter gives a happy life with mother, friends, servants, children, spouse and plenty of grain.",
+    "source": "Phaladeepika 8.14"
+   },
+   {
+    "text": "In the 5th Jupiter, the karaka of children, brings trouble through children (the karaka harming its own bhava), yet gives intelligence and a place as adviser to the ruler.",
+    "source": "Phaladeepika 8.15"
+   },
+   {
+    "text": "In the 6th Jupiter makes the native inactive and disrespected, but victorious over enemies and skilled in mantras and exorcism.",
+    "source": "Phaladeepika 8.15"
+   },
+   {
+    "text": "In the 7th Jupiter gives a good spouse and children, an amiable nature and more generosity than the father had.",
+    "source": "Phaladeepika 8.15"
+   },
+   {
+    "text": "In the 8th Jupiter gives a long life but poverty, menial work and a sinful turn.",
+    "source": "Phaladeepika 8.15"
+   },
+   {
+    "text": "In the 9th Jupiter makes the native a famous minister, wealthy, with children and devoted to virtuous acts.",
+    "source": "Phaladeepika 8.16"
+   },
+   {
+    "text": "In the 10th Jupiter gives right conduct, renowned virtues, great wealth and the friendship of the ruler.",
+    "source": "Phaladeepika 8.16"
+   },
+   {
+    "text": "In the 11th Jupiter gives wealth, fearlessness, a long life and vehicles, but few children.",
+    "source": "Phaladeepika 8.16"
+   },
+   {
+    "text": "In the 12th Jupiter makes the native disliked, foul-mouthed, childless, sinful, idle and menial.",
+    "source": "Phaladeepika 8.16"
+   }
+  ],
+  "Ve": [
+   {
+    "text": "In the Lagna Venus gives health, a beautiful body, happiness and a long life.",
+    "source": "Phaladeepika 8.17"
+   },
+   {
+    "text": "In the 2nd Venus makes the native a poet with riches of many kinds.",
+    "source": "Phaladeepika 8.17"
+   },
+   {
+    "text": "In the 3rd Venus leaves the native without a spouse, unhappy, poor, miserly and unpopular.",
+    "source": "Phaladeepika 8.17"
+   },
+   {
+    "text": "In the 4th Venus gives fine vehicles, a good house, jewels, clothes and perfumes.",
+    "source": "Phaladeepika 8.17"
+   },
+   {
+    "text": "In the 5th Venus gives immense wealth, wisdom and children, and the power to protect others.",
+    "source": "Phaladeepika 8.18"
+   },
+   {
+    "text": "In the 6th Venus leaves the native without enemies but without riches, led astray by the young and grieving.",
+    "source": "Phaladeepika 8.18"
+   },
+   {
+    "text": "In the 7th Venus, the karaka of the spouse, gives a good partner and wealth, but affairs with others and the loss of a spouse (the karaka harming its own bhava).",
+    "source": "Phaladeepika 8.18"
+   },
+   {
+    "text": "In the 8th Venus gives a long life, wealth and lordship.",
+    "source": "Phaladeepika 8.18"
+   },
+   {
+    "text": "In the 9th Venus gives a spouse, friends and children, and prosperity through royal favour.",
+    "source": "Phaladeepika 8.19"
+   },
+   {
+    "text": "In the 10th Venus gives wide renown, friends and a happy, lordly position.",
+    "source": "Phaladeepika 8.19"
+   },
+   {
+    "text": "In the 11th Venus gives riches, the company of women and many comforts.",
+    "source": "Phaladeepika 8.19"
+   },
+   {
+    "text": "In the 12th Venus gives the pleasures of the bed, wealth and splendour.",
+    "source": "Phaladeepika 8.19"
+   }
+  ],
+  "Sa": [
+   {
+    "text": "In the Lagna Saturn in its own or exaltation sign makes the native equal to a king or the head of a city; elsewhere it brings sorrow, poverty, slovenliness and indolence.",
+    "source": "Phaladeepika 8.20"
+   },
+   {
+    "text": "In the 2nd Saturn spoils the face and leaves the native without wealth and given to evil ways; later in life they live abroad with vehicles and wealth.",
+    "source": "Phaladeepika 8.21"
+   },
+   {
+    "text": "In the 3rd Saturn makes the native intelligent, generous and happy with the spouse, but inactive and sorrowful.",
+    "source": "Phaladeepika 8.21"
+   },
+   {
+    "text": "In the 4th Saturn brings unhappiness, no home or vehicles, loss of the mother and illness in childhood.",
+    "source": "Phaladeepika 8.22"
+   },
+   {
+    "text": "In the 5th Saturn makes the native wandering and unsettled of mind, childless, short of happiness and treacherous.",
+    "source": "Phaladeepika 8.22"
+   },
+   {
+    "text": "In the 6th Saturn makes the native voracious, wealthy, stubborn and self-respecting, though troubled by enemies.",
+    "source": "Phaladeepika 8.22"
+   },
+   {
+    "text": "In the 7th Saturn brings a difficult spouse, poverty, wandering and distress.",
+    "source": "Phaladeepika 8.22"
+   },
+   {
+    "text": "In the 8th Saturn, the karaka of longevity, brings uncleanliness, poverty, piles, cruelty and hunger, and the contempt of friends.",
+    "source": "Phaladeepika 8.23"
+   },
+   {
+    "text": "In the 9th Saturn leaves the native without fortune, wealth, children, father or religious merit.",
+    "source": "Phaladeepika 8.24"
+   },
+   {
+    "text": "In the 10th Saturn makes the native a ruler or minister, brave, rich and renowned, working with the land.",
+    "source": "Phaladeepika 8.24"
+   },
+   {
+    "text": "In the 11th Saturn gives a long life, lasting wealth, a good income, bravery and freedom from disease.",
+    "source": "Phaladeepika 8.24"
+   },
+   {
+    "text": "In the 12th Saturn makes the native impudent, poor and childless, with a defect of a limb, dull, and driven out by enemies.",
+    "source": "Phaladeepika 8.24"
+   }
+  ],
+  "Ra": [
+   {
+    "text": "In the Lagna Rahu gives wealth and strength but a short life and diseases of the head and face.",
+    "source": "Phaladeepika 8.25"
+   },
+   {
+    "text": "In the 2nd Rahu makes speech insincere and brings disease to the mouth or face; the native is tender-hearted but wrathful, with wealth from the ruler.",
+    "source": "Phaladeepika 8.25"
+   },
+   {
+    "text": "In the 3rd Rahu makes the native proud, strong-willed, long-lived and wealthy, but hostile to brothers.",
+    "source": "Phaladeepika 8.25"
+   },
+   {
+    "text": "In the 4th Rahu makes the native foolish and a cause of sorrow, with friends and a short life, happy only at times.",
+    "source": "Phaladeepika 8.25"
+   },
+   {
+    "text": "In the 5th Rahu brings few or no children, a hard heart, pains in the stomach and a nasal voice.",
+    "source": "Phaladeepika 8.26"
+   },
+   {
+    "text": "In the 6th Rahu gives wealth and a long life, though the native is troubled by enemies and unseen forces and by diseases of the anus.",
+    "source": "Phaladeepika 8.26"
+   },
+   {
+    "text": "In the 7th Rahu brings loss of wealth through women, separation from the beloved, loss of vigour and self-willed folly.",
+    "source": "Phaladeepika 8.26"
+   },
+   {
+    "text": "In the 8th Rahu gives a short life, impure acts, a defect of a limb, wind disorders and few children.",
+    "source": "Phaladeepika 8.26"
+   },
+   {
+    "text": "In the 9th Rahu makes the native a headman of clan, village or city, but given to speaking against others and to unrighteous acts.",
+    "source": "Phaladeepika 8.27"
+   },
+   {
+    "text": "In the 10th Rahu gives fame and fearlessness and a hand in others' affairs, but few children and few good deeds.",
+    "source": "Phaladeepika 8.27"
+   },
+   {
+    "text": "In the 11th Rahu gives prosperity and a long life, but few children and trouble to the ears.",
+    "source": "Phaladeepika 8.27"
+   },
+   {
+    "text": "In the 12th Rahu brings secret sins, heavy spending and diseases from water.",
+    "source": "Phaladeepika 8.27"
+   }
+  ],
+  "Ke": [
+   {
+    "text": "In the Lagna Ketu makes the native ungrateful, unhappy and a tale-bearer, keeping bad company, with some deformity of the body.",
+    "source": "Phaladeepika 8.28"
+   },
+   {
+    "text": "In the 2nd Ketu leaves the native without learning or riches, coarse of speech and sinister of look, eating at others' tables.",
+    "source": "Phaladeepika 8.28"
+   },
+   {
+    "text": "In the 3rd Ketu gives a long life, strength, wealth and fame, happiness with the spouse and good food, but the loss of a brother.",
+    "source": "Phaladeepika 8.29"
+   },
+   {
+    "text": "In the 4th Ketu takes away lands, vehicles, mother and happiness; the native leaves the homeland and lives on others.",
+    "source": "Phaladeepika 8.29"
+   },
+   {
+    "text": "In the 5th Ketu brings loss of children, disease of the stomach and trouble from spirits, and an evil turn of mind.",
+    "source": "Phaladeepika 8.30"
+   },
+   {
+    "text": "In the 6th Ketu gives magnanimity, excellent qualities, lasting fame and authority, victory over enemies and wishes fulfilled.",
+    "source": "Phaladeepika 8.30"
+   },
+   {
+    "text": "In the 7th Ketu brings disrespect, bad company, disease of the bowels and loss of the spouse and of vitality.",
+    "source": "Phaladeepika 8.31"
+   },
+   {
+    "text": "In the 8th Ketu gives a short life, loss of dear friends, quarrels, wounds from weapons and failed undertakings.",
+    "source": "Phaladeepika 8.31"
+   },
+   {
+    "text": "In the 9th Ketu makes the native unrighteous and unlucky, poor and a slanderer of the good, and may take the father.",
+    "source": "Phaladeepika 8.32"
+   },
+   {
+    "text": "In the 10th Ketu brings obstacles to good deeds and impure acts, yet energy, boldness and renown.",
+    "source": "Phaladeepika 8.32"
+   },
+   {
+    "text": "In the 11th Ketu gives hoarded wealth, many good qualities, enjoyment of life and goals achieved.",
+    "source": "Phaladeepika 8.33"
+   },
+   {
+    "text": "In the 12th Ketu brings secret sins, wasteful spending on vile things, forbidden conduct and disease of the eyes.",
+    "source": "Phaladeepika 8.33"
+   }
+  ]
+ }
+}

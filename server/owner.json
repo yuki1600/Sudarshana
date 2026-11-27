@@ -1,0 +1,6 @@
+{
+  "username": "Yuki",
+  "name": "Yuki",
+  "email_sha256": "9130f4a3f7d27c0aa1b60105721bec708b73bd5017bc0ccabd2eb6b2228e0628",
+  "password_hash": "scrypt$16384$8$1$ed79fdc64be657147f8c8fd2bcf95034$9a63ddfd340e33f49fe74f875567e9afd443c1518bc8c2db46321c53ad69dcdddc1495126d3563af4b494254d51c7097afa157d7dd62217c7e7de948d447b44b"
+}
