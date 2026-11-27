@@ -277,7 +277,7 @@ main>.pane.muhurta>.mu-bar { flex: none; overflow: visible; position: relative; 
 .mf-go button.step { padding-inline: .625rem; gap: 2px; }
 .mf-go button.step .icon { width: .875rem; height: .875rem; }
 .mf>.pane.mf-find { flex: none; }
-.mf>.lab-head>button { margin-left: auto; align-self: center; }
+.mf>.lab-head>button { margin-left: auto; align-self: center; margin-bottom: .25rem; }     /* as Matrix beside Matching's sub tabs */
 .mf>.pane.mf-chart { flex: 1 0 auto; }
 .mf-chart .pane-head h2.mode-title { margin: 0; font-size: .9375rem; }
 .mf-chart dl.core .lead dd { font-family: var(--mono); font-size: .78125rem; }

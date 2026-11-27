@@ -783,8 +783,11 @@ main>.pane.match-pane> :not(.pane-head, dialog) {     /* not its pop-ups: they s
   border-bottom: 1px solid var(--line);
 }
 
-.match-top .match-total> button {
+/* a button beside a page's sub tabs (Matrix here, the Mundane tab's calendar options): one size, one padding */
+.match-top .match-total> button,
+.mf>.lab-head>button {
   padding: .1875rem .625rem;
+  font-size: .875rem;
 }
 
 .match-top .match-total {
